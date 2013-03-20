@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-12-29"/>
+<meta name="author" content="Osiris Alejandro Gómez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Introducción</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<p>
+Desde que comencé a usar org-mode <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup> siempre tuve ganas de
+graficar el registro de horas que llevo a diario, pasaron dos largos
+años y hoy lo conseguí, luego de 9 horas y 59 minutos:
+</p>
+
+
+
+<pre class="example">** tareas por día.........................................** 9:59
+   :LOGBOOK:
+   CLOCK: [2011-12-29 jue 00:04]--[2011-12-29 jue 02:45] =&gt;  2:41
+   CLOCK: [2011-12-28 mié 11:50]--[2011-12-28 mié 13:27] =&gt;  1:37
+   CLOCK: [2011-12-26 lun 16:50]--[2011-12-26 lun 19:00] =&gt;  2:10
+   CLOCK: [2011-12-16 vie 10:24]--[2011-12-16 vie 13:55] =&gt;  3:31
+   :END:
+</pre>
+
+
+<p>
+Entonces quiero compartir el proceso de esta mini aventura,
+especialmente para todos aquellos que no conocen nada acerca de
+org-mode y tienen ganas de saber qué es y par qué sirve.
+</p>
+<p>
+Es difícil de sintetizar, lo podés usar como anotador, también como
+agenda, llevar el registro de horas de un proyecto (o varios), hacer
+planillas de cáculo y hasta ejecutar código de distintos lenguajes de
+programación entre muchas otras cosas interesantes, casi todo se puede
+hacer en org-mode.
+</p>
+<p>
+Lo interesante es que el formato de archivos usados por orgmode son
+simples archivos de texto plano, con esto está garantizada la
+compatibiliad y portabilidad de todos tus datos, los podés leer desde
+cualquier sistema operativo y con cualquier editor de texto,
+obviamente la edición se agiliza muchísimo usando org-mode.
+</p>
+<p>
+Un detalle, org-mode es parte de Emacs <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup>, pero no hay que
+tener miedo, lleva un poco de tiempo aprenderlo y vale la pena.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">Cronometrar Tareas</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<p>
+Para iniciar el reloj de una tarea basta con presionar <code>C-c C-x C-i</code>,
+es decir <code>Ctrl+C Ctrl+x Ctrl+i</code> sobre una tarea, y qué es una tarea,
+básicamente una línea que comience con asteriscos:
+</p>
+
+
+
+<pre class="example">* tareas
+** primer tarea
+** segunda tarea
+</pre>
+
+
+<p>
+Se pueden definir atajos de teclado en el archivo <code>.emacs</code>, en mi
+caso alcanza con presionar <code>f9 i</code> para comenzar y luego <code>f9 o</code>
+para finalizar:
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(global-set-key (kbd <span class="org-string">"&lt;f9&gt; i"</span>) 'org-clock-in)
+(global-set-key (kbd <span class="org-string">"&lt;f9&gt; j"</span>) 'org-clock-jump-to-current-clock)
+(global-set-key (kbd <span class="org-string">"&lt;f9&gt; o"</span>) 'org-clock-out)
+</pre>
+
+
+<p>
+Cada vez que se utiliza el reloj se crea una línea que indica la fecha
+y hora de comienzo y fin de la tarea y luego la cuenta de las horas y
+minutos transcurridos en ese periódo de tiempo:
+</p>
+
+
+
+<pre class="src src-org"><span class="org-org-special-keyword">CLOCK:</span> <span class="org-org-date">[2011-12-29 jue 00:04]--[2011-12-29 jue 02:45]</span> =&gt;  2:41
+</pre>
+
+
+<p>
+Como se trata solamente de texto, es posible editar el texto
+manualmente, lo cual permite mucha flexibilidad, sólo hay que respetar
+el formato y cada vez que se presione <code>C-c C-c</code> sobre la línea, la
+cantidad de horas se recalcula. Además se pueden usar las flechas para
+avanzar/retrocer días y horas respetando el calendario.
+</p>
+<p>
+Eso es todo, solo hay que acordarse de iniciar y detener el reloj cada
+vez que se está trabajando en una tarea en particular, aunque se puede
+registar más tarde editando los valores manualmente.
+</p>
+<p>
+Sugiero agregar un par de líneas al <code>.bashrc</code> que ayudan mucho para
+determinar qué estuve haciendo y exáctamente cuándo:
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-builtin">export</span> <span class="org-variable-name">HISTSIZE</span>=100000
+<span class="org-builtin">export</span> <span class="org-variable-name">HISTFILESIZE</span>=100000
+<span class="org-builtin">export</span> <span class="org-variable-name">HISTTIMEFORMAT</span>=<span class="org-string">'%Y-%m-%d %H:%M '</span>
+<span class="org-variable-name">HISTCONTROL</span>=$<span class="org-variable-name">HISTCONTROL</span>${<span class="org-variable-name">HISTCONTROL</span>+,}ignoredups
+<span class="org-variable-name">HISTCONTROL</span>=ignoreboth
+<span class="org-builtin">shopt</span> -s histappend
+</pre>
+
+
+<p>
+Esto cambia la vista del comando <code>history</code> y es de gran ayuda:
+</p>
+
+
+
+<pre class="src src-sh">&gt; history | tail
+ 5237  2011-12-29 03:05 cdb
+ 5240  2011-12-29 03:16 cd
+ 5241  2011-12-29 03:16 g f9 .emacs
+ 5242  2011-12-29 03:21 :q
+ 5243  2011-12-29 03:29 cd
+ 5245  2011-12-29 03:29 gi hist .bashrc 
+ 5246  2011-12-29 03:29 history | tail
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">Recolectando datos</h3>
+<div class="outline-text-3" id="text-3">
+
+
+<p>
+La idea es recoletar todos los períodos de tiempo utilizados para cada
+proyecto (un archivo con extesion <code>.org</code>) ordenados por día y
+horario en un determinado año y mes.
+</p>
+<p>
+Para esta tarea realizo un <b>script bash</b> el cual lo escribo, edito y
+ejecuto directamente desde org-mode usando org-babel <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup> .
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-4">
+<h4 id="sec-3-1">listado de días</h4>
+<div class="outline-text-4" id="text-3-1">
+
+
+<p>
+Primero busco las líneas que tengan <code>CLOCK:</code> seguido de cualquier cosa
+<code>(.*)</code> para luego buscar el año y mes actual <code>2011-12</code> seguido de un
+número de dos cifras <code>[0-9]{2}</code> en todos los archivos <code>*.org</code>, usando
+el comando <code>egrep</code>:
+</p>
+
+
+
+<pre class="src src-sh">egrep -ho <span class="org-string">"CLOCK:(.*)2011-12-[0-9]{2}"</span> *.org
+</pre>
+
+
+<p>
+y obtengo muchas líneas como éstas:
+</p>
+
+
+
+<pre class="example">...
+CLOCK: [2011-12-26 lun 11:19]--[2011-12-26
+CLOCK: [2011-12-21 mié 11:31]--[2011-12-21
+CLOCK: [2011-12-19 lun 14:18]--[2011-12-19
+CLOCK: [2011-12-12 lun 10:04]--[2011-12-12
+CLOCK: [2011-12-16 vie 01:22]--[2011-12-16
+CLOCK: [2011-12-16 vie 01:17]--[2011-12-16
+...
+</pre>
+
+
+<p>
+a continuación me quedo sólo con <code>AÑO-MES-DIA</code>:
+</p>
+
+
+
+<pre class="src src-sh">egrep -ho <span class="org-string">"CLOCK:(.*)2011-12-[0-9]{2}"</span> *.org  | <span class="org-sh-escaped-newline">\</span>
+awk <span class="org-string">'{print $2}'</span> | tr -d <span class="org-string">"["</span> | sort -u
+</pre>
+
+
+<p>
+elimino los caracteres `[` y ordeno la lista dejando valores únicos:
+</p>
+
+
+
+<pre class="example">2011-12-12
+2011-12-16
+2011-12-19
+2011-12-21
+2011-12-26
+</pre>
+
+
+<p>
+todo esto para obtener la lista de días en los cuales hay tareas
+cronometradas, ya que no siempre estoy registrando horas.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-4">
+<h4 id="sec-3-2">listado de archivos</h4>
+<div class="outline-text-4" id="text-3-2">
+
+
+<p>
+De manera similar al paso anterior hago lo mismo para obtener el
+listado de archivos de los proyectos registrados:
+</p>
+
+
+
+<pre class="src src-sh">egrep -l <span class="org-string">"CLOCK:(.*)2011-12-[0-9]{2}"</span> *.org | sort -u
+</pre>
+
+
+<p>
+el resultado son nombres de archivos:
+</p>
+
+
+
+<pre class="example">almuerzo.org
+auditoria.org
+bal.org
+caipiroska.org
+gcoop.org
+malbec.org
+org.org
+osiux.org
+plot.org
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-4">
+<h4 id="sec-3-3">Armando la matriz</h4>
+<div class="outline-text-4" id="text-3-3">
+
+
+<p>
+Con el listado de días y archivos estamos en condiciones de completar
+una matriz para cada día y proyecto especificando la hora de inicio de
+cada tarea y la cantidad de minutos consumidos, siendo usadas las
+filas para los días y un par de columnas (inicio y minutos) para cada
+proyecto:
+</p>
+
+
+
+<pre class="example">dia         almuerzo  min  gca   min
+2011-12-15  13:19     50   0     0
+2011-12-15  14:10     18   0     0
+2011-12-17  0         0    0     0
+2011-12-18  13:15     61   0     0
+2011-12-18  0         0    12:28 107
+2011-12-18  0         0    14:16 106
+2011-12-18  0         0    16:37 25
+2011-12-18  0         0    0     0
+2011-12-18  0         0    0     0
+2011-12-19  0         0    14:33 25
+2011-12-19  0         0    16:59 25
+</pre>
+
+
+<p>
+A fin de completar armar estos datos en un archivo, es necesario
+buscar para una fecha determinada en un archivo en particular:
+</p>
+
+
+
+<pre class="src src-sh">grep <span class="org-string">"CLOCK: \[2011-12-18"</span> gca.org
+</pre>
+
+
+<p>
+obtengo lo siguiente:
+</p>
+
+
+
+<pre class="example">CLOCK:  2011-01-18 mar 14:16 -- 2011-01-18 mar 16:02  =&gt;  1:46
+CLOCK:  2011-01-18 mar 12:28 -- 2011-01-18 mar 14:15  =&gt;  1:47
+CLOCK:  2011-01-18 mar 16:37 -- 2011-01-18 mar 17:02  =&gt;  0:25
+</pre>
+
+
+<p>
+elimino los caracteres <code>[]</code> y me quedo con el día <code>$2</code>, la hora de
+inicio <code>$4</code> y la cantidad de horas y minutos <code>$10</code>:
+</p>
+
+
+
+<pre class="src src-sh">grep <span class="org-string">"CLOCK: \[2011-12-18"</span> gca.org | tr <span class="org-string">"[]"</span> <span class="org-string">" "</span> | awk <span class="org-string">'{print $2,$4,$10}'</span>
+</pre>
+
+
+<p>
+el resultado luego de usar <code>awk</code>:
+</p>
+
+
+
+<pre class="example">2011-01-18 14:16 1:46
+2011-01-18 12:28 1:47
+2011-01-18 16:37 0:25
+</pre>
+
+
+<p>
+hay un detalle, la última columa está en formato <code>H:MM</code> y es
+necesario convertirla a minutos, esto también lo resuelvo mendiante
+<code>awk</code> multiplicando por 60 las horas y sumando los minutos, solo es
+necesario dividir <code>split</code> la última columna por el caracter <code>:</code> y
+ordenando el resultado:
+</p>
+
+
+
+<pre class="src src-sh">grep <span class="org-string">"CLOCK: \[2011-12-18"</span> gca.org | tr <span class="org-string">"[]"</span> <span class="org-string">" "</span> | <span class="org-sh-escaped-newline">\</span>
+awk <span class="org-string">'{split($10,a,":"); print $2,$4,a[1]*60+a[2]}'</span> | sort
+</pre>
+
+
+<p>
+obteniendo:
+</p>
+
+
+
+<pre class="example">2011-12-18 12:28 107
+2011-12-18 14:16 106
+2011-12-18 16:37 25
+</pre>
+
+
+<p>
+Listo! Tenemos todos los datos que necesitamos, asi que los guardo en
+un archivo <code>org-task-by-day.dat</code> para graficar.
+</p>
+<p>
+El código completo del script (con algunas mejoras) es el siguiente:
+</p>
+
+
+
+<pre class="src src-org"><span class="org-org-meta-line">#+srcname: org-task-by-day</span>
+#+begin_src sh :session :results file
+  cd ~/org
+  YEAR=$(date +%Y)
+  MONTH=$(date +%m)
+  DAYS=$(egrep -ho "<span class="org-org-special-keyword">CLOCK:</span>(.*)$YEAR-$MONTH-[0-9]{2}" *.org | \
+  awk '{print $2}' | tr -d "[" | sort -u)
+  FILES=$(egrep -l "<span class="org-org-special-keyword">CLOCK:</span>(.*)$YEAR-$MONTH-[0-9]{2}" *.org | sort -u)
+  DAT=org-task-by-day.dat
+
+  echo -n 'dia\t' &gt;$DAT
+  for F in $FILES
+  do
+    echo -n $(basename $F .org)'\tmin\t' &gt;&gt;$DAT
+  done
+  echo -n '\n' &gt;&gt;$DAT
+
+  for DAY in $DAYS
+  do       
+    SEP='\t'
+    for F in $FILES
+    do
+      grep "<span class="org-org-special-keyword">CLOCK:</span> \[$DAY" $F | tr "[]" " " | \
+      awk '{split($10,a,":"); print $2,$4,a[1]*60+a[2]}' | sort | while read T
+      do
+        START=$(echo $T | awk '{print $2}')
+        MINUTES=$(echo $T | awk '{print $3}')
+        echo $DAY$SEP$START'\t'$MINUTES &gt;&gt;$DAT
+      done
+      SEP=$SEP'0\t0\t'
+    done
+  done
+  echo $DAT
+</pre>
+
+
+<p>
+Ahora, cada vez que se presiona <code>C-c C-c</code>, este código se ejecuta y
+genera una línea con un link al archivo que contiene todos los datos
+procesados:
+</p>
+
+
+
+<pre class="example">#+results: org-task-by-day
+[[file:org-task-by-day.dat]]
+</pre>
+
+
+<p>
+Es posible <b>copiar y pegar</b> estas líneas en cualquier archivo de
+org-mode para que sea funcional (siempre que esté habilitado
+org-babel), en el archivo <code>.emacs</code> es necesario definir:
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(<span class="org-keyword">require</span> '<span class="org-constant">ob-sh</span>)
+(setq org-confirm-babel-evaluate nil)
+(setq org-babel-load-languages (
+  quote (
+          (gnuplot . t)
+          (sh . t)
+        )))
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">Graficando</h3>
+<div class="outline-text-3" id="text-4">
+
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-4">
+<h4 id="sec-4-1">El primer gráfico</h4>
+<div class="outline-text-4" id="text-4-1">
+
+
+<p>
+<b>GNUPLOT</b> <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup> es sorprendente, realmente es muy fácil de usar
+y muy rápido generando los gráficos, inicialmente alcanza con indicar
+algunos parámetros y ya se puede visualizar el gráfico.
+</p>
+<p>
+Definiendo un bloque de código contenido entre los textos
+<code>#+begin_src</code> y <code>#+end_src</code> se puede escribir toda la sintaxis de
+gnuplot y cada vez que se presione <code>C-c C-c</code> obtenemos un archivo
+<code>png</code> con nombre definido en el parámetro <code>:file</code>, y en la
+variable <code>:var data=</code> indicamos el nombre de archivo donde están
+contenidos los datos a plotear:
+</p>
+
+
+
+<pre class="example">#+begin_src gnuplot :var data='org-task-by-day.dat' :file org-task-by-day.png
+reset
+set xdata time
+set ydata time
+set timefmt x "%Y-%m-%d"
+set timefmt y "%H:%M"
+
+plot data using 1:2:(0):($3*60)   with vec lw 10 lt  1 nohead ti col(2), \
+     data using 1:4:(0):($5*60)   with vec lw 10 lt  2 nohead ti col(4), \
+     data using 1:6:(0):($7*60)   with vec lw 10 lt  3 nohead ti col(6), \
+     data using 1:8:(0):($9*60)   with vec lw 10 lt  4 nohead ti col(8), \
+     data using 1:10:(0):($11*60) with vec lw 10 lt  5 nohead ti col(10), \
+     data using 1:12:(0):($13*60) with vec lw 10 lt  6 nohead ti col(12), \
+     data using 1:14:(0):($15*60) with vec lw 10 lt  7 nohead ti col(14), \
+     data using 1:16:(0):($17*60) with vec lw 10 lt  8 nohead ti col(16), \
+     data using 1:18:(0):($19*60) with vec lw 10 lt  9 nohead ti col(18), \
+     data using 1:20:(0):($21*60) with vec lw 10 lt 10 nohead ti col(20), \
+     data using 1:22:(0):($23*60) with vec lw 10 lt 11 nohead ti col(22), \
+#+end_src
+</pre>
+
+
+<p>
+Inicialmente especificando que los ejes <code>x</code> e <code>y</code> son del tipo
+fecha y luego dando formato a cada eje, ya estamos en condiciones de
+leer y graficar, los parámetros indicados para cada serie de datos
+son:
+</p>
+
+
+
+<pre class="example">data using 1:6:(0):($7*60)   with vec lw 10 lt  3 nohead ti col(6), \
+           ^ ^       ^            ^   ^-+-^ ^-+-^   ^    ^---+---^
+           | |       |            |     |     |     |        |
+           | |       |            |     |     |     |   titulo columna
+           | |       |            |     |     |     +- sin flecha
+           | |       |            |     |     +- tipo de línea
+           | |       |            |     +- espesor de línea
+           | |       |            +- tipo de gráfico (vectores)
+           | |       +- valor eje y
+           | +- columna eje y 
+           +--- columna eje x
+</pre>
+
+
+<p>
+El primer gráfico:
+</p>
+<p>
+<img src="img/org-task-by-day-1.png" width="640" height="480" alt="Tareas por día" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-4">
+<h4 id="sec-4-2">Mejorando el gráfico</h4>
+<div class="outline-text-4" id="text-4-2">
+
+
+<p>
+Las primeras mejoras que apliqué fueron todas visuales:
+</p>
+<p>
+Tamaño de la imagen:
+</p>
+
+
+
+<pre class="example">set terminal png size 1024, 768
+</pre>
+
+
+<p>
+Margenes:
+</p>
+
+
+
+<pre class="example">set lmargin 5
+set bmargin 5
+set rmargin 16
+</pre>
+
+
+<p>
+Títulos:
+</p>
+
+
+
+<pre class="example">set title "Orgmode Task by Day" font "Inconsolata,10"
+</pre>
+
+
+<p>
+Formato fechas y horas:
+</p>
+
+
+
+<pre class="example">set format y "%H:%M"
+set format x "%d/%m/%Y" font "Inconsolata,8"
+</pre>
+
+
+<p>
+Rango horario eje <code>y</code>:
+</p>
+
+
+
+<pre class="example">set yrange ["00:01":"23:59"]
+</pre>
+
+
+<p>
+Etiquetas de las series de datos::
+</p>
+
+
+
+<pre class="example">set key outside font "Inconsolata,10"
+</pre>
+
+
+<p>
+Etiquetas de los ejes:
+</p>
+
+
+
+<pre class="example">set xtics 60*60*24*7 font "Inconsolata,8" nomirror rotate by right at 0.5,0
+set ytics font "Inconsolata,8" nomirror
+set mytics
+unset mxtics
+set autoscale x
+</pre>
+
+
+<p>
+Aunque la principal mejora fue reemplazar las líneas para cada serie
+de datos por una función que calcula el todal de series contando el
+total de archivos <code>*.org</code> e iterando por todas las series en una
+sóla línea de código::
+</p>
+
+
+
+<pre class="example">f=`ls ~/org/*.org | wc -l`
+plot for [i=2:f:2] data u 1:i:(0):(column(i+1)*60) with vec lw 2 nohead ti col(i)
+</pre>
+
+
+<p>
+Con todos estos cambios aplicados el gráfico mejora notablemente:
+</p>
+<p>
+<img src="img/org-task-by-day-2011-12.png"  alt="img/org-task-by-day-2011-12.png" />
+</p>
+<p>
+El código completo de gnuplot es el siguiente:
+</p>
+
+
+
+<pre class="example">#+begin_src gnuplot :var data='org-task-by-day.dat' :file org-task-by-day.png
+reset
+set terminal png size 1024, 768
+set lmargin 5
+set bmargin 5
+set rmargin 16
+set title "Orgmode Task by Day" font "Inconsolata,10"
+set xdata time
+set ydata time
+set timefmt x "%Y-%m-%d"
+set timefmt y "%H:%M"
+set format y "%H:%M"
+set format x "%d/%m/%Y" font "Inconsolata,8"
+set yrange ["00:01":"23:59"]
+set key outside font "Inconsolata,10"
+set xtics 60*60*24*7 font "Inconsolata,8" nomirror rotate by right at 0.5,0
+set ytics font "Inconsolata,8" nomirror
+set mytics
+unset mxtics
+set autoscale x
+f=`ls ~/org/*.org | wc -l`
+plot for [i=2:f:2] data u 1:i:(0):(column(i+1)*60) with vec lw 2 nohead ti col(i)
+#+end_src
+
+#+results:
+[[file:org-task-by-day.png]]
+</pre>
+
+
+<p>
+Está disponible un archivo <code>plot.org</code> con el código completo:
+</p>
+<ul>
+<li><a href="http://pub.osiux.com/org-mode/plot.org">http://pub.osiux.com/org-mode/plot.org</a>
+</li>
+</ul>
+
+
+
+<p>
+Graficando un año completo
+
+</p>
+<hr/>
+
+<p>
+Como mencioné anteriormente, org-babel es muy flexible permitiendo
+modificar el código y presionando <code>C-c C-c</code> se obtienen resultados
+en segundos, asi que bastó con reemplazar las líneas:
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-variable-name">YEAR</span>=$(<span class="org-sh-quoted-exec">date</span> +%Y)
+...
+<span class="org-variable-name">DAYS</span>=$(<span class="org-sh-quoted-exec">egrep</span> -ho <span class="org-string">"CLOCK:(.*)$YEAR-$MONTH-[0-9]{2}"</span> *.org | <span class="org-sh-escaped-newline">\</span>
+</pre>
+
+
+<p>
+por:
+</p>
+
+
+
+<pre class="src src-src">YEAR=2011
+DAYS=$(egrep -ho <span class="org-string">"CLOCK:(.*)$YEAR-[0-9]{2}-[0-9]{2}"</span> *.org | \
+</pre>
+
+
+<p>
+Y obtuve un gráfico de todo el 2010:
+</p>
+<p>
+<img src="tmb/org-task-by-day-2010.png" width="640" height="480" alt="Tareas por día Año 2010" />
+</p>
+<p>
+Comparando el 2011, veo que soy un adicto a org-mode:
+</p>
+<p>
+<img src="tmb/org-task-by-day-2011.png" width="640" height="480" alt="Tareas por día Año 2011" />
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">Conclusión</h3>
+<div class="outline-text-3" id="text-5">
+
+
+<p>
+Org-mode es fiel a la filosofía UNIX al permitir unir muchas pequeñas
+herramientas, en este caso: <code>bash, awk, egrep, sort, gnuplot</code> con la
+ventaja de que no solo no es necesario salir del editor de texto sino
+que además se integran perfectamente unas con otras al mantener la
+simplicidad de manejar todo en archivos de textos permitiendo que el
+límite para obtener algo deseado sea sólo la imaginación de quién lo
+usa.
+</p>
+<p>
+Si llegaste hasta acá te recomiendo leer:
+</p>
+<p>
+<a href="http://osiux.com/emacs-orgmode-organize-your-life-in-plain-text.txt">http://osiux.com/emacs-orgmode-organize-your-life-in-plain-text.txt</a>
+</p>
+<p>
+Por cierto, este artículo lo escribí usando sintaxis
+<b>restructuredtext</b> <sup><a class="footref" name="fnr-.5" href="#fn-.5">5</a></sup> alternando entre <code>rst-mode</code> y
+<code>org-mode</code> dentro de emacs en el mismo archivo donde generé todos
+los scripts para graficar org-mode.
+</p>
+<p>
+Ejecutando unas pocas líneas se puede ver, cuanto tardé:
+</p>
+
+
+
+<pre class="example">#+begin_src sh :session :results output
+cd ~/org
+grep -A 3 "*** visualizando" plot.org | grep "="
+#+end_src
+
+#+results:
+:     CLOCK: [2011-12-29 jue 02:55]--[2011-12-29 jue 05:47] =&gt;  2:52
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">ChangeLog</h3>
+<div class="outline-text-3" id="text-6">
+
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-02-28 jue</span></span> Cambio formato rst por org.
+</li>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-15 vie</span></span> Agrego width a imágenes.
+</li>
+</ul>
+
+
+<div id="footnotes">
+<h2 class="footnotes">Pies de p&aacute;gina: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://orgmode.org">http://orgmode.org</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">http://orgmode.org/worg/org-contrib/babel/intro.html</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.5" href="#fnr-.5">5</a></sup> <a href="http://osiux.com/restructuredtext-texto-re-estructurado.txt">http://osiux.com/restructuredtext-texto-re-estructurado.txt</a>
+</p></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2011-12-29</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

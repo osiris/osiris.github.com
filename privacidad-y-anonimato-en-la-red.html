@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>privacidad y anominato en la red</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="privacidad y anominato en la red"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-03-14T19:09-0300"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content="GPG, TOR, LUKS, HTTPS"/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">privacidad y anominato en la red</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Seguridad de la Información</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<ul>
+<li>Integridad
+</li>
+<li>Disponibilidad
+</li>
+<li>Confidencialidad
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Niveles de Seguridad</h2>
+<div class="outline-text-2" id="text-2">
+
+
+
+
+
+<pre class="example">+--------------------------------+-----------------+
+| Inicio Dispositivo             | BIOS User/Admin |
+| Selección Sistema Operativo    | GRUB/Bootloader |
+| Acceso al Sistema Operativo    | root            |
+| Acceso a los datos             | LUKS            |
+| Acceso a la sesión del usuario | osiris          |
+| Acceso al canal seguro         | ssh             |
+| Recepción y Envío de Correos   | imap/smtp       |
+| Firmar/Cifrar correos          | gpg             |
++--------------------------------+-----------------+
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Cifrando el disco</h2>
+<div class="outline-text-2" id="text-3">
+
+
+
+
+
+<pre class="example">cryptsetup luksFormat /dev/sdb3
+cryptsetup luksOpen /dev/sdb3 misdatos
+mount /dev/mapper/soloparami /home/osiris
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Privacidad y Anonimato</h2>
+<div class="outline-text-2" id="text-4">
+
+
+<ul>
+<li>ocultar el contenido del mensaje
+</li>
+<li>ocultar origen y remitente
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Herramientas</h2>
+<div class="outline-text-2" id="text-5">
+
+
+<ul>
+<li>gpg
+</li>
+<li>polipo
+</li>
+<li>socat
+</li>
+<li>ssh
+</li>
+<li>ssl
+</li>
+<li>tor
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">Distribuciones</h2>
+<div class="outline-text-2" id="text-6">
+
+
+<ul>
+<li>Liberte Linux
+</li>
+<li>Mandragora
+</li>
+<li>Polippix
+</li>
+<li>Privatix Live System
+</li>
+<li>TAILS, The Amnesic Incognito Live System
+</li>
+<li>Ubuntu Privacy Remix
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">plugins firefox</h2>
+<div class="outline-text-2" id="text-7">
+
+
+
+
+
+<pre class="example">+-------------------+-------------------------------+
+| AdblockPlus       | bloquea publicidad            |
+| AutoProxy         | permite usar muchos proxies   |
+| Flashblock        | bloquea flash                 |
+| Ghostery          | bloquea scripts/trackers      |
+| HTTPS Every Where | fuerza HTTPS en lugar de HTTP |
+| NoScript          | bloquea scripts/trackers      |
+| ShowIP            | muestra IP servidor           |
+| ShowMyIP          | muestra IP local              |
++-------------------+-------------------------------+
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8">HTTP vs HTTPS</h2>
+<div class="outline-text-2" id="text-8">
+
+
+<ul>
+<li>en HTTP los datos viajan en claro
+</li>
+<li>en HTTPS los datos viajan cifrados
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9">Buscar sin dejar rastros?</h2>
+<div class="outline-text-2" id="text-9">
+
+
+<ul>
+<li>scroogle.com
+</li>
+<li>lxquick.com/StargPage.com
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10">ManInTheMiddle | HombreEnElMedio</h2>
+<div class="outline-text-2" id="text-10">
+
+
+
+
+
+<pre class="example">iptables -t nat -A PREROUTING -i eth0
+-p tcp --dport 443
+-j REDIRECT --to-port 4443
+
+socat -v OPENSSL-LISTEN:4443,reuseaddr,
+verify=0,cert=server.crt,key=server.key,
+cafile=ca.crt,debug,
+fork OPENSSL:gmail.com:443
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11">navegar sin proxy</h2>
+<div class="outline-text-2" id="text-11">
+
+
+<p>
+  <img src="navegar-sin-proxy.png"  alt="navegar-sin-proxy.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12">SSH Proxy SOCKS</h2>
+<div class="outline-text-2" id="text-12">
+
+
+<ul>
+<li>muy fácil de implementar!
+
+
+
+<pre class="example">ssh -D 9090 osiris@osiux.com
+</pre>
+
+</li>
+<li>multiplataforma OpenSSH/PUTTY
+</li>
+<li>cifrado
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13">navegar con proxy</h2>
+<div class="outline-text-2" id="text-13">
+
+
+<p>
+  <img src="navegar-con-proxy.png"  alt="navegar-con-proxy.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14">firefox DNS</h2>
+<div class="outline-text-2" id="text-14">
+
+
+<ul>
+<li>hacer consulta DNS desde el proxy
+</li>
+</ul>
+
+
+
+
+<pre class="example">about:config
+network.proxy.socks_remote_dns = true
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15">tunnel SSH</h2>
+<div class="outline-text-2" id="text-15">
+
+
+
+
+
+<pre class="example">ssh -L 8080:osiux.com:80  osiris@osiux.com
+       ^    ^         ^    ^      ^
+       |    |         |    |      |
+       |    |         |    |      servidor
+       |    |         |    |
+       |    destino   |    usuario
+       |              |
+       puerto local   puerto destino
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16">siempre <code>localhost</code></h2>
+<div class="outline-text-2" id="text-16">
+
+
+<ul>
+<li>aplicaciones apuntan a <code>localhost:puerto</code>
+</li>
+<li>si el <code>tunnel ssh</code> no está levantado, no hay canal <b>seguro</b>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><code>~/.ssh/config</code></h2>
+<div class="outline-text-2" id="text-17">
+
+
+
+
+
+<pre class="example">Host osiux.com
+    User osiris
+    HostName 67.208.113.123
+    LocalForward 2525 localhost:25
+    LocalForward 9930 localhost:993
+    LocalForward 8123 localhost:8123
+    LocalForward 6667 irc.freenode.net:6667
+    LocalForward 5223 talk.google.com:5223
+    LocalForward 5222 talk.google.com:5222
+    LocalForward 1863 messenger.hotmail.com:1863
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18">compartir es bueno</h2>
+<div class="outline-text-2" id="text-18">
+
+
+<p>
+  usted es libre de:
+</p><ul>
+<li>compartir, copiar, distribuir, ejecutar
+</li>
+<li>comunicar públicamente la obra
+</li>
+<li>hacer obras derivadas
+</li>
+<li>hacer un uso comercial de esta obra
+</li>
+</ul>
+
+
+<p>
+  <a href="http://pub.osiux.com/priv-y-anon.pdf">http://pub.osiux.com/priv-y-anon.pdf</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2013-03-14T19:09-0300</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

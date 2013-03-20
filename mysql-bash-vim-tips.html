@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>MySQL Bash Vim Tips</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="MySQL Bash Vim Tips"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2009-12-01"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">MySQL Bash Vim Tips</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Crear Base y Usuario</h3>
+<div class="outline-text-3" id="text-1">
+
+
+
+
+
+<pre class="example">CREATE DATABASE sugar CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE user sugar;
+GRANT ALL ON sugar.* TO 'sugar'@'%';
+SET PASSWORD FOR 'sugar'@'%'=PASSWORD('sugar');
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">UTF8</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<p>
+Definir UTF8 en el cliente
+</p>
+
+
+
+<pre class="example">mysql --default-character-set=utf8
+</pre>
+
+
+<p>
+Definir UTF8
+</p>
+
+
+
+<pre class="example">SET NAMES utf8; SELECT * FROM contacts;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">MySQL de Bash</h3>
+<div class="outline-text-3" id="text-3">
+
+
+<p>
+Definir Alias
+</p>
+
+
+
+<pre class="example">set alias sugar = 'mysql --default-character-set=utf8 -u sugar -psugar -B sugar -h localhost '
+</pre>
+
+
+<p>
+Ejecutar consulta
+</p>
+
+
+
+<pre class="example">echo "SELECT user_name FROM users WHERE is_admin = 1;" | sugar
+</pre>
+
+
+<p>
+Listado de Tablas
+</p>
+
+
+
+<pre class="example">set alias tablas='echo "show tables" | sugar | grep -v Tables_in | sort -u'
+</pre>
+
+
+<p>
+Listado Tabla Campo
+</p>
+
+
+
+<pre class="example">set alias tablacampo='echo "show tables" | sugar | grep -v Tables_in | while read t; \
+do d=$(echo "desc "$t";" | cct15 | grep -v Field | awk1); \
+for c in $d;do echo $t"__"$c;done ;done'
+</pre>
+
+
+<p>
+Quitar nombre de campo
+</p>
+
+
+
+<pre class="example">mysql -N
+</pre>
+
+
+<p>
+Vaciar todas las tablas que contengan la palabra <b>calls</b>
+</p>
+
+
+
+<pre class="example">sugar &lt; $(echo "show tables" | sugar | grep calls | while read t;do echo "TRUNCATE table $t;";done)
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">MySQL desde Vim</h3>
+<div class="outline-text-3" id="text-4">
+
+
+<p>
+Agregar en <code>.vimrc</code>
+</p>
+
+
+
+<pre class="example">command -range=% SUGAR :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B sugar -t -v -v -v
+</pre>
+
+
+<p>
+Ejecutar todo el archivo
+</p>
+
+
+
+<pre class="example">:SUGAR
+</pre>
+
+
+<p>
+Ejecutar la línea actual
+</p>
+
+
+
+<pre class="example">:. SUGAR
+</pre>
+
+
+<p>
+Ejecutar un rango de líneas
+</p>
+
+
+
+<pre class="example">:3,8 SUGAR
+</pre>
+
+
+<p>
+Ejecutar desde línea actual hasta el final
+</p>
+
+
+
+<pre class="example">:.,$ SUGAR
+</pre>
+
+
+<p>
+Usar diccionarios
+</p>
+
+
+
+<pre class="example">:set dictionary=tablas, tablacampo
+
+CTRL-X CTRL-K
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">Reemplazar Texto</h3>
+<div class="outline-text-3" id="text-5">
+
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-4">
+<h4 id="sec-5-1">Traducir valores</h4>
+<div class="outline-text-4" id="text-5-1">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      REPLACE(REPLACE(direction,<span class="org-string">'Inbound'</span>,<span class="org-string">'Entrante'</span>),<span class="org-string">'Outbound'</span>,<span class="org-string">'Saliente'</span>) <span class="org-keyword">AS</span> direccion
+<span class="org-keyword">FROM</span>        calls;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-4">
+<h4 id="sec-5-2">Actualizar registros</h4>
+<div class="outline-text-4" id="text-5-2">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> contacts <span class="org-keyword">SET</span> last_name = REPLACE(last_name, <span class="org-string">'NUNEZ'</span>, <span class="org-string">'NU&#209;EZ'</span>);
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">Buscar duplicados</h3>
+<div class="outline-text-3" id="text-6">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      last_name, first_name, <span class="org-builtin">COUNT</span>(id) <span class="org-keyword">AS</span> total
+<span class="org-keyword">FROM</span>        contacts
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span>    first_name, last_name
+<span class="org-keyword">HAVING</span>      total &gt; 1
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span>    last_name, first_name;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">Agrupar</h3>
+<div class="outline-text-3" id="text-7">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      <span class="org-keyword">name</span>,
+            (
+            <span class="org-keyword">SELECT</span>  <span class="org-keyword">CASE</span>
+            <span class="org-keyword">WHEN</span>    <span class="org-builtin">EXTRACT</span>(<span class="org-keyword">HOUR</span> <span class="org-keyword">FROM</span> date_start) &lt; 12
+            <span class="org-keyword">THEN</span>    <span class="org-string">'ma&#241;ana'</span>
+            <span class="org-keyword">ELSE</span>    <span class="org-string">'tarde'</span>
+            <span class="org-keyword">END</span>
+            ) <span class="org-keyword">AS</span> turno,
+            <span class="org-builtin">COUNT</span>(id) <span class="org-keyword">as</span> total
+<span class="org-keyword">FROM</span>        calls
+<span class="org-keyword">GROUP</span> <span class="org-keyword">BY</span>    <span class="org-keyword">name</span>, turno
+<span class="org-keyword">HAVING</span>      total &gt; 500
+<span class="org-keyword">ORDER</span> <span class="org-keyword">BY</span>    total <span class="org-keyword">DESC</span>;
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-3">
+<h3 id="sec-8">Cruzando tablas</h3>
+<div class="outline-text-3" id="text-8">
+
+
+<p>
+Explicito mejor que implicito
+</p>
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      <span class="org-builtin">COUNT</span>(cc.id) <span class="org-keyword">AS</span> total
+<span class="org-keyword">FROM</span>        calls_contacts cc
+<span class="org-keyword">LEFT</span> <span class="org-keyword">JOIN</span>   contacts co <span class="org-keyword">ON</span> co.id = cc.contact_id ;
+<span class="org-keyword">AND</span>         cc.deleted = 0
+<span class="org-keyword">AND</span>         co.deleted = 0
+
+<span class="org-keyword">SELECT</span>      <span class="org-builtin">COUNT</span>(cc.id) <span class="org-keyword">AS</span> total
+<span class="org-keyword">FROM</span>        calls_contacts cc, contacts co
+<span class="org-keyword">WHERE</span>       co.deleted = 0
+<span class="org-keyword">AND</span>         co.id = cc.contact_id
+<span class="org-keyword">AND</span>         cc.deleted = 0
+</pre>
+
+
+<p>
+Contactos con llamadas
+</p>
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      <span class="org-builtin">COUNT</span>(cc.id) <span class="org-keyword">AS</span> total
+<span class="org-keyword">FROM</span>        calls_contacts cc
+<span class="org-keyword">LEFT</span> <span class="org-keyword">JOIN</span>   contacts co <span class="org-keyword">ON</span> co.id = cc.contact_id;
+</pre>
+
+
+<p>
+Contactos con llamadas entrantes
+</p>
+
+
+
+<pre class="src src-sql"><span class="org-keyword">SELECT</span>      co.last_name,
+            co.first_name,
+            CONVERT_TZ(date_start, <span class="org-string">'+00:00'</span>, <span class="org-string">'-03:00'</span>) <span class="org-keyword">as</span> fecha
+<span class="org-keyword">FROM</span>        contacts co
+<span class="org-keyword">INNER</span> <span class="org-keyword">JOIN</span>  calls_contacts cc <span class="org-keyword">ON</span> (cc.contact_id = co.id <span class="org-keyword">AND</span> cc.deleted = 0)
+<span class="org-keyword">INNER</span> <span class="org-keyword">JOIN</span>  calls ca <span class="org-keyword">ON</span> (ca.id = cc.call_id <span class="org-keyword">AND</span> ca.deleted = 0)
+<span class="org-keyword">WHERE</span>       co.deleted = 0
+<span class="org-keyword">AND</span>         last_name <span class="org-keyword">IS</span> <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>
+<span class="org-keyword">LIMIT</span>       20;
+</pre>
+
+
+<p>
+Actualizar las llamadas de un contacto
+</p>
+
+
+
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span>      calls ca, contacts co, calls_contacts cc
+<span class="org-keyword">SET</span>         ca.assigned_user_id = (
+                                    <span class="org-keyword">SELECT</span>  id
+                                    <span class="org-keyword">FROM</span>    users
+                                    <span class="org-keyword">WHERE</span>   user_name = <span class="org-string">'osiris'</span>
+                                    )
+<span class="org-keyword">WHERE</span>       ca.id = cc.call_id
+<span class="org-keyword">AND</span>         co.id = cc.contact_id
+<span class="org-keyword">AND</span>         co.id = <span class="org-string">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+
+
+<span class="org-keyword">UPDATE</span>      calls ca
+<span class="org-keyword">INNER</span> <span class="org-keyword">JOIN</span>  calls_contacts cc <span class="org-keyword">ON</span> cc.call_id = ca.id
+<span class="org-keyword">INNER</span> <span class="org-keyword">JOIN</span>  contacts co <span class="org-keyword">ON</span> co.id = cc.contact_id
+<span class="org-keyword">SET</span>         ca.assigned_user_id = (
+                                    <span class="org-keyword">SELECT</span>  id
+                                    <span class="org-keyword">FROM</span>    users
+                                    <span class="org-keyword">WHERE</span>   user_name = <span class="org-string">'osiris'</span>
+                                    )
+<span class="org-keyword">WHERE</span>       co. = <span class="org-string">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-3">
+<h3 id="sec-9">Insertar desde otra tabla</h3>
+<div class="outline-text-3" id="text-9">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">DROP</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">IF</span> <span class="org-keyword">EXISTS</span> calls_contacts_today;
+
+<span class="org-keyword">CREATE</span> <span class="org-keyword">TABLE</span> `calls_contacts_today` (
+    `id` <span class="org-type">varchar</span>(36) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
+    `contact_id` <span class="org-type">varchar</span>(36) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
+    `call_id` <span class="org-type">varchar</span>(36) <span class="org-keyword">NOT</span> <span class="org-keyword">NULL</span>,
+    `status` <span class="org-type">varchar</span>(25) <span class="org-keyword">default</span> <span class="org-keyword">NULL</span>,
+    `direction` <span class="org-type">varchar</span>(25) <span class="org-keyword">default</span> <span class="org-keyword">NULL</span>,
+     <span class="org-keyword">PRIMARY</span> <span class="org-keyword">KEY</span>  (`call_id`)
+);
+
+<span class="org-keyword">INSERT</span> <span class="org-keyword">INTO</span> calls_contacts_today
+            (id, contact_id, call_id, status, direction)
+<span class="org-keyword">SELECT</span>      UUID(), cc.contact_id, ca.id, ca.status, ca.direction
+<span class="org-keyword">FROM</span>        calls ca
+<span class="org-keyword">INNER</span> <span class="org-keyword">JOIN</span>  calls_contacts cc <span class="org-keyword">ON</span> cc.call_id = ca.id
+<span class="org-keyword">WHERE</span>       <span class="org-type">DATE</span>(ca.date_start) = CURDATE();
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-3">
+<h3 id="sec-10">AUTOCOMPLETE</h3>
+<div class="outline-text-3" id="text-10">
+
+
+
+
+
+<pre class="src src-sql">\#
+
+<span class="org-keyword">SELECT</span> <span class="org-keyword">FROM</span> t&lt;Presionar TAB&gt;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-3">
+<h3 id="sec-11">COUNT</h3>
+<div class="outline-text-3" id="text-11">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span> calls <span class="org-keyword">set</span> deleted = 1 <span class="org-keyword">WHERE</span> status = <span class="org-string">'Not Held'</span>;
+<span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(*) <span class="org-keyword">FROM</span> calls;
+<span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(id) <span class="org-keyword">FROM</span> calls;
+<span class="org-keyword">SELECT</span> <span class="org-builtin">COUNT</span>(id) <span class="org-keyword">FROM</span> calls <span class="org-keyword">WHERE</span> deleted = 0;
+<span class="org-keyword">SELECT</span> SQL_CALC_FOUND_ROWS id <span class="org-keyword">FROM</span> calls <span class="org-keyword">WHERE</span> deleted = 0 <span class="org-keyword">LIMIT</span> 1; <span class="org-keyword">SELECT</span> FOUND_ROWS();
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-3">
+<h3 id="sec-12">EXPLAIN</h3>
+<div class="outline-text-3" id="text-12">
+
+
+
+
+
+<pre class="src src-sql">EXPLAIN <span class="org-keyword">SELECT</span>      <span class="org-builtin">COUNT</span>(id)
+        <span class="org-keyword">FROM</span>        calls
+        <span class="org-keyword">WHERE</span>       deleted = 0
+        <span class="org-keyword">AND</span>         assigned_user_id = <span class="org-string">'ba8630eb-7442-73f9-a88e-49b6be5882c2'</span>;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-3">
+<h3 id="sec-13">INDEX</h3>
+<div class="outline-text-3" id="text-13">
+
+
+
+
+
+<pre class="src src-sql">SHOW INDEX <span class="org-keyword">IN</span> calls;
+<span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">calls</span> <span class="org-keyword">ADD</span> INDEX idx_deleted_user (deleted, assigned_user_id);
+<span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">calls</span> <span class="org-keyword">DROP</span> INDEX idx_deleted_user;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-3">
+<h3 id="sec-14">UNIQUE</h3>
+<div class="outline-text-3" id="text-14">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">calls_contacts_today</span> <span class="org-keyword">ADD</span> <span class="org-keyword">UNIQUE</span> idx_contact_call (contact_id, call_id);
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-3">
+<h3 id="sec-15">AUTO_INCREMENT</h3>
+<div class="outline-text-3" id="text-15">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">tracker</span> AUTO_INCREMENT = 9;
+<span class="org-keyword">ALTER</span> <span class="org-keyword">TABLE</span> <span class="org-function-name">tracker</span> <span class="org-keyword">MODIFY</span> id <span class="org-type">INT</span>(11) AUTO_INCREMENT;
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-3">
+<h3 id="sec-16">REGEXP</h3>
+<div class="outline-text-3" id="text-16">
+
+
+
+
+
+<pre class="src src-sql"><span class="org-keyword">UPDATE</span>      contacts
+<span class="org-keyword">SET</span>         postal = SUBSTR(postal,4,7)
+<span class="org-keyword">WHERE</span>       postal <span class="org-keyword">NOT</span> REGEXP <span class="org-string">'^[0-9]{4}$'</span>
+<span class="org-keyword">AND</span>         postal REGEXP <span class="org-string">'^[A-Z]{3}[0-9]{4}$'</span>
+</pre>
+
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2009-12-01</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

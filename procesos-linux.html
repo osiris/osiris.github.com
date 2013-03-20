@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Procesos Linux</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Procesos Linux"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-06"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content="Administrando recursos de sistema"/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Procesos Linux</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">¿Qué es proceso?</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<ul>
+<li>Un proceso es la instancia de un programa en ejecución.
+</li>
+<li>También se lo conoce como tarea.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">¿Por qué?</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<ul>
+<li>GNU/Linux es un sistema multitarea, permite la ejecución de
+     múltiples procesos al mismo tiempo.
+
+</li>
+<li>Comprender el concepto de procesos nos permite administrar el
+     rendimiento de nuestro equipo.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">Lo que el usuario ve:</h3>
+<div class="outline-text-3" id="text-3">
+
+
+<p>
+   <img src="img/cfp-procesos-01.png" width="640" alt="procesos" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">Lo que el sistema ve:</h3>
+<div class="outline-text-3" id="text-4">
+
+
+<p>
+   <img src="img/cfp-procesos-03.png" width="640" alt="procesos" />
+</p>
+<p>
+   <img src="img/cfp-procesos-04.png" width="640" alt="procesos" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5"><code>PID</code></h3>
+<div class="outline-text-3" id="text-5">
+
+
+<ul>
+<li>Todo proceso que se inicia tiene un número asignado llamado
+     <b>PID</b>.
+
+</li>
+<li>Este <b>PID</b> permite identificar el proceso y administrarlo
+     (detenerlo, reanudarlo etc&hellip;)
+
+</li>
+<li>Ejemplo: Para obtener el <b>PID</b> de un proceso podemos usar el
+     comando <code>pidof</code>:
+
+
+
+
+<pre class="src src-sh">pidof init emacs
+</pre>
+
+
+</li>
+</ul>
+
+<p>=1 15787
+=ORG-LIST-END-MARKER
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">Listar procesos</h3>
+<div class="outline-text-3" id="text-6">
+
+
+<p>
+   El comando <code>ps</code> puede listar el estado de los procesos:
+</p>
+<p>
+   <img src="img/cfp-procesos-07.png" width="640" alt="listar procesos" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">Operaciones</h3>
+<div class="outline-text-3" id="text-7">
+
+
+<p>
+   Los procesos se pueden controlar de manera externa.
+</p>
+<p>
+   El comando <code>kill</code>, <code>xkill</code> o <code>killall</code> permite enviarle señales a
+   los procesos. Por ejemplo la señal de terminación:
+</p>
+<p>
+   <img src="img/cfp-procesos-08.png" width="640" alt="procesos" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-3">
+<h3 id="sec-8">Jerarquía</h3>
+<div class="outline-text-3" id="text-8">
+
+
+<p>
+   El comando pstree nos permite ver la organización de los procesos
+   en ejecución:
+</p>
+
+
+
+<pre class="src src-sh">ps -fax | grep -A 10 bash | head
+</pre>
+
+
+
+<pre class="example">2686 ?        S     51:26 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
+ 614 ?        S      0:00  \_ sleep 1
+2691 ?        S      2:56 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
+2692 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
+2731 ?        Ss     0:29 /usr/sbin/acpid
+2935 ?        Ss     0:30 /usr/sbin/apache2 -k start
+3138 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3139 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3140 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3141 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+</pre>
+
+
+
+<pre class="src src-sh">pstree -p -U | head
+</pre>
+
+
+
+<pre class="example">init(1)─┬─NetworkManager(3472)─┬─dhclient(3639)
+        │                      ├─{NetworkManager}(3518)
+        │                      └─{NetworkManager}(3662)
+        ├─accounts-daemon(4022)───{accounts-daemon}(4024)
+        ├─acpi_fakekeyd(2692)
+        ├─acpid(2731)
+        ├─apache2(2935)─┬─apache2(3138)
+        │               ├─apache2(3139)
+        │               ├─apache2(3140)
+        │               ├─apache2(3141)
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-3">
+<h3 id="sec-9">En tiempo real</h3>
+<div class="outline-text-3" id="text-9">
+
+
+<p>
+   Para visualizar los procesos en ejecución, también se puede usar
+   <code>htop</code> o <code>top</code>:
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-builtin">export</span> <span class="org-variable-name">TERM</span>=linux
+top -b -n1 | head -20
+</pre>
+
+
+
+<pre class="example">top - 21:18:23 up 11 days,  3:45,  6 users,  load average: 0,88, 0,71, 0,77
+Tasks: 182 total,   1 running, 181 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 13,9 us,  4,8 sy,  0,0 ni, 80,1 id,  0,6 wa,  0,5 hi,  0,2 si,  0,0 st
+KiB Mem:   2044852 total,  1774072 used,   270780 free,    99868 buffers
+KiB Swap:        0 total,        0 used,        0 free,   605360 cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
+  625 osiris    20   0 26096 1496 1080 R  11,8  0,1   0:00.02 top
+    1 root      20   0 10648  788  652 S   0,0  0,0   0:12.15 init
+    2 root      20   0     0    0    0 S   0,0  0,0   0:00.16 kthreadd
+    3 root      20   0     0    0    0 S   0,0  0,0  14:26.37 ksoftirqd/0
+    6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
+    7 root      -2   0     0    0    0 S   0,0  0,0   3:52.99 rcuc/0
+    8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
+    9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
+   10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
+   11 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/1
+   12 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/1
+   14 root      -2   0     0    0    0 S   0,0  0,0   5:28.06 rcuc/1
+   15 root      20   0     0    0    0 S   0,0  0,0  13:05.03 ksoftirqd/1
+</pre>
+
+
+<p>
+   <img src="img/cfp-procesos-11.png" width="640" alt="htop" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-3">
+<h3 id="sec-10">Resumen</h3>
+<div class="outline-text-3" id="text-10">
+
+
+<ul>
+<li>Los procesos son instancias de programas en funcionamiento.
+</li>
+<li>Los recursos del sistema son limitados, el sistema administra y
+     hace posible compartir recursos.
+</li>
+<li>Cada proceso tiene un identiﬁcador (<code>PID</code>), que nos sirve para
+     enviar señales.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-3">
+<h3 id="sec-11">Changelog</h3>
+<div class="outline-text-3" id="text-11">
+
+
+<p>
+ <span class="timestamp-wrapper"> <span class="timestamp">2013-03-18 lun</span></span> migro <a href="http://wiki.gcoop.coop/_media/apuntes:procesos.pdf">slides pdf</a> de Hugo Ruscitti a <code>.org</code>
+</p></div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2012-11-06</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

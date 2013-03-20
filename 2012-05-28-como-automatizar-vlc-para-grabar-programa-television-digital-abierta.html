@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Cómo automatizar VLC para grabar un programa de televisión digital abierta</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Cómo automatizar VLC para grabar un programa de televisión digital abierta"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-05-28"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Cómo automatizar VLC para grabar un programa de televisión digital abierta</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+<p>
+El jueves pasado recorrí varios lugares de microcentro y donde había
+antenas para <b>TDA</b> <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup> eran muy caras y donde estaban a buen precio
+no tenían stock, asi que volví a casa sin una antena decente para mi
+sintonizador geniatech <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup>.
+</p>
+<p>
+Luego de luchar al menos una hora, mediante un sistema de dos <b>amarres</b>, el
+primero fijando la antena al cordón de una cortina y el segundo al monopatín de
+mi hijo, logré tener <b>buena</b> señal de Canal Encuentro <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup>.
+</p>
+<p>
+<img src="img/sintonizador-usb-tda-con-amarre.jpg"  alt="img/sintonizador-usb-tda-con-amarre.jpg" />
+</p>
+<p>
+La idea era grabar el episodio <b>Internet: comunicación</b> del ciclo <b>en el medio digital</b> <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup> en el cual participó <b>BuenosAiresLibre</b> <sup><a class="footref" name="fnr-.5" href="#fn-.5">5</a></sup>.
+</p>
+<p>
+El problema era el horario, eran las 23hs y el programa empezaba a las 04:30 de
+la matina, si bien podía esperar a verlo el viernes a las 22hs en un horario
+más cómodo, estaba ansioso, ya que fue filmado en Septiembre del año pasado!
+</p>
+<p>
+Asi que empecé a ver cómo grabarlo y luego de luchar con <code>RecordMyDesktop</code>,
+<code>ffmpeg</code> y <code>sox</code>, vi que <code>vlc</code> tiene un bonito botón rojo para grabar,
+pero tenía que estar ahí en vivo para presionarlo!
+</p>
+<p>
+La solución fue instalar el paquete <code>xautomation</code> que permite automatizar
+tareas del entorno <code>X</code> usando una línea de <code>bash</code>, indicando al mouse
+moverse a las coordenadas del botón rojo y luego hacer clic.
+</p>
+<p>
+Entonces la tarea iniciada a las 23:16 del jueves fue:
+</p>
+<ol>
+<li>esperar 5 horas
+</li>
+<li>mover el mouse y hacer clic para iniciar la grabación
+</li>
+<li>esperar 60 minutos
+</li>
+<li>mover el mouse y hacer clic para detener la grabación
+</li>
+</ol>
+
+
+<p>
+Traducido a <code>bash</code>:
+</p>
+
+
+
+<pre class="src src-sh">sleep 5h &amp;&amp; <span class="org-sh-escaped-newline">\</span>
+xte <span class="org-string">'mousemove 29 694'</span> &amp;&amp; xte <span class="org-string">'mouseclick 1'</span> &amp;&amp; <span class="org-sh-escaped-newline">\</span>
+sleep 60m &amp;&amp; <span class="org-sh-escaped-newline">\</span>
+xte <span class="org-string">'mousemove 29 694'</span> &amp;&amp; xte <span class="org-string">'mouseclick 1'</span>
+</pre>
+
+
+<p>
+Asi que me pude ir a dormir tranquilo y a la mañana siguiente pude disfrutar
+del programa mientras desayunaba.
+</p>
+<p>
+Seguro hay algún programa que hace esto con menos complicaciones, digamos desde
+el control remoto, pero me pareció una excelente solución aplicable a miles de
+pequeños problemas cotidianos!
+</p>
+<p>
+Para el que quiera ver un resumen del programa:
+</p>
+<ul>
+<li><a href="http://osiux.com/2012-05-25-buenos-aires-libre-en-el-medio-digital.txt">http://osiux.com/2012-05-25-buenos-aires-libre-en-el-medio-digital.txt</a>
+</li>
+</ul>
+
+
+<div id="footnotes">
+<h2 class="footnotes">Pies de p&aacute;gina: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://www.tda.gob.ar/">http://www.tda.gob.ar/</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="http://osiux.com/tv/tv-digital-geniatech-usb-mygica-s87-dibcom-stk8096gp.txt">http://osiux.com/tv/tv-digital-geniatech-usb-mygica-s87-dibcom-stk8096gp.txt</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="http://encuentro.gob.ar/">http://encuentro.gob.ar/</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="http://encuentro.gob.ar/Event.aspx?Id=737">http://encuentro.gob.ar/Event.aspx?Id=737</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.5" href="#fnr-.5">5</a></sup> <a href="http://buenosaireslibre.org">http://buenosaireslibre.org</a>
+</p>
+
+
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2012-05-28</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

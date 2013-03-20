@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Ejecutar un Shell dentro de Vim</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Ejecutar un Shell dentro de Vim"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-09-30"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Ejecutar un Shell dentro de Vim</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+<p>
+Ayer alguien preguntó en la <a href="http://gcoop.coop">coop</a> cómo ejecutar un
+shell como una ventana más de Vim, tras una rápida búsqueda por la web
+encontramos un excelente plugin llamado
+<a href="http://conque.googlecode.com">ConqueTerm</a>, muy fácil de instalar:
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-builtin">cd</span> ~/.vim
+wget https://conque.googlecode.com/files/conque_2.3.vmb
+vim conque_2.3.vmb
+:so %
+:q
+</pre>
+
+
+<p>
+Para abrir una ventana con una terminal basta con ejecutar:
+</p>
+
+
+
+<pre class="example">:ConqueTermSplit bash
+</pre>
+
+
+<p>
+También se puede invocar a otras aplicaciones:
+</p>
+
+
+
+<pre class="example">:ConqueTermSplit top
+</pre>
+
+
+<p>
+Terminé agregando un alias a mi <code>.vimrc</code>:
+</p>
+
+
+
+<pre class="example">nmap ,c :ConqueTermSplit bash&lt;CR&gt;
+</pre>
+
+
+<p>
+De esta manera cada vez que necesito usar <code>bash</code> y no quiero salir de Vim,
+basta con pulsar =,c=. En breve publico todos mis archivos de configuración.
+:-)
+</p>
+
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2011-09-30</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

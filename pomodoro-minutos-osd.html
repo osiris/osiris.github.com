@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Técnica Pomodoro, mostrar minutos mediante OSD (On Screen Display)</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Técnica Pomodoro, mostrar minutos mediante OSD (On Screen Display)"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2011-05-23"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Técnica Pomodoro, mostrar minutos mediante OSD (On Screen Display)</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Pomodoro Minutos OSD</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+Muchas veces cuando realizo una presentación o una charla me encuentro limitado
+por el tiempo y debe tener presente constantemente cuántos minutos me quedan
+para seguir hablando, debido a ello hice un simple script bash usando OSD (On
+Screen Display) que muestra los minutos restantes.
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">!/bin/</span><span class="org-keyword">bash</span>
+
+<span class="org-variable-name">MM</span>=25
+
+<span class="org-keyword">if</span> [ ! -z <span class="org-string">"$1"</span> ]
+<span class="org-keyword">then</span>
+    <span class="org-variable-name">MM</span>=$<span class="org-variable-name">1</span>
+<span class="org-keyword">fi</span>
+
+<span class="org-keyword">for</span> i<span class="org-keyword"> in</span> $(<span class="org-sh-quoted-exec">seq</span> $<span class="org-variable-name">MM</span> -1 0)
+<span class="org-keyword">do</span>
+    osdctl -s $<span class="org-variable-name">i</span><span class="org-string">" "</span>
+    sleep 60
+<span class="org-keyword">done</span>
+</pre>
+
+
+<p>
+Es necesario levantar el servicio <code>osdsh</code> al inicio de la sesión, lo
+conveniente es agregarlo en el archivo <code>.xinitrc</code>.
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-keyword">exec</span> osdsh -c green -p1 -a2 -o 2 -d 50 &amp;
+</pre>
+
+
+<p>
+Luego para ejecutarlo basta invocar el nombre del script, en mi caso
+<code>minutos</code> está ubicado en <code>~/bin/minutos</code> y si no se especifica ningún
+parámetro toma por defecto el valor 25 que es la duración de un pomodoro <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>.
+</p>
+<p>
+<img src="img/pomodoro/pomodoro-minutos-osd.png" width: "680" alt="img/pomodoro/pomodoro-minutos-osd.png" />
+</p>
+<p>
+Una alternativa es usar <code>notify-send</code> <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup>.
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Pies de p&aacute;gina: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="la-tecnica-pomodoro.txt">la-tecnica-pomodoro.txt</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="pomodoro-notify-send.html">pomodoro-notify-send</a>
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2011-05-23</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Visualizando Cooperativas de Argentina</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Visualizando Cooperativas de Argentina"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-06-14"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Visualizando Cooperativas de Argentina</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">Convirtiendo un CSV en un gráfico animado</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<p>
+<img src="img/2012-06-13-SLyES-2037-0114.jpg" width="640" height="480" alt="Software Libre y Economía Social" />
+</p>
+<p>
+Ayer fue el evento <b>Software Libre y Economía Social</b> <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup> y
+desde las 12hs se armó un <b>hackaton</b> donde la premisa era mostrar los
+números del cooperativismo en Argentina.
+</p>
+<p>
+Partiendo del listado del <b>INAES</b> <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup> se armó un
+repositorio <b>CoopViz</b> en github <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup> donde se publicarán las
+distintas propuestas para visualizar gráficamente los datos de modo
+que se pueda captar la atención sobre la gran cantidad de cooperativas
+que existen en el país desde el año 1927 al 2008.
+</p>
+<p>
+Yo estuve trabajando con la herramienta <b>Gource</b> <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup>
+desarrollada por <b>Andrew Caudwell</b> <sup><a class="footref" name="fnr-.5" href="#fn-.5">5</a></sup> que originalmente
+está pensada para visualizar la actividad de un repositorio de control
+de versiones como el del <b>kernel de linux</b> <sup><a class="footref" name="fnr-.6" href="#fn-.6">6</a></sup>
+</p>
+<p>
+El primer paso fue convertir el <code>CSV</code> del listado del <b>INAES</b> a un
+archivo compatible con <b>Gource</b>. Básicamente leo el <code>CSV</code> y por cada
+línea aplico algunas conversiones, la más importante fue convertir el
+formato de fecha <code>DD/MM/YYYY</code> al <b>UNIX Timestamp</b> <sup><a class="footref" name="fnr-.7" href="#fn-.7">7</a></sup>
+y en función de el tipo de cooperativa elegir un color distinto.
+</p>
+<p>
+El script <code>csv2log.sh</code>:
+</p>
+
+
+
+<pre class="src src-sh">cat ../datos/coops.csv | tr <span class="org-string">" "</span> <span class="org-string">"-"</span> | sed s/<span class="org-string">"--"</span>/<span class="org-string">"-"</span>/g | tr -d <span class="org-string">'"'</span> | <span class="org-keyword">while </span><span class="org-builtin">read</span> LINE
+<span class="org-keyword">do</span>
+    <span class="org-variable-name">DATE</span>=$(<span class="org-sh-quoted-exec">echo</span> <span class="org-string">"$LINE"</span> | awk <span class="org-string">'{print $1}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span> | tr <span class="org-string">"/"</span> <span class="org-string">" "</span> | awk <span class="org-string">'{print $3"-"$2"-"$1}'</span>)
+    <span class="org-comment-delimiter"># </span><span class="org-comment">echo $DATE</span>
+    <span class="org-variable-name">TIME</span>=$(<span class="org-sh-quoted-exec">date</span> -d <span class="org-string">"$DATE 00:00:00"</span> <span class="org-string">"+%s"</span>)
+    <span class="org-comment-delimiter">#</span><span class="org-comment">echo $TIME</span>
+    <span class="org-variable-name">USER</span>=<span class="org-string">"coop"</span>
+    <span class="org-variable-name">STATUS</span>=<span class="org-string">"A"</span>
+    <span class="org-variable-name">PAGE</span>=<span class="org-string">""</span>
+    <span class="org-variable-name">PROV</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">LINE</span> | awk <span class="org-string">'{print $2}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span> | tr A-Z a-z)
+    <span class="org-variable-name">LOCA</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">LINE</span> | awk <span class="org-string">'{print $3}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span> | tr A-Z a-z)
+    <span class="org-variable-name">TIPO</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">LINE</span> | awk <span class="org-string">'{print $4}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span>)
+    <span class="org-variable-name">T</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">TIPO</span> | tr -d <span class="org-string">'"'</span> | tr <span class="org-string">"-"</span> <span class="org-string">" "</span> | awk <span class="org-string">'{print $1}'</span>)
+    <span class="org-variable-name">COLOR</span>=$(<span class="org-sh-quoted-exec">grep</span> $<span class="org-variable-name">T</span> tipos-basicos | head -1 | awk <span class="org-string">'{print $1}'</span>)
+    <span class="org-variable-name">NRO</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">LINE</span>  | awk <span class="org-string">'{print $5}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span>)
+    <span class="org-variable-name">NOMBRE</span>=$(<span class="org-sh-quoted-exec">echo</span> $<span class="org-variable-name">LINE</span>  | awk <span class="org-string">'{print $6}'</span> <span class="org-variable-name">FS</span>=<span class="org-string">','</span> | tr <span class="org-string">"-"</span> <span class="org-string">" "</span> | tr A-Z a-z | cut -c -20)
+    <span class="org-builtin">echo</span> $<span class="org-variable-name">TIME</span><span class="org-string">"|"</span>$<span class="org-variable-name">TIPO</span><span class="org-string">"|"</span>$<span class="org-variable-name">STATUS</span><span class="org-string">"|"</span>$<span class="org-variable-name">PROV</span><span class="org-string">"/"</span>$<span class="org-variable-name">LOCA</span><span class="org-string">"/"</span>$<span class="org-variable-name">NRO</span><span class="org-string">"-"</span>$<span class="org-variable-name">NOMBRE</span><span class="org-string">"|"</span>$<span class="org-variable-name">COLOR</span>
+<span class="org-keyword">done</span> | sort -n | tee gource.log
+</pre>
+
+
+<p>
+La estructura el grafo es <code>Provincia/Localidad/Matrícula-Cooperativa</code>,
+ya que los nombres son muy largos, opté por limitarlos a 20 caracteres.
+</p>
+<p>
+Con el archivo <code>gource.log</code> ya creado, la animación se genera mediante
+el script <code>gource.sh</code> que establece los parámetros de visualización.
+</p>
+
+
+
+<pre class="src src-sh">cat gource.log | gource - --log-format custom <span class="org-sh-escaped-newline">\</span>
+--selection-colour FF0000 <span class="org-sh-escaped-newline">\</span>
+--stop-at-end <span class="org-sh-escaped-newline">\</span>
+-w -f  -b 000000 --camera-mode track -s 1 -720x480 <span class="org-sh-escaped-newline">\</span>
+--date-format <span class="org-string">'%d %B %Y'</span> <span class="org-sh-escaped-newline">\</span>
+--hide <span class="org-string">'bloom,filenames,dirnames,mouse,root,tree,users,usernames'</span> <span class="org-sh-escaped-newline">\</span>
+--max-files 0 --seconds-per-day 0.001 <span class="org-sh-escaped-newline">\</span>
+--dir-colour 4E90FE <span class="org-sh-escaped-newline">\</span>
+--title <span class="org-string">"Cooperativas de Argentina - SLyES2012@CCC - CC-BY-SA gcoop.coop"</span> <span class="org-sh-escaped-newline">\</span>
+--font-size 16 --font-colour 4E90FE <span class="org-sh-escaped-newline">\</span>
+--logo puntitos.png --max-file-lag -1 <span class="org-sh-escaped-newline">\</span>
+--default-user-image <span class="org-string">'/home/osiris/data/dev/CoopViz/datos/colores/default.png'</span> <span class="org-sh-escaped-newline">\</span>
+--user-image-dir <span class="org-string">'/home/osiris/data/dev/CoopViz/datos/colores/'</span>
+</pre>
+
+
+<p>
+Al finalizar el evento pude mostar mediante un proyector cómo el
+cooperativismo existe en cada una de las provincias desde hace años,
+más de 23 mil cooperativas en 80 años, es todo un universo que día a
+día crece y genera nuevos vínculos y relaciones que se transforman en
+federaciones y confederaciones como es <b>FACTTIC</b> <sup><a class="footref" name="fnr-.8" href="#fn-.8">8</a></sup> que fue
+presentada ayer.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">Año 1929</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<p>
+<img src="img/SLyES-2012-CoopViz-1929.jpg" width="640" height="360" alt="Cooperativas de Argentina Año 1929" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">Año 2000</h3>
+<div class="outline-text-3" id="text-3">
+
+
+<p>
+<img src="img/SLyES-2012-CoopViz-2000.jpg" width="640" height="360" alt="Cooperativas de Argentina Año 2000" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">Año 2007</h3>
+<div class="outline-text-3" id="text-4">
+
+
+<p>
+<img src="img/SLyES-2012-CoopViz-2007.jpg" width="640" height="360" alt="Cooperativas de Argentina Año 2007" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">Video Cooperativas de Argentina 1927-2008</h3>
+<div class="outline-text-3" id="text-5">
+
+
+<p>
+Hoy con algo más de tiempo, armé un video y lo liberé!
+</p>
+<ul>
+<li>Descargar Video <a href="http://archive.org/download/SlyES-2012-CoopViz/SLyES-2012-cooperativas-de-argentina.ogv">http://archive.org/download/SlyES-2012-CoopViz/SLyES-2012-cooperativas-de-argentina.ogv</a>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">Changelog</h3>
+<div class="outline-text-3" id="text-6">
+
+
+<ul>
+<li><span class="timestamp-wrapper"> <span class="timestamp">2013-03-15 vie</span></span> mejoro bloques de código y agrego tamaños a imágenes
+</li>
+</ul>
+
+
+<div id="footnotes">
+<h2 class="footnotes">Pies de p&aacute;gina: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://www.gcoop.coop/sles-2012">http://www.gcoop.coop/sles-2012</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="http://www.inaes.gob.ar/es/Enlaces/listados.asp">http://www.inaes.gob.ar/es/Enlaces/listados.asp</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="https://github.com/gcoop-libre/CoopViz">https://github.com/gcoop-libre/CoopViz</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="http://github.com/acaudwell/Gource">http://github.com/acaudwell/Gource</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.5" href="#fnr-.5">5</a></sup> <a href="http://www.thealphablenders.com/">http://www.thealphablenders.com/</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.6" href="#fnr-.6">6</a></sup> <a href="http://youtu.be/ntTpM8hfl_E">http://youtu.be/ntTpM8hfl\_E</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.7" href="#fnr-.7">7</a></sup> <a href="https://es.wikipedia.org/wiki/Unix_timestamp">https://es.wikipedia.org/wiki/Unix\_timestamp</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.8" href="#fnr-.8">8</a></sup> <a href="http://facttic.org.ar">http://facttic.org.ar</a>
+</p>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2012-06-14</p>
+<p class="author">Autor: Osiris Alejandro Gomez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
