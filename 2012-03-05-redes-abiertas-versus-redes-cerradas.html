@@ -33,13 +33,13 @@
 </p>
 
 <p>
-Estuve jugando un poco con varios <b>APs</b> (Access Points) y luego de un par de
-minutos de *"scannear"* las redes que me rodean se me ocurrió graficarlas!
+Estuve jugando un poco con varios <b>APs</b> (Access Points) y luego de un
+par de minutos de <b>scannear</b> las redes que me rodean se me ocurrió
+graficarlas!
 </p>
 <p>
-Como de costumbre la herramienta elegida fue
-<a href="http://graphviz.org">graphviz</a> y salió bastante bien, comparto la
-imagen:
+Como de costumbre la herramienta elegida fue <a href="http://graphviz.org">graphviz</a> y salió bastante
+bien, comparto la imagen:
 </p>
 <p>
 <img src="img/aps-2012-03-05.gif"  alt="img/aps-2012-03-05.gif" />
@@ -49,24 +49,26 @@ A medida que la señal disminuye los <b>SSIDs</b> (nombres) se alejan del
 centro (mi nodo) y el tamaño de la fuente se reduce.
 </p>
 <p>
-Como se puede apreciar, lamentablemente no abundan las redes abiertas, por el
-contrario, escasean y lo peor de todo es que muy pocas asignan <code>IP</code> por
-<code>DHCP</code> y cuentan con <b>cero contenido</b>, algunos pocos dan el servicio de
-salir a <b>INET</b>.
+Como se puede apreciar, lamentablemente no abundan las redes abiertas,
+por el contrario, escasean y lo peor de todo es que muy pocas asignan
+<code>IP</code> por <code>DHCP</code> y cuentan con <b>cero contenido</b>, algunos pocos dan el
+servicio de salir a <b>INET</b>.
 </p>
 <p>
-Obviamente la excepción son los pocos nodos de `BuenosAiresLibre
-<a href="http://buenosaireslibre.org">http://buenosaireslibre.org</a>`_. Sería interesante poder revertir esta
-situación y lograr que los 309 equipos listados sean cada uno parte de una <b>red libre, abierta y comunitaria</b>, donde todos podríamos sacar provecho de la
-misma, dejando de estar aislados y cerrados con la comunidad que nos rodea.
+Obviamente la excepción son los pocos nodos
+de <b>BuenosAiresLibre</b> <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>. Sería interesante poder revertir esta
+situación y lograr que los 309 equipos listados sean cada uno parte de
+una <b>red libre, abierta y comunitaria</b>, donde todos podríamos sacar
+provecho de la misma, dejando de estar aislados y cerrados con la
+comunidad que nos rodea.
 </p>
 <p>
-Invito a todos a capturar su zona y ver en un par de meses o años si el gráfico
-se torna más verde que rojo.
+Invito a todos a capturar su zona y ver en un par de meses o años si
+el gráfico se torna más verde que rojo.
 </p>
 <p>
-Solo hace falta generar un archivo que contenga SSID, MAC, estado (abierta o
-cerrada) y el nivel de señal, como por ejemplo
+Solo hace falta generar un archivo que contenga SSID, MAC, estado
+(abierta o cerrada) y el nivel de señal, como por ejemplo
 </p>
 
 
@@ -78,8 +80,7 @@ mesh.buenosaireslibre.org   f8:d1:11:7a:61:b2       1 (B+G)         Ad hoc  no  
 
 
 <p>
-Y luego ejecutar el script <a href="https://github.com/osiris/aps2dot/blob/master/aps2dot">aps2dot</a> de la
-siguiente manera:
+Y luego ejecutar el script <a href="https://github.com/osiris/aps2dot/blob/master/aps2dot">aps2dot</a> de la siguiente manera:
 </p>
 
 
@@ -99,8 +100,18 @@ Esta disponible el código fuente en un repositorio git:
 
 <p>
 Se aceptan sugerencias a osiux@buenosaireslibre.org
-Y acordate, <b>si en tu barrio no hay un nodo libre, es porque *vos</b> no lo hiciste!*
 </p>
+<p>
+Y acordate, <b>si en tu barrio no hay un nodo libre, es porque *vos</b> no
+lo hiciste!*
+</p>
+<div id="footnotes">
+<h2 class="footnotes">Pies de p&aacute;gina: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://buenosaireslibre.org">http://buenosaireslibre.org</a>
+</p>
+</div>
+</div>
 </div>
 
 <div id="postamble">

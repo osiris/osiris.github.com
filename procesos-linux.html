@@ -124,7 +124,7 @@
 </li>
 </ul>
 
-<p>=1 15787
+<p>=1 29941
 =ORG-LIST-END-MARKER
 </p>
 </div>
@@ -182,16 +182,16 @@
 
 
 
-<pre class="example">2686 ?        S     51:26 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
- 614 ?        S      0:00  \_ sleep 1
-2691 ?        S      2:56 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
-2692 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
-2731 ?        Ss     0:29 /usr/sbin/acpid
-2935 ?        Ss     0:30 /usr/sbin/apache2 -k start
-3138 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-3139 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-3140 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-3141 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+<pre class="example">2671 ?        S      1:59 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
+9905 ?        S      0:00  \_ sleep 1
+2677 ?        S      0:10 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
+2684 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
+2750 ?        Ss     0:04 /usr/sbin/acpid
+2925 ?        Ss     0:01 /usr/sbin/apache2 -k start
+3089 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3090 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3091 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+3092 ?        S      0:00  \_ /usr/sbin/apache2 -k start
 </pre>
 
 
@@ -201,16 +201,16 @@
 
 
 
-<pre class="example">init(1)─┬─NetworkManager(3472)─┬─dhclient(3639)
-        │                      ├─{NetworkManager}(3518)
-        │                      └─{NetworkManager}(3662)
-        ├─accounts-daemon(4022)───{accounts-daemon}(4024)
-        ├─acpi_fakekeyd(2692)
-        ├─acpid(2731)
-        ├─apache2(2935)─┬─apache2(3138)
-        │               ├─apache2(3139)
-        │               ├─apache2(3140)
-        │               ├─apache2(3141)
+<pre class="example">init(1)─┬─NetworkManager(3559)─┬─dhclient(28319)
+        │                      ├─{NetworkManager}(3580)
+        │                      └─{NetworkManager}(3722)
+        ├─accounts-daemon(3996)───{accounts-daemon}(3998)
+        ├─acpi_fakekeyd(2684)
+        ├─acpid(2750)
+        ├─apache2(2925)─┬─apache2(3089)
+        │               ├─apache2(3090)
+        │               ├─apache2(3091)
+        │               ├─apache2(3092)
 </pre>
 
 
@@ -237,26 +237,26 @@ top -b -n1 | head -20
 
 
 
-<pre class="example">top - 21:18:23 up 11 days,  3:45,  6 users,  load average: 0,88, 0,71, 0,77
-Tasks: 182 total,   1 running, 181 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 13,9 us,  4,8 sy,  0,0 ni, 80,1 id,  0,6 wa,  0,5 hi,  0,2 si,  0,0 st
-KiB Mem:   2044852 total,  1774072 used,   270780 free,    99868 buffers
-KiB Swap:        0 total,        0 used,        0 free,   605360 cached
+<pre class="example">top - 01:01:28 up 15:35,  7 users,  load average: 1,58, 0,96, 0,96
+Tasks: 194 total,   2 running, 192 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 17,8 us,  5,9 sy,  0,0 ni, 74,6 id,  0,8 wa,  0,6 hi,  0,2 si,  0,0 st
+KiB Mem:   2044852 total,  1972476 used,    72376 free,    28332 buffers
+KiB Swap:        0 total,        0 used,        0 free,   315812 cached
 
   PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
-  625 osiris    20   0 26096 1496 1080 R  11,8  0,1   0:00.02 top
-    1 root      20   0 10648  788  652 S   0,0  0,0   0:12.15 init
-    2 root      20   0     0    0    0 S   0,0  0,0   0:00.16 kthreadd
-    3 root      20   0     0    0    0 S   0,0  0,0  14:26.37 ksoftirqd/0
+ 9757 osiris    20   0 67108  19m 2576 R  95,9  1,0   0:10.40 ical2rem
+ 9916 osiris    20   0 26096 1456 1080 R  10,7  0,1   0:00.04 top
+ 6619 osiris    20   0 1828m 1,0g  22m S   5,3 50,5 111:24.59 firefox-bin
+    1 root      20   0 10648  836  700 S   0,0  0,0   0:01.57 init
+    2 root      20   0     0    0    0 S   0,0  0,0   0:00.01 kthreadd
+    3 root      20   0     0    0    0 S   0,0  0,0   0:53.24 ksoftirqd/0
     6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
-    7 root      -2   0     0    0    0 S   0,0  0,0   3:52.99 rcuc/0
+    7 root      -2   0     0    0    0 S   0,0  0,0   0:14.79 rcuc/0
     8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
     9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
    10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
    11 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/1
    12 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/1
-   14 root      -2   0     0    0    0 S   0,0  0,0   5:28.06 rcuc/1
-   15 root      20   0     0    0    0 S   0,0  0,0  13:05.03 ksoftirqd/1
 </pre>
 
 
