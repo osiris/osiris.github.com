@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>dame una consola</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="dame una consola"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2010/11/26"/>
+<meta name="author" content="Osiris Alejandro Gómez"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="index.html"> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">dame una consola</h1>
+
+<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+<p>
+<img src="img/terminal.png"  alt="img/terminal.png" />
+</p>
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">qué és una consola?</h3>
+<div class="outline-text-3" id="text-1">
+
+
+<ul>
+<li>Suele usarse indistintamente el termino shell, terminal, emulador de
+  terminal, intérprete de comandos.
+</li>
+<li>Se puede decir que es una interface de texto que permite ingresar
+  instrucciones a un programa informático.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">porqué usar la consola?</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<ul>
+<li>Uno de los principales beneficios es la automatización de las
+  tareas.
+</li>
+<li>Es la interconexión de comandos la mayor ventaja, ya que esto
+  permite escribir rápidamente soluciones que no tienen una aplicación
+  específica que las resuelva.
+</li>
+<li>Está siempre disponible en todas las distribuciones de GNU/Linux,
+  BSD, Unix, etc.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">todo es un archivo</h3>
+<div class="outline-text-3" id="text-3">
+
+
+<p>
+En sistemas <code>*nix</code> todo es un archivo, es decir todos los
+dispositivos, las particiones de disco, CDs, diskettes, tarjeta de
+sonido, video, etc.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">permisos</h3>
+<div class="outline-text-3" id="text-4">
+
+
+
+
+
+<pre class="example">r = read        4
+w = write       2
+x = execute     1
+</pre>
+
+
+
+<pre class="example"># usuario y grupo todo, el resto nada.
+770   rwxrwx--
+# solo dueño y grupo leer y ejecutar.
+550   r-xr-x--
+# solo dueño tiene escritura, todos pueden leer.
+644   rw--r--r   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">comandos básicos</h3>
+<div class="outline-text-3" id="text-5">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>man</code></td><td class="left">leer el manual, es el mas importante!</td></tr>
+<tr><td class="left"><code>echo</code></td><td class="left">eco, imprime texto en pantalla</td></tr>
+<tr><td class="left"><code>ls</code></td><td class="left">listar archivos y directorios</td></tr>
+<tr><td class="left"><code>pwd</code></td><td class="left">mostrar directorio actual</td></tr>
+<tr><td class="left"><code>cd</code></td><td class="left">cambiar directorio</td></tr>
+<tr><td class="left"><code>cp</code></td><td class="left">copiar</td></tr>
+<tr><td class="left"><code>rm</code></td><td class="left">borrar</td></tr>
+<tr><td class="left"><code>mv</code></td><td class="left">mover</td></tr>
+<tr><td class="left"><code>mkdir</code></td><td class="left">crear directorio</td></tr>
+<tr><td class="left"><code>cat</code></td><td class="left">muestra contenido de un archivo</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">más comandos</h3>
+<div class="outline-text-3" id="text-6">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>more</code></td><td class="left">pagina la salida de un archivo</td></tr>
+<tr><td class="left"><code>sort</code></td><td class="left">ordena</td></tr>
+<tr><td class="left"><code>wc</code></td><td class="left">cuenta cantidad líneas y palabaras</td></tr>
+<tr><td class="left"><code>grep</code></td><td class="left">filtra un texto</td></tr>
+<tr><td class="left"><code>sed</code></td><td class="left">editor de texto en línea</td></tr>
+<tr><td class="left"><code>awk</code></td><td class="left">procesa texto</td></tr>
+<tr><td class="left"><code>find</code></td><td class="left">busca archivos</td></tr>
+<tr><td class="left"><code>chmod</code></td><td class="left">cambia permisos</td></tr>
+<tr><td class="left"><code>chown</code></td><td class="left">cambia el propietario de un archivo</td></tr>
+<tr><td class="left"><code>alias</code></td><td class="left">define un alias para un comando</td></tr>
+<tr><td class="left"><code>ps</code></td><td class="left">muestra procesos en ejecucion</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">stdinput</h3>
+<div class="outline-text-3" id="text-7">
+
+
+<p>
+   En lugar de tipear podemos enviar un archivo como la entrada
+   estandard de un comando:
+</p>
+
+
+
+<pre class="example">mail osiux@osiux.com.ar &lt; archivo.txt
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-3">
+<h3 id="sec-8">stdoutput</h3>
+<div class="outline-text-3" id="text-8">
+
+
+<p>
+   Podemos almacenar en un archivo el resultado de la ejecución de un
+   comando:
+</p>
+
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">sobreescribe</span>
+ls *.png &gt;lista.txt
+<span class="org-comment-delimiter"># </span><span class="org-comment">agrega</span>
+ls *.txt &gt;&gt;lista.txt
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-3">
+<h3 id="sec-9">pipe</h3>
+<div class="outline-text-3" id="text-9">
+
+
+<p>
+   Convertir la salida standard de un comando en la entrada standard
+   de otro comando permite conectar procesos:
+</p>
+
+
+
+<pre class="src src-sh">ls | sort
+</pre>
+
+
+<p>
+   <img src="img/redirection.png"  alt="img/redirection.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-3">
+<h3 id="sec-10">expresiones regulares</h3>
+<div class="outline-text-3" id="text-10">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>[a-z]</code></td><td class="left">rango de la <b>a</b> a la <b>z</b></td></tr>
+<tr><td class="left"><code>[A-Z]</code></td><td class="left">rango de la <b>A</b> a la <b>Z</b></td></tr>
+<tr><td class="left"><code>[0-9]</code></td><td class="left">rango de 0 a 9</td></tr>
+<tr><td class="left"><code>[^..]</code></td><td class="left">negación</td></tr>
+<tr><td class="left"><code>^</code></td><td class="left">principio de línea</td></tr>
+<tr><td class="left"><code>$</code></td><td class="left">fin de línea</td></tr>
+<tr><td class="left"><code>.</code></td><td class="left">cualquier caracter</td></tr>
+<tr><td class="left"><code>?</code></td><td class="left">cero o una aparición</td></tr>
+<tr><td class="left"><code>*</code></td><td class="left">ninguna o muchas repeticiones</td></tr>
+<tr><td class="left"><code>+</code></td><td class="left">una o mas repeticiones</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-3">
+<h3 id="sec-11">aplicaciones</h3>
+<div class="outline-text-3" id="text-11">
+
+
+
+
+
+<pre class="example">mutt, pine, fetchmail
+reminder, wyrd
+vim, emacs, joe, nano, mcedit, vim-outliner
+w3m, lynx, elinks, rtorrent, newsbeuter
+freetalk, cabber, irssi, weechat, center-im
+moc, rippit, aumix, alsamixer
+ftp, ncftp, wget, httrack
+mc, rsync, rdiff-backup 
+vlc, mplayer
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-3">
+<h3 id="sec-12">más aplicaciones</h3>
+<div class="outline-text-3" id="text-12">
+
+
+
+
+
+<pre class="example">ssh, telnet, screen, ajaxterm
+tig, git, svn, bzr, mercurial
+mysql, msqldump
+python, ipython, bpython
+graphviz, imagemagick, gnuplot
+parted, testdisk, dd, partimage
+gnupg, dmsetup, bcrypt, truecrypt
+htop, ethtool, netcat, nmap, wicd-curses
+diff, patch, make, base64, vim-diff
+vnstat, iftop, nload, wicd-curses
+pdf2text, html2text, python-docutils, rst2pdf   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-3">
+<h3 id="sec-13">ejemplos</h3>
+<div class="outline-text-3" id="text-13">
+
+
+
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">cu&#225;l es mi ip?</span>
+ip r | grep -o src.[0-9.]+ | awk <span class="org-string">'{print $2}'</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">cu&#225;l es mi mac?</span>
+ifconfig eth0 | grep HWaddr | awk <span class="org-string">'{print $5}'</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">s&#233; la mac, pero c&#250;al es la ip?</span>
+tcpdump -ennqti eth0 <span class="org-string">\(</span> arp or 600pxp <span class="org-string">\)</span> | grep <span class="org-string">"48:5b:39:6e:f4:d4"</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">encender la compu remotamente</span>
+wakeonlan 48:5b:39:6e:f4:d4
+<span class="org-comment-delimiter"># </span><span class="org-comment">qu&#237;en est&#225; consumiendo todo el ancho de banda?</span>
+iftop -i eth0
+<span class="org-comment-delimiter"># </span><span class="org-comment">ips entregadas por dhcp?</span>
+egrep -o <span class="org-string">"[0-9]+&gt;[0-9]+&gt;[0-9]+&gt;[0-9]+"</span> dhcpd.leases | uniq | wc -l
+<span class="org-comment-delimiter"># </span><span class="org-comment">obtener una l&#237;nea espec&#237;fica de un archivo</span>
+head -30 /var/log/messages | tail -1
+<span class="org-comment-delimiter"># </span><span class="org-comment">reemplazar texto en varios archivos</span>
+find -name <span class="org-string">'*.php'</span> | <span class="org-keyword">while </span><span class="org-builtin">read</span> i;<span class="org-keyword">do</span> cat $<span class="org-variable-name">i</span> | <span class="org-sh-escaped-newline">\</span>
+sed s/GNU/GPL/g &gt;$<span class="org-variable-name">i</span>.tmp;cat $<span class="org-variable-name">i</span>.tmp&gt;$<span class="org-variable-name">i</span>;<span class="org-keyword">done</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-3">
+<h3 id="sec-14">más ejemplos</h3>
+<div class="outline-text-3" id="text-14">
+
+
+
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">buscar en el contenido de una web</span>
+w3m -dump http://barrapunto.com | grep -i -C2 android
+w3m -dump http://debian.org/News | grep -i squeeze | grep frozen &gt;/tmp/debian
+<span class="org-comment-delimiter"># </span><span class="org-comment">notificar estado bater&#237;a</span>
+<span class="org-keyword">if</span> [ <span class="org-string">"$BAT_STATUS"</span> = <span class="org-string">"Discharging"</span> ];<span class="org-keyword">then</span> <span class="org-sh-escaped-newline">\</span>
+    <span class="org-keyword">if</span> [ $<span class="org-variable-name">BAT_PERCENT</span> -le 25 ];<span class="org-keyword">then</span> <span class="org-sh-escaped-newline">\</span>
+        notify-send -u critical <span class="org-string">"$MSG"</span> <span class="org-string">"$BAT_PERCENT"</span>;<span class="org-keyword">fi</span>
+<span class="org-keyword">else</span>;notify-send <span class="org-string">"$MSG"</span>;<span class="org-keyword">fi</span>
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-3">
+<h3 id="sec-15">vim</h3>
+<div class="outline-text-3" id="text-15">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>Esc</code></td><td class="left">cambia a modo visual</td></tr>
+<tr><td class="left"><code>a</code></td><td class="left">agregar texto posición actual</td></tr>
+<tr><td class="left"><code>A</code></td><td class="left">agregar texto al final línea</td></tr>
+<tr><td class="left"><code>i</code></td><td class="left">inserta en la posición actual</td></tr>
+<tr><td class="left"><code>I</code></td><td class="left">inserta al inicio de la línea</td></tr>
+<tr><td class="left"><code>r</code></td><td class="left">reemplazar un caracter</td></tr>
+<tr><td class="left"><code>R</code></td><td class="left">modo reemplazar</td></tr>
+<tr><td class="left"><code>x</code></td><td class="left">borra caracter a la derecha</td></tr>
+<tr><td class="left"><code>X</code></td><td class="left">borra caracter a la izquierda</td></tr>
+<tr><td class="left"><code>y</code></td><td class="left">copiar</td></tr>
+<tr><td class="left"><code>p</code></td><td class="left">pegar</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-3">
+<h3 id="sec-16">más vim</h3>
+<div class="outline-text-3" id="text-16">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>d</code></td><td class="left">eliminar</td></tr>
+<tr><td class="left"><code>.</code></td><td class="left">repite última función</td></tr>
+<tr><td class="left"><code>:</code></td><td class="left">cambia a modo comando</td></tr>
+<tr><td class="left"><code>:q</code></td><td class="left">salir si no hubo cambios</td></tr>
+<tr><td class="left"><code>:q!</code></td><td class="left">salir sin guardar cambios</td></tr>
+<tr><td class="left"><code>:wq</code></td><td class="left">guardar y salir</td></tr>
+<tr><td class="left"><code>:e</code></td><td class="left">editar archivo</td></tr>
+<tr><td class="left"><code>:.</code></td><td class="left">línea actual</td></tr>
+<tr><td class="left"><code>:1,.</code></td><td class="left">desde primer línea a la actual</td></tr>
+<tr><td class="left"><code>:.,$</code></td><td class="left">desde línea actual a la última</td></tr>
+<tr><td class="left"><code>:5,15</code></td><td class="left">desde línea 5 a la número 15</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-3">
+<h3 id="sec-17">telnet mail</h3>
+<div class="outline-text-3" id="text-17">
+
+
+
+
+
+<pre class="example">telnet localhost 25
+HELO branca.osiux.com.ar
+MAIL FROM: osiris@branca.osiux.com.ar
+RCPT TO: osiux@branca.osiux.com.ar
+DATA
+Subject: prueba correo local usando telnet
+nero cuando nos tomamos unos fernets?
+.
+250 2.0.0 Ok: queued as 6626586DE6
+QUIT   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-3">
+<h3 id="sec-18">telnet web</h3>
+<div class="outline-text-3" id="text-18">
+
+
+
+
+
+<pre class="example">telnet google.com 80
+Trying 209.85.195.104...
+Connected to google.com.
+GET /
+HTTP/1.0 302 Found
+Location: http://www.google.com.ar/
+Content-Type: text/html; charset=UTF-8
+&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;302 Moved&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;
+&lt;H1&gt;302 Moved&lt;/H1&gt;The document has moved
+&lt;A HREF="http://www.google.com.ar/"&gt;here&lt;/A&gt;.
+&lt;/BODY&gt;&lt;/HTML&gt;
+Connection closed by foreign host.   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-3">
+<h3 id="sec-19">mysql + bash</h3>
+<div class="outline-text-3" id="text-19">
+
+
+
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">Definir Alias</span>
+<span class="org-builtin">set</span> alias <span class="org-variable-name">sugar</span>=<span class="org-string">'mysql --default-character-set=utf8 -u sugar -psugar -B sugar'</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Ejecutar consulta</span>
+<span class="org-builtin">echo</span> <span class="org-string">"SELECT user_name FROM users WHERE is_admin = 1;"</span> | sugar
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Listado de Tablas</span>
+<span class="org-builtin">set</span> alias <span class="org-variable-name">tablas</span>=<span class="org-string">'echo "show tables" | sugar | grep -v Tables_in | sort -u'</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Listado Tabla Campo</span>
+<span class="org-builtin">set</span> alias <span class="org-variable-name">tablacampos</span>=<span class="org-string">'echo "show tables" | sugar | grep -v Tables_in | \</span>
+<span class="org-string">while read t; do d=$(</span><span class="org-sh-quoted-exec">echo</span><span class="org-string"> "desc "$t";" | cct15 | grep -v Field | awk1); \</span>
+<span class="org-string">for c in $d;do echo $t"__"$c;done ;done'</span>
+
+<span class="org-comment-delimiter"># </span><span class="org-comment">Vaciar todas las tablas que contengan la palabra *calls*</span>
+sugar &lt; $(<span class="org-sh-quoted-exec">echo</span> <span class="org-string">"show tables"</span> | sugar | grep calls | <span class="org-sh-escaped-newline">\</span>
+<span class="org-keyword">while </span><span class="org-builtin">read</span> t;<span class="org-keyword">do </span><span class="org-builtin">echo</span> <span class="org-string">"TRUNCATE table $t;"</span>;<span class="org-keyword">done</span>)   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-3">
+<h3 id="sec-20">mysql + vim</h3>
+<div class="outline-text-3" id="text-20">
+
+
+<ul>
+<li>Conexión en ``.vimrc``
+
+
+
+<pre class="example">command -range=% Q :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B sugar -t -v -v -v
+</pre>
+
+
+</li>
+<li>Ejecutar todo el archivo
+
+
+
+<pre class="example">:Q
+</pre>
+
+
+</li>
+<li>Ejecutar la línea actual
+
+
+
+<pre class="example">:. Q
+</pre>
+
+
+</li>
+<li>Ejecutar un rango de líneas
+
+
+
+<pre class="example">:3,8 Q
+</pre>
+
+
+</li>
+<li>Ejecutar desde línea actual hasta el final
+
+
+
+<pre class="example">:.,$ Q
+</pre>
+
+
+</li>
+<li>Usar diccionarios <code>CTRL-X CTRL-K</code>
+
+
+
+<pre class="example">:set dictionary=tablas, tablacampo
+</pre>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-3">
+<h3 id="sec-21">imagemagick</h3>
+<div class="outline-text-3" id="text-21">
+
+
+
+
+
+<pre class="src src-sh"><span class="org-variable-name">c</span>=0;ls | grep jpg | <span class="org-keyword">while </span><span class="org-builtin">read</span> f; <span class="org-sh-escaped-newline">\</span>
+<span class="org-keyword">do</span> mv -v $<span class="org-variable-name">f</span> $<span class="org-string">'monte-hermoso-2010-'</span>$<span class="org-variable-name">c</span>$<span class="org-string">'.jpg'</span>; <span class="org-sh-escaped-newline">\</span>
+<span class="org-variable-name">c</span>=$[$<span class="org-variable-name">c</span>+1];<span class="org-keyword">done</span>
+
+<span class="org-keyword">for</span> i<span class="org-keyword"> in</span> *.jpg
+<span class="org-keyword">do</span>
+    convert -filter cubic -resize 640 $<span class="org-variable-name">i</span> 640-$<span class="org-variable-name">i</span>
+<span class="org-keyword">done</span>   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-22" class="outline-3">
+<h3 id="sec-22">graphviz</h3>
+<div class="outline-text-3" id="text-22">
+
+
+
+
+
+<pre class="src src-dot">digraph topology {
+   <span class="org-string">"10.4.14.225"</span> [color=red]; <span class="org-string">"10.4.14.33"</span> [color=orange];
+   <span class="org-string">"10.4.14.161"</span> [color=yellow]; <span class="org-string">"172.16.169.52"</span> [color=red];
+   <span class="org-string">"172.16.169.55"</span> [color=orange]; <span class="org-string">"10.4.14.34"</span> [color=yellow];
+   <span class="org-string">"172.16.169.52"</span> [color=red]; <span class="org-string">"10.4.10.1"</span> [color=orange];
+   <span class="org-string">"10.4.14.225"</span> -&gt; <span class="org-string">"10.4.14.33"</span>[label=<span class="org-string">"1.08"</span>, style=solid];
+   <span class="org-string">"10.4.14.225"</span> -&gt; <span class="org-string">"10.4.14.161"</span>[label=<span class="org-string">"1.20"</span>, style=solid];
+   <span class="org-string">"10.4.14.225"</span> -&gt; <span class="org-string">"172.16.169.52"</span>[label=<span class="org-string">"1.37"</span>, style=solid];
+   <span class="org-string">"10.4.14.225"</span> -&gt; <span class="org-string">"172.16.169.55"</span>[label=<span class="org-string">"1.26"</span>, style=solid];
+   <span class="org-string">"10.4.14.225"</span> -&gt; <span class="org-string">"10.4.14.34"</span>[label=<span class="org-string">"1.11"</span>, style=solid];
+   <span class="org-string">"10.4.10.1"</span> -&gt; <span class="org-string">"10.4.14.34"</span>[label=<span class="org-string">"1.07"</span>];
+   <span class="org-string">"172.16.169.52"</span> -&gt; <span class="org-string">"10.4.14.225"</span>[label=<span class="org-string">"1.36"</span>];
+   <span class="org-string">"172.16.169.52"</span> -&gt; <span class="org-string">"10.4.14.161"</span>[label=<span class="org-string">"1.00"</span>];
+   <span class="org-string">"172.16.169.52"</span> -&gt; <span class="org-string">"172.16.169.55"</span>[label=<span class="org-string">"1.11"</span>];
+   <span class="org-string">"10.4.14.161"</span> -&gt; <span class="org-string">"172.16.169.52"</span>[label=<span class="org-string">"1.00"</span>];
+   <span class="org-string">"10.4.14.161"</span> -&gt; <span class="org-string">"172.16.169.55"</span>[label=<span class="org-string">"1.00"</span>];
+   <span class="org-string">"10.4.14.161"</span> -&gt; <span class="org-string">"10.4.14.188"</span>[label=<span class="org-string">"1.00"</span>];
+   <span class="org-string">"10.4.14.161"</span> -&gt; <span class="org-string">"10.4.14.225"</span>[label=<span class="org-string">"1.23"</span>];
+   <span class="org-string">"10.4.14.33"</span> -&gt; <span class="org-string">"10.4.12.161"</span>[label=<span class="org-string">"4.18"</span>];
+   <span class="org-string">"10.4.14.33"</span> -&gt; <span class="org-string">"10.4.14.225"</span>[label=<span class="org-string">"1.08"</span>];
+   <span class="org-string">"10.4.14.33"</span> -&gt; <span class="org-string">"10.4.14.34"</span>[label=<span class="org-string">"1.00"</span>]; }
+</pre>
+
+
+
+
+
+<pre class="src src-sh">      dot -Tpng grafo.dot &gt;grafo.png   
+    <span class="org-comment-delimiter">#</span><span class="org-comment">+END_EXAMPLE</span>
+
+    <a href="file:img/olsr.png">[[</a><a href="file:img/olsr.png">file:img/olsr.png</a><a href="file:img/olsr.png">]]</a>
+
+** gnuplot
+
+   <span class="org-comment-delimiter">#</span><span class="org-comment">+BEGIN_SRC sh </span>
+   ping -c10 google.com | grep 600pxp_seq<span class="org-string">" \</span>
+<span class="org-string">| tr "</span>=<span class="org-string">" "</span> <span class="org-string">" | awk '{print $7,$11}' &gt;ping.dat</span>
+
+<span class="org-string">echo 'set title "</span>ping<span class="org-string">" \</span>
+<span class="org-string">set xlabel "</span>milisegundos<span class="org-string">" \</span>
+<span class="org-string">set ylabel "</span>secuencia<span class="org-string">" \</span>
+<span class="org-string">set term png \</span>
+<span class="org-string">set output "</span>ping.png<span class="org-string">" \</span>
+<span class="org-string">plot "</span>ping.dat<span class="org-string">" using 1:2 with lines \</span>
+<span class="org-string">quit ' &gt;ping.plt</span>
+
+<span class="org-string">gnuplot ping.plt</span>
+</pre>
+
+
+<p>
+   <img src="img/ping.png"  alt="img/ping.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-23" class="outline-3">
+<h3 id="sec-23">ditaa</h3>
+<div class="outline-text-3" id="text-23">
+
+
+
+
+
+<pre class="src src-ditaa">                                 +---------------------+
+                        +---+    | malbec         c978 |
+                        | S |    +---------------------+
++-------------------+   | W |&lt;--&gt;| eth0 192.168.10.5   |               +------+
+| syrah        cDBF |   | I |    |                     |    +------+   | cYEL |
++-------------------+   | T |    | ppp0 186.109.85.126 |&lt;--&gt;| ADSL |&lt;-&gt;| INET |
+| eth0 192.168.10.4 |&lt;-&gt;| C |    |                     |    +------+   |  {o} |
++-------------------+   | H |&lt;-+ | eth2 192.168.20.3   |&lt;-+            +------+
+          ^             +---+  | +---------------------+  | 
+          |                    |                          |
+          v                    |                          |
+     /---------\               |                          |
+     | HP 4200 |               | +---------------------+  |
+     |  c897   |        +---+  | | torrontes      c789 |  |     
+     \---------/        | S |&lt;-+ +---------------------+  |
+                        | W |&lt;--&gt;| eth0 192.168.10.5   |  |
+                        | I |    |                     |  |
+                        | T |    | eth1 192.168.20.5   |&lt;-+          
+                        | C |    +---------------------+
+                        | H |&lt;-+
+                        +---+  |   
+</pre>
+
+
+<p>
+   <img src="img/network.png"  alt="img/network.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-24" class="outline-3">
+<h3 id="sec-24">rst2pdf</h3>
+<div class="outline-text-3" id="text-24">
+
+
+
+
+
+<pre class="src src-sh">rst2pdf dame-una-consola.txt
+rst2pdf -s style -b 1 dame-una-consola.txt   
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-25" class="outline-3">
+<h3 id="sec-25">Dudas y comentarios</h3>
+<div class="outline-text-3" id="text-25">
+
+
+<ul>
+<li>osiris@gcoop.coop Cualquier duda pueden consultar por email,
+     prometo responder lo antes posible.
+</li>
+<li><a href="http://pub.osiux.com/charlas">http://pub.osiux.com/charlas</a> Pueden descargar ésta y otras
+     charlas, incluído el código fuente CC-BY-SA.
+</li>
+<li><a href="http://pub.osiux.com/charlas/dame-una-consola-slides.pdf">http://pub.osiux.com/charlas/dame-una-consola-slides.pdf</a>
+</li>
+<li><a href="http://osiux.com">http://osiux.com</a> Mucha data útil (muy poco de mi autoría),
+     archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
+</li>
+</ul>
+
+
+<p>
+   <img src="img/gcoop.png"  alt="img/gcoop.png" />
+</p></div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Fecha: 2010/11/26</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
