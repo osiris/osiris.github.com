@@ -99,9 +99,9 @@
 <tr><th scope="col" class="left">modelo</th><th scope="col" class="left">flash</th><th scope="col" class="left">ram</th><th scope="col" class="left">radio0</th><th scope="col" class="left">radio1</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">TL-WDR3500ND</td><td class="left">8mb</td><td class="left">128mb</td><td class="left">2.4Ghz</td><td class="left">5Ghz</td></tr>
-<tr><td class="left">TL-MR3220</td><td class="left">4mb</td><td class="left">32mb</td><td class="left">2.4Ghz</td><td class="left">-</td></tr>
-<tr><td class="left">TL-WR842ND</td><td class="left">8mb</td><td class="left">32mb</td><td class="left">2.4Ghz</td><td class="left">-</td></tr>
+<tr><td class="left">TL-WDR3500ND <sup><a class="footref" name="fnr-.10" href="#fn-.10">10</a></sup></td><td class="left">8mb</td><td class="left">128mb</td><td class="left">2.4Ghz</td><td class="left">5Ghz</td></tr>
+<tr><td class="left">TL-MR3220 <sup><a class="footref" name="fnr-.11" href="#fn-.11">11</a></sup></td><td class="left">4mb</td><td class="left">32mb</td><td class="left">2.4Ghz</td><td class="left">-</td></tr>
+<tr><td class="left">TL-WR842ND <sup><a class="footref" name="fnr-.12" href="#fn-.12">12</a></sup></td><td class="left">8mb</td><td class="left">32mb</td><td class="left">2.4Ghz</td><td class="left">-</td></tr>
 </tbody>
 </table>
 
@@ -129,13 +129,13 @@
 
 
 <p>    
-    El primer paso es utilizar el <b>chef</b> <sup><a class="footref" name="fnr-.10" href="#fn-.10">10</a></sup> de <i>Altermundi</i>
+    El primer paso es utilizar el <b>chef</b> <sup><a class="footref" name="fnr-.13" href="#fn-.13">13</a></sup> de <i>Altermundi</i>
     para "cocinar" una versión de <i>Altermesh</i>, se puede usar la imagen
-    genérica <b>AlterMesh-nodo</b> <sup><a class="footref" name="fnr-.11" href="#fn-.11">11</a></sup> o crear una propia
+    genérica <b>AlterMesh-nodo</b> <sup><a class="footref" name="fnr-.14" href="#fn-.14">14</a></sup> o crear una propia
     partiendo de ésta o de alguna otra de
-    las <b>RedesLibres</b> <sup><a class="footref" name="fnr-.12" href="#fn-.12">12</a></sup> que están haciendo uso del
+    las <b>RedesLibres</b> <sup><a class="footref" name="fnr-.15" href="#fn-.15">15</a></sup> que están haciendo uso del
     firmware. En mi caso creé el
-    perfil <b>CompartirEsBueno</b> <sup><a class="footref" name="fnr-.13" href="#fn-.13">13</a></sup>, el mismo se puede
+    perfil <b>CompartirEsBueno</b> <sup><a class="footref" name="fnr-.16" href="#fn-.16">16</a></sup>, el mismo se puede
     utilizar tal y como está o incluso tomarlo como base para crear un
     nuevo perfil de red.
 </p>
@@ -353,15 +353,15 @@ sudo iwconfig wlan0 essid CompartirEsBueno
 
 
 <pre class="example">PING ff02::2%wlan0(ff02::2) 56 data bytes
-64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=64 time=4.40 ms
-64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=64 time=16.9 ms (DUP!)
-64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=64 time=4.40 ms
-64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=64 time=12.6 ms (DUP!)
-64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=3 ttl=64 time=1.21 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=64 time=5.41 ms
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=64 time=21.0 ms (DUP!)
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=64 time=1.36 ms
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=64 time=13.8 ms (DUP!)
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=3 ttl=64 time=1.22 ms
 
 --- ff02::2%wlan0 ping statistics ---
-3 packets transmitted, 3 received, +2 duplicates, 0% packet loss, time 2003ms
-rtt min/avg/max/mdev = 1.212/7.930/16.936/5.897 ms
+3 packets transmitted, 3 received, +2 duplicates, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 1.226/8.592/21.099/7.755 ms
 </pre>
 
 
@@ -388,21 +388,19 @@ rtt min/avg/max/mdev = 1.212/7.930/16.936/5.897 ms
 
 
 <pre class="example">PING ff02::1%wlan0(ff02::1) 56 data bytes
-64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=1 ttl=64 time=0.071 ms
-64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=64 time=1.59 ms (DUP!)
-64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=64 time=7.43 ms (DUP!)
-64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=1 ttl=64 time=66.1 ms (DUP!)
-64 bytes from fe80::222:f4ff:fe68:6d7: icmp_seq=1 ttl=64 time=80.4 ms (DUP!)
-64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=2 ttl=64 time=0.113 ms
-64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=64 time=2.91 ms (DUP!)
-64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=64 time=13.8 ms (DUP!)
-64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=2 ttl=64 time=88.0 ms (DUP!)
-64 bytes from fe80::222:f4ff:fe68:6d7: icmp_seq=2 ttl=255 time=88.2 ms (DUP!)
-64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=3 ttl=64 time=0.080 ms
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=1 ttl=64 time=0.087 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=64 time=3.73 ms (DUP!)
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=64 time=17.9 ms (DUP!)
+64 bytes from fe80::222:f4ff:fe68:6d7: icmp_seq=1 ttl=64 time=254 ms (DUP!)
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=2 ttl=64 time=0.095 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=64 time=1.21 ms (DUP!)
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=64 time=8.34 ms (DUP!)
+64 bytes from fe80::222:f4ff:fe68:6d7: icmp_seq=2 ttl=255 time=48.8 ms (DUP!)
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=3 ttl=64 time=0.078 ms
 
 --- ff02::1%wlan0 ping statistics ---
-3 packets transmitted, 3 received, +8 duplicates, 0% packet loss, time 2002ms
-rtt min/avg/max/mdev = 0.071/31.714/88.250/37.623 ms
+3 packets transmitted, 3 received, +6 duplicates, 0% packet loss, time 2001ms
+rtt min/avg/max/mdev = 0.078/37.171/254.189/78.150 ms
 </pre>
 
 
@@ -485,7 +483,7 @@ overlayfs:/overlay        4.5M    660.0K      3.9M  14% /
 <p>
    Uno de los aspectos más interesantes de <i>Altermesh</i> es su manejo de
    <i>IPv6</i>, no sólo se obtiene una <i>IPv6</i> pública para el nodo sino que
-   además siendo parte de <b>LibreNet6</b> <sup><a class="footref" name="fnr-.14" href="#fn-.14">14</a></sup> se puede obtener
+   además siendo parte de <b>LibreNet6</b> <sup><a class="footref" name="fnr-.17" href="#fn-.17">17</a></sup> se puede obtener
    un rango, en mi caso <code>2a00:1508:1:f00f::1/64</code>, y entregar <i>IPv6</i> a
    cada cliente del nodo y nodos asociados!
 </p>
@@ -571,14 +569,14 @@ Capabilities: 0x11ec
 </div>
 
 <div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">Graficando la red</h3>
+<h3 id="sec-6"><a name="ID-c3de996b-7628-41a5-841c-4cdeb77f5081" id="ID-c3de996b-7628-41a5-841c-4cdeb77f5081"></a>Graficando la red</h3>
 <div class="outline-text-3" id="text-6">
 
 
 <p>
    Ahora hay más de una manera de conectarse a cada equipo y debido a
    ello se me ocurrió graficar los enlaces <i>IPv4</i> e <i>IPv6</i> (globales y
-   de enlace local). Para esto utilicé <code>nwdiag</code> <sup><a class="footref" name="fnr-.15" href="#fn-.15">15</a></sup> que
+   de enlace local). Para esto utilicé <code>nwdiag</code> <sup><a class="footref" name="fnr-.18" href="#fn-.18">18</a></sup> que
    permite de manera simple y cómoda editar un archivo de texto plano
    con cada equipo para luego generar el gráfico final.
 </p>
@@ -586,7 +584,7 @@ Capabilities: 0x11ec
    <img src="tmb/osiux-network.png" width="640" height="527" alt="Altermesh, BuenosAiresLibre y CompartirEsBueno network diagram" />
 </p>
 <ul>
-<li>Descargar imagen en alta resolución: <img src="img/osiux-network.png"  alt="img/osiux-network.png" />
+<li>Descargar imagen en alta resolución: <img src="http://osiux.com/img/osiux-network.png"  alt="http://osiux.com/img/osiux-network.png" />
 </li>
 </ul>
 
@@ -636,11 +634,7 @@ Capabilities: 0x11ec
 </li>
 </ul>
 
-<p>[fn:WR842ND] <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WR842ND">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WR842ND</a>
-[fn:MR3220] <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-MR3220">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-MR3220</a>
-[fn:WDR3500] <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WDR3500">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WDR3500</a>
-[fn:redes-libres] <a href="http://wiki.redeslibres.org">http://wiki.redeslibres.org</a>
-</p>
+
 <div id="footnotes">
 <h2 class="footnotes">Pies de p&aacute;gina: </h2>
 <div id="text-footnotes">
@@ -680,26 +674,39 @@ Capabilities: 0x11ec
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.10" href="#fnr-.10">10</a></sup> <a href="http://chef.mesh.altermundi.net">http://chef.mesh.altermundi.net</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.10" href="#fnr-.10">10</a></sup> <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WDR3500">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WDR3500</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.11" href="#fnr-.11">11</a></sup> <a href="http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo">http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.11" href="#fnr-.11">11</a></sup> <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-MR3220">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-MR3220</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.12" href="#fnr-.12">12</a></sup> DEFINITION NOT FOUND: fn:redeslibres
-</p>
-
-<p class="footnote"><sup><a class="footnum" name="fn-.13" href="#fnr-.13">13</a></sup> <a href="http://chef.mesh.altermundi.net/network/compartiresbueno">http://chef.mesh.altermundi.net/network/compartiresbueno</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.12" href="#fnr-.12">12</a></sup> <a href="http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WR842ND">http://www.tp-link.com/ar/products/details/?categoryid=&amp;model=TL-WR842ND</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.14" href="#fnr-.14">14</a></sup> <a href="http://docs.altermundi.net/LibreNet6">http://docs.altermundi.net/LibreNet6</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.13" href="#fnr-.13">13</a></sup> <a href="http://chef.mesh.altermundi.net">http://chef.mesh.altermundi.net</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.15" href="#fnr-.15">15</a></sup> <a href="http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag">http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.14" href="#fnr-.14">14</a></sup> <a href="http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo">http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.15" href="#fnr-.15">15</a></sup> <a href="http://wiki.redeslibres.org">http://wiki.redeslibres.org</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.16" href="#fnr-.16">16</a></sup> <a href="http://chef.mesh.altermundi.net/network/compartiresbueno">http://chef.mesh.altermundi.net/network/compartiresbueno</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.17" href="#fnr-.17">17</a></sup> <a href="http://docs.altermundi.net/LibreNet6">http://docs.altermundi.net/LibreNet6</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.18" href="#fnr-.18">18</a></sup> <a href="http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag">http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag</a>
 </p></div>
 </div>
 
