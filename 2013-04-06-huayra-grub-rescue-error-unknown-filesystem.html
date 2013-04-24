@@ -1,100 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>huayra grub rescue error unknown filesystem</title>
+<!-- 2013-04-24 mié 02:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="huayra grub rescue error unknown filesystem"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-04-06"/>
 <meta name="author" content="Osiris Alejandro Gómez"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
 <link rel="stylesheet" href="osiux.css" type="text/css" />
-
-
 </head>
 <body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html"> UP </a>
- |
- <a accesskey="H" href="index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">huayra grub rescue error unknown filesystem</h1>
-
-<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
-</p>
-
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">mmmm que rarooo&hellip;</h3>
-<div class="outline-text-3" id="text-1">
-
-
 <p>
-   Luego de una exitosa jornada de dos días instalando
-   <i>Huayra</i> <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup> en el <i>Primer Encuentro de Software Libre en    Monte Caseros</i> <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup>, como no podía ser de otra manera, justo
-   a última hora, el último día la netbook de "la directora" dejó de
-   arrancar tras instalar <i>Huayra 1.0</i> y en su lugar apareció un bonito
-   mensaje de error <code>grub rescue&gt; error unknown filesystem</code>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
 </p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">mmmm que rarooo&#x2026;</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-   <img src="tmb/1eslmc/2013-04-06-17-45-a4bdc1-grub-rescue-error-unknown-filesystem.jpg"  alt="tmb/1eslmc/2013-04-06-17-45-a4bdc1-grub-rescue-error-unknown-filesystem.jpg" />
+Luego de una exitosa jornada de dos días instalando
+<i>Huayra</i> <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> en el <i>Primer Encuentro de Software Libre en
+Monte Caseros</i> <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>, como no podía ser de otra manera, justo
+a última hora, el último día la netbook de "la directora" dejó de
+arrancar tras instalar <i>Huayra 1.0</i> y en su lugar apareció un bonito
+mensaje de error <code>grub rescue&gt; error unknown filesystem</code>
 </p>
+
+
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-17-45-a4bdc1-grub-rescue-error-unknown-filesystem.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra grub rescue error unknown filesystem&quot;"/></p>
 </div>
-
 </div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">linux.mod</h3>
-<div class="outline-text-3" id="text-2">
-
-
-<p>
-   Apelando a nuestros conocimientos de recuperación empezamos a tirar
-   comandos, básicamente se puede listar el contenido de cada
-   partición haciendo <code>ls (hd0,1)/</code> y rápidamente vimos que el comando
-   <code>insmod linux.mod</code> fallaba porque no existía el archivo en
-   <code>(hd0,1)/boot/grub/linux.mod</code> entonces vimos la ubicación original
-   del archivo al copiarse el paquete es
-   <code>/usr/lib/grub/i386-pc/linux.mod</code> pero tampoco estaba, evidentemente
-   justo ese archivo no se copió al instalarse, por algún motivo que
-   ignoramos por ahora.
-</p>
-<p>
-   <img src="tmb/1eslmc/2013-04-06-17-55-926d69-grub-error-file-not-found.jpg" width="640" height="480" alt="huayra grub rescue error unknown filesystem" width="640" height="480" alt="huayra grub error file not found" />
-</p>
 </div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">linux.mod</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Apelando a nuestros conocimientos de recuperación empezamos a tirar
+comandos, básicamente se puede listar el contenido de cada
+partición haciendo <code>ls (hd0,1)/</code> y rápidamente vimos que el comando
+<code>insmod linux.mod</code> fallaba porque no existía el archivo en
+<code>(hd0,1)/boot/grub/linux.mod</code> entonces vimos la ubicación original
+del archivo al copiarse el paquete es
+<code>/usr/lib/grub/i386-pc/linux.mod</code> pero tampoco estaba, evidentemente
+justo ese archivo no se copió al instalarse, por algún motivo que
+ignoramos por ahora.
+</p>
 
+
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-17-55-926d69-grub-error-file-not-found.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra grub error file not found&quot;"/></p>
 </div>
-
-<div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">super grub2 disk al rescate de grub</h3>
-<div class="outline-text-3" id="text-3">
-
-
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">super grub2 disk al rescate de grub</h2>
+<div class="outline-text-2" id="text-3">
 <p>
-   No quedaba otra que corregir <code>grub</code> pero aún booteando desde un
-   pendrive no se lograba iniciar el sistema, asi que buscamos alguna
-   distro de rescate, encontramos <i>Rescatux</i> <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup> y
-   <i>SuperGrub2Disk</i> <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup>, ésta última ocupaba apenas 7mb la
-   <i>ISO</i>, asi que era la indicada a probar dada la simplicidad y que
-   nuestra conexión al mundo era muy angosta de banda.
-</p>
-<p>
-   Descargamos la <i>ISO</i> y verificamos el <i>MD5</i>:
+No quedaba otra que corregir <code>grub</code> pero aún booteando desde un
+pendrive no se lograba iniciar el sistema, asi que buscamos alguna
+distro de rescate, encontramos <i>Rescatux</i> <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup> y
+<i>SuperGrub2Disk</i> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>, ésta última ocupaba apenas 7mb la
+<i>ISO</i>, asi que era la indicada a probar dada la simplicidad y que
+nuestra conexión al mundo era muy angosta de banda.
 </p>
 
+<p>
+Descargamos la <i>ISO</i> y verificamos el <i>MD5</i>:
+</p>
 
-
-<pre class="example"># wget http://download.berlios.de/supergrub/super_grub2_disk_hybrid_2.00s1-beta1.iso
+<pre class="example">
+# wget http://download.berlios.de/supergrub/super_grub2_disk_hybrid_2.00s1-beta1.iso
 # wget http://download.berlios.de/supergrub/super_grub2_disk_hybrid_2.00s1-beta1.iso.md5
 
 # md5sum super_grub2_disk_hybrid_2.00s1-beta1.iso
@@ -104,156 +82,152 @@
 952a48942df720f579ebca0d09f197c4  super_grub2_disk_hybrid_2.00s1~beta1.iso
 </pre>
 
-
 <p>
-   Intentamos instalarla en un pendrive de diversas maneras, primero
-   usando <code>unetbootin</code> <sup><a class="footref" name="fnr-.5" href="#fn-.5">5</a></sup> la cual no funcionó.
-</p>
-<p>
-   Luego usando <code>dd</code> a la unidad, pero tampoco funcionó:
+Intentamos instalarla en un pendrive de diversas maneras, primero
+usando <code>unetbootin</code> <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup> la cual no funcionó.
 </p>
 
+<p>
+Luego usando <code>dd</code> a la unidad, pero tampoco funcionó:
+</p>
+
+<pre class="example">
+dd if=supergrub.iso of=/dev/sdb
+</pre>
+
+<p>
+Finalmente la fórmula ganadora fue:
+</p>
+
+<pre class="example">
+dd if=supergrub.iso of=/dev/sdb1
+</pre>
+
+<p>
+Booteamos con <i>SuperGrub2Disk</i> y elegimos una opción que no
+encontró nada de nada:
+</p>
 
 
-<pre class="example">dd if=supergrub.iso of=/dev/sdb
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-18-15-caef04-not-found-any-grub2-installation.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra not found any grub2 installation&quot;"/></p>
+</div>
+
+<p>
+En el segundo intento tuvimos éxito!:
+</p>
+
+
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-18-15-d81f34-super-grub2-disk.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra super grub2 disk&quot;"/></p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">instalando grub</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Una vez iniciado el <i>Huayra</i> de la netbook con la ayuda de
+<i>SuperGrub2Disk</i> procedimos a reinstalar <code>grub</code>:
+</p>
+
+<pre class="example">
+grub-install /dev/sdb
 </pre>
 
 
-<p>
-   Finalmente la fórmula ganadora fue:
-</p>
-
-
-
-<pre class="example">dd if=supergrub.iso of=/dev/sdb1   
-</pre>
-
-
-<p>
-   Booteamos con <i>SuperGrub2Disk</i> y elegimos una opción que no
-   encontró nada de nada:
-</p>
-<p>
-   <img src="tmb/1eslmc/2013-04-06-18-15-caef04-not-found-any-grub2-installation.jpg" width="640" height="480" alt="huayra not found any grub2 installation" />
-</p>
-<p>
-   En el segundo intento tuvimos éxito!:
-</p>
-<p>
-   <img src="tmb/1eslmc/2013-04-06-18-15-d81f34-super-grub2-disk.jpg" width="640" height="480" alt="huayra super grub2 disk" />
-</p>
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-18-18-f4b7dd-grub-install.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra grub install&quot;"/></p>
 </div>
-
 </div>
-
-<div id="outline-container-4" class="outline-3">
-<h3 id="sec-4">instalando grub</h3>
-<div class="outline-text-3" id="text-4">
-
-
-<p>
-   Una vez iniciado el <i>Huayra</i> de la netbook con la ayuda de
-   <i>SuperGrub2Disk</i> procedimos a reinstalar <code>grub</code>:
-</p>
-
-
-
-<pre class="example">grub-install /dev/sdb
-</pre>
-
-
-<p>
-   <img src="tmb/1eslmc/2013-04-06-18-18-f4b7dd-grub-install.jpg" width="640" height="480" alt="huayra grub install" />
-</p>
 </div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">booteando Huayra</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+A festejar <i>Huayra</i> salió andando de una, "la dire" contenta:
+</p>
 
+
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-18-19-9d2385-huayra.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra&quot;"/></p>
 </div>
-
-<div id="outline-container-5" class="outline-3">
-<h3 id="sec-5">booteando Huayra</h3>
-<div class="outline-text-3" id="text-5">
-
-
-<p>
-   A festejar <i>Huayra</i> salió andando de una, "la dire" contenta:
-</p>
-<p>
-   <img src="tmb/1eslmc/2013-04-06-18-19-9d2385-huayra.jpg" width="640" height="480" alt="huayra" />
-</p>
 </div>
-
 </div>
-
-<div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">compartir es bueno</h3>
-<div class="outline-text-3" id="text-6">
-
-
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">compartir es bueno</h2>
+<div class="outline-text-2" id="text-6">
 <p>
-   Aprovechamos a copiar algunas de las presentaciones que se dieron
-   en el evento, como asi también el Libro <i>Redes Inalámbricas en los    Países en Desarrollo</i> <sup><a class="footref" name="fnr-.6" href="#fn-.6">6</a></sup> ya que se quedaron muy
-   entusiasmados por las charlas sobre Redes Libres <sup><a class="footref" name="fnr-.7" href="#fn-.7">7</a></sup>,
-   también las <i>ISO</i> de <i>Huayra 1.0</i> <sup><a class="footref" name="fnr-.8" href="#fn-.8">8</a></sup> y <i>Huayra    Live</i> <sup><a class="footref" name="fnr-.9" href="#fn-.9">9</a></sup> y de paso el video <i>Códigos    Cooperativos</i> <sup><a class="footref" name="fnr-.10" href="#fn-.10">10</a></sup>, porque si de algo estamos
-   seguros es que <b>Compartir es Bueno</b> y por ello este artículo, si a
-   alguno le llega a pasar este error o algo similar con <code>grub</code>, ahora
-   saben como solucionarlo en pocos pasos.
+Aprovechamos a copiar algunas de las presentaciones que se dieron
+en el evento, como asi también el Libro <i>Redes Inalámbricas en los
+Países en Desarrollo</i> <sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup> ya que se quedaron muy
+entusiasmados por las charlas sobre Redes Libres <sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>,
+también las <i>ISO</i> de <i>Huayra 1.0</i> <sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup> y <i>Huayra
+Live</i> <sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup> y de paso el video <i>Códigos
+Cooperativos</i> <sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup>, porque si de algo estamos
+seguros es que <b>Compartir es Bueno</b> y por ello este artículo, si a
+alguno le llega a pasar este error o algo similar con <code>grub</code>, ahora
+saben como solucionarlo en pocos pasos.
 </p>
-<p>
-   <img src="tmb/1eslmc/2013-04-06-18-41-662982-compartir.jpg" width="640" height="480" alt="huayra compartir es bueno" />
-</p>
+
+
+<div class="figure">
+<p><img src="tmb/1eslmc/2013-04-06-18-41-662982-compartir.jpg" width="&quot;640&quot;" height="&quot;480&quot;" alt="&quot;huayra compartir es bueno&quot;"/></p>
+</div>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Pies de p&aacute;gina: </h2>
 <div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://huayra.conectarigualdad.gob.ar/">http://huayra.conectarigualdad.gob.ar/</a>
-</p>
 
-
-<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="2013-04-06-primer-encuentro-software-libre-monte-caseros.html">2013-04-06-primer-encuentro-software-libre-monte-caseros</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="http://www.supergrubdisk.org/rescatux/">http://www.supergrubdisk.org/rescatux/</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="http://www.supergrubdisk.org/super-grub2-disk/">http://www.supergrubdisk.org/super-grub2-disk/</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.5" href="#fnr-.5">5</a></sup> <a href="http://unetbootin.sourceforge.net/">http://unetbootin.sourceforge.net/</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.6" href="#fnr-.6">6</a></sup> <a href="http://wndw.net">http://wndw.net</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.7" href="#fnr-.7">7</a></sup> <a href="http://wiki.redeslibres.org">http://wiki.redeslibres.org</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.8" href="#fnr-.8">8</a></sup> <a href="http://huayra.educ.gob.ar/huayra-VR-1.0.iso">http://huayra.educ.gob.ar/huayra-VR-1.0.iso</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.9" href="#fnr-.9">9</a></sup> <a href="http://huayra.educ.gob.ar/huayra-live-mate-1.0.iso">http://huayra.educ.gob.ar/huayra-live-mate-1.0.iso</a>
-</p>
-
-
-<p class="footnote"><sup><a class="footnum" name="fn-.10" href="#fnr-.10">10</a></sup> <a href="http://www.gcoop.coop/codigos-cooperativos">http://www.gcoop.coop/codigos-cooperativos</a>
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://huayra.conectarigualdad.gob.ar/">http://huayra.conectarigualdad.gob.ar/</a>
 </p></div>
-</div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="2013-04-06-primer-encuentro-software-libre-monte-caseros.html">2013-04-06-primer-encuentro-software-libre-monte-caseros.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://www.supergrubdisk.org/rescatux/">http://www.supergrubdisk.org/rescatux/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://www.supergrubdisk.org/super-grub2-disk/">http://www.supergrubdisk.org/super-grub2-disk/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<a href="http://unetbootin.sourceforge.net/">http://unetbootin.sourceforge.net/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<a href="http://wndw.net">http://wndw.net</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<a href="http://wiki.redeslibres.org">http://wiki.redeslibres.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="http://huayra.educ.gob.ar/huayra-VR-1.0.iso">http://huayra.educ.gob.ar/huayra-VR-1.0.iso</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<a href="http://huayra.educ.gob.ar/huayra-live-mate-1.0.iso">http://huayra.educ.gob.ar/huayra-live-mate-1.0.iso</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<a href="http://www.gcoop.coop/codigos-cooperativos">http://www.gcoop.coop/codigos-cooperativos</a>
+</p></div>
+
 
 </div>
-</div>
-</div>
-
-<div id="postamble">
-<p class="date">Fecha: 2013-04-06</p>
-<p class="author">Autor: Osiris Alejandro Gómez</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2013-04-06</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
 </div>
 </body>
 </html>

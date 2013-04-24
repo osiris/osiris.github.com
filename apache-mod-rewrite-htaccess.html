@@ -1,43 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Reescribir URLs con mod_rewrite en Apache</title>
+<!-- 2013-04-24 mié 02:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Reescribir URLs con mod_rewrite en Apache"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2010-05-12 17:46"/>
 <meta name="author" content="Osiris Alejandro Gómez"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
 <link rel="stylesheet" href="osiux.css" type="text/css" />
-
-
 </head>
 <body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="index.html"> UP </a>
- |
- <a accesskey="H" href="index.html"> HOME </a>
-</div>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Reescribir URLs con mod_rewrite en Apache</h1>
-
-<p><a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+<p>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
 </p>
 
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">Migrando URLs</h3>
-<div class="outline-text-3" id="text-1">
-
-
+<div id="outline-container-sec-0-1" class="outline-3">
+<h3 id="sec-0-1">Migrando URLs</h3>
+<div class="outline-text-3" id="text-0-1">
 <p>
 Tuve que migrar de servidor y además cambié la url de
 <a href="http://blog.osiux.com">http://blog.osiux.com</a> a <a href="http://osiux.com">http://osiux.com</a>.  Así que para no perder los
@@ -47,31 +28,26 @@ sitio.  Para hacer esto basta con crear un archivo <code>.htaccess</code> con
 las reglas que definen la reescritura de la url.
 </p>
 </div>
-
 </div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2"><code>mod-rewrite</code></h3>
-<div class="outline-text-3" id="text-2">
-
-
+<div id="outline-container-sec-0-2" class="outline-3">
+<h3 id="sec-0-2"><code>mod-rewrite</code></h3>
+<div class="outline-text-3" id="text-0-2">
 <p>
 Es necesario habilitar el módulo de apache:
 </p>
 
-
+<div class="org-src-container">
 
 <pre class="src src-sh">a2enmod rewrite
 </pre>
-
+</div>
 
 <p>
 En el <code>.htaccess</code> de <a href="http://blog.osiux.com">http://blog.osiux.com</a> definí lo siguiente:
 </p>
 
-
-
-<pre class="example">RewriteEngine On
+<pre class="example">
+RewriteEngine On
 RewriteBase /
 
 RewriteRule ^/$  http://osiux.com/
@@ -87,67 +63,33 @@ RewriteRule ^category/(.+)/$  http://osiux.com/find/$1
 RewriteRule ^(tag)/(.+)/$  http://osiux.com/find/$2
 RewriteRule ^(.+)\.txt$  http://osiux.com/$1.txt
 </pre>
-
-
+</div>
+</div>
+<div id="outline-container-sec-0-3" class="outline-3">
+<h3 id="sec-0-3">Referencias</h3>
 </div>
 
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><a href="http://www.askapache.com/htaccess/mod_rewrite-tips-and-tricks.html#default-mod-rewrite-hint">http://www.askapache.com/htaccess/mod_rewrite-tips-and-tricks.html#default-mod-rewrite-hint</a></h2>
 </div>
-
-<div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">Referencias</h3>
-<div class="outline-text-3" id="text-3">
-
-
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><a href="http://www.sinctrl.com/2008/04/14/%C2%BFque-son-las-rewrite-rules/">http://www.sinctrl.com/2008/04/14/%C2%BFque-son-las-rewrite-rules/</a></h2>
 </div>
-
-</div>
-
-<div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><a href="http://www.askapache.com/htaccess/mod_rewrite-tips-and-tricks.html#default-mod-rewrite-hint">http://www.askapache.com/htaccess/mod\_rewrite-tips-and-tricks.html#default-mod-rewrite-hint</a></h2>
-<div class="outline-text-2" id="text-1">
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2"><a href="http://www.sinctrl.com/2008/04/14/¿que-son-las-rewrite-rules/">http://www.sinctrl.com/2008/04/14/%C2%BFque-son-las-rewrite-rules/</a></h2>
-<div class="outline-text-2" id="text-2">
-
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><a href="http://www.askapache.com/htaccess/ultimate-htaccess-file-sample.html">http://www.askapache.com/htaccess/ultimate-htaccess-file-sample.html</a></h2>
-<div class="outline-text-2" id="text-3">
-
 </div>
-
-</div>
-
-<div id="outline-container-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4"><a href="http://briancray.com/2010/03/18/htaccess-hack-remove-url-query-strings/">http://briancray.com/2010/03/18/htaccess-hack-remove-url-query-strings/</a></h2>
-<div class="outline-text-2" id="text-4">
-
 </div>
-
-</div>
-
-<div id="outline-container-5" class="outline-2">
+<div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5"><a href="http://corz.org/serv/tricks/htaccess2.php">http://corz.org/serv/tricks/htaccess2.php</a></h2>
-<div class="outline-text-2" id="text-5">
-
 </div>
 </div>
-</div>
-
-<div id="postamble">
-<p class="date">Fecha: 2010-05-12 17:46</p>
-<p class="author">Autor: Osiris Alejandro Gómez</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2010-05-12 17:46</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
 </div>
 </body>
 </html>
