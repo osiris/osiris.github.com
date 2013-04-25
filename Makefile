@@ -4,5 +4,8 @@ update-vodka:
 update-merlot:
 	ssh merlot 'cd ~/osiux && git pull'
 
-update-all: update-vodka update-merlot
+update-osiale:
+	ssh osiale 'cd ~/osiux && git pull'
+
+update-all: update-vodka update-merlot update-osiale
 

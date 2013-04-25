@@ -179,3 +179,4 @@ td, th{vertical-align:top;}
 .org-variable-pitch{}
 .org-vertical-border{}
 .org-warning{color:#ff0000;font-weight:bold;}
+.footdef sup {float:left;margin-right:9px;}
