@@ -1,5 +1,9 @@
 ErrorDocument 404 /404.html
 AddDefaultCharset utf-8
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^(.*?).txt$ $1.html
+</ifModule>
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "now"
