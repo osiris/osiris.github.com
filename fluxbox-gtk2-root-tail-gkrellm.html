@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>fluxbox + gtk2 + root-tail + gkrellm</title>
+<!-- 2013-04-24 mié 22:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="author" content="Osiris Alejandro Gomez"/>
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">fluxbox + gtk2 + root-tail + gkrellm</h1>
+<p>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+</p>
+
+<p>
+Decidí salir de gnome y probar <b>fluxbox</b>, el resultado: no vuelvo ni
+por Beryl (aunque lo extraño!). Realmente es muy facil personalizarlo
+y como manejador de ventanas es excelente, muy rapido y practicamente
+no consume recursos
+</p>
+
+<p>
+#+ATTR_HTML :width 640 :height 480 :alt "fluxbox gtk2 root-tail gkrellm"
+<a href="img/osiux-fluxbox-screenshot-1024x768-01.png"><img src="img/osiux-fluxbox-screenshot-640x480-01.png"  alt="osiux-fluxbox-screenshot-640x480-01.png"/></a>
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Editar un style</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Inicialmente descargue unos cuantos y termine modificandolos y
+haciendo un mix entre Sephiroth y Equilibrium.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://fluxbox.org/download/themes/contrib/discostoo_sephiroth.tar.bz2">http://fluxbox.org/download/themes/contrib/discostoo_sephiroth.tar.bz2</a>
+</li>
+<li><a href="http://rest0re.org/themes/equilibrium.tar.gz">http://rest0re.org/themes/equilibrium.tar.gz</a>
+</li>
+</ul>
+
+<p>
+El archivo de configuracion de un tema debe estar en
+<code>~/.fluxbox/styles/osiux/theme.cfg</code> donde osiux es el nombre del
+tema.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Editar menu</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+El menu se encuentra en el directorio del usuario <code>~/.fluxbox/menu</code>
+y es autogenerado al instalar fluxbox, en realidad llama al menu
+compartido para todos los usuarios que esta en
+<code>/etc/X11/fluxbox/fluxbox-menu</code>. Luego de mirar un poco como era la
+sintaxis opte por crear un menu propio unicamente con las
+aplicaciones mas usadas y nada mas, la manera mas simple es hacer
+un include a un arhivo con mi propio menu, asi de esta manera en
+cualquier momento descomentando la linea original puedo acceder a
+todas las opciones por defecto:
+</p>
+
+<pre class="example">
+[begin] (fluxbox)
+#[include] (/etc/X11/fluxbox/fluxbox-menu)
+[include] (~/.fluxbox/menu-osiux)
+[end]
+</pre>
+
+<p>
+Este es el contenido del menu personalizado <code>~/.fluxbox/menu-osiux</code>:
+</p>
+
+<pre class="example">
+[exec] (iceweasel)      {iceweasel}
+[exec] (gaim)           {/usr/bin/gaim}
+[exec] (xchat)          {/usr/bin/xchat}
+[exec] (tsclient)       {/usr/bin/tsclient -f}
+[exec] (icedove)        {/usr/bin/icedove}
+[exec] (eclipse)        {/usr/bin/eclipse}
+[exec] (quanta)         {/usr/bin/quanta}
+[exec] (gimp)           {/usr/bin/gimp-2.2}
+[exec] (inkscape)       {/usr/bin/inkscape}
+[exec] (vmware)         {/usr/bin/wmware}
+[exec] (mplayer)        {/usr/bin/gmplayer}
+[exec] (k3b)            {/usr/bin/k3b}
+[exec] (calc)           {/usr/bin/gnome-calculator}
+[exec] (opencalc)       {/usr/bin/ooffice -calc} &lt;&gt;
+[exec] (openwriter)     {/usr/bin/ooffice -writer} &lt;&gt;
+[exec] (gedit)          {/usr/bin/gedit}
+[exec] (run..)          {/usr/bin/fbrun} &lt;&gt;
+[exec] (mc)             { x-terminal-emulator -T "mc" -e /usr/bin/mc}
+[exec] (thunar)         {/usr/bin/thunar} &lt;&gt;
+[exec] (Terminal)       {/usr/bin/gnome-terminal}
+</pre>
+
+<p>
+Algunos iconos <code>.png</code> no se mostraban asi que los converti a <code>.xpm</code>
+usando <code>convert icono.png icono.xpm</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Script Fluxbox</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Fue necesario correr un script luego de iniciar fluxbox para que se
+carge el root-tail y el gkrellm y establecer el background.
+</p>
+
+<p>
+La llamada al script debe hacerce en el archivo <code>~/.fluxbox/init</code>
+en la siguiente linea:
+</p>
+
+<pre class="example">
+session.screen0.rootCommand:    ~/.fluxbox/fluxbox-scripts.sh
+</pre>
+
+<p>
+El contenido del script <code>fluxbox-scripts.sh</code>:
+</p>
+
+<pre class="example">
+#!/bin/bash
+Esetroot ~/.fluxbox/backgrounds/osiux-background.png
+~/root-tail/info-root-tail.sh &amp;
+gkrellm &amp;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">GTK2</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Para tener un tema de GTK2 corriendo en fluxbox es necesario
+levantar el <code>gnome-settings-daemon</code> y el mismo se agrega en el
+archivo <code>~/.fluxbox/startup</code> antes de que se ejecute fluxbox:
+</p>
+
+<pre class="example">
+exec gnome-settings-daemon &amp;
+exec /usr/bin/fluxbox
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">root-tail</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Esta utilidad es similar al tail y permite convertir un log a una
+imagen en el desktop, es posible definir colores, fuente y posicion de
+la imagen, es excelente!. Asi que solo es necesario crearse un par de
+scripts de lo que quieran visualizar o directamente leer los logs del
+sistema.
+</p>
+
+<p>
+Contenido del script <code>root-tail.sh</code>:
+</p>
+
+<pre class="example">
+#!/bin/bash
+root-tail -g 500x250+100+0 -font fixed ~/root-tail/info-disk-free.log,gray &amp;
+root-tail -g 500x250+500+0 -font fixed ~/root-tail/info-netstat-tcp.log,gray &amp;
+root-tail -g 500x230+100+500 -font fixed ~/root-tail/info-ps.log,gray &amp;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">gkrellm</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Es un panel con informacion del estado de los recursos del sistema
+(red,disco,procesadores,etc) mas la sumatoria de varios plugins que
+permiten desde ver la temperatura de su ciudad como manejar el xmms
+o hacer capturas de pantallas:
+</p>
+
+<pre class="example">
+apt-get install gkrellm gkrellm-volume gkrellmms gkrellmwireless
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2009-01-16</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
+<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+</div>
+</body>
+</html>
