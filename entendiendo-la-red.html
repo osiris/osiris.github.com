@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>entendiendo la red</title>
-<!-- 2013-05-02 jue 17:02 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="author" content="Osiris Alejandro Gómez"/>
+<!-- 2013-06-05 mié 02:36 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+
 <link rel="stylesheet" href="osiux.css" type="text/css" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">entendiendo la red</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -38,7 +39,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-centralizadas.png"  alt="redes-centralizadas.png"/></p>
+<p><img  src="img/redes-centralizadas.png" alt="redes-centralizadas.png" /></p>
 </div>
 </li>
 
@@ -60,7 +61,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-descentralizadas.png"  alt="redes-descentralizadas.png"/></p>
+<p><img  src="img/redes-descentralizadas.png" alt="redes-descentralizadas.png" /></p>
 </div>
 </li>
 
@@ -82,7 +83,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-mesh.png"  alt="redes-mesh.png"/></p>
+<p><img  src="img/redes-mesh.png" alt="redes-mesh.png" /></p>
 </div>
 </li>
 </ul>
@@ -129,7 +130,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-lan.png"  alt="redes-lan.png"/></p>
+<p><img  src="img/redes-lan.png" alt="redes-lan.png" /></p>
 </div>
 </div>
 </div>
@@ -160,7 +161,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-dhcp-discover.png"  alt="redes-dhcp-discover.png"/></p>
+<p><img  src="img/redes-dhcp-discover.png" alt="redes-dhcp-discover.png" /></p>
 </div>
 </div>
 </div>
@@ -195,7 +196,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-dhcp-offer.png"  alt="redes-dhcp-offer.png"/></p>
+<p><img  src="img/redes-dhcp-offer.png" alt="redes-dhcp-offer.png" /></p>
 </div>
 </div>
 </div>
@@ -220,7 +221,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-dhcp-request.png"  alt="redes-dhcp-request.png"/></p>
+<p><img  src="img/redes-dhcp-request.png" alt="redes-dhcp-request.png" /></p>
 </div>
 </div>
 </div>
@@ -245,7 +246,7 @@
 
 
 <div class="figure">
-<p><img src="img/redes-dhcp-ack.png"  alt="redes-dhcp-ack.png"/></p>
+<p><img  src="img/redes-dhcp-ack.png" alt="redes-dhcp-ack.png" /></p>
 </div>
 </div>
 </div>
@@ -273,18 +274,18 @@ localhost.gcoop.com.ar has address 127.0.0.1
 ; &lt;&lt;&gt;&gt; DiG 9.8.4-P1 &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 19166
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 46791
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
-;osiux.com.                  IN      A
+;osiux.com.          IN  A
 
 ;; ANSWER SECTION:
-osiux.com.           300     IN      A       96.8.118.129
+osiux.com.       78  IN  A   96.8.118.129
 
-;; Query time: 165 msec
+;; Query time: 0 msec
 ;; SERVER: 192.168.10.3#53(192.168.10.3)
-;; WHEN: Thu May  2 17:01:57 2013
+;; WHEN: Wed Jun  5 02:35:52 2013
 ;; MSG SIZE  rcvd: 43
 </pre>
 </div>
@@ -301,10 +302,10 @@ osiux.com.           300     IN      A       96.8.118.129
 <pre class="example">
 02:14:20.301428 IP (tos 0x0, ttl 64, id 27874, offset 0, flags [none], proto UDP (17), length 55)
     127.0.0.1.57039 &gt; 127.0.0.1.53: 39172+ A? osiux.com. (27)
-        0x0000:  4500 0037 6ce2 0000 4011 0fd2 7f00 0001  E..7l...@.......
-        0x0010:  7f00 0001 decf 0035 0023 fe36 9904 0100  .......5.#.6....
-        0x0020:  0001 0000 0000 0000 056f 7369 7578 0363  .........osiux.c
-        0x0030:  6f6d 0000 0100 01                        om.....
+    0x0000:  4500 0037 6ce2 0000 4011 0fd2 7f00 0001  E..7l...@.......
+    0x0010:  7f00 0001 decf 0035 0023 fe36 9904 0100  .......5.#.6....
+    0x0020:  0001 0000 0000 0000 056f 7369 7578 0363  .........osiux.c
+    0x0030:  6f6d 0000 0100 01                        om.....
 </pre>
 </div>
 </div>
@@ -364,9 +365,9 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 
 
 <colgroup>
-<col class="right"/>
+<col  class="right" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -441,7 +442,7 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 
 
 <div class="figure">
-<p><img src="img/ranking-dns.png"  alt="ranking-dns.png"/></p>
+<p><img  src="img/ranking-dns.png" alt="ranking-dns.png" /></p>
 </div>
 </div>
 </div>
@@ -461,6 +462,17 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </div>
 <div id="outline-container-sec-7" class="outline-2">
 <h2 id="sec-7">Sniffers nmap, dsniff</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1">nmap</h3>
+<div class="outline-text-3" id="text-7-1">
+<div class="org-src-container">
+
+<pre class="src src-sh">nmap -sV --open 192.168.10.0/24 -p22
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="outline-container-sec-8" class="outline-2">
 <h2 id="sec-8">Análisis de tráfico mediante tcpdump</h2>
@@ -533,7 +545,7 @@ ssh -R 12345:localhost:22 osiux.com
 
 
 <div class="figure">
-<p><img src="img/redes-arp-1.png"  alt="redes-arp-1.png"/></p>
+<p><img  src="img/redes-arp-1.png" alt="redes-arp-1.png" /></p>
 </div>
 </div>
 </div>
@@ -553,7 +565,7 @@ ssh -R 12345:localhost:22 osiux.com
 
 
 <div class="figure">
-<p><img src="img/redes-arp-2.png"  alt="redes-arp-2.png"/></p>
+<p><img  src="img/redes-arp-2.png" alt="redes-arp-2.png" /></p>
 </div>
 </div>
 </div>
@@ -583,15 +595,15 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.625 seconds (157.54 hosts/sec). 0 
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
-64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.077 ms
-64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.059 ms
-64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.062 ms
-64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.058 ms
-64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.055 ms
+64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.065 ms
+64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.051 ms
+64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.050 ms
+64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.054 ms
+64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.053 ms
 
 --- 127.0.0.1 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 3999ms
-rtt min/avg/max/mdev = 0.055/0.062/0.077/0.009 ms
+rtt min/avg/max/mdev = 0.050/0.054/0.065/0.009 ms
 </pre>
 </div>
 </div>
@@ -644,7 +656,7 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 
 <div class="figure">
-<p><img src="img/redes-lan-wan.png"  alt="redes-lan-wan.png"/></p>
+<p><img  src="img/redes-lan-wan.png" alt="redes-lan-wan.png" /></p>
 </div>
 
 <div class="org-src-container">
@@ -667,7 +679,7 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 
 <div class="figure">
-<p><img src="img/redes-lan-proxy-wan.png"  alt="redes-lan-proxy-wan.png"/></p>
+<p><img  src="img/redes-lan-proxy-wan.png" alt="redes-lan-proxy-wan.png" /></p>
 </div>
 </div>
 </div>
@@ -690,7 +702,29 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 
 <div class="figure">
-<p><img src="img/redes-protocolos.png"  alt="redes-protocolos.png"/></p>
+<p><img  src="img/redes-protocolos.png" alt="redes-protocolos.png" /></p>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-ditaa">                           +-------+
+                           | Data  |          &lt;-- Aplicaci&#243;n
+                           |       |
+                           |       |
+                  +--------+-------+
+                  | UDP    | UDP   |          &lt;-- Transporte
+                  | header | data  |
+                  |        |       |
+         +--------+--------+-------+
+         | IP     | IP             |          &lt;-- Internet
+         | header | data           |
+         |        |                |
++--------+--------+----------------+--------+
+| Frame  | Frame                   | Frame  | &lt;-- Link
+| header | data                    | footer |
+|        |                         |        |
++--------+-------------------------+--------+
+</pre>
 </div>
 </div>
 
@@ -717,7 +751,7 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 
 <div class="figure">
-<p><img src="img/redes-arp-header.png"  alt="redes-arp-header.png"/></p>
+<p><img  src="img/redes-arp-header.png" alt="redes-arp-header.png" /></p>
 </div>
 </div>
 </div>
@@ -809,8 +843,8 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2013-04-04</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
-<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.0.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

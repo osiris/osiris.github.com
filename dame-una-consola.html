@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>dame una consola</title>
-<!-- 2013-04-24 mié 02:32 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="author" content="Osiris Alejandro Gómez"/>
+<!-- 2013-06-05 mié 02:36 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+
 <link rel="stylesheet" href="osiux.css" type="text/css" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">dame una consola</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div class="figure">
-<p><img src="img/terminal.png"  alt="terminal.png"/></p>
+<p><img  src="img/terminal.png" alt="terminal.png" /></p>
 </div>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -86,9 +87,9 @@ x = execute     1
 
 
 <colgroup>
-<col class="left"/>
+<col  class="left" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -151,9 +152,9 @@ x = execute     1
 
 
 <colgroup>
-<col class="left"/>
+<col  class="left" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -261,7 +262,7 @@ de otro comando permite conectar procesos:
 
 
 <div class="figure">
-<p><img src="img/redirection.png"  alt="redirection.png"/></p>
+<p><img  src="img/redirection.png" alt="redirection.png" /></p>
 </div>
 </div>
 </div>
@@ -272,9 +273,9 @@ de otro comando permite conectar procesos:
 
 
 <colgroup>
-<col class="left"/>
+<col  class="left" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -414,9 +415,9 @@ w3m -dump http://debian.org/News | grep -i squeeze | grep frozen &gt;/tmp/debian
 
 
 <colgroup>
-<col class="left"/>
+<col  class="left" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -484,9 +485,9 @@ w3m -dump http://debian.org/News | grep -i squeeze | grep frozen &gt;/tmp/debian
 
 
 <colgroup>
-<col class="left"/>
+<col  class="left" />
 
-<col class="left"/>
+<col  class="left" />
 </colgroup>
 <tbody>
 <tr>
@@ -599,11 +600,11 @@ Connection closed by foreign host.
 
 <span style="color: #888a85;"># </span><span style="color: #888a85;">Listado Tabla Campo</span>
 <span style="color: #729fcf;">set</span> alias <span style="color: #ff6347;">tablacampos</span>=<span style="color: #ad7fa8; font-style: italic;">'echo "show tables" | sugar | grep -v Tables_in | \</span>
-<span style="color: #ad7fa8; font-style: italic;">while read t; do d=$(</span><span style="color: #fa8072;">echo</span><span style="color: #ad7fa8; font-style: italic;"> "desc "$t";" | cct15 | grep -v Field | awk1); \</span>
+<span style="color: #ad7fa8; font-style: italic;">while read t; do d=$(</span><span style="color: #ff00ff;">echo</span><span style="color: #ad7fa8; font-style: italic;"> "desc "$t";" | cct15 | grep -v Field | awk1); \</span>
 <span style="color: #ad7fa8; font-style: italic;">for c in $d;do echo $t"__"$c;done ;done'</span>
 
 <span style="color: #888a85;"># </span><span style="color: #888a85;">Vaciar todas las tablas que contengan la palabra *calls*</span>
-sugar &lt; $(<span style="color: #fa8072;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"show tables"</span> | sugar | grep calls | <span style="color: #ad7fa8; font-style: italic;">\</span>
+sugar &lt; $(<span style="color: #ff00ff;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"show tables"</span> | sugar | grep calls | <span style="color: #ad7fa8; font-style: italic;">\</span>
 <span style="color: #729fcf; font-weight: bold;">while </span><span style="color: #729fcf;">read</span> t;<span style="color: #729fcf; font-weight: bold;">do </span><span style="color: #729fcf;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"TRUNCATE table $t;"</span>;<span style="color: #729fcf; font-weight: bold;">done</span>)
 </pre>
 </div>
@@ -705,7 +706,7 @@ command -range=% Q :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B suga
 
 
 <div class="figure">
-<p><img src="img/olsr.png"  alt="olsr.png"/></p>
+<p><img  src="img/olsr.png" alt="olsr.png" /></p>
 </div>
 </div>
 </div>
@@ -731,7 +732,7 @@ command -range=% Q :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B suga
 
 
 <div class="figure">
-<p><img src="img/ping.png"  alt="ping.png"/></p>
+<p><img  src="img/ping.png" alt="ping.png" /></p>
 </div>
 </div>
 </div>
@@ -766,7 +767,7 @@ command -range=% Q :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B suga
 
 
 <div class="figure">
-<p><img src="img/network.png"  alt="network.png"/></p>
+<p><img  src="img/network.png" alt="network.png" /></p>
 </div>
 </div>
 </div>
@@ -800,7 +801,7 @@ archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
 
 
 <div class="figure">
-<p><img src="img/gcoop.png"  alt="gcoop.png"/></p>
+<p><img  src="img/gcoop.png" alt="gcoop.png" /></p>
 </div>
 </div>
 </div>
@@ -808,8 +809,8 @@ archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2010/11/26</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
-<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.0.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

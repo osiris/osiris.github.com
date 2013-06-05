@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Procesos Linux</title>
-<!-- 2013-04-24 mié 02:30 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="author" content="Osiris Alejandro Gomez"/>
-<meta name="description" content="Administrando recursos de sistema"/>
+<!-- 2013-06-05 mié 02:35 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+
+
 <link rel="stylesheet" href="osiux.css" type="text/css" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Procesos Linux</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -47,7 +48,7 @@ rendimiento de nuestro equipo.
 <div class="outline-text-2" id="text-3">
 
 <div class="figure">
-<p><img src="img/cfp-procesos-01.png"  alt="cfp-procesos-01.png"/></p>
+<p><img  src="img/cfp-procesos-01.png" alt="cfp-procesos-01.png" /></p>
 </div>
 </div>
 </div>
@@ -56,12 +57,12 @@ rendimiento de nuestro equipo.
 <div class="outline-text-2" id="text-4">
 
 <div class="figure">
-<p><img src="img/cfp-procesos-03.png"  alt="cfp-procesos-03.png"/></p>
+<p><img  src="img/cfp-procesos-03.png" alt="cfp-procesos-03.png" /></p>
 </div>
 
 
 <div class="figure">
-<p><img src="img/cfp-procesos-04.png"  alt="cfp-procesos-04.png"/></p>
+<p><img  src="img/cfp-procesos-04.png" alt="cfp-procesos-04.png" /></p>
 </div>
 </div>
 </div>
@@ -87,7 +88,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 22906
+1 19291
 </pre>
 </li>
 </ul>
@@ -102,7 +103,7 @@ El comando <code>ps</code> puede listar el estado de los procesos:
 
 
 <div class="figure">
-<p><img src="img/cfp-procesos-07.png"  alt="cfp-procesos-07.png"/></p>
+<p><img  src="img/cfp-procesos-07.png" alt="cfp-procesos-07.png" /></p>
 </div>
 </div>
 </div>
@@ -120,7 +121,7 @@ los procesos. Por ejemplo la señal de terminación:
 
 
 <div class="figure">
-<p><img src="img/cfp-procesos-08.png"  alt="cfp-procesos-08.png"/></p>
+<p><img  src="img/cfp-procesos-08.png" alt="cfp-procesos-08.png" /></p>
 </div>
 </div>
 </div>
@@ -139,16 +140,16 @@ en ejecución:
 </div>
 
 <pre class="example">
- 2669 ?        S     81:18 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
-24705 ?        S      0:00  \_ sleep 1
- 2676 ?        S      4:11 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
- 2682 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
- 2799 ?        Ss     0:41 /usr/sbin/acpid
- 2989 ?        Ss     0:43 /usr/sbin/apache2 -k start
- 3175 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3176 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3177 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3178 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+ 3450 ?        S      1:15 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
+ 1693 ?        S      0:00  \_ sleep 1
+ 3594 ?        Ssl    0:11 /usr/sbin/NetworkManager
+ 3695 ?        S      0:00  \_ /sbin/dhclient -d -4 -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /var/run/dhclient-eth0.pid -lf /var/lib/dhcp/dhclient-c02244e9-ac7d-4771-83dc-752826cd848a-eth0.lease -cf /var/run/nm-dhclient-eth0.conf eth0
+ 3614 ?        Sl     0:09 /usr/lib/policykit-1/polkitd --no-debug
+ 3616 ?        Ss     0:00 /usr/sbin/sshd
+ 8476 ?        Ss     0:00  \_ sshd: osiris [priv]
+ 8481 ?        S      0:00  |   \_ sshd: osiris@notty
+ 8482 ?        Ss     0:00  |       \_ /usr/lib/openssh/sftp-server
+10102 ?        Ss     0:00  \_ sshd: osiris [priv]
 </pre>
 
 <div class="org-src-container">
@@ -158,16 +159,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-init(1)─┬─NetworkManager(3484)─┬─dhclient(14406)
-        │                      ├─{NetworkManager}(3503)
-        │                      └─{NetworkManager}(3670)
-        ├─SystemToolsBack(5731)
-        ├─accounts-daemon(3942)───{accounts-daemon}(3948)
-        ├─acpi_fakekeyd(2682)
-        ├─acpid(2799)
-        ├─apache2(2989)─┬─apache2(3175)
-        │               ├─apache2(3176)
-        │               ├─apache2(3177)
+init(1)─┬─NetworkManager(3594)─┬─dhclient(3695)
+        │                      ├─{NetworkManager}(3611)
+        │                      └─{NetworkManager}(3699)
+        ├─accounts-daemon(4019)───{accounts-daemon}(4021)
+        ├─acpi_fakekeyd(2704)
+        ├─acpid(2730)
+        ├─apache2(2925)─┬─apache2(3094)
+        │               ├─apache2(3095)
+        │               ├─apache2(3096)
+        │               ├─apache2(3097)
 </pre>
 </div>
 </div>
@@ -187,21 +188,21 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 02:30:50 up 15 days, 15:09,  5 users,  load average: 1,48, 1,04, 1,01
-Tasks: 209 total,   2 running, 207 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 14,7 us,  5,8 sy,  0,0 ni, 77,4 id,  1,3 wa,  0,5 hi,  0,3 si,  0,0 st
-KiB Mem:   2044852 total,  1785156 used,   259696 free,   107600 buffers
-KiB Swap:        0 total,        0 used,        0 free,   492416 cached
+top - 02:35:38 up 11:33,  7 users,  load average: 1,94, 2,20, 2,10
+Tasks: 185 total,   2 running, 183 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 62,3 us,  6,3 sy,  0,0 ni, 29,4 id,  0,5 wa,  1,2 hi,  0,4 si,  0,0 st
+KiB Mem:   2044852 total,  1909596 used,   135256 free,   115216 buffers
+KiB Swap:        0 total,        0 used,        0 free,   945284 cached
 
   PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
-24762 osiris    20   0 26096 1528 1080 R  11,1  0,1   0:00.04 top
-24764 osiris    20   0  173m 5736 4040 R  11,1  0,3   0:00.02 emacs23
-22328 root      20   0     0    0    0 S   5,5  0,0   0:00.03 kworker/0:2
-    1 root      20   0 10648  688  552 S   0,0  0,0   0:17.48 init
-    2 root      20   0     0    0    0 S   0,0  0,0   0:02.80 kthreadd
-    3 root      20   0     0    0    0 S   0,0  0,0  22:09.29 ksoftirqd/0
+12268 osiris    20   0  629m  23m  13m R  89,6  1,2 637:52.05 gnome-settings-
+ 1705 osiris    20   0 26428 1440 1044 R  10,5  0,1   0:00.02 top
+    7 root      -2   0     0    0    0 S   5,3  0,0   0:08.46 rcuc/0
+18756 osiris    20   0 1130m 339m  54m S   5,3 17,0  50:17.15 x-www-browser
+    1 root      20   0 10792  900  760 S   0,0  0,0   0:01.31 init
+    2 root      20   0     0    0    0 S   0,0  0,0   0:00.01 kthreadd
+    3 root      20   0     0    0    0 S   0,0  0,0   0:11.10 ksoftirqd/0
     6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
-    7 root      -2   0     0    0    0 S   0,0  0,0   5:41.75 rcuc/0
     8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
     9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
    10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
@@ -211,7 +212,7 @@ KiB Swap:        0 total,        0 used,        0 free,   492416 cached
 
 
 <div class="figure">
-<p><img src="img/cfp-procesos-11.png"  alt="cfp-procesos-11.png"/></p>
+<p><img  src="img/cfp-procesos-11.png" alt="cfp-procesos-11.png" /></p>
 </div>
 </div>
 </div>
@@ -242,8 +243,8 @@ enviar señales.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
-<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.0.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Automatizando Tareas</title>
-<!-- 2013-05-06 lun 10:03 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="author" content="Osiris Alejandro Gomez"/>
-<meta name="description" content="Manejo de crontab, watch y scripts"/>
+<!-- 2013-06-05 mié 02:36 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+
+
 <link rel="stylesheet" href="osiux.css" type="text/css" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Automatizando Tareas</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="http://github.com/osiris/osiux-blog">.git</a>
+<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -136,7 +137,7 @@ Petición Proxy enviada, esperando respuesta... 200 OK
 Longitud: 729067520 (695M) [application/x-iso9660-image]
 Grabando a: “ubuntu-12.04.1-desktop-i386.iso”
 
-     0K .......... .......... .......... .......... ..........  0% 24,7K 8h0m
+ 0K .......... .......... .......... .......... ..........  0% 24,7K 8h0m
     50K .......... .......... .......... .......... ..........  0% 68,8K 5h26m
    100K .......... .......... .......... .......... ..........  0% 61,5K 4h41m
    150K .......... .......... .......... .......... ..........  0% 66,8K 4h15m
@@ -276,10 +277,10 @@ Veamos que hace cada línea, paso a paso:
 <pre class="example">
 for i in {1..186}  # incrementa el valor de i desde 1 a 186
 do # inicia la ejecucion
-    scrot # captura la pantalla
-    xte 'mousemove 100 300' # mueve el mouse a la posicion 100,300
-    xte 'mouseclick 1' # presiona click izquierdo del mouse
-    sleep 3s # espera 3 segundos
+scrot # captura la pantalla
+xte 'mousemove 100 300' # mueve el mouse a la posicion 100,300
+xte 'mouseclick 1' # presiona click izquierdo del mouse
+sleep 3s # espera 3 segundos
 done # termina la ejecucion
 </pre>
 
@@ -292,8 +293,8 @@ De esta simple manera, se pueden automatizar muchísimas tareas!
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.0)</p>
-<p class="xhtml-validation"><a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a></p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.0.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

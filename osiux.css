@@ -4,6 +4,7 @@ div#content{background:#111;padding:1em;width:100%;max-width:640px;margin-left:a
 div#postamble p{width:100%;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;color:#888;font-size:80%;padding:1;margin:1;}
 a{color:#cfff00;text-decoration:none;padding:1px;solid #e0e0e0;}
 a:hover{color:#cfff00;text-decoration:underline;}
+img{max-width:100%;height:auto;}
 #table-of-contents{margin:1em 0;padding:.1em;}
 #table-of-contents li a,
 #table-of-contents li a:hover,
@@ -16,7 +17,12 @@ h3{font-size:130%;}
 h4{font-size:130%;}
 h5{font-size:120%;}
 h6{font-size:110%;}
-h2, h3, h4, h5, h6{border-bottom:2px solid black;font-weight:bold;color:yellow;margin-top:35px;}
+h2, h3, h4, h5, h6{font-weight:bold;color:yellow;margin-top:35px;}
+.outline-text-2{margin-left:1em;}
+.outline-3{margin-left:1em;}
+.outline-text-3{margin-left:1em;}
+.outline-4{margin-left:1em;}
+.outline-text-4{margin-left:1em;}
 tt{color:#00f;}
 .verbatim{margin:.5em 0;}
 pre{border:1px solid #ccc;background:black;padding:.5em;overflow:auto;font-size:110%;white-space:pre-wrap;}
