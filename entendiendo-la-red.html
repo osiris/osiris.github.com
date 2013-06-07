@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>entendiendo la red</title>
-<!-- 2013-06-05 mié 12:38 -->
+<!-- 2013-06-05 mié 15:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 
@@ -23,20 +23,6 @@
 <ul class="org-ul">
 <li>centralizada
 
-<div class="org-src-container">
-
-<pre class="src src-ditaa">+---+             +---+
-| A +-----+ +-----+ B |
-+---+     | |     +---+
-         ++-++
-         | C |
-         ++-++
-+---+     | |     +---+
-| D +-----+ +-----+ E |
-+---+             +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-centralizadas.png" alt="redes-centralizadas.png" /></p>
@@ -45,20 +31,6 @@
 
 <li>descentralizada
 
-<div class="org-src-container">
-
-<pre class="src src-ditaa">+---+             +---+  +---+             +---+
-| A +-----+ +-----+ B |  | F +-----+ +-----+ G |
-+---+     | |     +---+  +---+     | |     +---+
-         ++-++                    ++-++
-         | C +--------------------+ H |
-         ++-++                    ++-++
-+---+     | |     +---+  +---+     | |     +---+
-| D +-----+ +-----+ E |  | I +-----+ +-----+ J |
-+---+             +---+  +---+             +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-descentralizadas.png" alt="redes-descentralizadas.png" /></p>
@@ -66,20 +38,6 @@
 </li>
 
 <li>en malla o <i>mesh</i>
-
-<div class="org-src-container">
-
-<pre class="src src-ditaa">+---+             +---+  +---+             +---+
-| A +-----+ +-----+ B +--+ F +-------------+ G |
-++-++     | |     ++--+  +--++             +--++
- | |     ++-++     |        |     +---+       |
- | +-----+ C +-----+ +----+ +-----+ H +-----+ |
- |       ++-++       |    |       ++-++     | |
-++--+     | |     +--++  ++--+     | |     ++-++
-| D +-----+ +-----+ E |  | I +-----+ +-----+ J |
-+---+             +---+  +---+             +---+
-</pre>
-</div>
 
 
 <div class="figure">
@@ -103,17 +61,6 @@
 <div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1">Red de 4 equipos</h3>
 <div class="outline-text-3" id="text-2-1">
-<div class="org-src-container">
-
-<pre class="src src-ditaa">-----+---------+---------+---------+-----
-     |         |         |         |
-     |         |         |         |
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-lan.png" alt="redes-lan.png" /></p>
@@ -133,17 +80,6 @@
 <li>dirección física: 01:12:23:34:45:bb
 </li>
 </ul>
-
-<div class="org-src-container">
-
-<pre class="src src-ditaa">&lt;----*---------*---------*---------*----&gt;
-     |         ^         |         |
-     v         |         v         v
-   +-+-+     +-+-+     +---+     +---+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
 
 
 <div class="figure">
@@ -169,17 +105,6 @@
 </li>
 </ul>
 
-<div class="org-src-container">
-
-<pre class="src src-ditaa">-----+---------*---------*---------*-----
-     |         |         |         ^
-     |         v         |         |
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-dhcp-offer.png" alt="redes-dhcp-offer.png" /></p>
@@ -194,17 +119,6 @@
 </li>
 </ul>
 
-<div class="org-src-container">
-
-<pre class="src src-ditaa">-----+---------+---------*---------*-----
-     |         ^         |         |
-     |         |         |         v
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-dhcp-request.png" alt="redes-dhcp-request.png" /></p>
@@ -218,17 +132,6 @@
 <li>mensaje: <code>DHCPACK</code>
 </li>
 </ul>
-
-<div class="org-src-container">
-
-<pre class="src src-ditaa">-----+---------*---------*---------*-----
-     |         |         |         ^
-     |         v         |         |
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
 
 
 <div class="figure">
@@ -260,7 +163,7 @@ localhost.gcoop.com.ar has address 127.0.0.1
 ; &lt;&lt;&gt;&gt; DiG 9.8.4-P1 &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 8973
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 36320
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
@@ -269,9 +172,9 @@ localhost.gcoop.com.ar has address 127.0.0.1
 ;; ANSWER SECTION:
 osiux.com.       300 IN  A   96.8.118.129
 
-;; Query time: 160 msec
+;; Query time: 207 msec
 ;; SERVER: 192.168.10.3#53(192.168.10.3)
-;; WHEN: Wed Jun  5 12:38:28 2013
+;; WHEN: Wed Jun  5 15:13:37 2013
 ;; MSG SIZE  rcvd: 43
 </pre>
 </div>
@@ -407,29 +310,6 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </tr>
 </tbody>
 </table>
-
-<div class="org-src-container">
-
-<pre class="src src-gnuplot">reset 
-
-<span style="color: #8ae234;">set</span> xdata time
-<span style="color: #8ae234;">set</span> timefmt "%Y-%m-%d"
-<span style="color: #8ae234;">set</span> format x "%d"
-
-<span style="color: #8ae234;">set</span> <span style="color: #8ae234; font-weight: bold;">title</span> "<span style="color: #729fcf; font-weight: bold;">Plot</span>"
-<span style="color: #8ae234;">set</span> xlabel "dominios"
-<span style="color: #8ae234;">set</span> ylabel "cantidad"
-<span style="color: #8ae234;">set</span> xtics nomirror
-<span style="color: #8ae234;">set</span> ytics nomirror
-
-<span style="color: #729fcf; font-weight: bold;">plot</span> <span style="color: #ff6347;">data</span> <span style="color: #8ae234; font-weight: bold;">using</span> 2:1 <span style="color: #8ae234; font-weight: bold;">with</span> <span style="color: #edd400; font-weight: bold;">lines</span> <span style="color: #8ae234; font-weight: bold;">lw</span> 2 <span style="color: #8ae234; font-weight: bold;">lt</span> 3 <span style="color: #8ae234; font-weight: bold;">title</span> <span style="color: #ad7fa8; font-style: italic;">'data'</span>
-</pre>
-</div>
-
-
-<div class="figure">
-<p><img  src="img/ranking-dns.png" alt="ranking-dns.png" /></p>
-</div>
 </div>
 </div>
 </div>
@@ -448,17 +328,6 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </li>
 </ul>
 
-<div class="org-src-container">
-
-<pre class="src src-ditaa">&lt;----+&lt;--------+--------&gt;+--------&gt;+----&gt;
-     |         ^         |         |
-     v         |         v         v
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-arp-1.png" alt="redes-arp-1.png" /></p>
@@ -468,17 +337,6 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 <div id="outline-container-sec-4-2" class="outline-3">
 <h3 id="sec-4-2">D contesta, <b>mi IP es 10.4.14.225</b></h3>
 <div class="outline-text-3" id="text-4-2">
-<div class="org-src-container">
-
-<pre class="src src-ditaa">-----+---------+&lt;--------+---------+-----
-     |         |         |         ^
-     |         v         |         |
-   +-+-+     +-+-+     +-+-+     +-+-+
-   | A |     | B |     | C |     | D |
-   +---+     +---+     +---+     +---+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img  src="img/redes-arp-2.png" alt="redes-arp-2.png" /></p>
@@ -511,15 +369,15 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.625 seconds (157.54 hosts/sec). 0 
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
-64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.061 ms
-64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.054 ms
-64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.054 ms
-64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.055 ms
-64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.066 ms
+64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.092 ms
+64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.055 ms
+64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.052 ms
+64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.056 ms
+64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.053 ms
 
 --- 127.0.0.1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 3999ms
-rtt min/avg/max/mdev = 0.054/0.058/0.066/0.004 ms
+5 packets transmitted, 5 received, 0% packet loss, time 4001ms
+rtt min/avg/max/mdev = 0.052/0.061/0.092/0.017 ms
 </pre>
 </div>
 </div>
@@ -556,54 +414,22 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5">protocolos</h2>
 <div class="outline-text-2" id="text-5">
-<div class="org-src-container">
 
-<pre class="src src-ditaa">+----------+
-| TCP/UDP  |
-+----------+
-| IP/ICMP  |
-+----------+
-| ARP      |
-+----------+
-| ETHERNET |
-+----------+
-</pre>
+<div class="figure">
+<p><img  src="img/redes-protocolos-1.png" alt="redes-protocolos-1.png" /></p>
 </div>
 
 
 <div class="figure">
-<p><img  src="img/redes-protocolos.png" alt="redes-protocolos.png" /></p>
-</div>
-
-<div class="org-src-container">
-
-<pre class="src src-ditaa">                           +-------+
-                           | Data  |          &lt;-- Aplicaci&#243;n
-                           |       |
-                           |       |
-                  +--------+-------+
-                  | UDP    | UDP   |          &lt;-- Transporte
-                  | header | data  |
-                  |        |       |
-         +--------+--------+-------+
-         | IP     | IP             |          &lt;-- Internet
-         | header | data           |
-         |        |                |
-+--------+--------+----------------+--------+
-| Frame  | Frame                   | Frame  | &lt;-- Link
-| header | data                    | footer |
-|        |                         |        |
-+--------+-------------------------+--------+
-</pre>
+<p><img  src="img/redes-protocolos-2.png" alt="redes-protocolos-2.png" /></p>
 </div>
 </div>
 
 <div id="outline-container-sec-5-1" class="outline-3">
 <h3 id="sec-5-1">Qué tiene un paquete TCP/IP?</h3>
 <div class="outline-text-3" id="text-5-1">
-<div class="org-src-container">
-
-<pre class="src src-ditaa">+------------------------+--------------------------+
+<pre class="example">
++------------------------+--------------------------+
 | MAC origen fe:ca:fe:ca | MAC destino  ca:fe:ca:fe |
 +------------------------+--------------------------+
 | IP origen 192.168.1.22 | IP destino  96.8.118.129 |
@@ -617,12 +443,6 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 | G | K | H | T | N | N |                           |
 +---+---+---+---+---+---+---------------------------+
 </pre>
-</div>
-
-
-<div class="figure">
-<p><img  src="img/redes-arp-header.png" alt="redes-arp-header.png" /></p>
-</div>
 </div>
 </div>
 <div id="outline-container-sec-5-2" class="outline-3">
@@ -718,9 +538,11 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 <h2 id="sec-9">ChangeLog</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2013-04-04 jue]</span></span> primer borrador general.
+<li><span class="timestamp-wrapper"><span class="timestamp">[2013-06-05 mié]</span></span> simplifico y hago correcciones varias
 </li>
 <li><span class="timestamp-wrapper"><span class="timestamp">[2013-04-09 mar]</span></span> corrijo gráficos ascii-art
+</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2013-04-04 jue]</span></span> primer borrador general
 </li>
 </ul>
 </div>
