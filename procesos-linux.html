@@ -4,7 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Procesos Linux</title>
-<!-- 2013-06-05 mié 22:08 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 
@@ -15,7 +14,7 @@
 <div id="content">
 <h1 class="title">Procesos Linux</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
+<a href="index.html">index</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -88,7 +87,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 19291
+1 29695
 </pre>
 </li>
 </ul>
@@ -140,16 +139,16 @@ en ejecución:
 </div>
 
 <pre class="example">
- 3450 ?        S      4:39 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
-13860 ?        S      0:00  \_ sleep 1
+ 3450 ?        S     28:54 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
+ 2893 ?        S      0:00  \_ sleep 1
  3614 ?        Sl     0:10 /usr/lib/policykit-1/polkitd --no-debug
  3616 ?        Ss     0:00 /usr/sbin/sshd
  8476 ?        Ss     0:00  \_ sshd: osiris [priv]
- 8481 ?        S      0:01  |   \_ sshd: osiris@notty
- 8482 ?        Ss     0:01  |       \_ /usr/lib/openssh/sftp-server
+ 8481 ?        S      0:04  |   \_ sshd: osiris@notty
+ 8482 ?        Ss     0:03  |       \_ /usr/lib/openssh/sftp-server
 10102 ?        Ss     0:00  \_ sshd: osiris [priv]
-10107 ?        S      0:26      \_ sshd: osiris@notty
-10108 ?        Ss     0:14          \_ /usr/lib/openssh/sftp-server
+10107 ?        S      0:33  |   \_ sshd: osiris@notty
+10108 ?        Ss     0:19  |       \_ /usr/lib/openssh/sftp-server
 </pre>
 
 <div class="org-src-container">
@@ -168,7 +167,7 @@ init(1)─┬─accounts-daemon(4019)───{accounts-daemon}(4021)
         │               ├─apache2(3097)
         │               └─apache2(3098)
         ├─atd(3056)
-        ├─atop(29236)
+        ├─atop(9692)
 </pre>
 </div>
 </div>
@@ -188,26 +187,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 22:08:40 up 1 day,  7:06,  9 users,  load average: 2,25, 2,71, 2,80
-Tasks: 187 total,   3 running, 184 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 66,0 us,  8,2 sy,  0,0 ni, 23,7 id,  0,3 wa,  1,3 hi,  0,4 si,  0,0 st
-KiB Mem:   2044852 total,  1936168 used,   108684 free,   116732 buffers
-KiB Swap:        0 total,        0 used,        0 free,   873496 cached
+top - 00:56:22 up 6 days,  9:54, 10 users,  load average: 2,58, 2,58, 2,54
+Tasks: 209 total,   2 running, 207 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 70,2 us,  7,8 sy,  0,0 ni, 19,5 id,  0,3 wa,  1,7 hi,  0,4 si,  0,0 st
+KiB Mem:   2044852 total,  1956236 used,    88616 free,    28948 buffers
+KiB Swap:        0 total,        0 used,        0 free,   303184 cached
 
   PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
-12268 osiris    20   0  629m  23m  13m R  91,1  1,2   1715:47 gnome-settings-
-18756 osiris    20   0 1187m 374m  38m R  60,7 18,8 357:04.01 iceweasel
-13876 osiris    20   0 26428 1436 1044 R  15,2  0,1   0:00.04 top
-    1 root      20   0 10792  900  760 S   0,0  0,0   0:01.91 init
-    2 root      20   0     0    0    0 S   0,0  0,0   0:00.03 kthreadd
-    3 root      20   0     0    0    0 S   0,0  0,0   0:24.40 ksoftirqd/0
+12268 osiris    20   0  629m  15m 5660 R  97,1  0,8   8202:20 gnome-settings-
+18756 osiris    20   0 1887m 935m  96m S  27,0 46,8   2213:57 iceweasel
+ 2908 osiris    20   0 26428 1436 1044 R  16,2  0,1   0:00.03 top
+21761 osiris    20   0  602m  97m  11m S   5,4  4,9 363:10.95 plugin-containe
+    1 root      20   0 10792  848  708 S   0,0  0,0   0:05.43 init
+    2 root      20   0     0    0    0 S   0,0  0,0   0:00.10 kthreadd
+    3 root      20   0     0    0    0 S   0,0  0,0   1:45.79 ksoftirqd/0
     6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
-    7 root      -2   0     0    0    0 S   0,0  0,0   0:22.82 rcuc/0
+    7 root      -2   0     0    0    0 S   0,0  0,0   1:45.91 rcuc/0
     8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
     9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
    10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
    11 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/1
-   12 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/1
 </pre>
 
 

@@ -4,7 +4,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>entendiendo la red</title>
-<!-- 2013-06-05 mié 15:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 
@@ -14,7 +13,7 @@
 <div id="content">
 <h1 class="title">entendiendo la red</h1>
 <p>
-<a href="index.html">ABSOLUTELLY NO WARRANTY</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
+<a href="index.html">index</a> | <a href="http://creativecommons.org/licenses/by-sa/2.5/ar/">CC-BY-SA</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -22,21 +21,25 @@
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>centralizada
+</li>
+</ul>
 
 
 <div class="figure">
 <p><img  src="img/redes-centralizadas.png" alt="redes-centralizadas.png" /></p>
 </div>
-</li>
 
+<ul class="org-ul">
 <li>descentralizada
+</li>
+</ul>
 
 
 <div class="figure">
 <p><img  src="img/redes-descentralizadas.png" alt="redes-descentralizadas.png" /></p>
 </div>
-</li>
 
+<ul class="org-ul">
 <li>en malla o <i>mesh</i>
 
 
@@ -163,18 +166,18 @@ localhost.gcoop.com.ar has address 127.0.0.1
 ; &lt;&lt;&gt;&gt; DiG 9.8.4-P1 &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 36320
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 22570
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
-;osiux.com.          IN  A
+;osiux.com.			IN	A
 
 ;; ANSWER SECTION:
-osiux.com.       300 IN  A   96.8.118.129
+osiux.com.		300	IN	A	96.8.118.129
 
-;; Query time: 207 msec
+;; Query time: 229 msec
 ;; SERVER: 192.168.10.3#53(192.168.10.3)
-;; WHEN: Wed Jun  5 15:13:37 2013
+;; WHEN: Tue Jun 11 00:57:41 2013
 ;; MSG SIZE  rcvd: 43
 </pre>
 </div>
@@ -369,15 +372,15 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.625 seconds (157.54 hosts/sec). 0 
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
-64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.092 ms
-64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.055 ms
-64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.052 ms
-64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.056 ms
-64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.053 ms
+64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.067 ms
+64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.052 ms
+64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.054 ms
+64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.057 ms
+64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.055 ms
 
 --- 127.0.0.1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4001ms
-rtt min/avg/max/mdev = 0.052/0.061/0.092/0.017 ms
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 0.052/0.057/0.067/0.005 ms
 </pre>
 </div>
 </div>
