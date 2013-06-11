@@ -230,6 +230,21 @@ and (orientation : portrait) {
 
 /* Desktops and laptops ----------- */
 @media only screen 
+and (min-width : 1024px) {
+    body{font-size:1.3em;}
+    div#content{padding:1em;width:760px;}
+    div#postamble p{width:760px}
+    img{width:100%;height:auto;}
+    h1{font-size:1.8em;}
+    h2{font-size:1.7em;}
+    h3{font-size:1.6em;}
+    h4{font-size:1.5em;}
+    h5{font-size:1.4em;}
+    h6{font-size:1.3em;}
+    pre{font-size:0.9em}
+}
+/* Desktops and laptops ----------- */
+@media only screen 
 and (min-width : 1224px) {
     body{font-size:1.5em;}
     div#content{padding:1em;width:760px;}
