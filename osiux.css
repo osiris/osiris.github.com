@@ -24,6 +24,7 @@ h2, h3, h4, h5, h6{font-weight:bold;color:yellow;margin-top:35px;text-align:left
 tt{color:#00f;}
 .verbatim{margin:.5em 0;}
 p{text-align:left;}
+li{text-align:left;}
 .verbatim pre{margin:0;}
 .verbatim-caption{border:1px solid #ccc;border-bottom:0;background:#fff;display:block;padding:.2em;}
 table{border-collapse:collapse;margin:.5em 0;}
@@ -46,7 +47,7 @@ span.underline{text-decoration:underline;}
 .tag{background-color:#add8e6;font-weight:normal}
 .target{background-color:#551a8b;}
 pre{border:1pt solid #80c800;background-color:black;padding:4pt; white-space:pre-wrap;
-font-family:Monaco, Menlo, Consola, Inconsolata, "Courier New", monospace;}
+font-family:Monaco, Menlo, Consola, Inconsolata, "Courier New", monospace;text-align:left;}
 table{border-collapse:collapse;}
 td, th{vertical-align:top;}
 .org-info-search-highlight{background-color:#adefef;color:#000000;font-weight:bold;}
