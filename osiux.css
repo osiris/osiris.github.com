@@ -1,5 +1,5 @@
 body{padding:5;background:black none repeat scroll 0 0;border:0px solid #000;color:#e0e0e0;font-size:1em;
-font-family:Monaco, Menlo, Consola, Inconsolata, "Courier New", monospace;}
+font-family:Monaco, Menlo, "BitStream Vera Sans", Verdana}
 div#content {background:#111;margin-left:auto;margin-right:auto;text-align:center;}
 div#postamble p{margin-left:auto;margin-right:auto;text-align:left;color:#888;}
 code{color:#cfff00;font-weight:bold;}
@@ -47,7 +47,7 @@ span.underline{text-decoration:underline;}
 .tag{background-color:#add8e6;font-weight:normal}
 .target{background-color:#551a8b;}
 pre{border:1pt solid #80c800;background-color:black;padding:4pt; white-space:pre-wrap;
-font-family:Monaco, Menlo, Consola, Inconsolata, "Courier New", monospace;text-align:left;}
+font-family:Monaco, Menlo, Inconsolata, monospace;text-align:left;}
 table{border-collapse:collapse;}
 td, th{vertical-align:top;}
 .org-info-search-highlight{background-color:#adefef;color:#000000;font-weight:bold;}
@@ -210,7 +210,29 @@ and (orientation : portrait) {
     h6{font-size:1.3em;}
     pre{font-size:0.9em}
 }
-
+@media only screen 
+and (min-device-width : 240px) 
+and (max-device-width : 314px) 
+and (orientation : landscape) {
+/* Styles */
+    div#content{padding:0.5em;width:312px;}
+    div#postamble p{width:312px}
+    img{width:100%;height:auto;}
+    h1{font-size:1.8em;}
+    h2{font-size:1.7em;}
+    h3{font-size:1.6em;}
+    h4{font-size:1.5em;}
+    h5{font-size:1.4em;}
+    h6{font-size:1.3em;}
+    pre{font-size:0.8em}
+    .outline-text-2{margin-left:0.75em;margin-right:0.5em}
+    .outline-3{margin-left:0.75em;margin-right:0.5em}
+    .outline-text-3{margin-left:0.75em;margin-right:0.5em}
+    .outline-4{margin-left:0.75em;margin-right:0.5em}
+    .outline-text-4{margin-left:0.75em;margin-right:0.5em}
+    .outline-5{margin-left:0.75em;margin-right:0.5em}
+    .outline-text-5{margin-left:0.75em;margin-right:0.5em}
+}
 /* Smartphones (landscape) ----------- */
 @media only screen 
 and (min-width : 321px) {
@@ -348,6 +370,34 @@ and (min-width : 1224px) {
     h5{font-size:1.5em;}
     h6{font-size:1.4em;}
     pre{font-size:0.8em}
+}
+@media only screen 
+and (min-width : 1360px) {
+    body{font-size:1.2em;}
+    div#content{padding:1em;width:760px;}
+    div#postamble p{width:760px}
+    img{width:100%;height:auto;}
+    h1{font-size:1.7em;}
+    h2{font-size:1.6em;}
+    h3{font-size:1.5em;}
+    h4{font-size:1.4em;}
+    h5{font-size:1.3em;}
+    h6{font-size:1.2em;}
+    pre{font-size:0.9em}
+}
+@media only screen 
+and (min-width : 1366px) {
+    body{font-size:1.2em;}
+    div#content{padding:1em;width:760px;}
+    div#postamble p{width:760px}
+    img{width:100%;height:auto;}
+    h1{font-size:1.7em;}
+    h2{font-size:1.6em;}
+    h3{font-size:1.5em;}
+    h4{font-size:1.4em;}
+    h5{font-size:1.3em;}
+    h6{font-size:1.2em;}
+    pre{font-size:0.9em}
 }
 
 /* Large screens ----------- */
