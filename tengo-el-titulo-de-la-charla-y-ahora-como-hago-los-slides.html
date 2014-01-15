@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>tengo el título de la charla y ahora cómo hago los slides?</title>
+<!-- 2014-01-15 mié 09:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">tengo el título de la charla y ahora cómo hago los slides?</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+</p>
+<p>
+Hace varios años que me aventuré a dar charlas del proyecto
+<b>BuenosAiresLibre.org</b> <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>, recuerdo que me preguntaron
+"<b>y qué vas a decir?</b>" a lo cual contesté "<b>lo que dice en el wiki</b>"
+:-)
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">yendo de Beamer a Pinpoint, pasando por rST y HTML</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Asi fue que mis primeros slides fueron usando <b>Beamer</b>, mi primer
+contacto con el mundo <b>LaTeX</b>, me costó un poco agarrarle la mano
+pero resultó muy fácil editar el contenido de la charla <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> ya
+que se trataba de un archivo de texto plano, el cual lo podía
+convertir a <b>PDF</b> <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup> presionando <code>F2</code> y <code>F6</code> en el editor
+<b>Kile</b>.
+</p>
+
+<p>
+Siempre detesté aplicaciones para presentaciones, porque te la
+pasás perdiendo el tiempo decidiendo la <b>negrita</b>, <i>itálica</i>, etc,
+en lugar de escribir el contenido, para aclarar este tema un texto
+imprescindible de leer es <i>Procesadores de texto, estúpidos e
+ineficientes</i> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>.
+</p>
+
+<p>
+Luego descubrí <b>reStructuredText</b> <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup> o mejor conocido como
+<b>reST</b> que también parte de escribir un archivo de texto plano y
+luego poder convertirlo en un bonito <b>HTML</b>, un <b>PDF</b> o incluso un
+<b>HTML S5</b> <sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup> apto para presentaciones!
+</p>
+
+<p>
+Hice muchísimas presentaciones con <b>reST</b>, mayormente generando
+<b>PDF</b> a los cuales les daba un poco de vida armando fondos alusivos
+al tema de la charla o al logo y colores del evento de la misma,
+entonces escribir el contenido de la charla era sólo cuestión de
+editar un texto y ejecutando <code>make</code> se procesaban las imágenes que
+fueran necesarias y finalmente el archivo <b>TXT</b> convirtiéndolo en
+un bonito <b>PDF</b>.
+</p>
+
+<p>
+Para una charla en particular, utilizé <b>DZSlides</b> <sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>, que no
+es más que un <b>HTML</b> con unas clases y un <b>Javascript</b> que lo hace
+navegable, como siempre el formato <b>HTML</b> tiene la ventaja de
+necesitar sólo un <b>Firefox</b>, ser liviano y permitir publicarlo
+fácilmente.
+</p>
+
+<p>
+Desde que uso <b>org-mode</b>, también tengo la posibilidad de generar
+rápidamente slides con <b>Beamer</b> desde archivos de <b>org-mode</b>.
+</p>
+
+<p>
+Para las últimas charlas estuve usando <b>PinPoint</b> <sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup> que
+también parte de un archivo de texto plano y que aprovecha las
+capacidades 3D de las modernas placas de video actuales, con lo
+cual se consiguen vistosos efectos en las transiciones y permite
+cambiar fácilmente los fondos de cada slide, algo que no era muy
+cómodo usando <b>reST</b> o <b>Beamer</b>. <b>PinPoint</b> exporta muy fácilmente
+a un archivo <b>PDF</b> y es muy práctico, lo invoco desde <b>Vim</b>
+presionando <code>F4</code> a medida que voy escribiendo el contenido de la
+charla y me resulta muy versatil.
+</p>
+
+<p>
+Agregar en <code>.vimrc</code>:
+</p>
+
+<pre class="example">
+augroup filetypedetect
+  au BufNewFile,BufRead *.pin map &lt;F4&gt; :w&lt;CR&gt;:!pinpoint -f %&lt;CR&gt;
+augroup END
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">la verdad de la milanesa</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>siempre, pero siempre, el día de la charla, el proyector no
+funciona, o mejor dicho funciona (claro, cuando hay proyector)
+pero no toma el modo de video que tenés en la notebook, con
+suerte anda en 800x600.
+</li>
+
+<li>te quedaste hasta la madrugada haciendo los slides y un par de
+minutos antes de la charla, sin querer borraste los archivos y
+con suerte tenés una versión previa muy distinta a la última que
+te había quedado espectacular. Asi que si te quedan unos minutos
+intentás arreglarla o al menos agregarle una foto impactante.
+</li>
+
+<li>el visualizador de PDFs decide dejar de funcionar sin pre-aviso,
+intentás usar otro y se cuelga o muestra los slides en otro
+orden o en realidad no sabés si estás presionando las teclas
+correctas porque estabas acostumbrado a otro visor.
+</li>
+
+<li>no se ve un pomo de lo que hiciste! si esos degrades, grises y
+celestitos tan bonitos que elegiste con cuidado no están en la
+pantalla, lo mirás al proyector con cara de qué corno estás
+proyectando?
+</li>
+
+<li>te ponés nervioso a la primer tecla que le errás y empezás a
+hablar apurado, nada de lo que hacés todos los días te sale,
+hasta el comando más boludo, no encontrás lo que querés mostrar,
+y las teclas que tocás ahora hacen otra cosa y te quedás con
+cara de no entender nada.
+</li>
+
+<li>internet no existe! no funciona, o anda tan pero tan lento que
+no te permite mostrar nada de lo que tenías pensando mostrar.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">estar preparado para dar pelea</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Seguramente algo falló al hacer una presentación, es natural,
+siempre algo sucede, pero no hace falta que te golpees la cabeza
+contra la pared, lo mejor es aprender de los errores de la última
+charla para mejorar la próxima presentación, lo mejor es filmarse,
+asi podés mirar con ojo crítico que hiciste y que se puede mejorar!
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">algunos consejos</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li>hacer la menor cantidad de slides, menos de 20 para 50 minutos.
+</li>
+<li>monólogo de 15 minutos y diálogo de 35 minutos.
+</li>
+<li>poco texto, letras grandes, mucha imagen.
+</li>
+<li>tener todo offline, no depender ni siquiera de tu notebook.
+</li>
+<li>publicar el PDF antes de dar la charla, copiarlo a un pendrive.
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">mis charlas</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Todo el material utilizado en cada una de mis presentaciones está
+disponible en: <a href="http://pub.osiux.com/charlas"><a href="http://pub.osiux.com/charlas">http://pub.osiux.com/charlas</a></a>
+</p>
+
+<p>
+No sólo están los <code>pdf</code>, además están disponibles las imágenes
+<code>.jpg</code>, <code>.png</code> y los archivos de diseño <code>.svg</code> como asi también el
+código que los genera ya sea en formato <code>.tex</code>, <code>.rst</code>, <code>.org</code> y
+otros.
+</p>
+
+<p>
+Un listado cronológico se encuentra en: <a href="charlas.html">charlas.html</a>
+</p>
+
+<p>
+Espero sirva de ayuda a todo aquél que tenga ganas de compartir ya
+que todas están bajo licencia <b>CC-BY-SA</b> <sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup> o similar.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://wiki.buenosaireslibre.org">http://wiki.buenosaireslibre.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://pub.osiux.com/charlas/lugfi-jornadas-2007/presentacion-bal.tex">http://pub.osiux.com/charlas/lugfi-jornadas-2007/presentacion-bal.tex</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://pub.osiux.com/charlas/lugfi-jornadas-2007/presentacion-bal.pdf">http://pub.osiux.com/charlas/lugfi-jornadas-2007/presentacion-bal.pdf</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://osiux.com/procesadores-de-texto-estupidos-e-ineficientes">http://osiux.com/procesadores-de-texto-estupidos-e-ineficientes</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<a href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<a href="http://docutils.sourceforge.net/docs/user/slide-shows.s5.html">http://docutils.sourceforge.net/docs/user/slide-shows.s5.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<a href="http://paulrouget.com/dzslides">http://paulrouget.com/dzslides</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="https://wiki.gnome.org/Pinpoint">https://wiki.gnome.org/Pinpoint</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/deed.es_AR">http://creativecommons.org/licenses/by-sa/4.0/deed.es_AR</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2013-01-15</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

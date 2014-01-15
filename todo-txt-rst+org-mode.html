@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>TODO TXT | rst + org-mode</title>
+<!-- 2014-01-15 mié 09:49 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">TODO TXT | rst + org-mode</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+</p>
+<pre class="example">
+          _                 _              _            _
+         | |_    ___     __| |   ___      | |_  __  __ | |_
+         | __|  / _ \   / _` |  / _ \     | __| \ \/ / | __|
+         | |_  | (_) | | (_| | | (_) |    | |_   &gt;  &lt;  | |_
+          \__|  \___/   \__,_|  \___/      \__| /_/\_\  \__|
+
+          _                                                      _
+ _ __ ___| |_     _      ___  _ __ __ _      _ __ ___   ___   __| | ___
+| '__/ __| __|  _| |_   / _ \| '__/ _` |____| '_ ` _ \ / _ \ / _` |/ _ \
+| |  \__ \ |_  |_   _| | (_) | | | (_| |____| | | | | | (_) | (_| |  __/
+|_|  |___/\__|   |_|    \___/|_|  \__, |    |_| |_| |_|\___/ \__,_|\___|
+                                  |___/
+</pre>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Slides</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="http://pub.osiux.com/charlas/todo-txt-rst+org-mode-slides.pdf">http://pub.osiux.com/charlas/todo-txt-rst+org-mode-slides.pdf</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Introducción</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Sobre el Autor</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Osiris Alejandro Gómez, es Programador y Administrador
+GNU/Linux. Socio de <i>gcoop</i> <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> Cooperativa de Software
+Libre y miembro del grupo de organización de <i>BAL</i> <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>
+(Buenos Aires Libre), además colabora en <i>USLA</i> <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>
+(Usuarios de Software Libre de Argentina) y <i>CaFeLUG</i> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>
+(Grupo de Usuarios GNU/Linux de la Capital Federal).
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Descripción breve</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Utilización de <b>re-StructuredText</b> <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup> como fuente principal
+de un documento y <b>Org-mode</b> <sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup> para organización de
+tareas. Su uso tanto para la web, presentaciones, hojas de
+referencia y documentación de alta calidad.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Porqué usar TXT?</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>único formato multiplataforma.
+</li>
+<li>se puede leer y editar siempre.
+</li>
+<li>automatizar la creación/modificación.
+</li>
+<li>es versionable (git, svn, mercurial, etc).
+</li>
+<li>ocupa muy poco espacio (muy comprimible).
+</li>
+<li>no está atado a un software.
+</li>
+<li>podés usar cualquier editor de texto.
+</li>
+<li>exportable a cualquier formato.
+</li>
+</ul>
+
+
+<div class="figure">
+<p><a href="img/txt.png" width="640" height="480" alt="exportar TXT a RST ORG PNG JPG S5 PDF"><img src="tmb/txt.png" alt="exportar TXT a RST ORG PNG JPG S5 PDF" width="640" height="480" /></a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Editores de Texto</h2>
+<div class="outline-text-2" id="text-4">
+
+<div class="figure">
+<p><a href="img/emacs-vim-notepad.png" width="640" height="480" alt="exportar Emacs VIM Notepad"><img src="tmb/emacs-vim-notepad.png" alt="exportar Emacs VIM Notepad" width="640" height="480" /></a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Vim</h2>
+<div class="outline-text-2" id="text-5">
+
+<div class="figure">
+<p><a href="img/vim-vs-emacs.jpg" width="640" height="480" alt="exportar Emacs VIM Notepad"><img src="tmb/vim-vs-emacs.jpg" alt="exportar Emacs VIM Notepad" width="640" height="480" /></a>
+</p>
+</div>
+
+<ul class="org-ul">
+<li><b>Vi IMproved</b> es una versión mejorada del <code>vi</code> por Bill Joy <sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup> en 1976.
+</li>
+<li>Desarrollado por Bram Moolenaar <sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup> en 1991.
+</li>
+<li><code>vi</code> está disponible en todos los sistemas UNIX.
+</li>
+<li>Se pueden realizar operaciones muy complejas en muy pocos pasos.
+</li>
+<li>La gran mayoría de los comandos son de una sola tecla.
+</li>
+<li>Posee modos de Visualización, Inserción y Comando.
+</li>
+<li>Hay muchas aplicaciones que usan la misma cominación de teclas.
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Leer y Editar Archivos</h3>
+<div class="outline-text-3" id="text-5-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>:w [archivo]</code></td>
+<td class="left">Guarda los cambios del archivo actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>:wq</code></td>
+<td class="left">Sale guardando los cambios del archivo actual cambios</td>
+</tr>
+
+<tr>
+<td class="left"><code>:q!</code></td>
+<td class="left">Sale del editor sin guardar cambios</td>
+</tr>
+
+<tr>
+<td class="left"><code>:q</code></td>
+<td class="left">evita perder modificaciones</td>
+</tr>
+
+<tr>
+<td class="left"><code>:e archivo</code></td>
+<td class="left">Edita el archivo indicado</td>
+</tr>
+
+<tr>
+<td class="left"><code>:r archivo</code></td>
+<td class="left">Lee el contenido del archivo y lo escribe en el buffer actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>gf</code></td>
+<td class="left">Abre el archivo bajo el cursor (usar CTRL-o para regresar)</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL+]</code></td>
+<td class="left">Da un salto a donde se define el símbolo debajo del cursor (*)</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL+t</code></td>
+<td class="left">Regresa al archivo anterior luego de hacer un salto (*)</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Usar <code>ctags</code> para que funcione correctamente, al menos en PHP, C y python.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">Modo Inserción</h3>
+<div class="outline-text-3" id="text-5-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>i</code></td>
+<td class="left">Ingresa a izquierda del caracter actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>I</code></td>
+<td class="left">Ingresa al principio de la linea</td>
+</tr>
+
+<tr>
+<td class="left"><code>a</code></td>
+<td class="left">Ingresa a derecha del caracter actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>A</code></td>
+<td class="left">Ingresa al final de la linea</td>
+</tr>
+
+<tr>
+<td class="left"><code>o</code></td>
+<td class="left">Inserta un linea debajo de la actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>O</code></td>
+<td class="left">Inserta una linea arriba de la actual</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3">Movimientos</h3>
+<div class="outline-text-3" id="text-5-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>H, L</code></td>
+<td class="left">Izquierda, Derecha</td>
+</tr>
+
+<tr>
+<td class="left"><code>J, K</code></td>
+<td class="left">Abajo, Arriba</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL-d</code></td>
+<td class="left">Avaza media pantalla</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL-u</code></td>
+<td class="left">Retrocede media pantalla</td>
+</tr>
+
+<tr>
+<td class="left"><code>w, W</code></td>
+<td class="left">Avanza de a palabras, W hace saltos mas largos</td>
+</tr>
+
+<tr>
+<td class="left"><code>b, B</code></td>
+<td class="left">Como <b>w, W</b> en sentido inverso</td>
+</tr>
+
+<tr>
+<td class="left"><code>e, E</code></td>
+<td class="left">Como <b>w, W</b> coloca el cursor a la derecha de la palabra</td>
+</tr>
+
+<tr>
+<td class="left"><code>0, $</code></td>
+<td class="left">Principio y final de la linea actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>gg, G</code></td>
+<td class="left">Ir al principio o final del archivo</td>
+</tr>
+
+<tr>
+<td class="left"><code>:nro</code></td>
+<td class="left">Se dirige directamente al número de línea indicado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4">Borrar y Deshacer</h3>
+<div class="outline-text-3" id="text-5-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>D, d$</code></td>
+<td class="left">Borra todos los caracteres hasta el final de la linea</td>
+</tr>
+
+<tr>
+<td class="left"><code>x</code></td>
+<td class="left">Elimina el caracter bajo el cursor <b><b>delete</b></b></td>
+</tr>
+
+<tr>
+<td class="left"><code>X</code></td>
+<td class="left">Elimina el caracter bajo el cursor <b><b>backpace</b></b></td>
+</tr>
+
+<tr>
+<td class="left"><code>dd</code></td>
+<td class="left">Elimina la linea actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>d{5w}</code></td>
+<td class="left">Borra 5 palabras hacia la derecha</td>
+</tr>
+
+<tr>
+<td class="left"><code>u</code></td>
+<td class="left">Deshacer el último cambio</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL-R</code></td>
+<td class="left">Rehacer</td>
+</tr>
+
+<tr>
+<td class="left"><code>U</code></td>
+<td class="left">Deshacer todos los cambios de la linea actual</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5">Búsquedas</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+Opciones para habilitar búsquedas inmediatas y subrayado de
+resultado:
+</p>
+
+<pre class="example">
+:set incsearch
+:set ignorecase smartcase
+:set hlsearch
+</pre>
+
+<p>
+<code>/{patrón}, ?{patrón}</code>
+</p>
+
+<p>
+Inicia la búsqueda de la expresión regular {patrón}. Con / es
+una búsqueda hacia abajo y ? hacia abajo.
+</p>
+
+<p>
+<code>n, N</code>
+</p>
+
+<p>
+Para avanzar o retroceder en los resultados de la búsqueda.
+</p>
+
+<p>
+<code>vimgrep /{patrón}/ *</code>
+</p>
+
+<p>
+Busca la expresión regular en todos los archivos del directorio
+actual.  Otra variante es utilizar <code>*</code> para iniciar una
+búsqueda recursiva o <code>*.php</code> para restringir la búsqueda
+solamente a un tipo de archivo.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6">Buscar y Reemplazar</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+<code>:{rango}s/{a_buscar}/{reemplazo}/g</code>
+</p>
+
+<p>
+Reemplaza todas las apariciones de {a_buscar} por {reemplazo} en
+el sector indicado por {rango}. Si omite {rango} se actúa
+solamente en la linea actual, si coloca % como {rango} se
+reemplaza en todo el archivo. También puede invocar el reemplazo
+desde el modo visual (iniciado con <b>v</b>) para actuar solamente en
+la porción definida.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-7" class="outline-3">
+<h3 id="sec-5-7">Copiar y pegar</h3>
+<div class="outline-text-3" id="text-5-7">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>y{3w}</code></td>
+<td class="left">Copia (yank) copia 3 palabras</td>
+</tr>
+
+<tr>
+<td class="left"><code>y$</code></td>
+<td class="left">Copia hasta hasta el final de linea</td>
+</tr>
+
+<tr>
+<td class="left"><code>yy</code></td>
+<td class="left">Copia la linea completa</td>
+</tr>
+
+<tr>
+<td class="left"><code>p, P</code></td>
+<td class="left">Pega el texto debajo o arriba de la linea actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>ddp</code></td>
+<td class="left">Invierte dos líneas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-8" class="outline-3">
+<h3 id="sec-5-8">Otros modos de selección</h3>
+<div class="outline-text-3" id="text-5-8">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>v</code></td>
+<td class="left">Define una zona de selección</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL-v</code></td>
+<td class="left">Similar al anterior pero en bloque</td>
+</tr>
+
+<tr>
+<td class="left"><code>SHIFT-v</code></td>
+<td class="left">Útil para seleccionar lineas de texto completas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-9" class="outline-3">
+<h3 id="sec-5-9">Autocompletado</h3>
+<div class="outline-text-3" id="text-5-9">
+<p>
+<code>CTRL-x CTRL-p, CTRL-x CTRL-n</code>
+</p>
+
+<p>
+Sugiere palabras similares a la actual buscando hacia arriba o
+abajo.  Funciona en cualquier tipo de archivo.
+</p>
+
+<p>
+<code>CTRL-x CTRL-f</code>
+</p>
+
+<p>
+Autocompleta nombres de archivos.
+</p>
+
+<p>
+<code>CTRL-x CTRL-o</code>
+</p>
+
+<p>
+Sugiere términos en base a la sintaxis del archivo actual. Por
+ejemplo si edita un archivo .html sugiere elementos de HTML y
+reconoce el contexto.  En archivos .py inspecciona objetos de
+python, o en archivos .css sugiere elementos, propiedades y
+valores.  En otros lenguajes como C hay que usar el comando
+externo <b><b>ctags</b></b> para que funcione. Igual es groso&#x2026;
+</p>
+
+<p>
+<code>CTRL-x CTRL-k</code>
+</p>
+
+<p>
+Autocompleta consultando un diccionario personalizado. Usar algo
+como <b>:set dictionary=palabras.txt</b> para definir el diccionario.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-10" class="outline-3">
+<h3 id="sec-5-10">Ventanas y Tabs</h3>
+<div class="outline-text-3" id="text-5-10">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>:split</code></td>
+<td class="left">Divide la ventana horizontalmente</td>
+</tr>
+
+<tr>
+<td class="left"><code>:vsplit</code></td>
+<td class="left">Similar al anterior pero verticalmente</td>
+</tr>
+
+<tr>
+<td class="left"><code>:Explore</code></td>
+<td class="left">Abre un navegador de archivos</td>
+</tr>
+
+<tr>
+<td class="left"><code>CTRL-w</code></td>
+<td class="left">Alterna entre ventanas</td>
+</tr>
+
+<tr>
+<td class="left"><code>:tabNew</code></td>
+<td class="left">Crea un nuevo tab</td>
+</tr>
+
+<tr>
+<td class="left"><code>:tabNext</code></td>
+<td class="left">Alterna entre tabs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-11" class="outline-3">
+<h3 id="sec-5-11">Integración con bash</h3>
+<div class="outline-text-3" id="text-5-11">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>:!comando</code></td>
+<td class="left">Ejecuta el comando y muestra la salida en pantalla</td>
+</tr>
+
+<tr>
+<td class="left"><code>:r !comando</code></td>
+<td class="left">Ejecuta el comando e inserta la salida de pantalla</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">Por ejemplo <b>:r !cal</b> inserta el calendario del mes actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>:shell</code></td>
+<td class="left">Inicia un proceso bash, utilice <b>exit</b> para regresar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-12" class="outline-3">
+<h3 id="sec-5-12">Atajos y macros</h3>
+<div class="outline-text-3" id="text-5-12">
+<p>
+<code>:map &lt;F5&gt; :r !date&lt;CR&gt;</code>
+</p>
+
+<p>
+Asigna una operación a la pulsación de una tecla. En este caso
+cuando se pulse la tecla <b>F5</b> se ha va escribir la hora actual
+en el documento.  El comando <b>imap</b> es similar pero funciona
+en modo insersión.
+</p>
+
+<p>
+<code>:abbr ,e micorreo@gcoop.coop</code>
+</p>
+
+<p>
+Genera una abreviatura que se expande automáticamente. En ese
+ejemplo al escribir *,e* VIM escribirá una dirección de correo
+completa.
+</p>
+
+<p>
+<code>qa</code>
+</p>
+
+<p>
+Guarda en un registro (*"a"* en este caso) todas las
+operaciones que realice. Tiene que pulsar la tecla <b>q</b> para
+terminar la grabación.
+</p>
+
+<p>
+<code>@a</code>
+</p>
+
+<p>
+Repite las operaciones que ha guardado en el registro
+<b>a</b>. Puede usar un número antes de @ para repetir la acción
+muchas veces.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5-13" class="outline-3">
+<h3 id="sec-5-13">Corrector ortográfico</h3>
+<div class="outline-text-3" id="text-5-13">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>:set spell spelllang=es</code></td>
+<td class="left">Habilita el corrector en español</td>
+</tr>
+
+<tr>
+<td class="left"><code>=z</code></td>
+<td class="left">Muestra sugerencias de corrección</td>
+</tr>
+
+<tr>
+<td class="left"><code>zg</code></td>
+<td class="left">Agrega en el diccionario la palabra</td>
+</tr>
+
+<tr>
+<td class="left"><code>]s, [s</code></td>
+<td class="left">Avanza o retrocede palabras incorrectas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-5-14" class="outline-3">
+<h3 id="sec-5-14">Otros</h3>
+<div class="outline-text-3" id="text-5-14">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>.</code></td>
+<td class="left">Repite el último cambio</td>
+</tr>
+
+<tr>
+<td class="left"><code>SHIFT-j</code></td>
+<td class="left">Une la linea actual con la siguente, elimina el salto de linea</td>
+</tr>
+
+<tr>
+<td class="left"><code>gqap</code></td>
+<td class="left">Aplica formato a todo el párrafo</td>
+</tr>
+
+<tr>
+<td class="left"><code>:set wildmenu</code></td>
+<td class="left">Visor de autocompletado en la barra de comandos</td>
+</tr>
+
+<tr>
+<td class="left"><code>:colorscheme</code></td>
+<td class="left">Alterna el tema de colores actual</td>
+</tr>
+
+<tr>
+<td class="left"><code>:set paste</code></td>
+<td class="left">Habilita <b>pegar</b> texto desde aplicaciones externas</td>
+</tr>
+
+<tr>
+<td class="left"><code>:X</code></td>
+<td class="left">Solicita una contraseña para cifrar el contenido de un archivo</td>
+</tr>
+
+<tr>
+<td class="left"><code>%</code></td>
+<td class="left">Busca el complemento del paréntesis, llave o corchete bajo el cursor</td>
+</tr>
+
+<tr>
+<td class="left"><code>*</code></td>
+<td class="left">Va al primer caracter de la siguiente linea</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">re-StructuredText</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">Instalación</h3>
+<div class="outline-text-3" id="text-6-1">
+<pre class="example">
+apt-get install python-docutils
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">Generar HTML/Slides/Latex/PDF</h3>
+<div class="outline-text-3" id="text-6-2">
+<pre class="example">
+rst2html presentacion.txt &gt;presentacion.html
+rst2s5 presentacion.txt &gt;presentacion.html
+rst2latex presentacion.txt presentacion.tex
+rst2pdf presentacion.txt -o presentacion.pdf
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3">Sintaxis</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Es extremandamente simple, prácticamente es un texto plano con
+algunas convenciones.
+</p>
+</div>
+
+<div id="outline-container-sec-6-3-1" class="outline-4">
+<h4 id="sec-6-3-1">Resaltado y Listas</h4>
+<div class="outline-text-4" id="text-6-3-1">
+<pre class="example">
+normal, *italica*
+**negrita**, ``código``
+\*evitar italica*
+a. item a
+* item dos
+- item tres
+      - tres uno
+4. cuatro
+      4.1. cuatro uno
+#. cinco
+#. seis
+</pre>
+
+<pre class="example">
+================
+titulo documento
+================
+
+-----------------------
+subtitulo del documento
+-----------------------
+
+título capítulo 1
+=================
+
+título sección 1
+----------------
+
+título sección 1.1
+``````````````````
+
+título subsección 2
+~~~~~~~~~~~~~~~~~~~
+</pre>
+
+
+<div class="figure">
+<p><img src="img/secciones.png" alt="secciones.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-3-2" class="outline-4">
+<h4 id="sec-6-3-2">Tablas</h4>
+<div class="outline-text-4" id="text-6-3-2">
+<pre class="example">
+========== ===========  
+ columna 1  columna 2   
+========== ===========  
+ fila 1     celda       
+ fila 2     celda       
+========== ===========  
+
++-----------+-------------+
+| columna 1 |  columna 2  |
++===========+=============+
+| fila 1    |  *italica*  |
++-----------+-------------+
+| segunda   |  osiux_     |
+| fila      |             |
++-----------+-------------+
+| fila 3    | **negrita** |
++-----------+-------------+
+| fila 4    | - item a    |
+|           | - item b    |
++-----------+-------------+
+| ``codigo de ejemplo``   |
+| ``en una tabla``        |
++-----------+-------------+
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3-3" class="outline-4">
+<h4 id="sec-6-3-3">Links</h4>
+<div class="outline-text-4" id="text-6-3-3">
+<pre class="example">
+`enlace uno`_
+
+enlace dos http://osiux.com
+
+enlace tres_
+
+`enlace cuatro`_
+
+`enlace seis &lt;http://osiux.com.ar&gt;`_
+
+`enlace siete &lt;mailto:noreply@osiux.com&gt;`_
+
+|osiux|_
+
+.. _enlace uno: http://vim.org
+.. _tres: http://vim.org
+.. _enlace cuatro: `enlace cinco`_
+.. _enlace cinco: http:://osiux.com
+.. |osiux| replace:: re-StructuredText
+.. _osiux: http://osiux.com.ar
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3-4" class="outline-4">
+<h4 id="sec-6-3-4">Referencias</h4>
+<div class="outline-text-4" id="text-6-3-4">
+<pre class="example">
+Que ganas de tomar un fernet [1]_
+aunque una caipiroska [#]_ no vendría mal
+igual nunca está demás una stella [#stella]_
+para el verano es bueno el clericó [#clerico]_ y la sangría [#sangria]_.
+
+.. [1] también conocido como *Branca*
+.. [#] la suma de vodka + caipiriña
+.. [#stella] esta mejor que la quilmes
+.. [#clerico] o como ponerle onda a una ensalada de frutas
+.. [#sangria] limón y azucar para levantar un tetra
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3-5" class="outline-4">
+<h4 id="sec-6-3-5">Imágenes</h4>
+<div class="outline-text-4" id="text-6-3-5">
+<pre class="example">
+.. image:: img/no-soy-un-pirata.jpg
+   :width: 6cm
+   :height: 6cm
+   :alt: no soy un pirata, compartir es bueno
+   :align: center
+   :target: http://buenosaireslibre.org
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3-6" class="outline-4">
+<h4 id="sec-6-3-6">Reemplazar</h4>
+<div class="outline-text-4" id="text-6-3-6">
+<pre class="example">
+* Attribution                                     |BY|           
+* Attribution-Share Alike                         |BY| |SA|     
+* Attribution-No Derivative Works                 |BY| |ND|     
+* Attribution-Noncommercial                       |BY| |NC|     
+* Attribution-Noncommercial-No Derivative Works   |BY| |NC| |ND|
+* Attribution-Noncommercial-Share                 |BY| |NC| |SA|
+.. |BY| image:: img/CC-BY.png
+.. |SA| image:: img/CC-SA.png
+.. |ND| image:: img/CC-ND.png
+.. |NC| image:: img/CC-NC.png
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-3-7" class="outline-4">
+<h4 id="sec-6-3-7">Código</h4>
+<div class="outline-text-4" id="text-6-3-7">
+<pre class="example">
+.. code-block:: php
+
+    &lt;?php
+        $x="Hola Mundo";
+        echo $x;
+    ?&gt;
+
+.. code-block:: python
+
+    def p(x)::
+        print('Hola ' + x)
+
+    p('Mundo');
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4">Aplicaciones</h3>
+<div class="outline-text-3" id="text-6-4">
+</div><div id="outline-container-sec-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1">Wordpress</h4>
+<div class="outline-text-4" id="text-6-4-1">
+<ul class="org-ul">
+<li><a href="http://bazaar.launchpad.net/~gldnspud/rest-wordpress/trunk/files">http://bazaar.launchpad.net/~gldnspud/rest-wordpress/trunk/files</a>
+</li>
+<li><a href="http://bazaar.launchpad.net/~p00ya/rest-wordpress/dos-hacks/files">http://bazaar.launchpad.net/~p00ya/rest-wordpress/dos-hacks/files</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4-2" class="outline-4">
+<h4 id="sec-6-4-2">Drupal</h4>
+<div class="outline-text-4" id="text-6-4-2">
+<ul class="org-ul">
+<li><a href="http://drupal.org/node/160846">http://drupal.org/node/160846</a>
+</li>
+<li><a href="http://drupal.org/node/141">http://drupal.org/node/141</a>
+</li>
+<li><a href="http://www.vasudevaservice.com/repository/pub/reStructuredText4Drupal/">http://www.vasudevaservice.com/repository/pub/reStructuredText4Drupal/</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4-3" class="outline-4">
+<h4 id="sec-6-4-3">Vim</h4>
+<div class="outline-text-4" id="text-6-4-3">
+<p>
+Para obtener el coloreo de la sintaxis sólo es necesario incluir
+al principio del documento la siguiente línea:
+</p>
+
+<pre class="example">
+.. -*- mode: rst -*-
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-4-4" class="outline-4">
+<h4 id="sec-6-4-4">Emacs</h4>
+<div class="outline-text-4" id="text-6-4-4">
+<ul class="org-ul">
+<li><a href="http://docutils.sourceforge.net/docs/user/emacs.html">http://docutils.sourceforge.net/docs/user/emacs.html</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4-5" class="outline-4">
+<h4 id="sec-6-4-5">MoinMoin</h4>
+<div class="outline-text-4" id="text-6-4-5">
+<p>
+MoinMoin parsea reST con sólo incluir #!rst entre triples llaves.
+</p>
+
+<pre class="example">
+{{{#!rst
+Texto *reST*
+}}}
+</pre>
+
+<ul class="org-ul">
+<li><a href="http://moinmo.in/HelpOnParsers/ReStructuredText">http://moinmo.in/HelpOnParsers/ReStructuredText</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4-6" class="outline-4">
+<h4 id="sec-6-4-6">Python</h4>
+<div class="outline-text-4" id="text-6-4-6">
+<p>
+Sphinx genera la documentación oficial de python usando <b>reST</b>.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://sphinx.pocoo.org/">http://sphinx.pocoo.org/</a>
+</li>
+<li><a href="http://docs.python.org/dev/">http://docs.python.org/dev/</a>
+</li>
+</ul>
+
+<p>
+<b>reST</b> se utiliza para la creación de los PEPs (Python Enhancement Proposals).
+</p>
+
+<ul class="org-ul">
+<li><a href="http://www.python.org/dev/peps/pep-0001/">http://www.python.org/dev/peps/pep-0001/</a>
+</li>
+</ul>
+
+<p>
+EpyDoc genera documentación para Python y soporta <b>reST</b>.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://epydoc.sourceforge.net/manual-othermarkup.html">http://epydoc.sourceforge.net/manual-othermarkup.html</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4-7" class="outline-4">
+<h4 id="sec-6-4-7">rst2a</h4>
+<div class="outline-text-4" id="text-6-4-7">
+<p>
+Un interesante servicio web que al pasarle una url de un texto
+escrito en <b>reST</b> puede devolver el contenido en formato HTML o PDF
+eligiendo diferentes templates, esto evita tener instalado <b>reST</b>.
+</p>
+
+<ul class="org-ul">
+<li><a href="http://rst2a.com/">http://rst2a.com/</a>
+</li>
+<li><a href="http://api.rst2a.com/1.0/rst2/html?uri=http://pub.osiux.com/restructuredtext/reStructuredText.txt">http://api.rst2a.com/1.0/rst2/html?uri=http://pub.osiux.com/restructuredtext/reStructuredText.txt</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">vim-outliner</h2>
+<div class="outline-text-2" id="text-7">
+<pre class="example">
+vim-outliner
+    [_] 66% calcula porcentaje tarea completada
+        [X] item 1
+        [_] item 2
+        [X] 100% item 3
+            [X] item 3.1
+            [X]	item 3.2
+    [X] comandos checkbox
+        : ,,cb	inserta un checkbox
+        : ,,cx  cambia el estado del checkbox
+        : ,,cd  elimina checkbox
+        : ,,cp  crea checkbox con porcentaje
+        : ,,cz  recalcula porcentaje
+    [_] niveles
+        : ,,0  nivel 1
+        : ,,1  nivel 2
+        : ,,9  ultimo
+    [_] fechas
+        : ,,d  inserta el día
+        : ,,t  inserta la hora
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Gething This Done</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+Es un método de gestión de las actividades y el título de un libro
+de David Allen <sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup>, libro que en español se ha editado con
+el título <b>Organízate con eficacia</b> <sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup>.
+</p>
+
+<p>
+<b>GTD</b> se basa en el principio de que una persona necesita borrar de
+su mente todas las tareas que tiene pendientes guardándolas en un
+lugar específico. De este modo, se libera a la mente del trabajo de
+recordar todo lo que hay que hacer, y se puede concentrar en la
+efectiva realización de aquellas tareas.
+</p>
+
+<p>
+A diferencia de otros expertos en gestión del tiempo, <b>Allen</b> no se
+centra en el establecimiento de prioridades. En su lugar, él insta a
+la creación de listas de tareas específicas para cada contexto, por
+ejemplo, una lista de llamadas telefónicas pendientes o recados que
+hacer en la ciudad. También sugiere que cualquier nueva tarea que
+pueda ser completada en menos de dos minutos debería ser hecha
+inmediatamente.
+</p>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">Workflow</h3>
+<div class="outline-text-3" id="text-8-1">
+
+<div class="figure">
+<p><img src="img/gtd-workflow.png" alt="GTD Workflow" width="640" height="480" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-1-1" class="outline-4">
+<h4 id="sec-8-1-1">Recopilar</h4>
+<div class="outline-text-4" id="text-8-1-1">
+<ul class="org-ul">
+<li>Capturar todo en <b><b>INBOX</b></b> y seguir trabajando
+<ul class="org-ul">
+<li>Ideas
+</li>
+<li>Tareas
+</li>
+<li>Recordatorios
+</li>
+<li>Cosas por hacer en general
+</li>
+</ul>
+</li>
+<li>Utilizar una herramienta de captura ágil
+</li>
+<li>Capturar&#x2026; y olvidarse de momento
+</li>
+<li>Aplicar <b>regla de los 2 minutos</b>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-1-2" class="outline-4">
+<h4 id="sec-8-1-2">Procesar</h4>
+<div class="outline-text-4" id="text-8-1-2">
+<ul class="org-ul">
+<li>Procesar por completo el <b>INBOX</b>
+<ul class="org-ul">
+<li>Si requiere actuar
+</li>
+<li>Delegar a alguien
+<ul class="org-ul">
+<li>Asignar a carpeta (sólo si depende de mi)
+</li>
+</ul>
+</li>
+<li>No requiere actuar
+<ul class="org-ul">
+<li>Eliminar
+</li>
+<li>Archivar
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Procesar de manera ágil, tomar decisiones rápidas
+</li>
+<li>Aislarse de las distracciones
+</li>
+<li>Aplicar <b>regla de los 2 minutos</b>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-1-3" class="outline-4">
+<h4 id="sec-8-1-3">Organizar</h4>
+<div class="outline-text-4" id="text-8-1-3">
+<ul class="org-ul">
+<li>Asignar acciones a una carpeta
+<ul class="org-ul">
+<li><b>PRÓXIMO</b>, a realizar en un lapso de tiempo corto
+</li>
+<li><b>PROYECTO</b>, cosas a realizar dentro de un proyecto
+</li>
+<li><b>EN ESPERA</b>, depende de otra persona
+</li>
+<li><b>ALGÚN DÍA</b>, no tiene prioridad temporal
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-8-1-4" class="outline-4">
+<h4 id="sec-8-1-4">Revisar</h4>
+<div class="outline-text-4" id="text-8-1-4">
+<ul class="org-ul">
+<li>Fijar un momento para la revisión
+</li>
+<li>Revisión ágil y diligente
+</li>
+<li>Localizar y cuidar las tareas clave
+</li>
+<li>Las acciones cambian de carpeta
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Emacs</h2>
+<div class="outline-text-2" id="text-9">
+
+<div class="figure">
+<p><img src="img/real-programmers.png" alt="real-programmers.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Emacs es un editor de texto desarrollado por <b>Richard Stallman</b> <sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup>
+</li>
+<li>Es un intérprete LISP, los comandos pueden ser modificados.
+</li>
+<li>Es muy poderoso y algo dificil al principio.
+</li>
+<li>Está disponible para consola y para <i>X</i>.
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1">Convención de Teclas</h3>
+<div class="outline-text-3" id="text-9-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-g</code></td>
+<td class="left">Mantener pulsada Ctrl, presionar g y soltar Ctrl</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x C-s</code></td>
+<td class="left">Mantener pulsada Ctrl, presionar x, presionar s, soltar Ctrl</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x f</code></td>
+<td class="left">Mantener pulsada Ctrl, presionar x, presionar f</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-q</code></td>
+<td class="left">Mantener pulsada Meta (Esc o Alt), presionar q, soltar Meta</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2">Rectángulos</h3>
+<div class="outline-text-3" id="text-9-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-SPACE</code></td>
+<td class="left">Marcar una region</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x r t</code></td>
+<td class="left">Reemplaza un rectangulo con caracter</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x r d</code></td>
+<td class="left">Borrar un rectangulo</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x r o</code></td>
+<td class="left">Inserta un rectangulo en blanco</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x r c</code></td>
+<td class="left">Reemplaza un rectangulo con espacios</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-3" class="outline-3">
+<h3 id="sec-9-3">Buffers</h3>
+<div class="outline-text-3" id="text-9-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-x C-f</code></td>
+<td class="left">Buscar un archivo</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x C-k</code></td>
+<td class="left">Cerrar un buffer</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x C-s</code></td>
+<td class="left">Guardar buffer en un archivo</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x C-w</code></td>
+<td class="left">Guardar buffer en un archivo distinto</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-&lt;</code></td>
+<td class="left">Ir al principio del buffer</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-&gt;</code></td>
+<td class="left">Ir al final del buffer</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x C-b</code></td>
+<td class="left">Listar buffers abiertos</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x b</code></td>
+<td class="left">Cambiar de buffer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-4" class="outline-3">
+<h3 id="sec-9-4">Movimiento</h3>
+<div class="outline-text-3" id="text-9-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>M-v</code></td>
+<td class="left">Retroceder página</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-f</code></td>
+<td class="left">Avanza un caracter</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-b</code></td>
+<td class="left">Retrocede un caracter</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-p</code></td>
+<td class="left">Línea anterior</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-n</code></td>
+<td class="left">Siguiente línea</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-f</code></td>
+<td class="left">Siguiente palabra</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-b</code></td>
+<td class="left">Palabra anterior</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-a</code></td>
+<td class="left">Ir al principio de la línea</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-e</code></td>
+<td class="left">Ir al final de la línea</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-v</code></td>
+<td class="left">Avanzar página</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-5" class="outline-3">
+<h3 id="sec-9-5">Edición</h3>
+<div class="outline-text-3" id="text-9-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-x u</code></td>
+<td class="left">Deshacer</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-d</code></td>
+<td class="left">Borrar caracter</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-g</code></td>
+<td class="left">Cancela cualquier comando</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-x</code></td>
+<td class="left">Permite ejecutar comandos interactivos</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-w</code></td>
+<td class="left">Cortar</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-y</code></td>
+<td class="left">Pegar</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-w</code></td>
+<td class="left">Copiar</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-y</code></td>
+<td class="left">Rota el portapapeles</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-q</code></td>
+<td class="left">Justifica un parrafo</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-6" class="outline-3">
+<h3 id="sec-9-6">Buscar y Reemplazar</h3>
+<div class="outline-text-3" id="text-9-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-s</code></td>
+<td class="left">Busqueda hacia adelante</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-r</code></td>
+<td class="left">Busqueda hacia atrás</td>
+</tr>
+
+<tr>
+<td class="left"><code>M-%</code></td>
+<td class="left">Buscar y Reemplazar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9-7" class="outline-3">
+<h3 id="sec-9-7">Ventanas</h3>
+<div class="outline-text-3" id="text-9-7">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><code>C-x 0</code></td>
+<td class="left">Elimina ventana</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x 1</code></td>
+<td class="left">1 sola ventana</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x 2</code></td>
+<td class="left">2 ventanas verticales</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x 3</code></td>
+<td class="left">2 ventanas horizontales</td>
+</tr>
+
+<tr>
+<td class="left"><code>C-x o</code></td>
+<td class="left">Ir a la otra ventana</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">org-mode</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Desarrollado por Carsten Dominik.
+</li>
+<li>Org mantiene simples las cosas simples.
+</li>
+<li>Es un outliner, estructura de arbol, jerarquico con posibilidad
+de ser colapsado.
+</li>
+<li>Posee un editor de tablas automático con capacitdades de hoja de
+cálculo.
+</li>
+<li>Incluye una completa agenda integrada.
+</li>
+<li>Editor de listas (TODO y checkboxes).
+</li>
+<li>Se puede usar el sistema GTD <sup><a id="fnr.12" name="fnr.12" class="footref" href="#fn.12">12</a></sup>.
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-10-1" class="outline-3">
+<h3 id="sec-10-1">Configurar <code>~/.emacs</code></h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>Es necesario personalizar la configuración del archivo ``~/.emacs``.
+</li>
+<li>A partir de emacs 22 viene incluido.
+</li>
+<li>Descargar <a href="http://pub.osiux.com/org-mode/emacs">http://pub.osiux.com/org-mode/emacs</a>
+</li>
+</ul>
+
+<pre class="example">
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(global-set-key (kbd "&lt;f12&gt;") 'org-agenda)
+(global-set-key (kbd "&lt;f5&gt;") 'org-todo)
+(defun org-todo () (interactive) (org-narrow-to-subtree)
+(org-show-todo-tree nil))
+(global-set-key (kbd "&lt;S-f5&gt;") 'widen)
+(defun widen () (interactive) (widen)
+(org-reveal))
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-2" class="outline-3">
+<h3 id="sec-10-2">Estructura del documento</h3>
+<div class="outline-text-3" id="text-10-2">
+<ul class="org-ul">
+<li>Los documentos se organizan en estructura jerárquica.
+</li>
+<li>Visión panorámica, de lo general a lo particular.
+</li>
+</ul>
+
+<pre class="example">
+* cabecera de nivel 1
+** cabecera nivel 2
+*** cabecera nivel 3
+    contenido del nivel 3
+*** otra cabecera nivel 3
+    contenido del nivel 3
+* otra cabecera de nivel 1
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-3" class="outline-3">
+<h3 id="sec-10-3">Rotación de la visibilidad</h3>
+<div class="outline-text-3" id="text-10-3">
+<p>
+Con sólo dos comandos se puede alterar la visibilidad de esquema.
+</p>
+
+<p>
+<code>TAB</code>
+</p>
+
+
+<div class="figure">
+<p><img src="img/org-tab.png" alt="org-tab.png" />
+</p>
+</div>
+
+<p>
+<code>Shift + TAB</code>
+</p>
+
+
+<div class="figure">
+<p><img src="img/org-s-tab.png" alt="org-s-tab.png" />
+</p>
+</div>
+
+<p>
+La visibilidad por defecto se puede establecer en cada fichero
+mediante:
+</p>
+
+<pre class="example">
+#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-4" class="outline-3">
+<h3 id="sec-10-4">Listas y Checkbox</h3>
+<div class="outline-text-3" id="text-10-4">
+<p>
+<code>M-ENTER / M-S-ENTER</code>
+</p>
+
+<p>
+Crea un nuevo elemento de la lista. Crea un nuevo checkbox
+</p>
+
+<p>
+<code>M-LEFT / M-RIGHT</code>
+</p>
+
+<p>
+Decrementa, incrementa el nivel
+</p>
+
+<p>
+<code>M-UP / M-DOWN</code>
+</p>
+
+<p>
+Mueve hacia arriba/abajo en el mismo nivel
+</p>
+
+<pre class="example">
+* Charlas
+** org-mode
+    - Configuración
+    - Ejemplos
+      - Cabeceras
+      - Listas [1/2] [50%]
+        - [_] listas básicas
+        - [X] checkbox
+    - Otros
+      - Varios
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-5" class="outline-3">
+<h3 id="sec-10-5">Tareas y estados</h3>
+<div class="outline-text-3" id="text-10-5">
+<ul class="org-ul">
+<li>Las tareas pueden tener una o más secuencias de estado:
+      <code>TODO -&gt; NEXT -&gt; DONE</code>
+</li>
+</ul>
+
+<pre class="example">
+(setq org-todo-keywords
+  (quote (
+    (sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+)))
+</pre>
+
+<pre class="example">
+* Debian en la notebook
+** DONE Obtener Debian
+*** DONE Descargar ISO 
+*** DONE Grabar CD
+** TODO Hacer backup
+** TODO Instalar
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-6" class="outline-3">
+<h3 id="sec-10-6">Tags (Etiquetas)</h3>
+<div class="outline-text-3" id="text-10-6">
+<ul class="org-ul">
+<li>Los tags se heredan de archivo a tarea, subtarea, etc.
+</li>
+<li>Una tarea puede tener mas de un tag. 
+</li>
+<li>Se pueden realizar búsquedas por medio de tags.
+</li>
+</ul>
+
+<pre class="example">
+* Debian en la notebook     :notebook:
+** DONE Obtener Debian      :debian:
+*** DONE Descargar ISO      :iso:
+*** DONE Grabar CD          :cd:
+** TODO Hacer backup        :backup:
+** TODO Instalar            :instalar:
+
+*   :notebook:
+**  :notebook:debian:
+*** :notebook:debian:iso:
+*** :notebook:debian:iso:cd:
+**  :notebook:debian:iso:cd:backup:
+**  :notebook:debian:iso:cd:backup:instalar:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-7" class="outline-3">
+<h3 id="sec-10-7">Cronometrar Tareas</h3>
+<div class="outline-text-3" id="text-10-7">
+<p>
+<code>C-c C-x C-i</code>
+</p>
+
+<p>
+Inicia reloj, posicionado sobre la tarea.
+</p>
+
+<p>
+<code>C-c C-x C-o</code>
+</p>
+
+<p>
+Detiene reloj de la tarea actual.                       
+</p>
+
+<p>
+<code>C-c C-x C-d</code>
+</p>
+
+<p>
+Muestra tiempos parciales y totales.                     
+</p>
+
+<pre class="example">
+** DONE Obtener Debian      :debian:.....................** 0:38
+*** DONE Descargar ISO      :iso:........................*** 0:30
+   :LOGBOOK:
+   CLOCK: [2010-11-09 mar 10:07]--[2010-11-09 mar 10:37] =&gt;  0:30
+   :END:
+*** DONE Grabar CD          :cd:.........................*** 0:08
+   :LOGBOOK:
+   CLOCK: [2010-11-09 mar 10:40]--[2010-11-09 mar 10:48] =&gt;  0:08
+   :END:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-8" class="outline-3">
+<h3 id="sec-10-8">Reporte de Tiempos</h3>
+<div class="outline-text-3" id="text-10-8">
+<p>
+<code>C-c C-x C-r</code>
+</p>
+
+<p>
+Generar un Reporte Tiempos.
+</p>
+
+<p>
+<code>C-c C-x C-u</code>
+</p>
+
+<p>
+Actualizar el Reporte.                  
+</p>
+
+<pre class="example">
+#+BEGIN: clocktable :maxlevel 3 :scope file
+Clock summary at [2010-11-11 jue 02:45]
+
+| L | Headline              | Time   |      |      |
+|---+-----------------------+--------+------+------|
+|   | *Total time*          | *0:38* |      |      |
+|---+-----------------------+--------+------+------|
+| 1 | Debian en la notebook | 0:38   |      |      |
+| 2 | DONE Obtener Debian   |        | 0:38 |      |
+| 3 | DONE Descargar ISO    |        |      | 0:30 |
+| 3 | DONE Grabar CD        |        |      | 0:08 |
+#+END:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-9" class="outline-3">
+<h3 id="sec-10-9">Agenda</h3>
+<div class="outline-text-3" id="text-10-9">
+<p>
+<code>C-c a a / C-c a a v w / C-c a a v w</code>
+</p>
+
+<p>
+Ir a la agenda diaria / de la semana / mes
+</p>
+
+<p>
+<code>C-c a a l</code>
+    Ver línea de tiempo en la agenda
+</p>
+
+<pre class="example">
+** TODO Hacer backup                             :backup:
+   SCHEDULED: &lt;2010-11-12 vie 10:00&gt;
+** TODO Instalar                           :instalar:
+   DEADLINE: &lt;2010-11-13 vie&gt;
+** Charlas
+*** *TODO TXT | rst+org-mode*
+    &lt;2010-11-12 vie 14:00&gt;--&lt;2010-11-12 vie 15:00&gt;
+
+
+Day-agenda (W45):
+Vie        12 Nov 2010
+  demo:       10:00...... Scheduled:  TODO Hacer backup       :notebook::backup:
+  osiux:      14:00-15:00 *TODO TXT | rst+org-mode*                     :osiux::
+  demo:       In   1 d.:  TODO Instalar                     :notebook::instalar:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-10" class="outline-3">
+<h3 id="sec-10-10">Recordatorios</h3>
+<div class="outline-text-3" id="text-10-10">
+<p>
+<code>C-c r</code>
+</p>
+
+<p>
+Anotar un recordatorio y seguir trabajando.
+</p>
+
+<p>
+<code>C-c C-w</code>
+</p>
+
+<p>
+Mueve una tarea a otro archivo/posición.
+</p>
+
+<pre class="example">
+(org-remember-insinuate)
+(setq org-directory "~/org/")
+(setq org-attach-directory "~/org/attach/")
+(setq org-default-notes-file "~/org/notas.org")
+(define-key global-map "\C-cr" 'org-remember)
+(setq org-remember-templates
+      '(
+        ("Todo" ?t "* TODO %?%^g\n" "~/org/notas.org" "Tareas")
+        ("Nota" ?n "* %?%^g\n" "~/org/notas.org" "Notas")
+        ("Link" ?l "* %?%^g\n" "~/org/notas.org" "Links")
+        )
+)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-11" class="outline-3">
+<h3 id="sec-10-11">Tablas</h3>
+<div class="outline-text-3" id="text-10-11">
+<p>
+<code>TAB</code>
+</p>
+
+<p>
+Actualiza formato de tabla y crea nueva fila
+</p>
+
+<p>
+<code>M-UP/DOWN/LEFT/RIGHT</code>
+</p>
+
+<p>
+Invierte posición fila/columna
+</p>
+
+<pre class="example">
+|horario|sala 1|sala 2|           | horario | sala 1 | sala 2 |
+|-                                |---------+--------+--------+
+                                  |         |        |        |
+
+| horario | sala 1 | sala 2 |
+|---------+--------+--------+
+| 14 a 15 | Gestión de Eventos 911 con PostgreSQL | TODO TXT rst+org-mode |
+|-    
+
+| horario | sala 1                                | sala 2                |
+|---------+---------------------------------------+-----------------------|
+| 14 a 15 | Gestión de Eventos 911 con PostgreSQL | TODO TXT rst+org-mode |
+|---------+---------------------------------------+-----------------------|
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-12" class="outline-3">
+<h3 id="sec-10-12">Hoja de Cálculo</h3>
+<div class="outline-text-3" id="text-10-12">
+<p>
+<code>:=</code>
+</p>
+
+<p>
+Edita la formula
+</p>
+
+<p>
+<code>C-c * / C-u C-c *</code>
+</p>
+
+<p>
+Recalcula fila / tabla
+</p>
+
+<pre class="example">
+| item     | importe | porcentaje |
+|----------+---------+------------|
+| luz      |   40.00 |         24 |
+| gas      |   30.00 |       18.1 |
+| telefono |   40.00 |      24.24 |
+| celular  |   55.00 |  33.333333 |
+|----------+---------+------------|
+|          |    165. |            |
+
+#+TBLFM: @2$3=(@2$2/@6$2)*100;%0d::@3$3=(@3$2/@6$2)*100;%0.1f
+       ::@4$3=(@4$2/@6$2)*100;%0.2f::@5$3=(@5$2/@6$2)*100
+       ::@6$2=vsum(@I..@II)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-13" class="outline-3">
+<h3 id="sec-10-13">Tablas Dinámicas</h3>
+<div class="outline-text-3" id="text-10-13">
+<p>
+<code>C-c C-x p</code>
+</p>
+
+<p>
+Establecer propiedad
+</p>
+
+<p>
+<code>C-c C-x C-c / q</code>
+</p>
+
+<p>
+Modo columnas / Salir del modo columnas
+</p>
+
+<pre class="example">
+* gastos               | 165.00 |
+** luz                 | 40.00  |
+   :PROPERTIES:        
+   :COST:     40.00    
+   :END:               
+** gas                 | 30.00  |
+   :PROPERTIES:        
+   :COST:     30.00    
+   :END:               
+** telefono            | 40.00  |
+   :PROPERTIES:        
+   :COST:     40.00    
+   :END:               
+** celular             | 55.00  |
+   :PROPERTIES:        
+   :COST:     55.00    
+   :END:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-14" class="outline-3">
+<h3 id="sec-10-14">Búsquedas</h3>
+<div class="outline-text-3" id="text-10-14">
+<p>
+<code>C-c a m / C-c a M</code>
+</p>
+
+<p>
+Busca por tag, propiedad, <code>TODO</code> / sólo por <code>TODO</code>
+</p>
+
+<p>
+<code>C-c /</code>
+</p>
+
+<p>
+Genera arbol disperso por expresión, propiedad, fechas.
+</p>
+
+<p>
+<code>C-c a s</code>
+</p>
+
+<p>
+Busca por expresión regular empleando lógica booleana
+</p>
+
+<pre class="example">
+(setq org-agenda-custom-commands (
+    ("b" . "Bugs pendientes")
+        ("ba" "Auditoria " tags-todo "auditoria+bug"
+            (
+                (occur-tree "NEW")
+                (org-agenda-remove-tags t)
+                (org-agenda-sorting-strategy '(effort-down))
+            )
+        ) ) )
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-10-15" class="outline-3">
+<h3 id="sec-10-15">Exportar</h3>
+<div class="outline-text-3" id="text-10-15">
+<p>
+<code>C-c a e</code>
+</p>
+
+<p>
+Exporta vistas de la agenda
+</p>
+
+<p>
+<code>C-c C-e h</code>
+</p>
+
+<p>
+Exporta html
+</p>
+
+<p>
+<code>C-c C-e p</code>
+</p>
+
+<p>
+Exporta pdf
+</p>
+
+<p>
+<code>C-c C-e i</code>
+</p>
+
+<p>
+Exporta calendario ICalendar
+</p>
+
+<p>
+<code>C-c C-e P</code>
+</p>
+
+<p>
+Publica proyecto
+</p>
+</div>
+</div>
+<div id="outline-container-sec-10-16" class="outline-3">
+<h3 id="sec-10-16">Graphviz</h3>
+<div class="outline-text-3" id="text-10-16">
+<div class="org-src-container">
+
+<pre class="src src-dot">digraph ejemplo {
+
+ graph [fontname=monospace,fontsize=8];
+ node [shape=box,style=filled,color=gray];
+ edge [color=black];
+
+ dot  [shape=box,color=blue];
+ png  [shape=box,color=mediumspringgreen];
+ jpg  [shape=box,color=darkolivegreen];
+ pdf  [shape=box,color=orange];
+
+ dot -&gt; png;
+ dot -&gt; jpg;
+ png -&gt; rst;
+ jpg -&gt; rst;
+ rst -&gt; pdf;
+}
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="graphviz.png" alt="graphviz.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10-17" class="outline-3">
+<h3 id="sec-10-17">ditaa</h3>
+<div class="outline-text-3" id="text-10-17">
+<div class="org-src-container">
+
+<pre class="src src-ditaa">/------\   +------+   +------+
+|      |   |  {c} |   |  {o} |
+| TODO +--&gt;| NEXT |--&gt;| DONE |
+| cYEL |   | cRED |   | cGRE |
+\------/   +------+   +------+
+   ^                      ^
+   |                      |
+   +--------------------=-+
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="ditaa.png" alt="ditaa.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">Dudas y comentarios</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+osiris@gcoop.coop
+    Cualquier duda pueden consultar por email, prometo responder lo antes posible.
+</p>
+
+<p>
+<a href="http://pub.osiux.com/charlas">http://pub.osiux.com/charlas</a>
+    Pueden descargar ésta y otras charlas, incluído el código fuente.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">Gracias!</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+A HugoRuscitti &lt;hugoruscitti@gmail.com&gt; por el libro
+GTD <sup><a id="fnr.10.100" name="fnr.10.100" class="footref" href="#fn.10">10</a></sup> y <b>frontweb</b> <sup><a id="fnr.13" name="fnr.13" class="footref" href="#fn.13">13</a></sup>, a SebastiánNarvaez
+&lt;snarvaez@gmail.com&gt; por presentarme a <b>Org-mode</b> <sup><a id="fnr.6.100" name="fnr.6.100" class="footref" href="#fn.6">6</a></sup>, a
+MatíasFernandez &lt;matias@decoder.com.ar&gt; que me ayudó con la gŕafica
+de los slides, a MiguelAngelRios &lt;likevinyl@gmail.com&gt; por la
+remera de Org. A los socios de <a href="http://gcoop.coop">gcoop</a> que me aguantan todos los
+días. A la organización de <b>Conurbania</b> <sup><a id="fnr.14" name="fnr.14" class="footref" href="#fn.14">14</a></sup> por darme
+la oportunidad de compartir estos conocimientos. Y especialmente a
+mi mujer e hijo por robarles tiempo valioso para hacer esta charla.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">Changelog</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li><span class="timestamp-wrapper"><span class="timestamp">[2014-01-15 mié]</span></span> Convierto a formato <code>.org</code> desde <code>.rst</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.gcoop.coop">http://www.gcoop.coop</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://wiki.buenosaireslibre.org">http://wiki.buenosaireslibre.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://www.usla.org.ar">http://www.usla.org.ar</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://www.cafelug.org.ar">http://www.cafelug.org.ar</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<a href="http://docutils.sourceforge.net/rst.html">http://docutils.sourceforge.net/rst.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<a href="http://orgmode.org">http://orgmode.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<a href="http://en.wikipedia.org/wiki/Bill_Joy">http://en.wikipedia.org/wiki/Bill_Joy</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="http://www.moolenaar.net/vim.html">http://www.moolenaar.net/vim.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<a href="http://davidco.com">http://davidco.com</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<a href="http://www.cuspide.com/isbn/849662708X">http://www.cuspide.com/isbn/849662708X</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
+<a href="http://gnu.org">http://gnu.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.12" name="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
+<a href="http://es.wikipedia.org/Getting_Things_Done">http://es.wikipedia.org/Getting_Things_Done</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.13" name="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara">
+<a href="http://frontweb.com.ar">http://frontweb.com.ar</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.14" name="fn.14" class="footnum" href="#fnr.14">14</a></sup> <p class="footpara">
+<a href="http://conurbania.org.ar">http://conurbania.org.ar</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2010-11-12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
