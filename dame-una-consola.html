@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>dame una consola</title>
-<!-- 2014-01-15 mié 10:20 -->
+<!-- 2014-03-11 mar 10:31 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
@@ -239,9 +239,9 @@ comando:
 
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="color: #888a85;"># </span><span style="color: #888a85;">sobreescribe</span>
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #888a85;">sobreescribe</span>
 ls *.png &gt;lista.txt
-<span style="color: #888a85;"># </span><span style="color: #888a85;">agrega</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">agrega</span>
 ls *.txt &gt;&gt;lista.txt
 </pre>
 </div>
@@ -372,21 +372,21 @@ pdf2text, html2text, python-docutils, rst2pdf
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="color: #888a85;"># </span><span style="color: #888a85;">cu&#225;l es mi ip?</span>
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #888a85;">cu&#225;l es mi ip?</span>
 ip r | grep -o src.[0-9.]+ | awk <span style="color: #ad7fa8; font-style: italic;">'{print $2}'</span>
-<span style="color: #888a85;"># </span><span style="color: #888a85;">cu&#225;l es mi mac?</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">cu&#225;l es mi mac?</span>
 ifconfig eth0 | grep HWaddr | awk <span style="color: #ad7fa8; font-style: italic;">'{print $5}'</span>
-<span style="color: #888a85;"># </span><span style="color: #888a85;">s&#233; la mac, pero c&#250;al es la ip?</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">s&#233; la mac, pero c&#250;al es la ip?</span>
 tcpdump -ennqti eth0 <span style="color: #ad7fa8; font-style: italic;">\(</span> arp or 600pxp <span style="color: #ad7fa8; font-style: italic;">\)</span> | grep <span style="color: #ad7fa8; font-style: italic;">"48:5b:39:6e:f4:d4"</span>
-<span style="color: #888a85;"># </span><span style="color: #888a85;">encender la compu remotamente</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">encender la compu remotamente</span>
 wakeonlan 48:5b:39:6e:f4:d4
-<span style="color: #888a85;"># </span><span style="color: #888a85;">qu&#237;en est&#225; consumiendo todo el ancho de banda?</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">qu&#237;en est&#225; consumiendo todo el ancho de banda?</span>
 iftop -i eth0
-<span style="color: #888a85;"># </span><span style="color: #888a85;">ips entregadas por dhcp?</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">ips entregadas por dhcp?</span>
 egrep -o <span style="color: #ad7fa8; font-style: italic;">"[0-9]+&gt;[0-9]+&gt;[0-9]+&gt;[0-9]+"</span> dhcpd.leases | uniq | wc -l
-<span style="color: #888a85;"># </span><span style="color: #888a85;">obtener una l&#237;nea espec&#237;fica de un archivo</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">obtener una l&#237;nea espec&#237;fica de un archivo</span>
 head -30 /var/log/messages | tail -1
-<span style="color: #888a85;"># </span><span style="color: #888a85;">reemplazar texto en varios archivos</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">reemplazar texto en varios archivos</span>
 find -name <span style="color: #ad7fa8; font-style: italic;">'*.php'</span> | <span style="color: #729fcf; font-weight: bold;">while </span><span style="color: #729fcf;">read</span> i;<span style="color: #729fcf; font-weight: bold;">do</span> cat $<span style="color: #ff6347;">i</span> | <span style="color: #ad7fa8; font-style: italic;">\</span>
 sed s/GNU/GPL/g &gt;$<span style="color: #ff6347;">i</span>.tmp;cat $<span style="color: #ff6347;">i</span>.tmp&gt;$<span style="color: #ff6347;">i</span>;<span style="color: #729fcf; font-weight: bold;">done</span>
 </pre>
@@ -398,10 +398,10 @@ sed s/GNU/GPL/g &gt;$<span style="color: #ff6347;">i</span>.tmp;cat $<span style
 <div class="outline-text-2" id="text-14">
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="color: #888a85;"># </span><span style="color: #888a85;">buscar en el contenido de una web</span>
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #888a85;">buscar en el contenido de una web</span>
 w3m -dump http://barrapunto.com | grep -i -C2 android
 w3m -dump http://debian.org/News | grep -i squeeze | grep frozen &gt;/tmp/debian
-<span style="color: #888a85;"># </span><span style="color: #888a85;">notificar estado bater&#237;a</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">notificar estado bater&#237;a</span>
 <span style="color: #729fcf; font-weight: bold;">if</span> [ <span style="color: #ad7fa8; font-style: italic;">"$BAT_STATUS"</span> = <span style="color: #ad7fa8; font-style: italic;">"Discharging"</span> ];<span style="color: #729fcf; font-weight: bold;">then</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
     <span style="color: #729fcf; font-weight: bold;">if</span> [ $<span style="color: #ff6347;">BAT_PERCENT</span> -le 25 ];<span style="color: #729fcf; font-weight: bold;">then</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
         notify-send -u critical <span style="color: #ad7fa8; font-style: italic;">"$MSG"</span> <span style="color: #ad7fa8; font-style: italic;">"$BAT_PERCENT"</span>;<span style="color: #729fcf; font-weight: bold;">fi</span>
@@ -591,21 +591,21 @@ Connection closed by foreign host.
 <div class="outline-text-2" id="text-19">
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="color: #888a85;"># </span><span style="color: #888a85;">Definir Alias</span>
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #888a85;">Definir Alias</span>
 <span style="color: #729fcf;">set</span> alias <span style="color: #ff6347;">sugar</span>=<span style="color: #ad7fa8; font-style: italic;">'mysql --default-character-set=utf8 -u sugar -psugar -B sugar'</span>
 
-<span style="color: #888a85;"># </span><span style="color: #888a85;">Ejecutar consulta</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">Ejecutar consulta</span>
 <span style="color: #729fcf;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"SELECT user_name FROM users WHERE is_admin = 1;"</span> | sugar
 
-<span style="color: #888a85;"># </span><span style="color: #888a85;">Listado de Tablas</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">Listado de Tablas</span>
 <span style="color: #729fcf;">set</span> alias <span style="color: #ff6347;">tablas</span>=<span style="color: #ad7fa8; font-style: italic;">'echo "show tables" | sugar | grep -v Tables_in | sort -u'</span>
 
-<span style="color: #888a85;"># </span><span style="color: #888a85;">Listado Tabla Campo</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">Listado Tabla Campo</span>
 <span style="color: #729fcf;">set</span> alias <span style="color: #ff6347;">tablacampos</span>=<span style="color: #ad7fa8; font-style: italic;">'echo "show tables" | sugar | grep -v Tables_in | \</span>
 <span style="color: #ad7fa8; font-style: italic;">while read t; do d=$(</span><span style="color: #fa8072;">echo</span><span style="color: #ad7fa8; font-style: italic;"> "desc "$t";" | cct15 | grep -v Field | awk1); \</span>
 <span style="color: #ad7fa8; font-style: italic;">for c in $d;do echo $t"__"$c;done ;done'</span>
 
-<span style="color: #888a85;"># </span><span style="color: #888a85;">Vaciar todas las tablas que contengan la palabra *calls*</span>
+<span style="color: #ff0000;"># </span><span style="color: #888a85;">Vaciar todas las tablas que contengan la palabra *calls*</span>
 sugar &lt; $(<span style="color: #fa8072;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"show tables"</span> | sugar | grep calls | <span style="color: #ad7fa8; font-style: italic;">\</span>
 <span style="color: #729fcf; font-weight: bold;">while </span><span style="color: #729fcf;">read</span> t;<span style="color: #729fcf; font-weight: bold;">do </span><span style="color: #729fcf;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"TRUNCATE table $t;"</span>;<span style="color: #729fcf; font-weight: bold;">done</span>)
 </pre>
@@ -815,7 +815,7 @@ archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2010/11/26</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

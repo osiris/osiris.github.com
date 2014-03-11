@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot</title>
-<!-- 2014-01-15 mié 10:19 -->
+<!-- 2014-03-11 mar 10:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
@@ -21,7 +21,7 @@
 <h2 id="sec-1">Introducción</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Desde que comencé a usar org-mode <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> siempre tuve ganas de
+Desde que comencé a usar org-mode <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> siempre tuve ganas de
 graficar el registro de horas que llevo a diario, pasaron dos largos
 años y hoy lo conseguí, luego de 9 horas y 59 minutos:
 </p>
@@ -59,7 +59,7 @@ obviamente la edición se agiliza muchísimo usando org-mode.
 </p>
 
 <p>
-Un detalle, org-mode es parte de Emacs <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>, pero no hay que
+Un detalle, org-mode es parte de Emacs <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, pero no hay que
 tener miedo, lleva un poco de tiempo aprenderlo y vale la pena.
 </p>
 </div>
@@ -164,7 +164,7 @@ horario en un determinado año y mes.
 
 <p>
 Para esta tarea realizo un <b>script bash</b> el cual lo escribo, edito y
-ejecuto directamente desde org-mode usando org-babel <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup> .
+ejecuto directamente desde org-mode usando org-babel <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> .
 </p>
 </div>
 
@@ -440,7 +440,7 @@ org-babel), en el archivo <code>.emacs</code> es necesario definir:
 <h3 id="sec-4-1">El primer gráfico</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
-<b>GNUPLOT</b> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup> es sorprendente, realmente es muy fácil de usar
+<b>GNUPLOT</b> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> es sorprendente, realmente es muy fácil de usar
 y muy rápido generando los gráficos, inicialmente alcanza con indicar
 algunos parámetros y ya se puede visualizar el gráfico.
 </p>
@@ -718,7 +718,7 @@ Si llegaste hasta acá te recomiendo leer:
 
 <p>
 Por cierto, este artículo lo escribí usando sintaxis
-<b>restructuredtext</b> <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup> alternando entre <code>rst-mode</code> y
+<b>restructuredtext</b> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> alternando entre <code>rst-mode</code> y
 <code>org-mode</code> dentro de emacs en el mismo archivo donde generé todos
 los scripts para graficar org-mode.
 </p>
@@ -753,23 +753,23 @@ grep -A 3 "*** visualizando" plot.org | grep "="
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
 <a href="http://orgmode.org">http://orgmode.org</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
 <a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
 <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">http://orgmode.org/worg/org-contrib/babel/intro.html</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
 <a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
 <a href="http://osiux.com/restructuredtext-texto-re-estructurado.txt">http://osiux.com/restructuredtext-texto-re-estructurado.txt</a>
 </p></div>
 
@@ -779,7 +779,7 @@ grep -A 3 "*** visualizando" plot.org | grep "="
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2011-12-29</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

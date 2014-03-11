@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Altermesh, BuenosAiresLibre y CompartirEsBueno</title>
-<!-- 2014-01-15 mié 10:22 -->
+<!-- 2014-03-11 mar 10:31 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
@@ -21,18 +21,18 @@
 <h2 id="sec-1">Migrando de <code>OLSR</code> a <code>Batman-adv</code></h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Hace años que tengo el <b>NodoOsiux</b> <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> dentro de la
-red <b>BuenosAiresLibre</b> <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>, pero en el último año estoy
+Hace años que tengo el <b>NodoOsiux</b> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> dentro de la
+red <b>BuenosAiresLibre</b> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>, pero en el último año estoy
 apostando a un nuevo modelo de red basado en la experiencia
-del <b>QuintanaCamp</b> <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup> en el cual dió origen a dos redes que
-vienen creciendo día a día, <b>QuintanaLibre</b> <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>
-y <b>DeltaLibre</b> <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>
+del <b>QuintanaCamp</b> <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> en el cual dió origen a dos redes que
+vienen creciendo día a día, <b>QuintanaLibre</b> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
+y <b>DeltaLibre</b> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
 </p>
 
 <p>
 <b>CompartirEsBueno</b> es la implementación del modelo de red
-de <b>Altermundi</b> <sup><a id="fnr.6" name="fnr.6" class="footref" href="#fn.6">6</a></sup> consolidado en el
-firmware <b>Altermesh</b> <sup><a id="fnr.7" name="fnr.7" class="footref" href="#fn.7">7</a></sup>.
+de <b>Altermundi</b> <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> consolidado en el
+firmware <b>Altermesh</b> <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>.
 </p>
 
 <p>
@@ -52,7 +52,7 @@ computadoras y no asi en internet.
 <p>
 Si bien técnicamente hay una gran diferencia entre el protocolo de
 ruteo dinámico utlizado por BAL y Altermesh, es decir
-OLSR <sup><a id="fnr.8" name="fnr.8" class="footref" href="#fn.8">8</a></sup> y batman-adv <sup><a id="fnr.9" name="fnr.9" class="footref" href="#fn.9">9</a></sup> respectivamente, ambos
+OLSR <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup> y batman-adv <sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup> respectivamente, ambos
 permiten escencialmente lo mismo, unir equipos y es posible tener
 una red híbrida con éstos y otros protocolos al mismo tiempo, algo
 de esto se puede apreciar en el <b>gŕafico de mi red actual</b> al final
@@ -101,7 +101,7 @@ en mi caso comencé por los siguientes modelos:
 </thead>
 <tbody>
 <tr>
-<td class="left">TL-WDR3500ND <sup><a id="fnr.10" name="fnr.10" class="footref" href="#fn.10">10</a></sup></td>
+<td class="left">TL-WDR3500ND <sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup></td>
 <td class="left">8mb</td>
 <td class="left">128mb</td>
 <td class="left">2.4Ghz</td>
@@ -109,7 +109,7 @@ en mi caso comencé por los siguientes modelos:
 </tr>
 
 <tr>
-<td class="left">TL-MR3220 <sup><a id="fnr.11" name="fnr.11" class="footref" href="#fn.11">11</a></sup></td>
+<td class="left">TL-MR3220 <sup><a id="fnr.11" class="footref" href="#fn.11">11</a></sup></td>
 <td class="left">4mb</td>
 <td class="left">32mb</td>
 <td class="left">2.4Ghz</td>
@@ -117,7 +117,7 @@ en mi caso comencé por los siguientes modelos:
 </tr>
 
 <tr>
-<td class="left">TL-WR842ND <sup><a id="fnr.12" name="fnr.12" class="footref" href="#fn.12">12</a></sup></td>
+<td class="left">TL-WR842ND <sup><a id="fnr.12" class="footref" href="#fn.12">12</a></sup></td>
 <td class="left">8mb</td>
 <td class="left">32mb</td>
 <td class="left">2.4Ghz</td>
@@ -141,13 +141,13 @@ para enlazar a otros nodos.
 <h3 id="sec-3-1">cocinar el firmware</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
-El primer paso es utilizar el <b>chef</b> <sup><a id="fnr.13" name="fnr.13" class="footref" href="#fn.13">13</a></sup> de <i>Altermundi</i>
+El primer paso es utilizar el <b>chef</b> <sup><a id="fnr.13" class="footref" href="#fn.13">13</a></sup> de <i>Altermundi</i>
 para "cocinar" una versión de <i>Altermesh</i>, se puede usar la imagen
-genérica <b>AlterMesh-nodo</b> <sup><a id="fnr.14" name="fnr.14" class="footref" href="#fn.14">14</a></sup> o crear una propia
+genérica <b>AlterMesh-nodo</b> <sup><a id="fnr.14" class="footref" href="#fn.14">14</a></sup> o crear una propia
 partiendo de ésta o de alguna otra de
-las <b>RedesLibres</b> <sup><a id="fnr.15" name="fnr.15" class="footref" href="#fn.15">15</a></sup> que están haciendo uso del
+las <b>RedesLibres</b> <sup><a id="fnr.15" class="footref" href="#fn.15">15</a></sup> que están haciendo uso del
 firmware. En mi caso creé el
-perfil <b>CompartirEsBueno</b> <sup><a id="fnr.16" name="fnr.16" class="footref" href="#fn.16">16</a></sup>, el mismo se puede
+perfil <b>CompartirEsBueno</b> <sup><a id="fnr.16" class="footref" href="#fn.16">16</a></sup>, el mismo se puede
 utilizar tal y como está o incluso tomarlo como base para crear un
 nuevo perfil de red.
 </p>
@@ -175,6 +175,26 @@ se almacenará <code>~/.ssh/llave_rsa</code> y una contraseña <code>cambiame</c
 <pre class="src src-sh">ssh-keygen -t rsa -f ~/.ssh/llave_rsa -Pcambiame
 </pre>
 </div>
+
+<pre class="example">
+Generating public/private rsa key pair.
+Your identification has been saved in /home/osiris/.ssh/llave_rsa.
+Your public key has been saved in /home/osiris/.ssh/llave_rsa.pub.
+The key fingerprint is:
+c6:cf:a5:4e:5d:9a:d8:cb:12:4b:9c:66:90:a5:90:67 osiris@inspiron
+The key's randomart image is:
++--[ RSA 2048]----+
+|       .         |
+|      o E .      |
+|       + +       |
+|       .+        |
+|        So .. .  |
+|       . oB* +   |
+|         +*o=    |
+|         oo. .   |
+|          ..o    |
++-----------------+
+</pre>
 
 <ul class="org-ul">
 <li>OjO: Es posible crear una llave sin contraseña lo cual resulta
@@ -227,6 +247,10 @@ Es <b>altamente recomendado</b> verificar la integridad del mismo, el
 md5sum *.bin
 </pre>
 </div>
+
+<pre class="example">
+24f6dfddbe4c1fbf29e74d3c32f24afc  altermesh-ar71xx-generic-tl-mr3220-v1-squashfs-r33815-CompartirEsBueno-nodo-compartir-factory.bin
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-3-4" class="outline-3">
@@ -336,6 +360,18 @@ ejemplo <code>ff02::2%wlan0</code>:
 <pre class="src src-sh">ping6 -c3 ff02::2%wlan0
 </pre>
 </div>
+
+<pre class="example">
+PING ff02::2%wlan0(ff02::2) 56 data bytes
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=255 time=1.22 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=255 time=10.4 ms (DUP!)
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=255 time=1.48 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=255 time=8.02 ms (DUP!)
+
+--- ff02::2%wlan0 ping statistics ---
+3 packets transmitted, 2 received, +2 duplicates, 33% packet loss, time 2002ms
+rtt min/avg/max/mdev = 1.229/5.305/10.485/4.043 ms
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-3-7" class="outline-3">
@@ -355,13 +391,18 @@ red IPv6 son considerados nodos y responden al alias
 
 <pre class="example">
 PING ff02::1%wlan0(ff02::1) 56 data bytes
-64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=1 ttl=64 time=0.064 ms
-64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=2 ttl=64 time=0.059 ms
-64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=3 ttl=64 time=0.049 ms
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=1 ttl=64 time=0.085 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=1 ttl=64 time=156 ms (DUP!)
+64 bytes from fe80::1e4b:d6ff:fed2:f99: icmp_seq=1 ttl=64 time=316 ms (DUP!)
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=2 ttl=64 time=0.086 ms
+64 bytes from fe80::68d3:ecff:fefb:d060: icmp_seq=2 ttl=64 time=9.74 ms (DUP!)
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=1 ttl=64 time=1124 ms (DUP!)
+64 bytes from fe80::a2f3:c1ff:fe9d:2577: icmp_seq=2 ttl=64 time=123 ms (DUP!)
+64 bytes from fe80::6aa3:c4ff:fecf:b5b4: icmp_seq=3 ttl=64 time=0.088 ms
 
 --- ff02::1%wlan0 ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 1999ms
-rtt min/avg/max/mdev = 0.049/0.057/0.064/0.008 ms
+3 packets transmitted, 3 received, +5 duplicates, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 0.085/216.376/1124.681/358.855 ms, pipe 2
 </pre>
 </div>
 </div>
@@ -412,6 +453,16 @@ quisieramos saber cuánto espacio hay disponible:
 <pre class="src src-sh">ssh root@fe80::a2f3:c1ff:fe9d:2577%wlan0 <span style="color: #ad7fa8; font-style: italic;">'df -h'</span>
 </pre>
 </div>
+
+<pre class="example">
+Filesystem                Size      Used Available Use% Mounted on
+rootfs                    4.5M    660.0K      3.9M  14% /
+/dev/root                 2.5M      2.5M         0 100% /rom
+tmpfs                    14.3M      1.7M     12.7M  12% /tmp
+tmpfs                   512.0K         0    512.0K   0% /dev
+/dev/mtdblock3            4.5M    660.0K      3.9M  14% /overlay
+overlayfs:/overlay        4.5M    660.0K      3.9M  14% /
+</pre>
 </div>
 </div>
 </div>
@@ -421,7 +472,7 @@ quisieramos saber cuánto espacio hay disponible:
 <p>
 Uno de los aspectos más interesantes de <i>Altermesh</i> es su manejo de
 <i>IPv6</i>, no sólo se obtiene una <i>IPv6</i> pública para el nodo sino que
-además siendo parte de <b>LibreNet6</b> <sup><a id="fnr.17" name="fnr.17" class="footref" href="#fn.17">17</a></sup> se puede obtener
+además siendo parte de <b>LibreNet6</b> <sup><a id="fnr.17" class="footref" href="#fn.17">17</a></sup> se puede obtener
 un rango, en mi caso <code>2a00:1508:1:f00f::1/64</code>, y entregar <i>IPv6</i> a
 cada cliente del nodo y nodos asociados!
 </p>
@@ -497,12 +548,12 @@ buena noticia que los nodos se hayan visto en el primer intento.
 </div>
 </div>
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><a id="ID-c3de996b-7628-41a5-841c-4cdeb77f5081" name="ID-c3de996b-7628-41a5-841c-4cdeb77f5081"></a>Graficando la red</h2>
+<h2 id="sec-6"><a id="ID-c3de996b-7628-41a5-841c-4cdeb77f5081"></a>Graficando la red</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Ahora hay más de una manera de conectarse a cada equipo y debido a
 ello se me ocurrió graficar los enlaces <i>IPv4</i> e <i>IPv6</i> (globales y
-de enlace local). Para esto utilicé <code>nwdiag</code> <sup><a id="fnr.18" name="fnr.18" class="footref" href="#fn.18">18</a></sup> que
+de enlace local). Para esto utilicé <code>nwdiag</code> <sup><a id="fnr.18" class="footref" href="#fn.18">18</a></sup> que
 permite de manera simple y cómoda editar un archivo de texto plano
 con cada equipo para luego generar el gráfico final.
 </p>
@@ -600,75 +651,75 @@ He añadido el enlace en nuestro wiki:
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
 <a href="http://wiki.buenosaireslibre.org/NodoOsiux">http://wiki.buenosaireslibre.org/NodoOsiux</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
 <a href="http://www.buenosaireslibre.org">http://www.buenosaireslibre.org</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
 <a href="http://wiki.arraigodigital.org.ar/RedLibre/QuintanaCamp">http://wiki.arraigodigital.org.ar/RedLibre/QuintanaCamp</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
 <a href="http://quintanalibre.org.ar">http://quintanalibre.org.ar</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
 <a href="http://wiki.redeslibres.org/DeltaLibre">http://wiki.redeslibres.org/DeltaLibre</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.6" name="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
 <a href="http://altermundi.net">http://altermundi.net</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.7" name="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
 <a href="http://docs.altermundi.net/AlterMesh">http://docs.altermundi.net/AlterMesh</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.8" name="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
 <a href="http://es.wikipedia.org/wiki/OLSR">http://es.wikipedia.org/wiki/OLSR</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.9" name="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
 <a href="http://es.wikipedia.org/wiki/B.A.T.M.A.N.">http://es.wikipedia.org/wiki/B.A.T.M.A.N.</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.10" name="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
 <a href="http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-WDR3500">http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-WDR3500</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.11" name="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara">
 <a href="http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-MR3220">http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-MR3220</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.12" name="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara">
 <a href="http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-WR842ND">http://www.tp-link.com/ar/products/details/?categoryid=&model=TL-WR842ND</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.13" name="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara">
 <a href="http://chef.mesh.altermundi.net">http://chef.mesh.altermundi.net</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.14" name="fn.14" class="footnum" href="#fnr.14">14</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <p class="footpara">
 <a href="http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo">http://chef.mesh.altermundi.net/fwprofile/altermesh-nodo</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.15" name="fn.15" class="footnum" href="#fnr.15">15</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <p class="footpara">
 <a href="http://wiki.redeslibres.org">http://wiki.redeslibres.org</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.16" name="fn.16" class="footnum" href="#fnr.16">16</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <p class="footpara">
 <a href="http://chef.mesh.altermundi.net/network/compartiresbueno">http://chef.mesh.altermundi.net/network/compartiresbueno</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.17" name="fn.17" class="footnum" href="#fnr.17">17</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <p class="footpara">
 <a href="http://docs.altermundi.net/LibreNet6">http://docs.altermundi.net/LibreNet6</a>
 </p></div>
 
-<div class="footdef"><sup><a id="fn.18" name="fn.18" class="footnum" href="#fnr.18">18</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <p class="footpara">
 <a href="http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag">http://blockdiag.com/en/nwdiag/introduction.html?highlight=nwdiag</a>
 </p></div>
 
@@ -678,7 +729,7 @@ He añadido el enlace en nuestro wiki:
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2013-04-02</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <title>Procesos Linux</title>
-<!-- 2014-01-15 mié 10:19 -->
+<!-- 2014-03-11 mar 10:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gomez" />
@@ -75,7 +75,7 @@ rendimiento de nuestro equipo.
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>Todo proceso que se inicia tiene un número asignado llamado
-     <b>PID</b>.
+<b>PID</b>.
 </li>
 
 <li>Este <b>PID</b> permite identificar el proceso y administrarlo
@@ -92,7 +92,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 24365
+1 15787
 </pre>
 </li>
 </ul>
@@ -146,16 +146,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-24170 pts/0    Ss     0:00  \_ bash
-24279 pts/0    S      0:00      \_ su osiris
-24292 pts/0    S      0:00          \_ bash
-24358 pts/0    S+     0:00              \_ tmux a
-24359 pts/0    Z+     0:00                  \_ [tmux] &lt;defunct&gt;
-24360 ?        Ss     1:08 tmux a
-24363 pts/6    Ss     0:00  \_ sh -c emacs -nw
-24365 pts/6    S+     4:13  |   \_ emacs -nw
-28623 pts/9    Ss+    0:00  |       \_ /usr/bin/gnuplot
-14827 ?        Ss     0:00  |       \_ sh
+ 2686 ?        S     50:52 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
+21395 ?        S      0:00  \_ sleep 1
+ 2691 ?        S      2:54 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
+ 2692 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
+ 2731 ?        Ss     0:28 /usr/sbin/acpid
+ 2935 ?        Ss     0:30 /usr/sbin/apache2 -k start
+ 3138 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+ 3139 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+ 3140 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+ 3141 ?        S      0:00  \_ /usr/sbin/apache2 -k start
 </pre>
 
 <div class="org-src-container">
@@ -165,16 +165,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-init(1)─┬─NetworkManager(1278)─┬─dhclient(31635)
-        │                      ├─dnsmasq(31646)
-        │                      ├─{NetworkManager}(1282)
-        │                      └─{NetworkManager}(2301)
-        ├─accounts-daemon(1875)───{accounts-daemon}(1880)
-        ├─acpid(1484)
-        ├─apache2(2545)─┬─apache2(2553)
-        │               ├─apache2(2554)
-        │               ├─apache2(2555)
-        │               ├─apache2(2556)
+init(1)─┬─NetworkManager(3472)─┬─dhclient(3639)
+	│                      ├─{NetworkManager}(3518)
+	│                      └─{NetworkManager}(3662)
+	├─accounts-daemon(4022)───{accounts-daemon}(4024)
+	├─acpi_fakekeyd(2692)
+	├─acpid(2731)
+	├─apache2(2935)─┬─apache2(3138)
+	│               ├─apache2(3139)
+	│               ├─apache2(3140)
+	│               ├─apache2(3141)
 </pre>
 </div>
 </div>
@@ -194,26 +194,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 10:19:35 up 23:46,  4 users,  load average: 0.20, 0.10, 0.20
-Tasks: 256 total,   1 running, 254 sleeping,   0 stopped,   1 zombie
-Cpu(s):  9.3%us,  1.9%sy,  0.0%ni, 88.2%id,  0.6%wa,  0.0%hi,  0.1%si,  0.0%st
-Mem:   5897404k total,  5089724k used,   807680k free,   147696k buffers
-Swap:  1048572k total,     6420k used,  1042152k free,  3091984k cached
+top - 18:34:37 up 11 days,  1:02,  6 users,  load average: 0,76, 0,88, 0,86
+Tasks: 180 total,   1 running, 179 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 13,9 us,  4,8 sy,  0,0 ni, 80,1 id,  0,6 wa,  0,5 hi,  0,2 si,  0,0 st
+KiB Mem:   2044852 total,  1709304 used,   335548 free,    89148 buffers
+KiB Swap:        0 total,        0 used,        0 free,   600420 cached
 
-  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
- 1529 root      20   0  197m  35m 9.9m S    2  0.6  38:47.52 Xorg               
- 6999 root      20   0     0    0    0 S    2  0.0   0:00.39 kworker/0:0        
-14835 osiris    20   0 17468 1384  928 R    2  0.0   0:00.01 top                
-    1 root      20   0 24728 2676 1352 S    0  0.0   0:01.75 init               
-    2 root      20   0     0    0    0 S    0  0.0   0:00.04 kthreadd           
-    3 root      20   0     0    0    0 S    0  0.0   0:04.63 ksoftirqd/0        
-    6 root      RT   0     0    0    0 S    0  0.0   0:01.23 migration/0        
-    7 root      RT   0     0    0    0 S    0  0.0   0:00.40 watchdog/0         
-   21 root       0 -20     0    0    0 S    0  0.0   0:00.00 cpuset             
-   22 root       0 -20     0    0    0 S    0  0.0   0:00.00 khelper            
-   23 root      20   0     0    0    0 S    0  0.0   0:00.00 kdevtmpfs          
-   24 root       0 -20     0    0    0 S    0  0.0   0:00.00 netns              
-   26 root      20   0     0    0    0 S    0  0.0   0:00.25 sync_supers
+  PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
+ 8203 root      20   0  121m  18m 6500 S   5,9  0,9   3:47.59 Xorg
+26355 osiris    20   0 26096 1488 1080 R   5,9  0,1   0:00.02 top
+    1 root      20   0 10648  788  652 S   0,0  0,0   0:12.03 init
+    2 root      20   0     0    0    0 S   0,0  0,0   0:00.16 kthreadd
+    3 root      20   0     0    0    0 S   0,0  0,0  14:15.93 ksoftirqd/0
+    6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
+    7 root      -2   0     0    0    0 S   0,0  0,0   3:50.22 rcuc/0
+    8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
+    9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
+   10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
+   11 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/1
+   12 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/1
+   14 root      -2   0     0    0    0 S   0,0  0,0   5:24.04 rcuc/1
 </pre>
 
 
@@ -250,7 +250,7 @@ enviar señales.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
