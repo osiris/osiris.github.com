@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>imágenes mágicas | imagemagick</title>
+<!-- 2014-03-21 vie 04:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gomez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">imágenes mágicas | imagemagick</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+</p>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Descripción breve</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Resolución a problemas comunes en la manipulación de imágenes
+mediante la generación de scripts usando <b>ImageMagick</b> y otras
+utilidades. Creación y edición de imágenes sin usar un editor
+gráfico, directamente desde una consola. Generar un video a partir
+de fotografías.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Crear Imagen</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+
+<pre class="src src-sh">convert -size 640x480 xc:green img/green.png
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="green.png" alt="green.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">identify</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+
+<pre class="src src-sh">identify img/green.png
+</pre>
+</div>
+
+<pre class="example">
+img/green.png PNG 640x480 640x480+0+0 8-bit PseudoClass 1c 252B 0.000u 0:00.000
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Creative Commons</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> img
+convert green.png -fill white <span style="color: #ad7fa8; font-style: italic;">\</span>
+-font ~/bin/cc-icons.ttf <span style="color: #ad7fa8; font-style: italic;">\</span>
+-pointsize 32 -gravity SouthEast <span style="color: #ad7fa8; font-style: italic;">\</span>
+-annotate 0 <span style="color: #ad7fa8; font-style: italic;">'cb'</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
+green-cc-by.jpg
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="img/green-cc-by.jpg" alt="green-cc-by.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">dark</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-sh">composite -compose colorburn gradient.png <span style="color: #ad7fa8; font-style: italic;">\</span>
+green-cc-by.jpg dark-green.jpg
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">font</h2>
+<div class="outline-text-2" id="text-6">
+<div class="org-src-container">
+
+<pre class="src src-sh">convert dark-green.jpg -fill white <span style="color: #ad7fa8; font-style: italic;">\</span>
+-font /usr/share/fonts/truetype/ttf-lucida/LucidaSansRegular.ttf <span style="color: #ad7fa8; font-style: italic;">\</span>
+-pointsize 32 -gravity NorthWest <span style="color: #ad7fa8; font-style: italic;">\</span>
+-annotate 0 <span style="color: #ad7fa8; font-style: italic;">'SASOConf 2014'</span> <span style="color: #ad7fa8; font-style: italic;">\</span>
+green-font.jpg
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="green-font.jpg" alt="green-font.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">gray</h2>
+<div class="outline-text-2" id="text-7">
+<pre class="example">
+convert osiux-color.jpg +dither -colors 2 -colorspace gray -contrast-stretch 0 osiux-2-grises.jpg
+convert osiux-color.jpg +dither -colors 4 -colorspace gray -contrast-stretch 0 osiux-4-grises.jpg
+convert osiux-color.jpg +dither -colors 8 -colorspace gray -contrast-stretch 0 osiux-8-grises.jpg
+convert +append osiux-color.jpg osiux-2-grises.jpg osiux-4-grises.jpg osiux-8-grises.jpg
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">edge</h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> img
+convert no-soy-un-pirata-compartir-es-bueno.jpg -colorspace Gray -edge 1 gris-edge.jpg
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="img/gris-edge.jpg" alt="gris-edge.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">edge + Negate</h2>
+<div class="outline-text-2" id="text-9">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> img
+convert no-soy-un-pirata-compartir-es-bueno.jpg -colorspace Gray -edge 1 -negate gris-edge-negate.jpg
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="img/gris-edge-negate.jpg" alt="gris-edge-negate.jpg" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">edge + negate + blur</h2>
+<div class="outline-text-2" id="text-10">
+<pre class="example">
+for i in {1..4};do convert osiux-edge-$i-negate.jpg -blur 0x1 osiux-edge-$i-negate-blur.jpg;done
+convert +append osiux-edge-1-negate-blur.jpg osiux-edge-2-negate-blur.jpg osiux-edge-3-negate-blur.jpg osiux-edge-4-negate-blur.jpg osiux-edge-negate-blur.jpg
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">charcoal (edge + negate + blur)</h2>
+<div class="outline-text-2" id="text-11">
+<pre class="example">
+for i in {1..4};do convert osiux-color.jpg -charcoal $i osiux-charcoal-$i.jpg;done
+convert +append osiux-charcoal-1.jpg osiux-charcoal-2.jpg osiux-charcoal-3.jpg osiux-charcoal-4.jpg osiux-charcoal.jpg
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">append</h2>
+<div class="outline-text-2" id="text-12">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> img
+convert -append no-soy-un-pirata-compartir-es-bueno.jpg gris-edge.jpg gris-edge-negate.jpg append.jpg
+convert +append append.jpg append.jpg 3x3.jpg
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="img/3x3.jpg" alt="3x3.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2010-05-10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
