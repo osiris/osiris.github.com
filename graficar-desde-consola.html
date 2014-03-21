@@ -42,18 +42,38 @@
 </div>
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">block-diag</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>FIXME
+</li>
+</ul>
+</div>
 </div>
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">ditaa</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 
-<pre class="src src-ditaa">+------------------------+   +------------+   +------------------------+   +----------------+
-| gcoop_salesopportunity |   | campaigns  |   | securitygroups_records |   | securitygroups |
-+------------------------+   +------------+   +------------------------+   +----------------+
-| campaign_id            |--&gt;| id         |--&gt;| record_id              |   | name           |
-| id                     |   +------------+   | securitygroup_id       |--&gt;| id             |
-+------------------------+                    +------------------------+   +----------------+
+<pre class="src src-ditaa">+------------------------+   +------------+                             
+| gcoop_salesopportunity |   | campaigns  |                             
++------------------------+   +------------+                             
+| campaign_id            |--&gt;| id         |--+                          
+| id                     |   +------------+  |                          
++------------------------+                   |                          
+                                             |                          
+           +------------------------+        |                          
+           | securitygroups_records |        |                          
+           +------------------------+        |                          
+           | record_id              |&lt;-------+                          
+       +--&gt;| securitygroup_id       |                                   
+       |   +------------------------+                                   
+       |                                                                
+       |   +----------------+                                           
+       |   | securitygroups |                                           
+       |   +----------------+                                           
+       |   | name           |                                           
+       +---| id             |                                           
+           +----------------+
 </pre>
 </div>
 
@@ -66,111 +86,8 @@
 </div>
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">gnuplot</h2>
-<div class="outline-text-2" id="text-4">
-<div class="org-src-container">
-
-<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/data/bcc/gca/cct-2797
-egrep <span style="color: #ad7fa8; font-style: italic;">"0895.*Query Execution Time:[0-9\.]+"</span> sugarcct6.log | awk <span style="color: #ad7fa8; font-style: italic;">'{print $4"\t"$9}'</span> | sed s/<span style="color: #ad7fa8; font-style: italic;">"Time:"</span>//g | awk <span style="color: #ad7fa8; font-style: italic;">'{if ($2&gt;h[$1]) h[$1]=$2} END {for (hh in h) print hh,h[hh]}'</span> | sort  | tee 0895-query-execution-time.dat
-</pre>
 </div>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="right" />
-
-<col  class="right" />
-</colgroup>
-<tbody>
-<tr>
-<td class="right">12:17:08</td>
-<td class="right">0.0302698612213</td>
-</tr>
-
-<tr>
-<td class="right">12:17:11</td>
-<td class="right">0.00952696800232</td>
-</tr>
-
-<tr>
-<td class="right">12:17:21</td>
-<td class="right">0.0434710979462</td>
-</tr>
-
-<tr>
-<td class="right">12:17:22</td>
-<td class="right">0.01877784729</td>
-</tr>
-
-<tr>
-<td class="right">12:17:25</td>
-<td class="right">0.0104238986969</td>
-</tr>
-
-<tr>
-<td class="right">12:17:26</td>
-<td class="right">0.0150380134583</td>
-</tr>
-
-<tr>
-<td class="right">12:17:28</td>
-<td class="right">1.61865592003</td>
-</tr>
-
-<tr>
-<td class="right">12:17:29</td>
-<td class="right">0.022381067276</td>
-</tr>
-
-<tr>
-<td class="right">12:17:30</td>
-<td class="right">0.00826001167297</td>
-</tr>
-
-<tr>
-<td class="right">12:17:50</td>
-<td class="right">0.00913214683533</td>
-</tr>
-
-<tr>
-<td class="right">12:17:51</td>
-<td class="right">0.0108060836792</td>
-</tr>
-</tbody>
-</table>
-
-<div class="org-src-container">
-
-<pre class="src src-gnuplot">reset
-<span style="color: #8ae234;">set</span> terminal png size 800,600
-<span style="color: #8ae234;">set</span> lmargin 10
-<span style="color: #8ae234;">set</span> bmargin 5
-<span style="color: #8ae234;">set</span> rmargin 5
-<span style="color: #8ae234;">set</span> <span style="color: #8ae234; font-weight: bold;">title</span> "M&#225;ximo Tiempo de ejecuci&#243;n Queries usuario 0895\nsugarcct6.<span style="color: #edd400; font-weight: bold;">log</span>" font "Inconsolata,10"
-<span style="color: #8ae234;">set</span> xdata time
-<span style="color: #8ae234;">set</span> timefmt x <span style="color: #ad7fa8; font-style: italic;">'%H:%M:%S'</span>
-<span style="color: #8ae234;">set</span> format x <span style="color: #ad7fa8; font-style: italic;">'%H:%M:%S'</span>
-<span style="color: #8ae234;">set</span> xtics font <span style="color: #ad7fa8; font-style: italic;">'Inconsolata,8'</span> rotate
-<span style="color: #8ae234;">set</span> mxtics
-<span style="color: #8ae234;">set</span> key off
-<span style="color: #8ae234;">set</span> tics font "Inconsolata,8" nomirror
-<span style="color: #8ae234;">set</span> mytics
-<span style="color: #8ae234;">set</span> grid ytics
-<span style="color: #8ae234;">set</span> xlabel "horario" font "Inconsolata,9"
-<span style="color: #8ae234;">set</span> ylabel "tiempo en segundos" font "Inconsolata,9"
-
-<span style="color: #729fcf; font-weight: bold;">plot</span> <span style="color: #ff6347;">data</span> u 1:2 <span style="color: #8ae234; font-weight: bold;">lw</span> 5 w i
-</pre>
-</div>
-
-
-<div class="figure">
-<p><img src="img/0895-query-execution-time.png" alt="0895-query-execution-time.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5">graphviz</h2>
 <div class="outline-text-2" id="text-5">
@@ -327,6 +244,28 @@ google --&gt; firefox: HTML
 <div id="outline-container-sec-9" class="outline-2">
 <h2 id="sec-9">gnuplot</h2>
 <div class="outline-text-2" id="text-9">
+</div><div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1">desde un archivo de datos</h3>
+<div class="outline-text-3" id="text-9-1">
+<div class="org-src-container">
+
+<pre class="src src-sh">head ~/data/bcc/gca/asterisk/asterisk1-bean-query-20.dat
+</pre>
+</div>
+
+<pre class="example">
+ 1	1.4569969177246	11.918306112289
+ 2	1.2775399684906	3.2772920131683
+ 3	1.1570041179657	2.124370098114
+ 4	1.2286741733551	2.1695129871368
+ 5	1.1820800304413	2.1903049945831
+ 6	1.3336930274963	1.7454440593719
+ 7	1.2775030136108	1.8959369659424
+ 8	1.2779738903046	2.9318058490753
+ 9	1.6264469623566	2.3969349861145
+10	1.280650138855	2.1734149456024
+</pre>
+
 <div class="org-src-container">
 
 <pre class="src src-gnuplot">reset
@@ -351,6 +290,114 @@ google --&gt; firefox: HTML
 <div class="figure">
 <p><img src="img/asterisk1-bean-query-20.png" alt="asterisk1-bean-query-20.png" />
 </p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2">procesar un log, generar el archivo y graficar</h3>
+<div class="outline-text-3" id="text-9-2">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/data/bcc/gca/cct-2797
+egrep <span style="color: #ad7fa8; font-style: italic;">"0895.*Query Execution Time:[0-9\.]+"</span> sugarcct6.log | awk <span style="color: #ad7fa8; font-style: italic;">'{print $4"\t"$9}'</span> | sed s/<span style="color: #ad7fa8; font-style: italic;">"Time:"</span>//g | awk <span style="color: #ad7fa8; font-style: italic;">'{if ($2&gt;h[$1]) h[$1]=$2} END {for (hh in h) print hh,h[hh]}'</span> | sort  | tee 0895-query-execution-time.dat
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="right">12:17:08</td>
+<td class="right">0.0302698612213</td>
+</tr>
+
+<tr>
+<td class="right">12:17:11</td>
+<td class="right">0.00952696800232</td>
+</tr>
+
+<tr>
+<td class="right">12:17:21</td>
+<td class="right">0.0434710979462</td>
+</tr>
+
+<tr>
+<td class="right">12:17:22</td>
+<td class="right">0.01877784729</td>
+</tr>
+
+<tr>
+<td class="right">12:17:25</td>
+<td class="right">0.0104238986969</td>
+</tr>
+
+<tr>
+<td class="right">12:17:26</td>
+<td class="right">0.0150380134583</td>
+</tr>
+
+<tr>
+<td class="right">12:17:28</td>
+<td class="right">1.61865592003</td>
+</tr>
+
+<tr>
+<td class="right">12:17:29</td>
+<td class="right">0.022381067276</td>
+</tr>
+
+<tr>
+<td class="right">12:17:30</td>
+<td class="right">0.00826001167297</td>
+</tr>
+
+<tr>
+<td class="right">12:17:50</td>
+<td class="right">0.00913214683533</td>
+</tr>
+
+<tr>
+<td class="right">12:17:51</td>
+<td class="right">0.0108060836792</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-gnuplot">reset
+<span style="color: #8ae234;">set</span> terminal png size 800,600
+<span style="color: #8ae234;">set</span> lmargin 10
+<span style="color: #8ae234;">set</span> bmargin 5
+<span style="color: #8ae234;">set</span> rmargin 5
+<span style="color: #8ae234;">set</span> <span style="color: #8ae234; font-weight: bold;">title</span> "M&#225;ximo Tiempo de ejecuci&#243;n Queries usuario 0895\nsugarcct6.<span style="color: #edd400; font-weight: bold;">log</span>" font "Inconsolata,10"
+<span style="color: #8ae234;">set</span> xdata time
+<span style="color: #8ae234;">set</span> timefmt x <span style="color: #ad7fa8; font-style: italic;">'%H:%M:%S'</span>
+<span style="color: #8ae234;">set</span> format x <span style="color: #ad7fa8; font-style: italic;">'%H:%M:%S'</span>
+<span style="color: #8ae234;">set</span> xtics font <span style="color: #ad7fa8; font-style: italic;">'Inconsolata,8'</span> rotate
+<span style="color: #8ae234;">set</span> mxtics
+<span style="color: #8ae234;">set</span> key off
+<span style="color: #8ae234;">set</span> tics font "Inconsolata,8" nomirror
+<span style="color: #8ae234;">set</span> mytics
+<span style="color: #8ae234;">set</span> grid ytics
+<span style="color: #8ae234;">set</span> xlabel "horario" font "Inconsolata,9"
+<span style="color: #8ae234;">set</span> ylabel "tiempo en segundos" font "Inconsolata,9"
+
+<span style="color: #729fcf; font-weight: bold;">plot</span> <span style="color: #ff6347;">data</span> u 1:2 <span style="color: #8ae234; font-weight: bold;">lw</span> 5 w i
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="img/0895-query-execution-time.png" alt="0895-query-execution-time.png" />
+</p>
+</div>
 </div>
 </div>
 </div>
