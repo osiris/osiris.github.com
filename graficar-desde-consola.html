@@ -30,17 +30,7 @@ Páginas más solicitadas
 </div>
 
 <pre class="example">
- 60.18 %  60.18 %       461 ██████████████████████████████ / 
- 75.98 %  15.80 %       121 ████████ /feed 
- 79.77 %   3.79 %        29 ██ /2014-03-14-saso-conf-curuzu-cuatia.html 
- 83.03 %   3.26 %        25 █ /index.html 
- 86.16 %   3.13 %        24 █ /painless-backups-using-rdiff-backup 
- 89.16 %   3.00 %        23 █ /visualizando-org-mode-con-gnuplot.html 
- 92.04 %   2.87 %        22 █ /docs.html 
- 94.78 %   2.74 %        21 █ /que-no-se-entere-nadie.html 
- 97.39 %   2.61 %        20 █ /todo-txt-rst+org-mode.html 
-100.00 %   2.61 %        20 █ /blog.html 
-                        766
+0
 </pre>
 
 <p>
@@ -54,12 +44,7 @@ Códigos de error HTTP
 </div>
 
 <pre class="example">
- 66.78 %  66.78 %      3225 █████████████████████████████████ 200 
- 86.75 %  19.96 %       964 ██████████ 404 
- 99.34 %  12.59 %       608 ██████ 304 
- 99.98 %   0.64 %        31 ▌ 206 
-100.00 %   0.02 %         1 ▌ 400 
-                       4829
+0
 </pre>
 
 <p>
@@ -73,37 +58,80 @@ Análisis de <code>user-agent</code>
 </div>
 
 <pre class="example">
- 86.82 %  86.82 %      4188 ███████████████████████████████████████████ Mozilla/5.0 
- 90.84 %   4.02 %       194 ██ Mozilla/4.0 
- 93.06 %   2.22 %       107 █ msnbot-media/1.1 
- 95.02 %   1.97 %        95 █ Googlebot-Image/1.0 
- 96.64 %   1.62 %        78 █ Opera/9.80 
- 97.53 %   0.89 %        43 ▌ Claws 
- 97.97 %   0.44 %        21 ▌ SAMSUNG-SGH-E250/1.0 
- 98.38 %   0.41 %        20 ▌ DoCoMo/2.0 
- 98.63 %   0.25 %        12 ▌ Sogou 
- 98.86 %   0.23 %        11 ▌ www.adressendeutschland.de 
- 99.07 %   0.21 %        10 ▌ Feedly/1.0 
- 99.25 %   0.19 %         9 ▌ - 
- 99.42 %   0.17 %         8 ▌ Python-urllib/2.6 
- 99.59 %   0.17 %         8 ▌ Googlebot/2.1 
- 99.67 %   0.08 %         4 ▌ WebIndex 
- 99.75 %   0.08 %         4 ▌ Google-HTTP-Java-Client/1.17.0-rc 
- 99.83 %   0.08 %         4 ▌ facebookexternalhit/1.0 
- 99.90 %   0.06 %         3 ▌ facebookexternalhit/1.1 
- 99.96 %   0.06 %         3 ▌ curl/7.21.0 
-100.00 %   0.04 %         2 ▌ W3C_Validator/1.3 
-                       4824
+0
 </pre>
 </div>
 </div>
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">block-diag</h2>
 <div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>FIXME
-</li>
-</ul>
+<pre class="example">
+diagram {
+ #default_node_color = black;
+ #default_linecolor = #cfff00;
+ #default_textcolor = #cfff00;
+ default_fontsize = 14;
+ span_width = 100;
+ span_height = 60;
+ node_height = 40;
+ node_width = 130;
+
+ inet [shape = cloud];
+ inet -- osiux;
+
+ network BuenosAiresLibre {
+     address = "10.4.14.x/224"
+     osiux [address = "10.4.14.225"]
+     aleosi [address = "10.4.14.251"]
+     eosial [address = "10.4.14.250"]
+     osiale [address = "10.4.14.226"]
+     ovislink [address = "10.4.14.228"]
+ }
+ network CompartirEsBueno-IPv6 {
+     address = "2a00:1508:1:f00f::1/64"
+     aleosi [address = "::1"]
+     caipiroska [address = ":a9f9:af72:93a2:c94c"]
+     leosia [address = ":6670:2ff:fe3d:9173"]
+ }
+ network CompartirEsBueno-IPv4 {
+     address = "10.254.x.x/16"
+     aleosi [address = "10.254.104.161"]
+     caipiroska [address = "10.254.104.182"]
+     eosial [address = "10.254.111.107"]
+     leosia [address = "10.254.47.64"]
+     sialeo [address = "10.254.157.127"]
+ }
+ network linklocal-wan {
+     address = "fe80::"
+     aleosi [address = "::a2f3:c1ff:fe9d:2579"]
+     eosial [address = "::fad1:11ff:fe7a:61b3"]
+ }
+ network linklocal-wlan {
+     address = "fe80::"
+     caipiroska [address = "::1e4b:d6ff:fed2:f99"]
+     aleosi [address = "::a0f3:c1ff:fe9d:257a"]
+     eosial [address = "::f8d1:11ff:fe7a:61b4"]
+     leosia [address = "::6470:2ff:fe3d:9175"]
+     sialeo [address = "::90f6:52ff:fe6a:7dee"]
+ }
+ network librenet6 {
+     address = "fe80::"
+     aleosi [address = "::c8e1:c2ff:fe9c:cfe4"]
+ }
+ network librevpn {
+     address = "192.168.9.x/24"
+     caipiroska [address = "192.168.9.70"]
+ }
+ network linklocal-lan {
+     address = "fe80::"
+     aleosi [address = "::a2f3:c1ff:fe9d:2577"]
+     eosial [address = "::fad1:11ff:fe7a:61b1"]
+     leosia [address = "::68d3:ecff:fefb:d060"]
+     osiale [address = "::214:85ff:fe3c:5a9f"]
+     sialeo [address = "::92f6:52ff:fe6a:7dec"]
+ }
+}
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-3" class="outline-2">
@@ -218,8 +246,8 @@ Análisis de <code>user-agent</code>
 </div>
 
 <pre class="example">
-13:    14:    15:    16:    17:    18:
-  ┊      ┊      ┊      ┊      ┊      ┊
+13:    14:    15:    16:    17:    18:     
+  ┊      ┊      ┊      ┊      ┊      ┊     
   ┊□□□□□□┊□□▣▣▣▣┊□□□□□□┊□▨▣▣▣▣┊□□□□□□┊        gca ===============&gt;  133
   ┊□□□□▣▣┊□□□□□□┊□□□□□□┊□□□□□□┊□□□□□□┊   almuerzo ===============&gt;   38
   ┊      ┊      ┊      ┊      ┊      ┊      TOTAL ===============&gt;  171
@@ -360,72 +388,6 @@ egrep <span style="color: #ad7fa8; font-style: italic;">"0895.*Query Execution T
 </pre>
 </div>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="right" />
-
-<col  class="right" />
-</colgroup>
-<tbody>
-<tr>
-<td class="right">12:17:08</td>
-<td class="right">0.0302698612213</td>
-</tr>
-
-<tr>
-<td class="right">12:17:11</td>
-<td class="right">0.00952696800232</td>
-</tr>
-
-<tr>
-<td class="right">12:17:21</td>
-<td class="right">0.0434710979462</td>
-</tr>
-
-<tr>
-<td class="right">12:17:22</td>
-<td class="right">0.01877784729</td>
-</tr>
-
-<tr>
-<td class="right">12:17:25</td>
-<td class="right">0.0104238986969</td>
-</tr>
-
-<tr>
-<td class="right">12:17:26</td>
-<td class="right">0.0150380134583</td>
-</tr>
-
-<tr>
-<td class="right">12:17:28</td>
-<td class="right">1.61865592003</td>
-</tr>
-
-<tr>
-<td class="right">12:17:29</td>
-<td class="right">0.022381067276</td>
-</tr>
-
-<tr>
-<td class="right">12:17:30</td>
-<td class="right">0.00826001167297</td>
-</tr>
-
-<tr>
-<td class="right">12:17:50</td>
-<td class="right">0.00913214683533</td>
-</tr>
-
-<tr>
-<td class="right">12:17:51</td>
-<td class="right">0.0108060836792</td>
-</tr>
-</tbody>
-</table>
-
 <div class="org-src-container">
 
 <pre class="src src-gnuplot">reset
@@ -462,7 +424,7 @@ egrep <span style="color: #ad7fa8; font-style: italic;">"0895.*Query Execution T
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2014-03-11</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.5h)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
