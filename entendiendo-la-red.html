@@ -7,7 +7,7 @@
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="osiux.css" type="text/css" /><link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -22,28 +22,10 @@
 <ul class="org-ul">
 <li>centralizada
 </li>
-</ul>
 
-
-
-<div class="figure">
-<p><img src="img/redes-centralizadas.png" alt="redes-centralizadas.png" />
-</p>
-</div>
-
-<ul class="org-ul">
 <li>descentralizada
 </li>
-</ul>
 
-
-
-<div class="figure">
-<p><img src="img/redes-descentralizadas.png" alt="redes-descentralizadas.png" />
-</p>
-</div>
-
-<ul class="org-ul">
 <li>en malla o <i>mesh</i>
 
 
@@ -55,6 +37,7 @@
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Asignación de IPs por medio de DHCP</h2>
 <div class="outline-text-2" id="text-2">
@@ -68,14 +51,8 @@
 
 <div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1">Red de 4 equipos</h3>
-<div class="outline-text-3" id="text-2-1">
+</div>
 
-<div class="figure">
-<p><img src="img/redes-lan.png" alt="redes-lan.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2"><code>B</code> dice, <b>necesito una IP!</b></h3>
 <div class="outline-text-3" id="text-2-2">
@@ -89,14 +66,9 @@
 <li>dirección física: 01:12:23:34:45:bb
 </li>
 </ul>
+</div>
+</div>
 
-
-<div class="figure">
-<p><img src="img/redes-dhcp-discover.png" alt="redes-dhcp-discover.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-2-3" class="outline-3">
 <h3 id="sec-2-3"><code>D</code> dice, <b>yo te puedo dar IP!</b></h3>
 <div class="outline-text-3" id="text-2-3">
@@ -114,14 +86,9 @@
 <li>dns secundario: 8.8.4.4
 </li>
 </ul>
+</div>
+</div>
 
-
-<div class="figure">
-<p><img src="img/redes-dhcp-offer.png" alt="redes-dhcp-offer.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-2-4" class="outline-3">
 <h3 id="sec-2-4"><code>B</code> dice, confirmo recepción!</h3>
 <div class="outline-text-3" id="text-2-4">
@@ -129,14 +96,9 @@
 <li>mensaje: <code>DHCPREQUEST</code>
 </li>
 </ul>
+</div>
+</div>
 
-
-<div class="figure">
-<p><img src="img/redes-dhcp-request.png" alt="redes-dhcp-request.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-2-5" class="outline-3">
 <h3 id="sec-2-5"><code>D</code> dice, confirmo confirmación!</h3>
 <div class="outline-text-3" id="text-2-5">
@@ -153,6 +115,7 @@
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Resolución de nombres de dominios DNS</h2>
 <div class="outline-text-2" id="text-3">
@@ -162,6 +125,10 @@
 </pre>
 </div>
 
+<pre class="example">
+localhost.gcoop.com.ar has address 127.0.0.1
+</pre>
+
 <div class="org-src-container">
 
 <pre class="src src-sh">dig osiux.com
@@ -169,10 +136,10 @@
 </div>
 
 <pre class="example">
-; &lt;&lt;&gt;&gt; DiG 9.8.1-P1 &lt;&lt;&gt;&gt; osiux.com
+; &lt;&lt;&gt;&gt; DiG 9.8.4-P1 &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 456
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 12788
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
@@ -181,9 +148,9 @@
 ;; ANSWER SECTION:
 osiux.com.		300	IN	A	96.8.118.129
 
-;; Query time: 249 msec
-;; SERVER: 8.8.8.8#53(8.8.8.8)
-;; WHEN: Wed Jan 15 10:19:49 2014
+;; Query time: 198 msec
+;; SERVER: 192.168.10.3#53(192.168.10.3)
+;; WHEN: Tue Apr  9 23:29:33 2013
 ;; MSG SIZE  rcvd: 43
 </pre>
 </div>
@@ -196,8 +163,18 @@ osiux.com.		300	IN	A	96.8.118.129
 <pre class="src src-sh">tcpdump -r dns-query.pcap -nvX
 </pre>
 </div>
+
+<pre class="example">
+02:14:20.301428 IP (tos 0x0, ttl 64, id 27874, offset 0, flags [none], proto UDP (17), length 55)
+    127.0.0.1.57039 &gt; 127.0.0.1.53: 39172+ A? osiux.com. (27)
+    0x0000:  4500 0037 6ce2 0000 4011 0fd2 7f00 0001  E..7l...@.......
+    0x0010:  7f00 0001 decf 0035 0023 fe36 9904 0100  .......5.#.6....
+    0x0020:  0001 0000 0000 0000 056f 7369 7578 0363  .........osiux.c
+    0x0030:  6f6d 0000 0100 01                        om.....
+</pre>
 </div>
 </div>
+
 <div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2">analizando un paquete de query dns</h3>
 <div class="outline-text-3" id="text-3-2">
@@ -206,8 +183,34 @@ osiux.com.		300	IN	A	96.8.118.129
 <pre class="src src-sh">tshark -r dns-query.pcap -VO dns
 </pre>
 </div>
+
+<pre class="example">
+Frame 1: 71 bytes on wire (568 bits), 71 bytes captured (568 bits)
+Linux cooked capture
+Internet Protocol Version 4, Src: 127.0.0.1 (127.0.0.1), Dst: 127.0.0.1 (127.0.0.1)
+User Datagram Protocol, Src Port: 57039 (57039), Dst Port: domain (53)
+Domain Name System (query)
+Transaction ID: 0x9904
+Flags: 0x0100 Standard query
+	0... .... .... .... = Response: Message is a query
+	.000 0... .... .... = Opcode: Standard query (0)
+	.... ..0. .... .... = Truncated: Message is not truncated
+	.... ...1 .... .... = Recursion desired: Do query recursively
+	.... .... .0.. .... = Z: reserved (0)
+	.... .... ...0 .... = Non-authenticated data: Unacceptable
+Questions: 1
+Answer RRs: 0
+Authority RRs: 0
+Additional RRs: 0
+Queries
+	osiux.com: type A, class IN
+	Name: osiux.com
+	Type: A (Host address)
+	Class: IN (0x0001)
+</pre>
 </div>
 </div>
+
 <div id="outline-container-sec-3-3" class="outline-3">
 <h3 id="sec-3-3">capturar consultas al dns</h3>
 <div class="outline-text-3" id="text-3-3">
@@ -216,6 +219,7 @@ ssh root@linksys '/usr/sbin/tcpdump -i br0 -s 0 -w - dst port 53' &gt;linksys.pc
 </pre>
 </div>
 </div>
+
 <div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4">ranking de dns</h3>
 <div class="outline-text-3" id="text-3-4">
@@ -288,6 +292,7 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Cómo saber la IP de un equipo?</h2>
 <div class="outline-text-2" id="text-4">
@@ -302,24 +307,13 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 <li>Todos reciben paquete ARP por difusión
 </li>
 </ul>
+</div>
+</div>
 
-
-<div class="figure">
-<p><img src="img/redes-arp-1.png" alt="redes-arp-1.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-4-2" class="outline-3">
 <h3 id="sec-4-2">D contesta, <b>mi IP es 10.4.14.225</b></h3>
-<div class="outline-text-3" id="text-4-2">
+</div>
 
-<div class="figure">
-<p><img src="img/redes-arp-2.png" alt="redes-arp-2.png" />
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-4-3" class="outline-3">
 <h3 id="sec-4-3">Quénes están en esta red?</h3>
 <div class="outline-text-3" id="text-4-3">
@@ -328,8 +322,14 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 <pre class="src src-sh">sudo arp-scan --interface eth0 --localnet
 </pre>
 </div>
+
+<pre class="example">
+0 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.8.1: 256 hosts scanned in 1.625 seconds (157.54 hosts/sec). 0 responded
+</pre>
 </div>
 </div>
+
 <div id="outline-container-sec-4-4" class="outline-3">
 <h3 id="sec-4-4">pingueando</h3>
 <div class="outline-text-3" id="text-4-4">
@@ -341,18 +341,19 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
-64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.080 ms
-64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.039 ms
-64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.065 ms
+64 bytes from 127.0.0.1: icmp_req=1 ttl=64 time=0.066 ms
+64 bytes from 127.0.0.1: icmp_req=2 ttl=64 time=0.050 ms
+64 bytes from 127.0.0.1: icmp_req=3 ttl=64 time=0.050 ms
 64 bytes from 127.0.0.1: icmp_req=4 ttl=64 time=0.048 ms
-64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.059 ms
+64 bytes from 127.0.0.1: icmp_req=5 ttl=64 time=0.049 ms
 
 --- 127.0.0.1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 3998ms
-rtt min/avg/max/mdev = 0.039/0.058/0.080/0.014 ms
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 0.048/0.052/0.066/0.010 ms
 </pre>
 </div>
 </div>
+
 <div id="outline-container-sec-4-5" class="outline-3">
 <h3 id="sec-4-5">capturando pings</h3>
 <div class="outline-text-3" id="text-4-5">
@@ -363,6 +364,7 @@ rtt min/avg/max/mdev = 0.039/0.058/0.080/0.014 ms
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-4-6" class="outline-3">
 <h3 id="sec-4-6">viendo un <code>ping</code></h3>
 <div class="outline-text-3" id="text-4-6">
@@ -383,9 +385,90 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">protocolos</h2>
+<h2 id="sec-5">traceroute</h2>
 <div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+
+<pre class="src src-sh">traceroute -m 100 216.81.59.173
+</pre>
+</div>
+
+<pre class="example">
+traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
+ 1  malbec (192.168.10.3)  0.107 ms  0.087 ms  0.083 ms
+ 2  10.29.64.1 (10.29.64.1)  9.180 ms  9.206 ms  9.190 ms
+ 3  cpe-181-47-254-17.telecentro-reversos.com.ar (181.47.254.17)  9.645 ms  9.653 ms  9.706 ms
+ 4  telecentro.baires1.bai.seabone.net (195.22.220.33)  10.882 ms  10.307 ms  10.762 ms
+ 5  bundle-ether1.baires1.bai.seabone.net (195.22.220.32)  15.964 ms  16.074 ms  15.974 ms
+ 6  * * *
+ 7  xe-1-2-0.mia10.ip4.tinet.net (77.67.71.97)  142.397 ms  139.703 ms  142.354 ms
+ 8  xe-2-1-0.atl11.ip4.tinet.net (89.149.184.21)  156.811 ms xe-3-0-0.atl11.ip4.tinet.net (89.149.180.202)  158.695 ms  158.561 ms
+ 9  epik-networks-gw.ip4.tinet.net (77.67.69.158)  159.786 ms  159.491 ms  159.581 ms
+10  po0-3.dsr2.atl.epikip.net (216.81.59.2)  176.330 ms  176.462 ms  176.281 ms
+11  * * *
+12  Episode.IV (206.214.251.1)  224.463 ms  226.258 ms  220.950 ms
+13  A.NEW.HOPE (206.214.251.6)  250.974 ms  247.808 ms  259.092 ms
+14  It.is.a.period.of.civil.war (206.214.251.9)  259.944 ms  250.907 ms  255.839 ms
+15  Rebel.spaceships (206.214.251.14)  218.522 ms  226.211 ms  219.834 ms
+16  striking.from.a.hidden.base (206.214.251.17)  241.201 ms  236.375 ms  232.261 ms
+17  have.won.their.first.victory (206.214.251.22)  241.703 ms  236.591 ms  224.864 ms
+18  against.the.evil.Galactic.Empire (206.214.251.25)  216.832 ms  216.318 ms  214.477 ms
+19  During.the.battle (206.214.251.30)  208.949 ms  210.051 ms  208.008 ms
+20  Rebel.spies.managed (206.214.251.33)  212.787 ms  212.294 ms  212.273 ms
+21  to.steal.secret.plans (206.214.251.38)  255.908 ms  258.825 ms  257.972 ms
+22  to.the.Empires.ultimate.weapon (206.214.251.41)  213.769 ms  213.009 ms  216.689 ms
+23  the.DEATH.STAR (206.214.251.46)  218.461 ms  218.095 ms  219.359 ms
+24  an.armored.space.station (206.214.251.49)  209.458 ms  211.553 ms  213.325 ms
+25  with.enough.power.to (206.214.251.54)  216.680 ms  215.119 ms  215.551 ms
+26  destroy.an.entire.planet (206.214.251.57)  229.043 ms  225.637 ms  225.987 ms
+27  Pursued.by.the.Empires (206.214.251.62)  217.677 ms  217.609 ms  221.162 ms
+28  sinister.agents (206.214.251.65)  212.421 ms  218.351 ms  217.477 ms
+29  Princess.Leia.races.home (206.214.251.70)  217.438 ms  215.519 ms  215.707 ms
+30  aboard.her.starship (206.214.251.73)  208.869 ms  211.286 ms  209.410 ms
+31  custodian.of.the.stolen.plans (206.214.251.78)  254.545 ms  257.170 ms  257.258 ms
+32  that.can.save.her (206.214.251.81)  230.703 ms  226.975 ms  224.884 ms
+33  people.and.restore (206.214.251.86)  213.461 ms  212.716 ms  210.437 ms
+34  freedom.to.the.galaxy (206.214.251.89)  240.426 ms  238.993 ms  238.415 ms
+35  0-----I-------I-----0 (206.214.251.94)  225.745 ms  228.150 ms  227.564 ms
+36  0------------------0 (206.214.251.97)  239.726 ms  242.001 ms  241.268 ms
+37  0-----------------0 (206.214.251.102)  216.268 ms  217.171 ms  219.559 ms
+38  0----------------0 (206.214.251.105)  213.450 ms  212.874 ms  210.651 ms
+39  0---------------0 (206.214.251.110)  211.686 ms  212.642 ms  213.635 ms
+40  0--------------0 (206.214.251.113)  243.655 ms  241.858 ms  238.552 ms
+41  0-------------0 (206.214.251.118)  218.823 ms  217.698 ms  217.625 ms
+42  0------------0 (206.214.251.121)  221.651 ms  217.936 ms  217.573 ms
+43  0-----------0 (206.214.251.126)  254.899 ms  255.905 ms  253.906 ms
+44  0----------0 (206.214.251.129)  219.658 ms  214.849 ms  218.945 ms
+45  0---------0 (206.214.251.134)  254.542 ms  255.310 ms  258.304 ms
+46  0--------0 (206.214.251.137)  221.805 ms  218.502 ms  216.293 ms
+47  0-------0 (206.214.251.142)  218.543 ms  219.614 ms  218.705 ms
+48  0------0 (206.214.251.145)  213.497 ms  216.123 ms  215.188 ms
+49  0-----0 (206.214.251.150)  250.876 ms  250.727 ms  253.698 ms
+50  0----0 (206.214.251.153)  217.614 ms  218.582 ms  219.936 ms
+51  0---0 (206.214.251.158)  216.849 ms  214.232 ms  212.980 ms
+52  0--0 (206.214.251.161)  217.178 ms  216.413 ms  215.734 ms
+53  0-0 (206.214.251.166)  228.141 ms  231.885 ms  226.433 ms
+54  00 (206.214.251.169)  255.405 ms  258.888 ms  258.736 ms
+55  I (206.214.251.174)  239.065 ms  241.727 ms  241.572 ms
+56  By.Ryan.Werber (206.214.251.177)  228.102 ms  226.607 ms  228.030 ms
+57  Blizzards.Breed.CCIE.Creativity (206.214.251.182)  239.656 ms  238.884 ms  239.301 ms
+58  Please.Try.Again.Tracerote.to.obiwan.scrye.net (206.214.251.185)  215.164 ms  215.725 ms  216.688 ms
+59  read.more.at.beaglenetworks.net (206.214.251.190)  228.818 ms * *
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">traceroute -m 255 obiwan.scrye.net|awk {<span style="color: #ad7fa8; font-style: italic;">'print $2'</span>}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">protocolos</h2>
+<div class="outline-text-2" id="text-6">
 
 <div class="figure">
 <p><img src="img/redes-protocolos-1.png" alt="redes-protocolos-1.png" />
@@ -399,9 +482,9 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </div>
 </div>
 
-<div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1">Qué tiene un paquete TCP/IP?</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">Qué tiene un paquete TCP/IP?</h3>
+<div class="outline-text-3" id="text-6-1">
 <pre class="example">
 +------------------------+--------------------------+
 | MAC origen fe:ca:fe:ca | MAC destino  ca:fe:ca:fe |
@@ -419,9 +502,10 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2">Ethernet header</h3>
-<div class="outline-text-3" id="text-5-2">
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">Ethernet header</h3>
+<div class="outline-text-3" id="text-6-2">
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -444,9 +528,10 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </div>
 </div>
 </div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">IP header</h2>
-<div class="outline-text-2" id="text-6">
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">IP header</h2>
+<div class="outline-text-2" id="text-7">
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -466,9 +551,10 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">UPD header</h2>
-<div class="outline-text-2" id="text-7">
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">UPD header</h2>
+<div class="outline-text-2" id="text-8">
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -482,9 +568,10 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">TCP header</h2>
-<div class="outline-text-2" id="text-8">
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">TCP header</h2>
+<div class="outline-text-2" id="text-9">
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -508,9 +595,10 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">ChangeLog</h2>
-<div class="outline-text-2" id="text-9">
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">ChangeLog</h2>
+<div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2013-06-05 mié]</span></span> simplifico y hago correcciones varias
 </li>
@@ -525,7 +613,7 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2013-04-04</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
