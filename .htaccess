@@ -3,6 +3,7 @@ AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteRule ^(.*?).txt$ $1.html
+    RewriteRule ^2013-09-30-hacks-hackers-buenos-aires-2013.html$ /2013-08-30-hacks-hackers-buenos-aires-2013.html [R=301,NC]
 </ifModule>
 <IfModule mod_expires.c>
     ExpiresActive On
