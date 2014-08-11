@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Semana Negra - Sobrevivir en la shell</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Semana Negra - Sobrevivir en la shell</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+</p>
+
+<div class="figure">
+<p><a href="img/semana-negra/tmux.png" width="640" height="480" alt="Semana Negra usando TMUX"><img src="tmb/semana-negra/tmux.png" alt="Semana Negra usando TMUX" width="640" height="480" /></a>
+</p>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">el juramento</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Desde el 28 de Abril del 2014 y por <b>una semana completa</b> debía
+cumplir con el juramento propuesto desde el sitio
+<a href="http://elbinario.net">elbinario.net</a> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<pre class="example">
+Te deposito mi corazón junto al tuyo, para hacer que el nuestro
+sea uno más ancho y seguro. Hago compromiso ante ti,
+terminal. Seré tuya por una semana. Cuando me sienta débil, seré
+fuerte y no arrancaré las x, cuando el ascii de los vídeos me
+agobie, seré fuerte y veré la saga entera de starwars en ascii,
+seré firme cuando los ojos no aguanten, seré tu sombra cuando no
+sepa algún comando, seré sonrisa, seré llanto.
+
+Hasta que la interface gráfica nos separe.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">motivación</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+A diario abuso de la terminal, de hecho practicamente la única
+aplicación gráfica que uso es <i>Firefox</i>, todo lo demás vive en un
+<code>screen/tmux</code> usando <code>terminator</code> y como siempre digo:
+</p>
+
+<p>
+<b>yo uso la consola sólo por si en algún momento no tengo X</b>
+</p>
+
+<p>
+Que mejor ocasión para probar vivir sin <code>X</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">desafío doble</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Tenía que lograr sobrevivir la semana en una desktop en el trabajo
+(trabajando) y en una notebook compartida en casa, en el primer
+caso coincidió justo con el cambio de distro, asi que directamente
+deshabilité <code>X</code> en mi nuevo <b>Huayra GNU/Linux 2.0</b> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
+</p>
+
+<p>
+En casa no pude deshabilitar <code>X</code> por tratarse de una compu
+compartida, asi que me mantuve en una <code>tty</code> usando <code>CTRL+ALT+F1</code>
+cada vez que necesitaba hacer algo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">blog desde la <code>tty</code></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Justo 2 días antes, participé del <b>FLISoL en la UNDAv</b> <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
+asi que tenía que comenzar la mañana escribiendo un post lo cual no
+representaba mayores desafíos porque uso <b>Org-mode</b> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>
+que es parte de <b>EMACS</b> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>, pero me encontré con un primer
+problema, ver y editar las fotos que incluiría&#x2026;
+</p>
+
+<p>
+Probé de utilizar <code>cacaview</code> del paquete <code>caca-utils</code> <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> y
+la verdad que hace honor a su nombre ;-), al menos para ver una
+foto en <i>ascii-art</i> no sirve de mucho, la imagen inicial a pantalla
+completa se ve así:
+</p>
+
+
+<div class="figure">
+<p><a href="img/semana-negra/cacaview.png" width="640" height="360" alt="Semana Negra cacaview"><img src="tmb/semana-negra/cacaview.png" alt="Semana Negra cacaview" width="640" height="360" /></a>
+</p>
+</div>
+
+<p>
+Haciendo un zoom se puede apreciar mejor pero, hay que scrollear
+mucho para entender toda la imagen:
+</p>
+
+
+<div class="figure">
+<p><a href="img/semana-negra/cacaview-zoom.png" width="640" height="360" alt="Semana Negra cacaview zoom x20"><img src="tmb/semana-negra/cacaview-zoom.png" alt="Semana Negra cacaview zoom x20" width="640" height="360" /></a>
+</p>
+</div>
+
+<p>
+Por suerte contamos con la ayuda de <code>fbi</code> que utiliza el
+<i>Framebuffer</i> <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> y se visualiza a la perfección:
+</p>
+
+
+<div class="figure">
+<p><a href="img/semana-negra/fbi.png" width="640" height="360" alt="Semana Negra fbi"><img src="tmb/semana-negra/fbi.png" alt="Semana Negra fbi" width="640" height="360" /></a>
+</p>
+</div>
+
+<p>
+El resultado final, pude visualizarlo mediante <code>links2</code>
+agregando los parámetros <code>-driver\=directfb -g</code>
+</p>
+
+
+<div class="figure">
+<p><a href="img/semana-negra/links2.png" width="640" height="360" alt="Semana Negra links2"><img src="tmb/semana-negra/links2.png" alt="Semana Negra links2" width="640" height="360" /></a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><code>tmux</code> y <code>mplayer</code></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+A diario uso <code>tmux</code>, sólo tuve que modificar la <code>statusbar</code> porque
+se redibujaba mal, en realidad no usaba muchas características,
+tiendo a un entorno minimamilista, y sólo para probar pude ver un
+video usando <code>mplayer</code> con la opción <code>-vo fbdev2</code> sin
+inconvenientes por sobre el <code>tmux</code>.
+</p>
+
+
+<div class="figure">
+<p><a href="img/semana-negra/tmux-mplayer.png" width="640" height="360" alt="Semana Negra fbi"><img src="tmb/semana-negra/tmux-mplayer.png" alt="Semana Negra fbi" width="640" height="360" /></a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">problemas encontrados</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+No funciona correctamente el <i>UTF8</i> en la terminal, probé con
+<code>/bin/unicode_start</code> pero no se ve nada bonito, después vi que
+algunas fuentes no tienen todos los caracteres, usando <code>fbterm</code>
+mejora notablemente la experiencia.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">resumen y encuesta</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Se realizó un resumen <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup> de la experiencia y se
+realizaron las siguientes preguntas, las cuales paso a responder&#x2026;
+</p>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1">¿Cómo me he sentido en la consola?</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Muy bien, confirmé que mi entorno esta preparado para una <code>tty</code>
+aunque algunas configuraciones tuvieron que ser adaptadas, en
+general no tuve inconvenientes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2">¿Lo más sencillo?</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+Utilizar <code>tmux</code> en una <code>tty</code> no varía de un emulador de terminal,
+asi que rápidamente estaba operativo y podía también trabajar en
+remoto levantando mi <code>tmux</code> vía <code>ssh</code>. Sólo que <code>tmux</code> no se llevó
+bien con <code>fbterm</code> que aparenta ser una buen terminal que usa
+<i>framebuffer</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3">¿Lo más difícil?</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+Navegar por la web, si bien en mi <i>Firefox</i> tengo <i>plugins</i> que
+deshabilitan <i>javascript</i> por defecto, algunos sitios fueron
+imposibles de navegarlos usando <code>w3m</code> y <code>links2</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4">¿Qué necesidades no he podido cubrir durante la semana?</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+Usar el <i>Home Banking</i>, nuevamente <i>javascript</i> y un diseño para
+navegadores modernos impidió realizar movimientos, al menos pude
+ver el saldo de mi cuenta :-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-5" class="outline-3">
+<h3 id="sec-7-5">Herramientas que he usado:</h3>
+<div class="outline-text-3" id="text-7-5">
+<p>
+Las habituales, sólo tuve que reemplazar <i>Firefox</i> por
+<code>links2</code>. Se puede ver un ranking de los comandos más usados en la
+semana, de acuerdo al historial de <code>bash</code>.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">cat ~/semana-negra.log | head
+<span style="color: #729fcf;">echo</span>
+cat ~/semana-negra.log | awk <span style="color: #ad7fa8; font-style: italic;">'{print $3,$4}'</span> | sort | uniq -c | sort -nr | head -20 | barra
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-6" class="outline-3">
+<h3 id="sec-7-6">Usos de la shell frente a X y viceversa</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+El mejor de los mundos es que exista un comando que hace todo lo
+que necesitás, si con mil parámetros y luego una o varias <i>gui</i>
+que permitan usos simples y cada usuario podrá elegir su interfaz.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-7" class="outline-3">
+<h3 id="sec-7-7">El frío en la shell</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+Para nada! mi <code>$TERM</code> esta seteada en <code>screen-256color</code> :-P,
+además no hay como el fondo negro y letras verdes para aclimatar
+los ojos, <b>la shell es mi amiga</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-8" class="outline-3">
+<h3 id="sec-7-8">¿Programas pesados?</h3>
+<div class="outline-text-3" id="text-7-8">
+<p>
+No hay duda que las aplicaciones gráficas son enormes y tienen
+varias capas de abstracción y niveles que no hacen más que gastar
+un montón de bytes para mostrar un pixel gris oscuro para tener un
+bonito sombreado. OjO no hay duda, si hacés diseño o necesitás
+alguna aplicación que verdaderamente aprovecha el entorno gráfico
+usala, para todo los demás existe una terminal liviana y ágil.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7-9" class="outline-3">
+<h3 id="sec-7-9">¿Cómo resumirías tu experiencia Alone in the shell?</h3>
+<div class="outline-text-3" id="text-7-9">
+<p>
+Muy productiva, pude poner a prueba mi entorno, corrigiéndolo para
+que se vea casi igual tanto en <code>X</code> o en una <code>tty</code>.
+</p>
+
+<p>
+Lo mejor fue que logré sobrevivir toda la semana a la consigna, lo
+cual demuestra cierta disciplina, más allá de los tecnicismos.
+</p>
+
+<p>
+Utilizar el modo gráfico sobre <i>framebuffer</i> debería estar más
+soportado por más aplicaciones aunque en cierto punto parecería
+que es hacer trampa, ya que nos estamos escapando de la salida a
+puro texto plano :-P
+</p>
+
+<p>
+La destreza sobre una consola, sólo se consigue usándola a diario
+y puede ser vital tener dominio sobre ella, casualmente unos días
+después al realizar una entrega de un proyecto, un viernes a
+última hora, justo cuando estábamos terminando, se cortó la luz y
+pudimos continuar con los últimos minutos de la UPS desde una
+<code>tty</code> en el servidor, gracias a <code>screen/tmux</code> y unos bonitos
+túneles <code>ssh</code>, de otro modo, no hubieramos podido&#x2026;
+</p>
+
+<p>
+También para el usuario de notebook, mi experiencia demuestra que
+la batería rinde el doble trabajando únicamente desde una <code>tty</code>.
+</p>
+
+<p>
+Asi que recomiendo a todos a tener una <b>semana negra</b> como
+entrenamiento para convertirse en un <b>console ninja</b>. :-)
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://elbinario.net/2014/04/21/semana-negra-sobrevivir-en-la-shell/">http://elbinario.net/2014/04/21/semana-negra-sobrevivir-en-la-shell/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="2014-04-25-huayra-2.0.html">2014-04-25-huayra-2.0.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="2014-04-26-flisol-avellaneda-undav.html">2014-04-26-flisol-avellaneda-undav.html</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://orgmode.org/">http://orgmode.org/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<a href="http://www.gnu.org/software/emacs">http://www.gnu.org/software/emacs</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<a href="http://caca.zoy.org/wiki/libcaca">http://caca.zoy.org/wiki/libcaca</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<a href="https://es.wikipedia.org/wiki/Fbdev">https://es.wikipedia.org/wiki/Fbdev</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="http://elbinario.net/2014/05/06/resumen-de-la-semananegra/">http://elbinario.net/2014/05/06/resumen-de-la-semananegra/</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2014-04-25</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
