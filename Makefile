@@ -1,11 +1,8 @@
 update-vodka:
 	ssh vodka 'cd ~/osiux && git pull'
 
-update-merlot:
-	ssh merlot 'cd ~/osiux && git pull'
+update-leosia:
+	rsync -avz --exclude .git . leosial:/mnt/sda1/osiux/html/
 
-update-aleosi:
-	rsync -avz --exclude .git . aleosil:/mnt/sda1/www/osiux/
-
-update-all: update-vodka update-merlot update-aleosi
+update-all: update-vodka update-leosia
 

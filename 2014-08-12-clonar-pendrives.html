@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Clonar 24 pendrives al mismo tiempo</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Clonar 24 pendrives al mismo tiempo</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+</p>
+
+<div class="figure">
+<p><a href="img/clonar-pendrives/letras-viajeras-routers.jpg" width="640" height="487" alt="Clonar pendrives - routers"><img src="tmb/clonar-pendrives/letras-viajeras-routers.jpg" alt="Clonar pendrives - routers" width="640" height="487" /></a>
+</p>
+</div>
+
+<p>
+Luego de reemplazar el <i>firmware</i> original de <i>TPLink</i> por
+<i>OpenWRT</i> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> a 24 Routers MR-3020 <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> para el
+proyecto <b>Letras Viajeras</b> <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, necesitabamos clonar 24
+pendrives con exactamente lo mismo y no queríamos hacerlo de a uno.
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Cómo clonar un pendrive a muchos pendrives</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Buscando un poco por la web, encontramos varias opciones, entre ellas:
+</p>
+
+<ol class="org-ol">
+<li>iniciar una máquina con <i>CloneZilla</i> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> que tiene
+una utilidad para clonar <i>USB</i>.
+</li>
+<li>usar <code>dd</code> y <code>tee</code> con varios <i>pendrives</i> conectados a la misma
+máquina.
+</li>
+<li>usar <code>dd</code>, <code>tee</code> y <code>netcat</code> con varios <i>pendrives</i> en varias
+máquinas.
+</li>
+<li>crear un <code>.torrent</code> con el contenido, y descargar el <i>torrent</i>
+      directamente en cada <i>pendrive</i> conectado a un <i>router</i>.
+</li>
+<li>que cada router descargue el contenido directamente en el <i>USB</i>
+      usando <code>wget</code> y <code>tar</code> desde un <code>parallel-ssh</code> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">1. CloneZilla</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+No lo probamos porque no queríamos reiniciar :-P
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">2. <code>dd</code> + <code>tee</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Un hack <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> de la vieja escuela, haciendo uso de <code>dd</code> y
+<code>tee</code> se puede de una manera muy simple clonar en varios
+dispositivos al mismo tiempo, la desventaja es que por lo general
+los distintos puertos USB comparten el mismo BUS y por ello puede
+ser más lento copiar más de 1 a la vez, pero bueno, sirve para un
+proceso desatendido.
+</p>
+
+<p>
+Primero, un test, de que efectivamente funcione:
+</p>
+
+<pre class="example">
+ls / | pv | tee &gt;(dd of=a) &gt;(dd of=b) | (dd of=c)
+</pre>
+
+<ul class="org-ul">
+<li><code>ls /</code> listamos el contenido de la raiz
+</li>
+
+<li><code>| pv</code> agregamos un <i>pipe view</i> para tener un indicador de
+progreso
+</li>
+
+<li><code>| tee</code> esto nos permite redireccionar a la salida estandar y al
+mismo tiempo enviar la salida a un archivo.
+</li>
+
+<li><code>&gt;(dd of=a)</code> enviamos la salida al archivo <code>a</code>
+</li>
+
+<li><code>&gt;(dd of=b)</code> enviamos la salida al archivo <code>b</code>
+</li>
+
+<li><code>&gt;| (dd of=c)</code> última salida al archivo <code>c</code>
+</li>
+</ul>
+
+<p>
+El resultado es el siguiente:
+</p>
+
+<pre class="example">
+160B 0:00:00 [3,37kB/s] [  &lt;=&gt;                                                                                                        ]
+0+1 registros leídos
+0+1 registros escritos
+160 bytes (160 B) copiados, 0,0398646 s, 4,0 kB/s
+0+1 registros leídos
+0+1 registros escritos
+160 bytes (160 B) copiados, 0,0434177 s, 3,7 kB/s
+0+1 registros leídos
+0+1 registros escritos
+160 bytes (160 B) copiados, 0,0465925 s, 3,4 kB/s
+</pre>
+
+<p>
+Se visualizan el total de bytes copiados <code>160</code> y la tasa de
+transferencia en cada caso: <code>4,0</code>, <code>3,7</code> y <code>3.4 kB/s</code>.
+</p>
+
+<p>
+Comprobamos que se los 3 archivos estén completos y sean
+idénticos:
+</p>
+
+<pre class="example">
+ls -lh a b c
+
+-rw-rw-r-- 1 osiris osiris 160 ago 12 12:46 a
+-rw-rw-r-- 1 osiris osiris 160 ago 12 12:46 b
+-rw-rw-r-- 1 osiris osiris 160 ago 12 12:46 c
+
+md5sum a b c
+
+0f422c457d50131124ba323a23f76f7e  a
+0f422c457d50131124ba323a23f76f7e  b
+0f422c457d50131124ba323a23f76f7e  c
+</pre>
+
+<p>
+Luego generamos un pendrive con el contenido a copiar, en nuestro
+caso, el mismo ocupa solo 1.4G de los 7.4 disponibles:
+</p>
+
+<pre class="example">
+fdisk -l | grep sdc1
+
+/dev/sdc1       7,4G   1,4G  6,0G  20% /mnt/sdc
+</pre>
+
+<p>
+La utilidad <code>pv</code> simplemente va contando los <i>bytes</i> que pasan,
+pero si indicamos el tamaño total a copiar, nos proporciona un
+<i>ETA</i> <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup> que ayuda bastante a tener una idea real de cuanto
+tardará el proceso de copia. Para esto es necesario indicar la
+cantidad de <i>bytes</i>, esto lo podemos obtener usando <code>fdisk</code>:
+</p>
+
+<pre class="example">
+B=$(fdisk -l /dev/sdc | grep sdc | head -1 | awk '{print $5}')
+</pre>
+
+<p>
+Entonces leemos el contenido del pendrive y creamos una imagen en
+disco, desde la cual copiaremos el resto de los pendrives.
+</p>
+
+<pre class="example">
+dd if=/dev/sdc bs=1M | pv -s $B | dd of=pendrive.raw
+</pre>
+
+<p>
+La copia dura unos 9 minutos, en total se copian los 8GB a una
+tasa de transferencia de <code>14,3 MB/s</code>
+</p>
+
+<pre class="example">
+7,46GB 0:09:19 [13,7MB/s] [===============&gt;] 100%
+
+15646720+0 registros leídos
+15646720+0 registros escritos
+8011120640 bytes (8,0 GB) copiados, 559,49 s, 14,3 MB/s
+</pre>
+
+<p>
+Ahora partimos desde la imagen <code>pendrive.raw</code> y clonamos los
+dispositivos <code>/dev/sdc</code> y <code>/dev/sdd</code> usando lo siguiente:
+</p>
+
+<pre class="example">
+time dd if=pendrive.raw | tee &gt;(dd of=/dev/sdc) | (dd of=/dev/sdd)
+</pre>
+
+<p>
+El resultado, no fue favorable en termimos de tiempos, 38 minutos
+para clonar 2 pendrives! Esto varía de máquina en máquina, es
+cuestión de probar con diferentes puertos y usando un <i>hub USB</i>
+(algo que no hicimos).
+</p>
+
+<pre class="example">
+time dd if=pendrive.raw | tee &gt;(dd of=/dev/sdc) | (dd of=/dev/sdd)
+
+15646720+0 registros leídos
+15646720+0 registros escritos
+8011120640 bytes (8,0 GB) copiados, 2313,62 s, 3,5 MB/s
+15646720+0 registros leídos
+15646720+0 registros escritos
+8011120640 bytes (8,0 GB) copiados, 2321,35 s, 3,5 MB/s
+15646720+0 registros leídos
+15646720+0 registros escritos
+8011120640 bytes (8,0 GB) copiados, 2326,16 s, 3,4 MB/s
+
+real38m46.174s
+user0m57.744s
+sys6m4.339s
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">3. <code>dd</code> + <code>tee</code> + <code>netcat</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Esta opción sonaba muy interesante, porque podíamos usar varias
+máquinas y podríamos clonar todos los pendrives al mismo tiempo,
+pero al ser en cascada, en cada <i>host/q había que especificar la
+/IP</i> del siguiente y eso involucraba realizar un paso manual en
+cada compu.
+</p>
+
+<p>
+La ventaja de este método es que se reduce el cuello de botella de
+utilizar un mismo <i>BUS</i> <i>USB</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4">4. crear un <code>.torrent</code> y distribuirlo</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Esto motivó realmente conectar todos los pendrives al mismo
+tiempo, y ahí el surgieron 2 temas, el primero la alimentación de
+energía, intentamos comprar zapatillas (adaptador de múltiples
+tomacorrientes), pero los transformadores del MR3020 tienen una
+disposición que impiden enchufar un toma al lado de otro, por
+tener las patas en sentido horizontal. En una zapatilla de 8
+tomas, sólo entraban 4, y en otra de 5 sólo se aprovechaban 2
+tomas, ya que el cable <i>USB</i> también molestaba.
+</p>
+
+<p>
+Optamos por conectar el resto de los routers a 1 <i>hub USB</i> de 10
+puertos y otros a varias notebooks, todos conectados a la <i>LAN</i>,
+adicionando 2 <i>switchs</i> de 8 puertos cada uno.
+</p>
+
+<p>
+Ahora bien, como el contenido podría sufrir varias modificaciones,
+habría que regenerar un <code>.torrent</code> por cada cambio, y además
+instalar un cliente como <code>rtorrent</code> pero decidimos, no tocar la
+imagen de <i>OpenWRT</i> ya que el MR3020 tiene poco espacio.
+</p>
+
+<p>
+Asi que queda pendiente realizar esta prueba, seguramente la
+ventaja estaría en que cada <i>router</i> podría leer los datos de
+otros <i>routers</i> al mismo tiempo por compartir el mismo <i>torrent</i>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5">5. <code>wget</code> + <code>tar</code> + <code>parallel-ssh</code></h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Aprovechando que <code>wget</code> y <code>tar</code> vienen en <i>OpenWRT</i>, realizamos un
+<i>script</i> para que realize el <i>deploy</i> en cada <i>router</i>. Para esto
+utilizamos <i>parallel-ssh</i> que facilita enormemente la
+administración de todos los <i>routers</i> al mismo tiempo, incluso
+permite aplicar cambios parciales, detectando los <i>routers</i> que
+fallan ya sea por estar desconectados o con algún error en
+particular (algunos no levantaban el pendrive correctamente).
+</p>
+
+<p>
+Lo primero es crear un archivo con el listado de <i>hostnames</i>, en
+este caso ya nos habíamos asegurado de que cada <i>router</i> tenga un
+<i>hostname</i> distinto basado en su <i>macaddress</i> mediante un
+script <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>. Capturamos los <i>hostnames</i> desde el
+servidor <i>DHCP</i> a un archivo <code>~/.ssh/letras</code>:
+</p>
+
+<pre class="example">
+grep C04A /tmp/dnsmasq.leases | awk '{print $4}' | sort -u | tee ~/.ssh/letras
+</pre>
+
+<p>
+Luego es muy simple ejecutar un comando en todos los equipos,
+definimos un <i>alias</i> para simplificar aún más:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">alias</span> <span style="color: #ff6347;">multiletras</span>=<span style="color: #ad7fa8; font-style: italic;">'parallel-ssh -i -h ~/.ssh/letras'</span>
+</pre>
+</div>
+
+<p>
+Confirmamos que estén conectados todos los <i>routers</i>, mediante
+<code>wicd</code> se pueden ver los <code>SSIDs</code>:
+</p>
+
+
+<div class="figure">
+<p><a href="img/clonar-pendrives/letras-viajeras-wicd.jpg" width="640" height="480" alt="Clonar pendrives - wicd"><img src="tmb/clonar-pendrives/letras-viajeras-wicd.jpg" alt="Clonar pendrives - wicd" width="640" height="480" /></a>
+</p>
+</div>
+
+<p>
+Ahora si, tirando un <code>uptime</code> en todos los equipos, rápidamente
+vemos los <i>routers</i> en que se pudo ejecutar el comando y su
+resultado:
+</p>
+
+
+<div class="figure">
+<p><a href="img/clonar-pendrives/letras-viajeras-pssh.jpg" width="640" height="480" alt="Clonar pendrives - parallel-ssh"><img src="tmb/clonar-pendrives/letras-viajeras-pssh.jpg" alt="Clonar pendrives - parallel-ssh" width="640" height="480" /></a>
+</p>
+</div>
+
+<p>
+Para facilitar, la descarga del contenido a copiar en el
+<i>pendrive</i>, realizamos un <i>script</i> llamado
+<code>deploy.sh</code> <sup><a id="fnr.9" class="footref" href="#fn.9">9</a></sup>, el cual ubicamos en un servidor
+<code>nginx</code> <sup><a id="fnr.10" class="footref" href="#fn.10">10</a></sup> junto a todos los archivos comprimidos en
+<code>letras-viajeras.tar.gz</code>
+</p>
+
+<p>
+El proceso de copia en todos los <i>routers</i> se reduce a ejecutar lo
+siguiente:
+</p>
+
+<pre class="example">
+multiletras 'wget -q -O - http://192.168.10.180/deploy.sh | /bin/sh'
+</pre>
+
+<p>
+Es decir, primero se conecta a cada <i>router</i>, se descargar el
+archivo <code>deploy.sh</code> y luego se ejecuta, este <i>script</i> luego se
+encarga de hacer unas mínimas comprobaciones necesarias, como
+verificar que esté correctamente montando en modo escritura el
+pendrive, descargar el <code>.tar.gz</code>, verificar el <i>MD5</i> de los
+archivos testigo, capturar algunos errores y en caso de estar
+corriendo <code>wget</code> o <code>tar</code>, no ejecutarse nuevamente.
+</p>
+
+<p>
+Ni bien ejecutamos el <i>deploy</i> vemos el resultado por cada
+<i>router</i>:
+</p>
+
+
+<div class="figure">
+<p><a href="img/clonar-pendrives/letras-viajeras-md5.jpg" width="640" height="480" alt="Clonar pendrives - md5"><img src="tmb/clonar-pendrives/letras-viajeras-md5.jpg" alt="Clonar pendrives - md5" width="640" height="480" /></a>
+</p>
+</div>
+
+<p>
+Y si monitoreamos el tráfico de red, podemos apreciar que todos
+los <i>routers</i> descargan al mismo tiempo el contenido a copiar en
+cada pendrive, cada conexión descarga entre <code>6Mb</code> y <code>13Mb</code>, es un
+cuello de botella el ancho de banda, pero por muy poco tiempo y
+teniendo una <i>LAN</i> de <code>1Gbit</code> no debería haber problemas:
+</p>
+
+
+<div class="figure">
+<p><a href="img/clonar-pendrives/letras-viajeras-iftop.jpg" width="640" height="480" alt="Clonar pendrives - iftop"><img src="tmb/clonar-pendrives/letras-viajeras-iftop.jpg" alt="Clonar pendrives - iftop" width="640" height="480" /></a>
+</p>
+</div>
+
+<p>
+La mayor ventaja, es poder repetir el proceso una y otra vez,
+siempre con la última versión disponible de <code>deploy.sh</code>, siendo el
+límite de <i>routers</i> la cantidad de bocas de red, reduciendo el
+tiempo total de copia a solo unos minutos por ejecutarlas en
+paralelo y asegurando que quedan todas exactamente iguales. :-)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><a href="mailto:blog@osiux.com?subject=Comentario">Comentarios</a></h2>
+<div class="outline-text-2" id="text-2">
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://openwrt.org">http://openwrt.org</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://www.tp-link.com/en/products/details/?model=TL-MR3020">http://www.tp-link.com/en/products/details/?model=TL-MR3020</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="https://github.com/gcoop-libre/letras_viajeras">https://github.com/gcoop-libre/letras_viajeras</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://www.clonezilla.org/">http://www.clonezilla.org/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<a href="https://code.google.com/p/parallel-ssh/">https://code.google.com/p/parallel-ssh/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<a href="https://superuser.com/questions/145516/cloning-single-disk-drive-to-multiple-drives-simultaneously">https://superuser.com/questions/145516/cloning-single-disk-drive-to-multiple-drives-simultaneously</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<a href="https://es.wikipedia.org/wiki/Tiempo_estimado_de_llegada">https://es.wikipedia.org/wiki/Tiempo_estimado_de_llegada</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<a href="https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/autoconfig.sh">https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/autoconfig.sh</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<a href="https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/deploy.sh">https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/deploy.sh</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<a href="http://nginx.org/">http://nginx.org/</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2014-08-12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
