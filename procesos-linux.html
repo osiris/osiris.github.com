@@ -9,13 +9,14 @@
 <meta  name="author" content="Osiris Alejandro Gomez" />
 <meta  name="description" content="Administrando recursos de sistema"
  />
-<link rel="stylesheet" href="osiux.css" type="text/css" /><link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Procesos Linux</h1>
 <p>
-<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -95,7 +96,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 15787
+1 16243
 </pre>
 </li>
 </ul>
@@ -152,16 +153,16 @@ en ejecución:
 </div>
 
 <pre class="example">
- 2686 ?        S     50:52 /bin/bash /usr/share/siguibui/backend/shellserver.sh --daemon
-21395 ?        S      0:00  \_ sleep 1
- 2691 ?        S      2:54 /usr/bin/python /usr/share/pywwetha/pywwetha.py --daemon
- 2692 ?        Ss     0:00 /usr/sbin/acpi_fakekeyd
- 2731 ?        Ss     0:28 /usr/sbin/acpid
- 2935 ?        Ss     0:30 /usr/sbin/apache2 -k start
- 3138 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3139 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3140 ?        S      0:00  \_ /usr/sbin/apache2 -k start
- 3141 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+ 660 ?        S      0:00 /bin/bash /usr/bin/mysqld_safe
+1054 ?        Sl     1:27  \_ /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
+ 661 ?        S      0:00 logger -p daemon.err -t /etc/init.d/mysql -i
+ 962 ?        Ss     0:02 /usr/sbin/apache2 -k start
+1221 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+1222 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+1223 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+1224 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+1225 ?        S      0:00  \_ /usr/sbin/apache2 -k start
+1064 ?        Sl     0:11 /usr/bin/python /usr/bin/fail2ban-server -b -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid
 </pre>
 
 <div class="org-src-container">
@@ -171,16 +172,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-init(1)─┬─NetworkManager(3472)─┬─dhclient(3639)
-	│                      ├─{NetworkManager}(3518)
-	│                      └─{NetworkManager}(3662)
-	├─accounts-daemon(4022)───{accounts-daemon}(4024)
-	├─acpi_fakekeyd(2692)
-	├─acpid(2731)
-	├─apache2(2935)─┬─apache2(3138)
-	│               ├─apache2(3139)
-	│               ├─apache2(3140)
-	│               ├─apache2(3141)
+systemd(1)─┬─/usr/bin/termin(4116)─┬─bash(4123)───tmuxemacs(4181)───tmux(4189)
+           │                       ├─gnome-pty-helpe(4122)
+           │                       └─{gmain}(4124)
+           ├─/usr/bin/termin(12319)─┬─bash(12326)───tmuxgcoop(12384)───tmux(12390)
+           │                        ├─gnome-pty-helpe(12325)
+           │                        └─{gmain}(12327)
+           ├─/usr/bin/termin(18368)─┬─bash(18399)───tmux(18500)───sh(27895)───vlock-main(27900)
+           │                        ├─gnome-pty-helpe(18398)
+           │                        └─{gmain}(18400)
+           ├─/usr/bin/termin(22832)─┬─bash(22839)───tmux(22904)───sh(27896)───vlock-main(27899)
 </pre>
 </div>
 </div>
@@ -201,26 +202,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 18:34:37 up 11 days,  1:02,  6 users,  load average: 0,76, 0,88, 0,86
-Tasks: 180 total,   1 running, 179 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 13,9 us,  4,8 sy,  0,0 ni, 80,1 id,  0,6 wa,  0,5 hi,  0,2 si,  0,0 st
-KiB Mem:   2044852 total,  1709304 used,   335548 free,    89148 buffers
-KiB Swap:        0 total,        0 used,        0 free,   600420 cached
+top - 10:47:06 up 18:37,  5 users,  load average: 0,29, 0,17, 0,22
+Tasks: 177 total,   1 running, 176 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  3,4 us,  2,3 sy,  4,9 ni, 88,7 id,  0,8 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem:   2004296 total,  1893720 used,   110576 free,   122352 buffers
+KiB Swap:        0 total,        0 used,        0 free.   501004 cached Mem
 
-  PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM     TIME+ COMMAND
- 8203 root      20   0  121m  18m 6500 S   5,9  0,9   3:47.59 Xorg
-26355 osiris    20   0 26096 1488 1080 R   5,9  0,1   0:00.02 top
-    1 root      20   0 10648  788  652 S   0,0  0,0   0:12.03 init
-    2 root      20   0     0    0    0 S   0,0  0,0   0:00.16 kthreadd
-    3 root      20   0     0    0    0 S   0,0  0,0  14:15.93 ksoftirqd/0
-    6 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/0
-    7 root      -2   0     0    0    0 S   0,0  0,0   3:50.22 rcuc/0
-    8 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/0
-    9 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/0
-   10 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 rcun/1
-   11 root      -2   0     0    0    0 S   0,0  0,0   0:00.00 rcub/1
-   12 root      rt   0     0    0    0 S   0,0  0,0   0:00.00 migration/1
-   14 root      -2   0     0    0    0 S   0,0  0,0   5:24.04 rcuc/1
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+29417 osiris    20   0   23500   1392   1020 R   6,4  0,1   0:00.01 top
+    1 root      20   0   45124   3164   1668 S   0,0  0,2   0:00.74 systemd
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.02 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:04.00 ksoftirqd/0
+    5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
+    7 root      20   0       0      0      0 S   0,0  0,0   0:11.35 rcu_sched
+    8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.12 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:00.28 watchdog/0
+   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.29 watchdog/1
+   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.14 migration/1
+   13 root      20   0       0      0      0 S   0,0  0,0   0:03.74 ksoftirqd/1
+   15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
 </pre>
 
 
@@ -259,7 +260,7 @@ enviar señales.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

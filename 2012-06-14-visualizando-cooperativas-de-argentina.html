@@ -7,13 +7,14 @@
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gomez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" /><link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Visualizando Cooperativas de Argentina</h1>
 <p>
-<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
@@ -62,20 +63,20 @@ El script <code>csv2log.sh</code>:
 
 <pre class="src src-sh">cat ../datos/coops.csv | tr <span style="color: #ad7fa8; font-style: italic;">" "</span> <span style="color: #ad7fa8; font-style: italic;">"-"</span> | sed s/<span style="color: #ad7fa8; font-style: italic;">"--"</span>/<span style="color: #ad7fa8; font-style: italic;">"-"</span>/g | tr -d <span style="color: #ad7fa8; font-style: italic;">'"'</span> | <span style="color: #729fcf; font-weight: bold;">while </span><span style="color: #729fcf;">read</span> LINE
 <span style="color: #729fcf; font-weight: bold;">do</span>
-    <span style="color: #ff6347;">DATE</span>=$(<span style="color: #fa8072;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"$LINE"</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr <span style="color: #ad7fa8; font-style: italic;">"/"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $3"-"$2"-"$1}'</span>)
-    <span style="color: #ff0000;"># </span><span style="color: #888a85;">echo $DATE</span>
-    <span style="color: #ff6347;">TIME</span>=$(<span style="color: #fa8072;">date</span> -d <span style="color: #ad7fa8; font-style: italic;">"$DATE 00:00:00"</span> <span style="color: #ad7fa8; font-style: italic;">"+%s"</span>)
-    <span style="color: #ff0000;">#</span><span style="color: #888a85;">echo $TIME</span>
+    <span style="color: #ff6347;">DATE</span>=$(<span style="color: #ff00ff;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"$LINE"</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr <span style="color: #ad7fa8; font-style: italic;">"/"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $3"-"$2"-"$1}'</span>)
+    <span style="color: #888a85;"># </span><span style="color: #888a85;">echo $DATE</span>
+    <span style="color: #ff6347;">TIME</span>=$(<span style="color: #ff00ff;">date</span> -d <span style="color: #ad7fa8; font-style: italic;">"$DATE 00:00:00"</span> <span style="color: #ad7fa8; font-style: italic;">"+%s"</span>)
+    <span style="color: #888a85;">#</span><span style="color: #888a85;">echo $TIME</span>
     <span style="color: #ff6347;">USER</span>=<span style="color: #ad7fa8; font-style: italic;">"coop"</span>
     <span style="color: #ff6347;">STATUS</span>=<span style="color: #ad7fa8; font-style: italic;">"A"</span>
     <span style="color: #ff6347;">PAGE</span>=<span style="color: #ad7fa8; font-style: italic;">""</span>
-    <span style="color: #ff6347;">PROV</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $2}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr A-Z a-z)
-    <span style="color: #ff6347;">LOCA</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $3}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr A-Z a-z)
-    <span style="color: #ff6347;">TIPO</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $4}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span>)
-    <span style="color: #ff6347;">T</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">TIPO</span> | tr -d <span style="color: #ad7fa8; font-style: italic;">'"'</span> | tr <span style="color: #ad7fa8; font-style: italic;">"-"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span>)
-    <span style="color: #ff6347;">COLOR</span>=$(<span style="color: #fa8072;">grep</span> $<span style="color: #ff6347;">T</span> tipos-basicos | head -1 | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span>)
-    <span style="color: #ff6347;">NRO</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">LINE</span>  | awk <span style="color: #ad7fa8; font-style: italic;">'{print $5}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span>)
-    <span style="color: #ff6347;">NOMBRE</span>=$(<span style="color: #fa8072;">echo</span> $<span style="color: #ff6347;">LINE</span>  | awk <span style="color: #ad7fa8; font-style: italic;">'{print $6}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr <span style="color: #ad7fa8; font-style: italic;">"-"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | tr A-Z a-z | cut -c -20)
+    <span style="color: #ff6347;">PROV</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $2}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr A-Z a-z)
+    <span style="color: #ff6347;">LOCA</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $3}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr A-Z a-z)
+    <span style="color: #ff6347;">TIPO</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">LINE</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $4}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span>)
+    <span style="color: #ff6347;">T</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">TIPO</span> | tr -d <span style="color: #ad7fa8; font-style: italic;">'"'</span> | tr <span style="color: #ad7fa8; font-style: italic;">"-"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span>)
+    <span style="color: #ff6347;">COLOR</span>=$(<span style="color: #ff00ff;">grep</span> $<span style="color: #ff6347;">T</span> tipos-basicos | head -1 | awk <span style="color: #ad7fa8; font-style: italic;">'{print $1}'</span>)
+    <span style="color: #ff6347;">NRO</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">LINE</span>  | awk <span style="color: #ad7fa8; font-style: italic;">'{print $5}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span>)
+    <span style="color: #ff6347;">NOMBRE</span>=$(<span style="color: #ff00ff;">echo</span> $<span style="color: #ff6347;">LINE</span>  | awk <span style="color: #ad7fa8; font-style: italic;">'{print $6}'</span> <span style="color: #ff6347;">FS</span>=<span style="color: #ad7fa8; font-style: italic;">','</span> | tr <span style="color: #ad7fa8; font-style: italic;">"-"</span> <span style="color: #ad7fa8; font-style: italic;">" "</span> | tr A-Z a-z | cut -c -20)
     <span style="color: #729fcf;">echo</span> $<span style="color: #ff6347;">TIME</span><span style="color: #ad7fa8; font-style: italic;">"|"</span>$<span style="color: #ff6347;">TIPO</span><span style="color: #ad7fa8; font-style: italic;">"|"</span>$<span style="color: #ff6347;">STATUS</span><span style="color: #ad7fa8; font-style: italic;">"|"</span>$<span style="color: #ff6347;">PROV</span><span style="color: #ad7fa8; font-style: italic;">"/"</span>$<span style="color: #ff6347;">LOCA</span><span style="color: #ad7fa8; font-style: italic;">"/"</span>$<span style="color: #ff6347;">NRO</span><span style="color: #ad7fa8; font-style: italic;">"-"</span>$<span style="color: #ff6347;">NOMBRE</span><span style="color: #ad7fa8; font-style: italic;">"|"</span>$<span style="color: #ff6347;">COLOR</span>
 <span style="color: #729fcf; font-weight: bold;">done</span> | sort -n | tee gource.log
 </pre>
@@ -218,7 +219,7 @@ Hoy con algo más de tiempo, armé un video y lo liberé!
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-06-14</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

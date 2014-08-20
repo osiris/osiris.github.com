@@ -7,13 +7,14 @@
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" /><link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Aplicaciones de consola, terminal, ncurses</h1>
 <p>
-<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
 
@@ -141,14 +142,6 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 <pre class="src src-sh">ssh malbec <span style="color: #ad7fa8; font-style: italic;">'sudo iotop -b -o -n 2 -d 5'</span>
 </pre>
 </div>
-
-<pre class="example">
-Total DISK READ: 0.00 B/s | Total DISK WRITE: 0.00 B/s
-  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
-Total DISK READ: 0.00 B/s | Total DISK WRITE: 0.00 B/s
-  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
- 1552 be/4 root        0.00 B/s  815.89 B/s  0.00 %  0.00 % syslogd
-</pre>
 </div>
 </div>
 
@@ -180,22 +173,6 @@ Total DISK READ: 0.00 B/s | Total DISK WRITE: 0.00 B/s
 <pre class="src src-sh">mtr -r -c 5 -n osiux.com
 </pre>
 </div>
-
-<pre class="example">
-HOST: amaretto                    Loss%   Snt   Last   Avg  Best  Wrst StDev
-  1.|-- 192.168.10.3               0.0%     5    0.2   0.2   0.2   0.2   0.0
-  2.|-- 10.29.64.1                 0.0%     5    7.3   7.3   6.9   8.0   0.4
-  3.|-- 181.47.254.17              0.0%     5    8.4   8.4   7.1   9.8   1.0
-  4.|-- 208.178.195.210            0.0%     5    9.4  10.1   8.8  11.9   1.4
-  5.|-- 208.178.195.209            0.0%     5    7.5   7.8   7.0   9.1   0.9
-  6.|-- 67.16.142.93               0.0%     5  171.9 175.3 170.2 192.6   9.7
-  7.|-- 204.93.144.25              0.0%     5  171.4 178.4 171.4 201.7  13.1
-  8.|-- 204.93.204.153            40.0%     5  173.3 174.2 173.3 174.6   0.8
-  9.|-- 50.31.170.122              0.0%     5  180.6 180.9 179.6 183.6   1.6
- 10.|-- 206.217.137.250            0.0%     5  181.1 182.3 179.5 188.5   3.6
- 11.|-- 96.8.118.251              20.0%     5  178.4 178.0 176.9 178.7   0.8
- 12.|-- 96.8.118.129              20.0%     5  181.5 182.2 181.5 183.0   0.6
-</pre>
 </div>
 </div>
 
@@ -213,24 +190,6 @@ HOST: amaretto                    Loss%   Snt   Last   Avg  Best  Wrst StDev
 <pre class="src src-sh">ssh vodka <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -t'</span>
 </pre>
 </div>
-
-<pre class="example">
-venet0  /  top 10
-
-   #      day          rx      |     tx      |    total    |   avg. rate
-  -----------------------------+-------------+-------------+---------------
-   1   03/19/13       4.09 GiB |   64.21 GiB |   68.30 GiB |    6.63 Mbit/s
-   2   03/20/13     930.99 MiB |   23.57 GiB |   24.48 GiB |    2.38 Mbit/s
-   3   11/09/13       3.58 GiB |   18.64 GiB |   22.23 GiB |    2.16 Mbit/s
-   4   03/26/13       1.02 GiB |   18.19 GiB |   19.22 GiB |    1.87 Mbit/s
-   5   03/25/13     735.60 MiB |   16.55 GiB |   17.27 GiB |    1.68 Mbit/s
-   6   03/27/13     695.73 MiB |   13.61 GiB |   14.29 GiB |    1.39 Mbit/s
-   7   03/21/13     700.46 MiB |   13.58 GiB |   14.26 GiB |    1.38 Mbit/s
-   8   04/09/13     648.98 MiB |   13.32 GiB |   13.95 GiB |    1.35 Mbit/s
-   9   01/07/14      13.21 GiB |  356.93 MiB |   13.56 GiB |    1.32 Mbit/s
-  10   07/03/13     830.55 MiB |   12.69 GiB |   13.50 GiB |    1.31 Mbit/s
-  -----------------------------+-------------+-------------+---------------
-</pre>
 </div>
 </div>
 
@@ -242,27 +201,6 @@ venet0  /  top 10
 <pre class="src src-sh">ssh vodka <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -m'</span>
 </pre>
 </div>
-
-<pre class="example">
-venet0  /  monthly
-
-      month        rx      |     tx      |    total    |   avg. rate
-   ------------------------+-------------+-------------+---------------
-     Mar '13     16.50 GiB |  190.62 GiB |  207.12 GiB |  648.70 kbit/s
-     Apr '13     20.32 GiB |  125.04 GiB |  145.36 GiB |  470.42 kbit/s
-     May '13     15.09 GiB |    6.23 GiB |   21.33 GiB |   66.79 kbit/s
-     Jun '13     15.15 GiB |   10.28 GiB |   25.43 GiB |   82.29 kbit/s
-     Jul '13     19.02 GiB |   19.53 GiB |   38.55 GiB |  120.75 kbit/s
-     Aug '13     24.59 GiB |   21.24 GiB |   45.83 GiB |  143.53 kbit/s
-     Sep '13     15.25 GiB |    8.18 GiB |   23.43 GiB |   75.84 kbit/s
-     Oct '13     26.23 GiB |   25.19 GiB |   51.42 GiB |  161.03 kbit/s
-     Nov '13     10.20 GiB |   30.08 GiB |   40.28 GiB |  130.36 kbit/s
-     Dec '13      1.67 GiB |    9.41 GiB |   11.08 GiB |   34.69 kbit/s
-     Jan '14     25.88 GiB |    7.73 GiB |   33.61 GiB |  105.25 kbit/s
-     Feb '14      4.46 GiB |    2.76 GiB |    7.22 GiB |   70.61 kbit/s
-   ------------------------+-------------+-------------+---------------
-   estimated     12.57 GiB |    7.79 GiB |   20.36 GiB |
-</pre>
 </div>
 </div>
 
@@ -274,18 +212,6 @@ venet0  /  monthly
 <pre class="src src-sh">ssh vodka <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -w'</span>
 </pre>
 </div>
-
-<pre class="example">
-venet0  /  weekly
-
-                     rx      |     tx      |    total    |   avg. rate
-  ---------------------------+-------------+-------------+---------------
-   last 7 days      3.16 GiB |    2.30 GiB |    5.46 GiB |   76.48 kbit/s
-     last week      3.19 GiB |    2.19 GiB |    5.39 GiB |   74.70 kbit/s
-  current week    418.63 MiB |  265.81 MiB |  684.44 MiB |   70.05 kbit/s
-  ---------------------------+-------------+-------------+---------------
-     estimated      3.12 GiB |    1.98 GiB |    5.09 GiB |
-</pre>
 </div>
 </div>
 
@@ -297,32 +223,6 @@ venet0  /  weekly
 <pre class="src src-sh">ssh vodka <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -h'</span>
 </pre>
 </div>
-
-<pre class="example">
- venet0                                                                   22:14 
-  ^                                                                       r     
-  |                                                                       r     
-  |  r  r  r  r  r  r  r  r  r  r                                         r     
-  |  r  r  r  r  rt r  r  r  r  r                                         r     
-  |  r  r  r  r  rt r  r  r  r  r                           t             r     
-  |  r  r  r  r  rt r  r  r  r  rt                          t        t    r     
-  |  rt r  r  r  rt r  rt r  r  rt                          t  t     t    r     
-  |  rt r  r  r  rt r  rt rt r  rt                       t  t  t     t    r     
-  |  rt rt rt r  rt r  rt rt r  rt              t  t     t  t  t     t    r     
-  |  rt rt rt r  rt r  rt rt r  rt        t  t  t  t  t  t  t rt  t  t  t r     
- -+---------------------------------------------------------------------------&gt; 
-  |  23 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22    
-
- h  rx (KiB)   tx (KiB)      h  rx (KiB)   tx (KiB)      h  rx (KiB)   tx (KiB) 
-23      38043      18600    07      39022       3080    15       1618       6379
-00      39348       9530    08      38429      23452    16       2715      17279
-01      39080      10637    09       1997       3372    17       3533      27827
-02      38853       3011    10       2148       3307    18       4522      21075
-03      38293      32727    11       1117       5484    19       2201       6809
-04      38632       4056    12       2979       7545    20       4449      23659
-05      39518      18170    13       2040      10555    21       2587       8113
-06      37873      14265    14       3063      10136    22      44656       1721
-</pre>
 </div>
 </div>
 </div>
@@ -446,26 +346,31 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 </div>
 
 <pre class="example">
-[1] 13:14:09 [SUCCESS] redmine
- 13:13:37 up 6 days, 12:08,  0 users,  load average: 0.00, 0.02, 0.00
-[2] 13:14:09 [SUCCESS] mysqlcentos
- 13:13:37 up 6 days, 12:38,  0 users,  load average: 0.00, 0.00, 0.00
-[3] 13:14:09 [SUCCESS] torrontes
- 13:13:37 up 37 days, 22:39,  0 users,  load average: 0.20, 0.21, 0.22
-[4] 13:14:09 [SUCCESS] ssug0003lx
- 13:13:37 up 6 days, 12:11,  0 users,  load average: 0.00, 0.00, 0.00
-[5] 13:14:09 [SUCCESS] squeeze
- 13:13:37 up 6 days, 12:16,  0 users,  load average: 0.00, 0.00, 0.00
-[6] 13:14:09 [SUCCESS] symfony
- 13:13:37 up 6 days, 12:25,  0 users,  load average: 0.00, 0.00, 0.00
-[7] 13:14:09 [SUCCESS] tempranillo
- 13:13:37 up 67 days, 17:51,  0 users,  load average: 0,07, 0,09, 0,06
-[8] 13:14:09 [SUCCESS] malbec
- 13:13:50 up 37 days, 22:45,  0 users,  load average: 0.01, 0.58, 0.57
-[9] 13:14:09 [SUCCESS] merlot
- 13:13:59 up 97 days,  4:57,  0 users,  load average: 0.28, 0.12, 0.05
-[10] 13:14:12 [FAILURE] recibos Exited with error code 255
-Stderr: ssh_exchange_identification: Connection closed by remote host
+[1] 10:52:10 [FAILURE] mysqlcentos Exited with error code 255
+Stderr: ssh: connect to host localhost port 2206: Connection refused
+[2] 10:52:10 [FAILURE] redmine Exited with error code 255
+Stderr: ssh: connect to host localhost port 2141: Connection refused
+[3] 10:52:10 [FAILURE] squeeze Exited with error code 255
+Stderr: ssh: connect to host localhost port 2118: Connection refused
+[4] 10:52:10 [FAILURE] symfony Exited with error code 255
+Stderr: ssh: connect to host localhost port 2112: Connection refused
+[5] 10:52:10 [FAILURE] torrontes Exited with error code 255
+Stderr: ssh: connect to host localhost port 2205: Connection refused
+[6] 10:52:10 [FAILURE] ssug0003lx Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+Permission denied (publickey).
+[7] 10:52:10 [FAILURE] merlot Exited with error code 255
+Stderr: ssh: connect to host 67.208.113.123 port 2678: Connection refused
+[8] 10:52:10 [FAILURE] malbec Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+pssh error: SSH requested a password. Please create SSH keys or use
+the -A option to provide a password.
+Permission denied (publickey,password).
+[9] 10:52:11 [FAILURE] tempranillo Exited with error code 255
+Stderr: mux_client_forward: forwarding request failed: Port forwarding failed
+muxclient: master forward request failed
+Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+Permission denied (publickey).
 </pre>
 </div>
 </div>
@@ -474,7 +379,7 @@ Stderr: ssh_exchange_identification: Connection closed by remote host
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2014-02-10</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
