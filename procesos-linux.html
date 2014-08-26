@@ -78,16 +78,22 @@ rendimiento de nuestro equipo.
 <h2 id="sec-5"><code>PID</code></h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li>Todo proceso que se inicia tiene un número asignado llamado
+<li><p>
+Todo proceso que se inicia tiene un número asignado llamado
 <b>PID</b>.
+</p>
 </li>
 
-<li>Este <b>PID</b> permite identificar el proceso y administrarlo
+<li><p>
+Este <b>PID</b> permite identificar el proceso y administrarlo
 (detenerlo, reanudarlo etc&#x2026;)
+</p>
 </li>
 
-<li>Ejemplo: Para obtener el <b>PID</b> de un proceso podemos usar el
+<li><p>
+Ejemplo: Para obtener el <b>PID</b> de un proceso podemos usar el
 comando <code>pidof</code>:
+</p>
 
 <div class="org-src-container">
 
@@ -96,7 +102,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 16243
+1 8544
 </pre>
 </li>
 </ul>
@@ -153,16 +159,16 @@ en ejecución:
 </div>
 
 <pre class="example">
- 660 ?        S      0:00 /bin/bash /usr/bin/mysqld_safe
-1054 ?        Sl     1:27  \_ /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
- 661 ?        S      0:00 logger -p daemon.err -t /etc/init.d/mysql -i
- 962 ?        Ss     0:02 /usr/sbin/apache2 -k start
-1221 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-1222 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-1223 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-1224 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-1225 ?        S      0:00  \_ /usr/sbin/apache2 -k start
-1064 ?        Sl     0:11 /usr/bin/python /usr/bin/fail2ban-server -b -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid
+  647 ?        S      0:00 /bin/bash /usr/bin/mysqld_safe
+ 1060 ?        Sl     5:11  \_ /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
+  648 ?        S      0:00 logger -p daemon.err -t /etc/init.d/mysql -i
+ 1024 ?        Ssl    0:00 /usr/lib/colord/colord
+ 1159 ?        Sl     0:55 /usr/bin/python /usr/bin/fail2ban-server -b -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid
+ 1392 ?        Ss     0:00 /usr/sbin/sshd -D
+22150 ?        Ss     0:00  \_ sshd: osiris [priv] 
+22152 ?        S      0:00      \_ sshd: osiris@pts/1  
+22153 pts/1    Ss     0:00          \_ -bash
+ 1052 pts/1    S+     0:00              \_ /bin/bash /home/osiris/bin/tmuxosiux
 </pre>
 
 <div class="org-src-container">
@@ -172,16 +178,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-systemd(1)─┬─/usr/bin/termin(4116)─┬─bash(4123)───tmuxemacs(4181)───tmux(4189)
-           │                       ├─gnome-pty-helpe(4122)
-           │                       └─{gmain}(4124)
-           ├─/usr/bin/termin(12319)─┬─bash(12326)───tmuxgcoop(12384)───tmux(12390)
-           │                        ├─gnome-pty-helpe(12325)
-           │                        └─{gmain}(12327)
-           ├─/usr/bin/termin(18368)─┬─bash(18399)───tmux(18500)───sh(27895)───vlock-main(27900)
-           │                        ├─gnome-pty-helpe(18398)
-           │                        └─{gmain}(18400)
-           ├─/usr/bin/termin(22832)─┬─bash(22839)───tmux(22904)───sh(27896)───vlock-main(27899)
+systemd(1)─┬─/usr/bin/termin(4946)─┬─bash(4953)───tmuxchat(5011)───tmux(5019)───vlock-main(30054)
+           │                       ├─gnome-pty-helpe(4952)
+           │                       └─{gmain}(4954)
+           ├─/usr/bin/termin(6540)─┬─bash(6547)───tmux(16145)
+           │                       ├─gnome-pty-helpe(6546)
+           │                       └─{gmain}(6548)
+           ├─/usr/bin/termin(8169)─┬─bash(8176)───tmuxemacs(8234)───tmux(8240)
+           │                       ├─bash(31847)───python(31926)
+           │                       ├─gnome-pty-helpe(8175)
+           │                       └─{gmain}(8177)
 </pre>
 </div>
 </div>
@@ -202,26 +208,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 10:47:06 up 18:37,  5 users,  load average: 0,29, 0,17, 0,22
-Tasks: 177 total,   1 running, 176 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  3,4 us,  2,3 sy,  4,9 ni, 88,7 id,  0,8 wa,  0,0 hi,  0,0 si,  0,0 st
-KiB Mem:   2004296 total,  1893720 used,   110576 free,   122352 buffers
-KiB Swap:        0 total,        0 used,        0 free.   501004 cached Mem
+top - 12:23:34 up 4 days,  2:33, 10 users,  load average: 0,71, 0,47, 0,37
+Tasks: 221 total,   2 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 10,6 us,  3,4 sy,  5,5 ni, 78,2 id,  2,2 wa,  0,0 hi,  0,1 si,  0,0 st
+KiB Mem:   2004296 total,  1899408 used,   104888 free,    76196 buffers
+KiB Swap:        0 total,        0 used,        0 free.   356440 cached Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
-29417 osiris    20   0   23500   1392   1020 R   6,4  0,1   0:00.01 top
-    1 root      20   0   45124   3164   1668 S   0,0  0,2   0:00.74 systemd
-    2 root      20   0       0      0      0 S   0,0  0,0   0:00.02 kthreadd
-    3 root      20   0       0      0      0 S   0,0  0,0   0:04.00 ksoftirqd/0
+ 2834 root      20   0  188224  28224   7408 S  12,8  1,4 655:15.56 Xorg
+ 2837 osiris    20   0  200572  11284   2952 S  12,8  0,6   0:46.04 awesome
+  605 lp        20   0   12700    328    160 S   6,4  0,0  94:28.02 lpd
+ 6540 osiris    20   0  661596  31516   6340 S   6,4  1,6   0:20.41 /usr/bin/t+
+    1 root      20   0  193096   3136   1256 S   0,0  0,2   0:02.15 systemd
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.10 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:32.46 ksoftirqd/0
     5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
-    7 root      20   0       0      0      0 S   0,0  0,0   0:11.35 rcu_sched
+    7 root      20   0       0      0      0 S   0,0  0,0   1:00.61 rcu_sched
     8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
-    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.12 migration/0
-   10 root      rt   0       0      0      0 S   0,0  0,0   0:00.28 watchdog/0
-   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.29 watchdog/1
-   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.14 migration/1
-   13 root      20   0       0      0      0 S   0,0  0,0   0:03.74 ksoftirqd/1
-   15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.40 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:01.62 watchdog/0
+   11 root      rt   0       0      0      0 S   0,0  0,0   0:01.63 watchdog/1
 </pre>
 
 
@@ -260,7 +266,7 @@ enviar señales.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

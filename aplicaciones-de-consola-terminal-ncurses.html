@@ -346,27 +346,42 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 </div>
 
 <pre class="example">
-[1] 10:52:10 [FAILURE] mysqlcentos Exited with error code 255
-Stderr: ssh: connect to host localhost port 2206: Connection refused
-[2] 10:52:10 [FAILURE] redmine Exited with error code 255
-Stderr: ssh: connect to host localhost port 2141: Connection refused
-[3] 10:52:10 [FAILURE] squeeze Exited with error code 255
-Stderr: ssh: connect to host localhost port 2118: Connection refused
-[4] 10:52:10 [FAILURE] symfony Exited with error code 255
-Stderr: ssh: connect to host localhost port 2112: Connection refused
-[5] 10:52:10 [FAILURE] torrontes Exited with error code 255
-Stderr: ssh: connect to host localhost port 2205: Connection refused
-[6] 10:52:10 [FAILURE] ssug0003lx Exited with error code 255
+[1] 12:29:08 [FAILURE] mysqlcentos Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+pssh error: SSH requested a password. Please create SSH keys or use
+the -A option to provide a password.
+Permission denied (publickey,gssapi-with-mic,password).
+[2] 12:29:08 [FAILURE] merlot Exited with error code 255
+Stderr: ssh: connect to host 67.208.113.123 port 2678: Connection refused
+[3] 12:29:08 [FAILURE] ssug0003lx Exited with error code 255
 Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
 Permission denied (publickey).
-[7] 10:52:10 [FAILURE] merlot Exited with error code 255
-Stderr: ssh: connect to host 67.208.113.123 port 2678: Connection refused
-[8] 10:52:10 [FAILURE] malbec Exited with error code 255
+[4] 12:29:08 [FAILURE] squeeze Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+Permission denied (publickey).
+[5] 12:29:08 [FAILURE] redmine Exited with error code 255
 Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
 pssh error: SSH requested a password. Please create SSH keys or use
 the -A option to provide a password.
 Permission denied (publickey,password).
-[9] 10:52:11 [FAILURE] tempranillo Exited with error code 255
+[6] 12:29:08 [FAILURE] torrontes Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+pssh error: SSH requested a password. Please create SSH keys or use
+the -A option to provide a password.
+Permission denied (publickey,password).
+[7] 12:29:08 [FAILURE] symfony Exited with error code 255
+Stderr: Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+pssh error: SSH requested a password. Please create SSH keys or use
+the -A option to provide a password.
+Permission denied (publickey,password).
+[8] 12:29:09 [FAILURE] malbec Exited with error code 255
+Stderr: mux_client_forward: forwarding request failed: Port forwarding failed
+muxclient: master forward request failed
+Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
+pssh error: SSH requested a password. Please create SSH keys or use
+the -A option to provide a password.
+Permission denied (publickey,password).
+[9] 12:29:10 [FAILURE] tempranillo Exited with error code 255
 Stderr: mux_client_forward: forwarding request failed: Port forwarding failed
 muxclient: master forward request failed
 Enter passphrase for key '/home/osiris/.ssh/id_rsa': 
@@ -379,7 +394,7 @@ Permission denied (publickey).
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2014-02-10</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

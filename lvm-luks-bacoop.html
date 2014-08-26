@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title></title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="OSiRiS" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title"></h1>
+<p>
+.. -*- mode rst -*-
+</p>
+
+<p>
+<code>===============</code>
+howto lvm2 + luks
+<code>===============</code>
+</p>
+
+<p>
+:author: OSiRiS &lt;osiux@osiux.com.ar&gt;
+</p>
+
+
+<p>
+fdisk
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+fdisk /dev/sdb
+</p>
+
+<p>
+dd
+&#x2013;
+</p>
+
+<p>
+::
+</p>
+
+<p>
+dd if=/dev/urandom of=/dev/sdb
+</p>
+
+
+<p>
+install
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+apt-get install cryptsetup lvm2 dmsetup
+</p>
+
+
+<p>
+pvcreate
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+pvcreate /dev/sdb
+</p>
+
+
+<p>
+vgcreate
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+vgcreate vg_bacoop /dev/sdb
+</p>
+
+
+<p>
+users
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+echo "hugo lukio pablo alecu jose osiris" &gt;/root/bacoop.txt
+for i in $(cat /root/bacoop.txt);do mkdir /bacoop/$i;done
+</p>
+
+
+<p>
+lvcreate
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+lvcreate -L250G -n lv1_osiris vg_bacoop
+lvcreate -L250G -n lv2_jose vg_bacoop
+lvcreate -L250G -n lv3_alecu vg_bacoop
+lvcreate -L250G -n lv4_pablo vg_bacoop
+lvcreate -L250G -n lv5_lukio vg_bacoop
+</p>
+
+
+<p>
+lvresize
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+lvresize -L-18G /dev/mapper/vg_bacoop-lv1_osiris 
+lvresize -L-18G /dev/mapper/vg_bacoop-lv2_jose 
+lvresize -L-18G /dev/mapper/vg_bacoop-lv3_alecu 
+lvresize -L-18G /dev/mapper/vg_bacoop-lv4_pablo 
+lvresize -L-18G /dev/mapper/vg_bacoop-lv5_lukio 
+lvcreate -L232G -n lv6_hugo vg_bacoop
+</p>
+
+
+<p>
+pvscan
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+File descriptor 4 left open
+  PV /dev/sdb   VG vg_bacoop   lvm2 [1,36 TB / 5,26 GB free]
+  Total: 1 [1,36 TB] / in use: 1 [1,36 TB] / in no VG: 0 [0   ]
+</p>
+
+
+<p>
+lvscan
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+File descriptor 4 left open
+  ACTIVE            '/dev/vg_bacoop/lv1_osiris' [232,00 GB] inherit
+  ACTIVE            '/dev/vg_bacoop/lv2_jose' [232,00 GB] inherit
+  ACTIVE            '/dev/vg_bacoop/lv3_alecu' [232,00 GB] inherit
+  ACTIVE            '/dev/vg_bacoop/lv4_pablo' [232,00 GB] inherit
+  ACTIVE            '/dev/vg_bacoop/lv5_lukio' [232,00 GB] inherit
+  ACTIVE            '/dev/vg_bacoop/lv6_hugo' [232,00 GB] inherit
+</p>
+
+
+<p>
+cryptsetup
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+cryptsetup luksFormat /dev/vg_bacoop/lv1_osiris 
+cryptsetup luksOpen /dev/vg_bacoop/lv1_osiris osiris
+</p>
+
+
+<p>
+mkfs
+-&#x2014;
+</p>
+
+<p>
+::
+</p>
+
+<p>
+mkfs.ext3 -L osiris /dev/mapper/osiris 
+</p>
+
+
+<p>
+mount
+</p>
+<hr  />
+
+<p>
+::
+</p>
+
+<p>
+mount <i>dev/mapper/osiris /bacoop/osiris</i>
+</p>
+
+
+<p>
+df
+&#x2013;
+</p>
+
+<p>
+::
+</p>
+
+<p>
+S.ficheros          Tamaño Usado  Disp Uso% Montado en
+/dev/mapper/osiris    229G   22G  196G  10% /bacoop/osiris
+</p>
+
+
+<p>
+references
+</p>
+<hr  />
+
+<ul class="org-ul">
+<li><a href="http://es.wikipedia.org/wiki/Logical_Volume_Manager">http://es.wikipedia.org/wiki/Logical_Volume_Manager</a>
+</li>
+<li><a href="http://www.debian-administration.org/articles/410">http://www.debian-administration.org/articles/410</a>
+</li>
+<li><a href="http://www.debuntu.org/how-to-encrypted-partitions-over-lvm-with-luks-page-3-install-and-config">http://www.debuntu.org/how-to-encrypted-partitions-over-lvm-with-luks-page-3-install-and-config</a>
+</li>
+<li><a href="http://blog.pioto.org/2009/02/disk-encryption-w-dm-crypt-luks-and-lvm2-part-3.html">http://blog.pioto.org/2009/02/disk-encryption-w-dm-crypt-luks-and-lvm2-part-3.html</a>
+</li>
+<li><a href="http://www.radioprosciutto.com/node/7">http://www.radioprosciutto.com/node/7</a>
+</li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: OSiRiS (<a href="mailto:osiris@gcoop.coop">osiris@gcoop.coop</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

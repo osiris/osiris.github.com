@@ -21,7 +21,9 @@
 <h2 id="sec-1">Topología, redes y Subredes</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>centralizada
+<li><p>
+centralizada
+</p>
 
 
 <div class="figure">
@@ -30,7 +32,9 @@
 </div>
 </li>
 
-<li>descentralizada
+<li><p>
+descentralizada
+</p>
 
 
 <div class="figure">
@@ -39,7 +43,9 @@
 </div>
 </li>
 
-<li>en malla o <i>mesh</i>
+<li><p>
+en malla o <i>mesh</i>
+</p>
 
 
 <div class="figure">
@@ -177,20 +183,20 @@ localhost.gcoop.com.ar has address 127.0.0.1
 ; &lt;&lt;&gt;&gt; DiG 9.9.5-4-Debian &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 17397
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 55401
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 4096
+; EDNS: version: 0, flags:; udp: 4000
 ;; QUESTION SECTION:
 ;osiux.com.			IN	A
 
 ;; ANSWER SECTION:
 osiux.com.		3600	IN	A	96.8.118.129
 
-;; Query time: 265 msec
+;; Query time: 619 msec
 ;; SERVER: 192.168.10.3#53(192.168.10.3)
-;; WHEN: Wed Aug 20 10:50:14 ART 2014
+;; WHEN: Tue Aug 26 12:27:12 ART 2014
 ;; MSG SIZE  rcvd: 54
 </pre>
 </div>
@@ -436,15 +442,15 @@ ssh -R 12345:localhost:22 osiux.com
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
-64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.038 ms
-64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.035 ms
-64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.040 ms
-64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.047 ms
-64 bytes from 127.0.0.1: icmp_seq=5 ttl=64 time=0.044 ms
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.049 ms
+64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.042 ms
+64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.046 ms
+64 bytes from 127.0.0.1: icmp_seq=5 ttl=64 time=0.043 ms
 
 --- 127.0.0.1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 3999ms
-rtt min/avg/max/mdev = 0.035/0.040/0.047/0.009 ms
+5 packets transmitted, 5 received, 0% packet loss, time 3997ms
+rtt min/avg/max/mdev = 0.030/0.042/0.049/0.006 ms
 </pre>
 </div>
 </div>
@@ -490,62 +496,62 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 <pre class="example">
 traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
- 1  malbec (192.168.10.3)  0.335 ms  0.305 ms  0.278 ms
- 2  10.0.0.2 (10.0.0.2)  0.790 ms  0.791 ms  1.050 ms
- 3  host41.190-225-250.telecom.net.ar (190.225.250.41)  25.322 ms  27.111 ms  29.391 ms
- 4  host234.200-3-37.telecom.net.ar (200.3.37.234)  170.215 ms  170.223 ms  170.759 ms
- 5  nota.he.net (198.32.124.176)  181.598 ms  182.325 ms  182.321 ms
- 6  10ge1-1.core1.atl1.he.net (72.52.92.53)  198.615 ms  192.651 ms  198.167 ms
- 7  216.66.0.26 (216.66.0.26)  190.108 ms  188.093 ms  192.030 ms
- 8  10.26.26.22 (10.26.26.22)  238.193 ms  218.208 ms  219.124 ms
- 9  Episode.IV (206.214.251.1)  219.094 ms  216.293 ms  217.763 ms
-10  A.NEW.HOPE (206.214.251.6)  212.450 ms  216.198 ms  217.361 ms
-11  It.is.a.period.of.civil.war (206.214.251.9)  224.041 ms  229.249 ms  225.013 ms
-12  Rebel.spaceships (206.214.251.14)  230.673 ms  231.101 ms  233.296 ms
-13  striking.from.a.hidden.base (206.214.251.17)  227.622 ms  216.049 ms  217.507 ms
-14  have.won.their.first.victory (206.214.251.22)  223.682 ms  224.601 ms  226.550 ms
-15  against.the.evil.Galactic.Empire (206.214.251.25)  224.053 ms  215.392 ms  217.776 ms
-16  During.the.battle (206.214.251.30)  215.363 ms  216.299 ms  217.727 ms
-17  Rebel.spies.managed (206.214.251.33)  223.711 ms  225.819 ms  228.742 ms
-18  to.steal.secret.plans (206.214.251.38)  227.278 ms  229.688 ms  217.842 ms
-19  to.the.Empires.ultimate.weapon (206.214.251.41)  217.352 ms  216.330 ms  218.258 ms
-20  the.DEATH.STAR (206.214.251.46)  224.410 ms  225.260 ms  220.527 ms
-21  an.armored.space.station (206.214.251.49)  214.315 ms  217.288 ms  221.468 ms
-22  with.enough.power.to (206.214.251.54)  223.888 ms  225.862 ms  224.847 ms
-23  destroy.an.entire.planet (206.214.251.57)  225.370 ms  225.833 ms  227.253 ms
-24  Pursued.by.the.Empires (206.214.251.62)  237.818 ms  239.281 ms  242.699 ms
-25  sinister.agents (206.214.251.65)  247.191 ms  248.132 ms  249.849 ms
-26  Princess.Leia.races.home (206.214.251.70)  222.453 ms  224.854 ms  228.318 ms
-27  aboard.her.starship (206.214.251.73)  220.685 ms  224.338 ms  226.295 ms
-28  custodian.of.the.stolen.plans (206.214.251.78)  232.159 ms  233.126 ms  235.561 ms
-29  that.can.save.her (206.214.251.81)  229.638 ms  214.623 ms  215.789 ms
-30  people.and.restore (206.214.251.86)  222.256 ms  223.233 ms  225.197 ms
-31  freedom.to.the.galaxy (206.214.251.89)  221.088 ms  215.893 ms  216.889 ms
-32  0-----I-------I-----0 (206.214.251.94)  224.264 ms  227.769 ms  225.692 ms
-33  0------------------0 (206.214.251.97)  222.282 ms  225.165 ms  226.138 ms
-34  0-----------------0 (206.214.251.102)  229.378 ms  230.326 ms  215.994 ms
-35  0----------------0 (206.214.251.105)  215.979 ms  218.648 ms  220.099 ms
-36  0---------------0 (206.214.251.110)  221.042 ms  222.003 ms  216.183 ms
-37  0--------------0 (206.214.251.113)  218.976 ms  219.927 ms  225.143 ms
-38  0-------------0 (206.214.251.118)  224.106 ms  226.063 ms  227.487 ms
-39  0------------0 (206.214.251.121)  229.931 ms  231.391 ms  232.345 ms
-40  0-----------0 (206.214.251.126)  215.917 ms  216.976 ms  218.444 ms
-41  0----------0 (206.214.251.129)  218.432 ms  224.288 ms  223.287 ms
-42  0---------0 (206.214.251.134)  214.583 ms  217.640 ms  218.854 ms
-43  0--------0 (206.214.251.137)  226.233 ms  227.723 ms  228.903 ms
-44  0-------0 (206.214.251.142)  229.862 ms  225.699 ms  230.371 ms
-45  0------0 (206.214.251.145)  236.248 ms  218.892 ms  221.845 ms
-46  0-----0 (206.214.251.150)  218.245 ms  221.271 ms  223.969 ms
-47  0----0 (206.214.251.153)  225.470 ms  218.983 ms  218.977 ms
-48  0---0 (206.214.251.158)  222.599 ms  223.574 ms  224.513 ms
-49  0--0 (206.214.251.161)  227.948 ms  229.200 ms  231.646 ms
-50  0-0 (206.214.251.166)  233.086 ms  234.614 ms  219.305 ms
-51  00 (206.214.251.169)  222.230 ms  224.192 ms  226.612 ms
-52  I (206.214.251.174)  227.027 ms  224.144 ms  215.069 ms
-53  By.Ryan.Werber (206.214.251.177)  216.475 ms  219.875 ms  224.272 ms
-54  Blizzards.Breed.CCIE.Creativity (206.214.251.182)  225.552 ms  226.408 ms  229.447 ms
-55  Please.Try.Again.Tracerote.to.obiwan.scrye.net (206.214.251.185)  229.050 ms  229.904 ms  230.907 ms
-56  read.more.at.beaglenetworks.net (206.214.251.190)  223.137 ms * *
+ 1  malbec (192.168.10.3)  0.210 ms  0.186 ms  0.175 ms
+ 2  10.0.0.2 (10.0.0.2)  0.758 ms  0.753 ms  1.017 ms
+ 3  host41.190-225-250.telecom.net.ar (190.225.250.41)  25.692 ms  27.646 ms  29.090 ms
+ 4  host234.200-3-37.telecom.net.ar (200.3.37.234)  169.346 ms  169.363 ms  170.395 ms
+ 5  nota.he.net (198.32.124.176)  173.756 ms  173.753 ms  173.747 ms
+ 6  10ge1-1.core1.atl1.he.net (72.52.92.53)  199.166 ms  198.199 ms  198.192 ms
+ 7  216.66.0.26 (216.66.0.26)  189.202 ms  189.336 ms  189.332 ms
+ 8  10.26.26.22 (10.26.26.22)  235.528 ms  215.766 ms  217.829 ms
+ 9  Episode.IV (206.214.251.1)  219.304 ms  216.488 ms  217.845 ms
+10  A.NEW.HOPE (206.214.251.6)  210.288 ms  214.922 ms  215.891 ms
+11  It.is.a.period.of.civil.war (206.214.251.9)  223.858 ms  224.746 ms  226.624 ms
+12  Rebel.spaceships (206.214.251.14)  227.659 ms  216.090 ms  218.746 ms
+13  striking.from.a.hidden.base (206.214.251.17)  217.330 ms  212.451 ms  215.788 ms
+14  have.won.their.first.victory (206.214.251.22)  222.960 ms  223.836 ms  224.979 ms
+15  against.the.evil.Galactic.Empire (206.214.251.25)  224.961 ms  227.379 ms  225.890 ms
+16  During.the.battle (206.214.251.30)  224.539 ms  226.459 ms  227.765 ms
+17  Rebel.spies.managed (206.214.251.33)  232.719 ms  234.118 ms  219.970 ms
+18  to.steal.secret.plans (206.214.251.38)  220.384 ms  215.685 ms  216.586 ms
+19  to.the.Empires.ultimate.weapon (206.214.251.41)  213.253 ms  215.423 ms  214.673 ms
+20  the.DEATH.STAR (206.214.251.46)  220.176 ms  222.178 ms  223.497 ms
+21  an.armored.space.station (206.214.251.49)  220.152 ms  222.119 ms  223.489 ms
+22  with.enough.power.to (206.214.251.54)  224.720 ms  227.131 ms  227.850 ms
+23  destroy.an.entire.planet (206.214.251.57)  210.770 ms  214.091 ms  215.467 ms
+24  Pursued.by.the.Empires (206.214.251.62)  211.863 ms  213.675 ms  213.598 ms
+25  sinister.agents (206.214.251.65)  212.307 ms  214.621 ms  216.043 ms
+26  Princess.Leia.races.home (206.214.251.70)  215.478 ms  216.949 ms  219.114 ms
+27  aboard.her.starship (206.214.251.73)  220.855 ms  223.974 ms  225.929 ms
+28  custodian.of.the.stolen.plans (206.214.251.78)  224.970 ms  216.664 ms  219.487 ms
+29  that.can.save.her (206.214.251.81)  216.631 ms  212.543 ms  215.455 ms
+30  people.and.restore (206.214.251.86)  221.319 ms  217.728 ms  217.321 ms
+31  freedom.to.the.galaxy (206.214.251.89)  214.845 ms  213.449 ms  214.377 ms
+32  0-----I-------I-----0 (206.214.251.94)  220.817 ms  221.196 ms  226.595 ms
+33  0------------------0 (206.214.251.97)  224.376 ms  223.307 ms  218.246 ms
+34  0-----------------0 (206.214.251.102)  219.206 ms  221.184 ms  220.157 ms
+35  0----------------0 (206.214.251.105)  220.644 ms  221.547 ms  221.000 ms
+36  0---------------0 (206.214.251.110)  216.801 ms  213.142 ms  212.589 ms
+37  0--------------0 (206.214.251.113)  212.869 ms  212.132 ms  214.362 ms
+38  0-------------0 (206.214.251.118)  215.745 ms  217.324 ms  218.252 ms
+39  0------------0 (206.214.251.121)  215.144 ms  216.381 ms  215.313 ms
+40  0-----------0 (206.214.251.126)  218.932 ms  220.462 ms  222.385 ms
+41  0----------0 (206.214.251.129)  219.275 ms  222.342 ms  223.668 ms
+42  0---------0 (206.214.251.134)  224.511 ms  213.693 ms  212.026 ms
+43  0--------0 (206.214.251.137)  220.333 ms  220.414 ms  220.926 ms
+44  0-------0 (206.214.251.142)  217.575 ms  223.422 ms  222.452 ms
+45  0------0 (206.214.251.145)  220.896 ms  221.070 ms  220.408 ms
+46  0-----0 (206.214.251.150)  218.936 ms  220.376 ms  222.803 ms
+47  0----0 (206.214.251.153)  224.279 ms  226.625 ms  229.015 ms
+48  0---0 (206.214.251.158)  230.508 ms  219.968 ms  220.902 ms
+49  0--0 (206.214.251.161)  217.980 ms  217.752 ms  219.779 ms
+50  0-0 (206.214.251.166)  220.801 ms  220.176 ms  216.636 ms
+51  00 (206.214.251.169)  219.596 ms  220.986 ms  223.930 ms
+52  I (206.214.251.174)  214.814 ms  219.150 ms  220.279 ms
+53  By.Ryan.Werber (206.214.251.177)  224.243 ms  223.255 ms  225.634 ms
+54  Blizzards.Breed.CCIE.Creativity (206.214.251.182)  226.653 ms  215.471 ms  218.681 ms
+55  Please.Try.Again.Tracerote.to.obiwan.scrye.net (206.214.251.185)  216.634 ms  213.707 ms  213.753 ms
+56  read.more.at.beaglenetworks.net (206.214.251.190)  219.799 ms * *
 </pre>
 
 <div class="org-src-container">
@@ -703,7 +709,7 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2013-04-04</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

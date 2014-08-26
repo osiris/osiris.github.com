@@ -84,55 +84,87 @@ mejorarla.
 <h2 id="sec-2">particionar y formatear el pendrive</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
-<li>Abrir una terminar y loguearse como <code>root</code>
+<li><p>
+Abrir una terminar y loguearse como <code>root</code>
+</p>
 <pre class="example">
 sudo -s
 </pre>
 </li>
 
-<li>Listar los discos:
+<li><p>
+Listar los discos:
+</p>
 <pre class="example">
 fdisk -l
 </pre>
 </li>
 
-<li>Reparticionar, reemplazando <code>sdx</code> por lo que corresponda, por lo
+<li><p>
+Reparticionar, reemplazando <code>sdx</code> por lo que corresponda, por lo
 general es <code>sdb</code>. <b>OjO si te equivocás, PERDES TUS DATOS!</b>
+</p>
 
 <pre class="example">
 fdisk /dev/sdx
 </pre>
 </li>
 
-<li>Tipear <code>d</code> para eliminar una partición existente
+<li><p>
+Tipear <code>d</code> para eliminar una partición existente
+</p>
 </li>
-<li>Tipear <code>n</code> para crear una nueva partición
+<li><p>
+Tipear <code>n</code> para crear una nueva partición
+</p>
 </li>
-<li>Tipear <code>p</code> para seleecionar una partición primaria
+<li><p>
+Tipear <code>p</code> para seleecionar una partición primaria
+</p>
 </li>
-<li>Tipear <code>1</code> para crear la primer partición
+<li><p>
+Tipear <code>1</code> para crear la primer partición
+</p>
 </li>
-<li>Presionar <code>Enter</code> para usar el primer cilindro
+<li><p>
+Presionar <code>Enter</code> para usar el primer cilindro
+</p>
 </li>
-<li>Presionar <code>Enter</code> nuevamente para usar el último cilindro por defecto
+<li><p>
+Presionar <code>Enter</code> nuevamente para usar el último cilindro por defecto
+</p>
 </li>
-<li>Tipear <code>a</code> para activar
+<li><p>
+Tipear <code>a</code> para activar
+</p>
 </li>
-<li>Tipear <code>1</code> para marcar como <i>booteable</i> la primer partición activa
+<li><p>
+Tipear <code>1</code> para marcar como <i>booteable</i> la primer partición activa
+</p>
 </li>
-<li>Tipear <code>t</code> para elegir el tipo de partición
+<li><p>
+Tipear <code>t</code> para elegir el tipo de partición
+</p>
 </li>
-<li>Tipear <code>c</code> para usar una partición FAT32
+<li><p>
+Tipear <code>c</code> para usar una partición FAT32
+</p>
 </li>
-<li>Tipear <code>w</code> para escribir los cambios (si no estás seguro, presioná <code>q</code>)
+<li><p>
+Tipear <code>w</code> para escribir los cambios (si no estás seguro, presioná <code>q</code>)
+</p>
 </li>
-<li>formatear la nueva partición:
+<li><p>
+formatear la nueva partición:
+</p>
 <pre class="example">
 mkfs.vfat -F 32 -n MULTIBOOT /dev/sdx1
 </pre>
 </li>
 
-<li>Estos pasos están basados en el <i>HowTo</i> de pendrivelinux <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
+<li><p>
+Estos pasos están basados en el <i>HowTo</i> de pendrivelinux <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
+</p>
 </li>
 </ol>
 </div>
@@ -142,14 +174,18 @@ mkfs.vfat -F 32 -n MULTIBOOT /dev/sdx1
 <h2 id="sec-3">instalar GRUB</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
-<li>Montar el USB (sólo si no se montó solo)
+<li><p>
+Montar el USB (sólo si no se montó solo)
+</p>
 <pre class="example">
 sudo mkdir /mnt/multiboot
 sudo mount /dev/sdx1 /mnt/multiboot
 </pre>
 </li>
 
-<li>Instalar <i>GRUB</i>
+<li><p>
+Instalar <i>GRUB</i>
+</p>
 <pre class="example">
 sudo grub-install --force --no-floppy --boot-directory=/mnt/multiboot /dev/sdx
 </pre>
@@ -231,7 +267,7 @@ Entonces se muestra el menú de <i>GRUB</i> y se puede probar una distro:
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-<a href="http://huayra.conectarigualdad.gob.ar">http://huayra.conectarigualdad.gob.ar</a>
+<a href="http://huayra.conectarigualdad.gob.ar/">http://huayra.conectarigualdad.gob.ar/</a>
 </p></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
@@ -239,11 +275,11 @@ Entonces se muestra el menú de <i>GRUB</i> y se puede probar una distro:
 </p></div>
 
 <div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
-<a href="https://tails.boum.org">https://tails.boum.org</a>
+<a href="https://tails.boum.org/">https://tails.boum.org/</a>
 </p></div>
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
-<a href="http://getgnulinux.org">http://getgnulinux.org</a>
+<a href="http://getgnulinux.org/">http://getgnulinux.org/</a>
 </p></div>
 
 <div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
@@ -260,7 +296,7 @@ Entonces se muestra el menú de <i>GRUB</i> y se puede probar una distro:
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2014-04-23</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -53,9 +53,13 @@ obteniendo control total de un sistema de manera remota.
 <h2 id="sec-3">¿qué necesito para usar SSH?</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li><i>computadora remota</i>
+<li><p>
+<i>computadora remota</i>
+</p>
 <ul class="org-ul">
-<li><b>servidor SSH</b>
+<li><p>
+<b>servidor SSH</b>
+</p>
 <ul class="org-ul">
 <li>se instala haciendo:
 </li>
@@ -75,9 +79,13 @@ veremos cómo encender remotamente una computadora)
 </li>
 </ul>
 </li>
-<li><i>computadora local</i>
+<li><p>
+<i>computadora local</i>
+</p>
 <ul class="org-ul">
-<li><b>cliente ssh</b>
+<li><p>
+<b>cliente ssh</b>
+</p>
 <ul class="org-ul">
 <li>en todos los linux <b>ya está instalado</b>!
 </li>
@@ -85,16 +93,26 @@ veremos cómo encender remotamente una computadora)
 </li>
 </ul>
 </li>
-<li><a href="https://es.wikipedia.org/wiki/PuTTY">https://es.wikipedia.org/wiki/PuTTY</a>
+<li><p>
+<a href="https://es.wikipedia.org/wiki/PuTTY">https://es.wikipedia.org/wiki/PuTTY</a>
+</p>
 </li>
-<li><b>dirección IP</b> de computadora remota
+<li><p>
+<b>dirección IP</b> de computadora remota
+</p>
 </li>
-<li><b>usuario válido</b> de computadora remota
+<li><p>
+<b>usuario válido</b> de computadora remota
+</p>
 </li>
-<li><b>contraseña</b> del usuario de la computadora remota
+<li><p>
+<b>contraseña</b> del usuario de la computadora remota
+</p>
 </li>
-<li>que el <b>puerto 22 de salida esté habilitado</b> en el firewall
+<li><p>
+que el <b>puerto 22 de salida esté habilitado</b> en el firewall
 (aunque hay trucos para saltearlo)
+</p>
 </li>
 </ul>
 </li>
@@ -254,30 +272,44 @@ desapercibido. Qué podemos hacer, para evitar esto?
 </p>
 
 <ul class="org-ul">
-<li>Utilizar contraseñas fuertes, usando <code>md5</code> por ejemplo:
+<li><p>
+Utilizar contraseñas fuertes, usando <code>md5</code> por ejemplo:
+</p>
 <pre class="example">
 echo -n maradona | md5sum
 8b123b7a7cf86f5aa9424d1f379384d8
 </pre>
 </li>
-<li>Mucho más fácil de recordar, frases de paso:
+<li><p>
+Mucho más fácil de recordar, frases de paso:
+</p>
 <pre class="example">
 Se te escapo la tortuga!
 </pre>
 </li>
-<li>NO usar la misma contraseña en todos lados!
+<li><p>
+NO usar la misma contraseña en todos lados!
+</p>
 </li>
-<li>NO usar <b>sudo</b>, loguearse como <b>root</b> sólo para tareas
+<li><p>
+NO usar <b>sudo</b>, loguearse como <b>root</b> sólo para tareas
 administrativas
+</p>
 </li>
-<li>NO permitir el login del usuario <b>root</b>
+<li><p>
+NO permitir el login del usuario <b>root</b>
+</p>
 </li>
-<li>Sólo permitir login por <i>SSH</i> desde algunas IPs
+<li><p>
+Sólo permitir login por <i>SSH</i> desde algunas IPs
+</p>
 </li>
 
-<li>OjO: aunque quitando el cable de red, basta para desconectar a
+<li><p>
+OjO: aunque quitando el cable de red, basta para desconectar a
 los intrusos, hoy día casi que vuelve inservible una compu
 desconectada del mundo!
+</p>
 </li>
 </ul>
 </div>
@@ -315,7 +347,7 @@ conectadas! :-D
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

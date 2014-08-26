@@ -635,37 +635,49 @@ sugar &lt; $(<span style="color: #ff00ff;">echo</span> <span style="color: #ad7f
 <h2 id="sec-20">mysql + vim</h2>
 <div class="outline-text-2" id="text-20">
 <ul class="org-ul">
-<li>Conexión en <code>.vimrc</code>
+<li><p>
+Conexión en <code>.vimrc</code>
+</p>
 <pre class="example">
 command -range=% Q :&lt;line1&gt;,&lt;line2&gt;w !mysql -u sugar -psugar -B sugar -t -v -v -v
 </pre>
 </li>
 
-<li>Ejecutar todo el archivo
+<li><p>
+Ejecutar todo el archivo
+</p>
 <pre class="example">
 :Q
 </pre>
 </li>
 
-<li>Ejecutar la línea actual
+<li><p>
+Ejecutar la línea actual
+</p>
 <pre class="example">
 :. Q
 </pre>
 </li>
 
-<li>Ejecutar un rango de líneas
+<li><p>
+Ejecutar un rango de líneas
+</p>
 <pre class="example">
 :3,8 Q
 </pre>
 </li>
 
-<li>Ejecutar desde línea actual hasta el final
+<li><p>
+Ejecutar desde línea actual hasta el final
+</p>
 <pre class="example">
 :.,$ Q
 </pre>
 </li>
 
-<li>Usar diccionarios <code>CTRL-X CTRL-K</code>
+<li><p>
+Usar diccionarios <code>CTRL-X CTRL-K</code>
+</p>
 <pre class="example">
 :set dictionary=tablas, tablacampo
 </pre>
@@ -824,7 +836,7 @@ charlas, incluído el código fuente CC-BY-SA.
 </li>
 <li><a href="http://pub.osiux.com/charlas/dame-una-consola-slides.pdf">http://pub.osiux.com/charlas/dame-una-consola-slides.pdf</a>
 </li>
-<li><a href="http://osiux.com">http://osiux.com</a> Mucha data útil (muy poco de mi autoría),
+<li><a href="http://osiux.com/">http://osiux.com/</a> Mucha data útil (muy poco de mi autoría),
 archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
 </li>
 </ul>
@@ -840,7 +852,7 @@ archivos <code>TXT</code> en formato <code>re-StructuredText</code>.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2010/11/26</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

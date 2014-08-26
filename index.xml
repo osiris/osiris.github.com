@@ -14,9 +14,9 @@
   <link>http://osiux.com/</link>
   <description><![CDATA[]]></description>
   <language>es</language>
-  <pubDate>Wed, 20 Aug 2014 09:43:57 -0300</pubDate>
-  <lastBuildDate>Wed, 20 Aug 2014 09:43:57 -0300</lastBuildDate>
-  <generator>Emacs 24.3 Org-mode 8.2.6</generator>
+  <pubDate>Tue, 26 Aug 2014 12:23:06 -0300</pubDate>
+  <lastBuildDate>Tue, 26 Aug 2014 12:23:06 -0300</lastBuildDate>
+  <generator>Emacs 24.3 Org-mode 8.3beta</generator>
   <webMaster>osiux@osiux.com (Osiris Alejandro Gómez)</webMaster>
   <image>
     <url>http://orgmode.org/img/org-mode-unicorn-logo.png</url>
@@ -27,6 +27,7 @@
   <p>
     <a href="http://osiux.com/index.html">index</a> | <a href="http://osiux.com/osiux.html">OSiUX</a> | <a href="http://osiux.com/blog.html">blog</a> | <a href="http://osiux.com/docs.html">docs</a> | <a href="http://osiux.com/charlas.html">charlas</a> | <a href="http://osiux.com/index.xml">rss</a>
   </p>
+
 
   <item>
     <title>Clonar 24 pendrives al mismo tiempo!</title>
@@ -43,6 +44,7 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>Semana Negra - Sobrevivir en la shell</title>
     <link>http://osiux.com/2014-04-28-semana-negra.org</link>
@@ -57,6 +59,7 @@
     </div>
     ]]></description>
   </item>
+
 
   <item>
     <title>FLISoL Avellaneda en la UNDAv</title>
@@ -73,6 +76,7 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>Salió Huayra 2.0</title>
     <link>http://osiux.com/2014-04-25-huayra-2.0.org</link>
@@ -88,12 +92,13 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>Muchas Distros en un pendrive = Multiboot Grub2 ISOBoot</title>
     <link>http://osiux.com/multiboot-grub2-isoboot.org</link>
     <author>Osiris Alejandro Gómez</author>
     <guid isPermaLink="false">http://osiux.com/multiboot-grub2-isoboot.org</guid>
-    <pubDate>Sun, 23 Mar 2014 00:00:00 -0300</pubDate>
+    <pubDate>Wed, 23 Apr 2014 00:00:00 -0300</pubDate>
 
     <description><![CDATA[
     <div class="figure">
@@ -102,6 +107,7 @@
     </div>
     ]]></description>
   </item>
+
 
   <item>
     <title>Se viene el FLISoL 2014</title>
@@ -118,6 +124,7 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>FACTTIC cuenta su experiencia en el MIT</title>
     <link>http://osiux.com/2014-03-22-facttic-mit-libre-planet.org</link>
@@ -132,6 +139,7 @@
     </div>
     ]]></description>
   </item>
+
 
   <item>
     <title>SASOConf en Curuzú Cuatiá</title>
@@ -148,6 +156,7 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>Hardware Freedom Day 2014</title>
     <link>http://osiux.com/2014-03-12-hardware-freedom-day-2014.org</link>
@@ -163,6 +172,7 @@
     ]]></description>
   </item>
 
+
   <item>
     <title>Se viene a la SASOConf</title>
     <link>http://osiux.com/2014-03-11-se-viene-la-sasoconf.org</link>
@@ -177,6 +187,7 @@
     </div>
     ]]></description>
   </item>
+
 
   <item>
     <title>TODO TXT rst + org-mode</title>

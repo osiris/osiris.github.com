@@ -27,34 +27,48 @@ Para configurarlo lo vamos a hacer desde consola:
 </p>
 
 <ul class="org-ul">
-<li>Instalar el paquete <code>wvdial</code> instalado <code>sudo apt-get install wvdial</code>
+<li><p>
+Instalar el paquete <code>wvdial</code> instalado <code>sudo apt-get install wvdial</code>
+</p>
 </li>
 
-<li>Antes que nada debemos ver si tenemos en <code>/dev/</code> los <code>ttyUSB*</code>. Para
+<li><p>
+Antes que nada debemos ver si tenemos en <code>/dev/</code> los <code>ttyUSB*</code>. Para
 eso hacemos un <code>ls /dev/</code>, si no estan conectamos el modem y
 reiniciamos, hacemos un <code>ls /dev/</code> y ya deberia aparecer
 <code>/dev/ttyUSB0</code>
+</p>
 </li>
 
-<li>Los dispositivos USB se identifican con dos ID: el idVendor y el
+<li><p>
+Los dispositivos USB se identifican con dos ID: el idVendor y el
 idProduct, que corresponden respectivamente al fabricante y al
 producto.
+</p>
 </li>
 
-<li>Cuando se enchufan, el sistema de detección de hardware formado por
+<li><p>
+Cuando se enchufan, el sistema de detección de hardware formado por
 udev, dbus, hal, intenta determinar qué driver cargar para manejar
 ese dispositivo en base a la pareja (<code>idVendor</code>, <code>idProduct</code>)
+</p>
 </li>
 
-<li>Para averiguar el idVendor y el idProduct debemos tipear en consola
+<li><p>
+Para averiguar el idVendor y el idProduct debemos tipear en consola
 <code>lsusb -v</code> y buscar donde aparezca el nombre de nuestro modem.
+</p>
 </li>
 
-<li>Yo para buscarlo mejor, ejecuto <code>lsusb -v | less</code> asi se hace mas
+<li><p>
+Yo para buscarlo mejor, ejecuto <code>lsusb -v | less</code> asi se hace mas
 facil la busqueda antes de estar subiendo la pantalla de la consola
+</p>
 </li>
 
-<li>En mi caso al hacer <code>lsusb -v | less</code> me sale esto: 
+<li><p>
+En mi caso al hacer <code>lsusb -v | less</code> me sale esto: 
+</p>
 
 <pre class="example">
     Bus 002 Device 003: ID 12d1:1001 Huawei Technologies Co., Ltd. E620 USB Modem
@@ -132,8 +146,10 @@ el modulo con modprobe usbserial vendor=0x12d1 product=0x1001
 </pre>
 
 <ul class="org-ul">
-<li>Una vez hecho esto, editamos el file ubicado en <code>/etc/wvdial.conf</code>
+<li><p>
+Una vez hecho esto, editamos el file ubicado en <code>/etc/wvdial.conf</code>
    y borren lo que tenga escrito y pegan esto tal cual:
+</p>
 
 <pre class="example">
 [Dialer Defaults]
@@ -161,15 +177,19 @@ Auto DNS = 1
 </pre>
 </li>
 
-<li>Con esto ya el modem deberia poder funcionar. Desde la consola
+<li><p>
+Con esto ya el modem deberia poder funcionar. Desde la consola
 ejecutamos <code>wvdial</code>, despues de unos segundos nuestro modem deberia
 aparecer como conectado (se mantiene prendida una luz cuando
 estamos conectados)
+</p>
 </li>
 
-<li>Si el modem conecta debemos modificar el <code>resolv.conf</code> porque por
+<li><p>
+Si el modem conecta debemos modificar el <code>resolv.conf</code> porque por
 algun motivo que desconozco el dhcp no entrega los DNS que
 corresponden. German me paso los siguientes:
+</p>
 
 <pre class="example">
 nameserver 170.51.255.100
@@ -194,7 +214,7 @@ PD: Gracias German, sos mi google personal ;)
 <div id="postamble" class="status">
 <p class="author">Author: JoMaX (<a href="mailto:jose@dotlinux.com.ar">jose@dotlinux.com.ar</a>)</p>
 <p class="date">Date: 2008-11-29</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.6)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
