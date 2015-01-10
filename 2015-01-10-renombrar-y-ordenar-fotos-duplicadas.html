@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Renombrar y Ordenar Fotos Duplicadas</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Renombrar y Ordenar Fotos Duplicadas</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div class="figure">
+<p><img src="img/nahuel-osiris-leonel.jpg" alt="En casa usamos Debian" width="640" height="320" />
+</p>
+</div>
+
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Caos por naturaleza</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+Amo el orden, pero soy un caos ;-) asi que desde hace años que vengo
+acumulando archivos en distintas computadoras, en varios discos
+rígidos, copiando <i>por las dudas</i> una y otras vez casi los mismos
+archivos con nombres muy similares y por sobre todas las cosas de
+manera muy desordenada.
+</p>
+
+<p>
+Cada tanto hago el intento de ordenarlos, pero me pierdo en la
+revisión manual y suelo cambiar de criterio, por lo cual abandono el
+orden. Muchas veces también sucede que no logro tener 1 disco donde
+consolidar todos los <i>backups</i> parciales y provisorios para dejar un
+compilado completo y ordenado, suelo llenar discos en muy poco
+tiempo, en parte porque duplico archivos y <i>backups</i> de desconfiado
+nomás&#x2026;
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">Ordenando un poco</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<p>
+Hace poco que vengo teniendo éxito en ordenar mi colección de fotos
+digitales (y algunas digitalizadas), la solución vino de manera
+automatizada, como no podía ser de otra forma, pero en lugar de
+elegir una aplicación, opté como es costumbre, hacerlo a mano,
+mediante un <i>script</i> en <code>bash</code> (de cabezadura que soy!).
+</p>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3"><code>renombrar-fotos</code></h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+<p>
+Este <i>script</i> se encarga de generar un nombre de archivo único, a
+partir del <i>md5</i> y de la fecha que esta dentro de la imagen <code>.jpg</code>
+mediante <i>exif</i>.
+</p>
+
+<p>
+Partiendo de varios directorios desordenados, como por ejemplo el
+siguiente listado:
+</p>
+
+<pre class="example">
+/mnt/data/fotos
+/mnt/data/fotos/fotos
+/mnt/data/fotos/fotos/monte2010/fotos
+/mnt/data/inspiron/Dropbox/gcoop/fotos
+/mnt/data/inspiron/charlas/campusparty-2012/fotos
+/mnt/data/inspiron/revisar/fotos
+/mnt/data/inspiron/revisar/pld/charlas/campusparty-2012/fotos
+/mnt/data/musica/fotos   
+/mnt/sdb5/vodka/home/osiris/fotos
+/mnt/sdb9/bal/fotos
+/mnt/sdb9/bal/fotos/JRSL07/fotos
+</pre>
+
+<p>
+Se invoca al comando <code>fotos-renombrar</code> de la siguiente manera:
+</p>
+
+<pre class="example">
+cd /mnt
+fotos-ordenar
+</pre>
+
+<p>
+De esta manera el <i>script</i> buscará archivos <code>*.jpg</code> en el directorio
+actual (<code>/mnt</code>), en caso de encontrar archivos <i>JPEG</i>, verificará
+que efectivamente se tratan de archivos válidos usando <code>file</code> para
+identificar que contienen una imagen <i>JPEG</i>, luego se comprobará el
+<i>HASH</i> mediante <code>md5sum</code> y se verificará si existe un archivo con el
+mismo <i>HASH</i> y/o el mismo nombre de archivo compuesto del <i>HASH</i> y
+la extensión <code>.jpg</code>, si es asi indicará que esta duplicado.
+</p>
+
+<p>
+Luego con <code>identify</code> verificamos que sea correcto el <i>JPEG</i> y en
+caso se ser inválido, se renombra el archivo a <code>HASH.jpg</code>.
+</p>
+
+<p>
+Ahora viene lo interesante, extraer la metadata, básicamente la
+fecha y hora de creación de la imagen, esto facilitará ordenarlas.
+Se realizan varias comprobaciones y se renombra el archivo al
+formato <code>YYYY-MM-DD-HH-MM-HASH.jpg</code> usando <code>jhead</code>. En el caso de
+no contar con metadata se crea lo mínimo partiendo del <i>timestamp</i>
+del archivo.
+</p>
+
+<p>
+El resultado sería algo similar a esto:
+</p>
+
+<pre class="example">
+2014-07-03-0935-2bb594.jpg
+2014-07-03-0935-436e18.jpg
+2014-07-03-0935-437eaa.jpg
+2014-07-03-0935-6c5846.jpg
+2014-07-03-0935-8d84be.jpg
+2014-07-03-0935-da7f18.jpg
+2014-07-03-0936-1ad076.jpg
+2014-07-03-0936-9f6327.jpg
+2014-07-03-0936-e01e7e.jpg
+</pre>
+
+<p>
+También se puede especificar el directorio con el parámetro <code>-d</code> y
+el nivel de subdirectorios a buscar usanod <code>-l</code>:
+</p>
+
+<pre class="example">
+fotos-renombrar -l 3 -d ~/ordenar
+</pre>
+
+<p>
+Hasta este paso conseguimos renombrar a todas las fotos por igual,
+bajo un mismo criterio y detectar las duplicadas! :-)
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4"><code>ordenar-fotos</code></h3>
+<div class="outline-text-3" id="text-unnumbered-4">
+<p>
+Teniendo los archivos correctamente renombrados, se mueven a un
+único directorio, por defecto <code>/mnt/data/fotos</code> y se organizan en
+la siguiente estructura:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> /mnt/data/fotos &amp;&amp; tree -d | grep 2014 | head
+</pre>
+</div>
+
+<pre class="example">
+├── 2014
+│   ├── 2014-01
+│   │   ├── 2014-01-25
+│   │   ├── 2014-01-26
+│   │   ├── 2014-01-27
+│   │   └── 2014-01-29
+│   ├── 2014-03
+│   │   ├── 2014-03-14
+│   │   └── 2014-03-31
+│   ├── 2014-04
+</pre>
+
+<p>
+Entonces los archivos quedarían asi:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> /mnt/data/fotos &amp;&amp; ls 2014/2014-01/2014-01-29/* | head
+</pre>
+</div>
+
+<pre class="example">
+2014/2014-01/2014-01-29/2014-01-29-0844-24fc12.jpg
+2014/2014-01/2014-01-29/2014-01-29-0844-b70a1e.jpg
+2014/2014-01/2014-01-29/2014-01-29-0846-69dc1a.jpg
+</pre>
+
+<p>
+De manera similar al <i>script</i> anterior, se detectan los duplicados,
+con la diferencia que el primer duplicado que se encuentre se moverá
+al directorio de destino y guardarán en <code>/duplicate</code>, esto es a los
+fines de realizar una revisión manual, antes de tomar alguna
+decisión. Un resultado posible sería:
+</p>
+
+<pre class="example">
+fotos-ordenar
+
+duplicate file:  /mnt/data/fotos/2014/2014-07/2014-07-15/2014-07-15-1044-ffb340.jpg
+move duplicate file: /mnt/data/fotos/duplicate/2014-07-15-1044-ffb340.jpg
+duplicate file:  /mnt/data/fotos/2014/2014-07/2014-07-26/2014-07-26-1306-c9869d.jpg
+move duplicate file: /mnt/data/fotos/duplicate/2014-07-26-1306-c9869d.jpg
+duplicate file:  /mnt/data/fotos/2014/2014-08/2014-08-06/2014-08-06-1855-b42d9c.jpg
+move duplicate file: /mnt/data/fotos/duplicate/2014-08-06-1855-b42d9c.jpg
+</pre>
+
+<p>
+Pero en el caso de encontrar un segundo duplicado, en base al <i>HASH</i>
+y no solamente al nombre del archivo, directamente se eliminará por
+ser idéntico.
+</p>
+
+<pre class="example">
+fotos-ordenar
+
+duplicate file:  /mnt/data/fotos/2014/2014-07/2014-07-15/2014-07-15-1044-ffb340.jpg
+delete re-duplicate file: 2014-07-15-1044-ffb340.jpg
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">Todo en orden?</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+<p>
+Actualmente ambos <i>scripts</i> están en el repo <code>media-bash-utils</code> y
+se pueden obtener usando <code>git</code>:
+</p>
+
+<pre class="example">
+git clone https://github.com/osiris/media-bash-utils
+</pre>
+
+<p>
+Invito a probar los <i>scripts</i> y acepto cualquier sugerencia y/o
+mejora, desde ya que hay mucho más que se puede hacer, por ejemplo
+se me ocurren las siguientes ideas:
+</p>
+
+<ul class="org-ul">
+<li>ante duplicados, comparar tamaños en pixels y conservar las fotos
+más grandes.
+</li>
+<li>detectar imágenes muy similares.
+</li>
+<li>aplicar operaciones varias como compresión, marcas de agua, etc.
+</li>
+<li>generar tamaños alternativos y/o unificar tamaños de <i>previews</i>.
+</li>
+</ul>
+
+<p>
+Una de las mayores ventajas es el ahorro de espacio en disco, pero
+por sobre todo el poder consolidarlas, eliminar los duplicados y
+dejar de hacerlo manualmente, todo es automático y a medida que
+vayan apareciendo casos se puede ir mejorando y reorganizando una y
+otra vez a todas las fotos con exactamente el mismo criterio.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2015-01-10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -14,9 +14,9 @@
   <link>http://osiux.com/</link>
   <description><![CDATA[]]></description>
   <language>es</language>
-  <pubDate>Wed, 08 Oct 2014 19:33:13 -0300</pubDate>
-  <lastBuildDate>Wed, 08 Oct 2014 19:33:13 -0300</lastBuildDate>
-  <generator>Emacs 24.3 Org-mode 8.3beta</generator>
+  <pubDate>Sat, 10 Jan 2015 11:25:26 -0300</pubDate>
+  <lastBuildDate>Sat, 10 Jan 2015 11:25:26 -0300</lastBuildDate>
+  <generator>Emacs 24.4 Org-mode 8.3beta</generator>
   <webMaster>osiux@osiux.com (Osiris Alejandro Gómez)</webMaster>
   <image>
     <url>http://orgmode.org/img/org-mode-unicorn-logo.png</url>
@@ -30,212 +30,17 @@
 
 
   <item>
-    <title>Tensión en la red</title>
-    <link>http://osiux.com/2014-10-08-tension-en-la-red.org</link>
+    <title>Renombrar y Ordenar Fotos Duplicadas</title>
+    <link>http://osiux.com/2014-01-10-renombrar-y-ordenar-fotos-duplicadas.org</link>
     <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-10-08-tension-en-la-red.org</guid>
-    <pubDate>Mon, 28 Apr 2014 00:00:00 -0300</pubDate>
+    <guid isPermaLink="false">http://osiux.com/2014-01-10-renombrar-y-ordenar-fotos-duplicadas.org</guid>
+    <pubDate>Fri, 10 Jan 2014 00:00:00 -0300</pubDate>
 
     <description><![CDATA[
     <div class="figure">
-    <p><a href="http://osiux.com/2014-10-08-tension-en-la-red.html" width="451" height="400" alt="Libertad y control en la era digital"><img src="http://osiux.com/tmb/tension-en-la-red.jpg" alt="Libertad y control en la era digital" width="451" height="400" /></a>
+    <p><a href="http://osiux.com/2015-01-10-renombrar-y-ordenar-fotos-duplicadas.html" width="640" height="320" alt="En casa usamos Debian"><img src="http://osiux.com/img/nahuel-osiris-leonel.jpg" alt="En casa usamos Debian" width="640" height="320" /></a>
     </p>
     </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Clonar 24 pendrives al mismo tiempo!</title>
-    <link>http://osiux.com/2014-08-12-clonar-pendrives.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-08-12-clonar-pendrives.org</guid>
-    <pubDate>Tue, 12 Aug 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-08-12-clonar-pendrives.html" width="640" height="487" alt="Clonar 24 pendrives al mismo tiempo usando routers MR3020"><img src="http://osiux.com/tmb/clonar-pendrives/letras-viajeras-routers.jpg" alt="Clonar 24 pendrives al mismo tiempo usando routers MR3020" width="640" height="487" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Semana Negra - Sobrevivir en la shell</title>
-    <link>http://osiux.com/2014-04-28-semana-negra.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-04-28-semana-negra.org</guid>
-    <pubDate>Mon, 28 Apr 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-04-28-semana-negra.html" width="640" height="480" alt="Semana Negra usando TMUX"><img src="http://osiux.com/tmb/semana-negra/tmux.png" alt="Semana Negra usando TMUX" width="640" height="480" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>FLISoL Avellaneda en la UNDAv</title>
-    <link>http://osiux.com/2014-04-26-flisol-avellaneda-undav.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-04-26-flisol-avellaneda-undav.org</guid>
-    <pubDate>Sat, 26 Apr 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-04-26-flisol-avellaneda-undav.html" width="640" height="480" alt="FLISoL Avellaneda en la UNDAv"><img src="http://osiux.com/tmb/flisol-2014-undav/2014-04-26-1417-1efa0f.jpg" alt="FLISoL Avellaneda en la UNDAv" width="640" height="480" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Salió Huayra 2.0</title>
-    <link>http://osiux.com/2014-04-25-huayra-2.0.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-04-25-huayra-2.0.org</guid>
-    <pubDate>Fri, 25 Apr 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-04-25-huayra-2.0.html" width="640" height="480" alt="Huayra 2.0"><img src="http://osiux.com/tmb/huayra-2.0.png" alt="Huayra 2.0" width="640" height="480" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Muchas Distros en un pendrive = Multiboot Grub2 ISOBoot</title>
-    <link>http://osiux.com/multiboot-grub2-isoboot.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/multiboot-grub2-isoboot.org</guid>
-    <pubDate>Wed, 23 Apr 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/multiboot-grub2-isoboot.html" width="640" height="360" alt="Multiboot Grub2 ISOBoot"><img src="http://osiux.com/img/multiboot-grub2-isoboot.png" alt="Multiboot Grub2 ISOBoot" width="640" height="360" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Se viene el FLISoL 2014</title>
-    <link>http://osiux.com/2014-04-22-flisol-2014.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-04-22-flisol-2014.org</guid>
-    <pubDate>Tue, 22 Apr 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-04-22-flisol-2014.html" width="640" height="366" alt="FLISoL 2014"><img src="http://osiux.com/img/flisol-2014-banner.png" alt="FLISoL 2014" width="640" height="366" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>FACTTIC cuenta su experiencia en el MIT</title>
-    <link>http://osiux.com/2014-03-22-facttic-mit-libre-planet.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-03-22-facttic-mit-libre-planet.org</guid>
-    <pubDate>Sat, 22 Mar 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-03-22-facttic-mit-libre-planet.html" width="640" height="360" alt="FACTTIC MIT LibrePlanet"><img src="http://osiux.com/img/mit-stata-center.jpg" alt="FACTTIC MIT LibrePlanet" width="640" height="360" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>SASOConf en Curuzú Cuatiá</title>
-    <link>http://osiux.com/2014-03-14-saso-conf-curuzu-cuatia.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-03-14-saso-conf-curuzu-cuatia.org</guid>
-    <pubDate>Thu, 20 Mar 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-03-14-saso-conf-curuzu-cuatia.html" width="640" height="480" alt="SASOConf Curuzú Cuatiá"><img src="http://osiux.com/tmb/sasoconf/SASOConf-2014-03-14-1143-d2c88a.jpg" alt="SASOConf Curuzú Cuatiá" width="640" height="480" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Hardware Freedom Day 2014</title>
-    <link>http://osiux.com/2014-03-12-hardware-freedom-day-2014.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-03-12-hardware-freedom-day-2014.org</guid>
-    <pubDate>Wed, 12 Mar 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-03-12-hardware-freedom-day-2014.html" width="640" height="346" alt="Hardware Freedom Day 2014"><img src="http://osiux.com/tmb/Hardware-Freedom-Day-2014.png" alt="Hardware Freedom Day 2014" width="640" height="346" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>Se viene a la SASOConf</title>
-    <link>http://osiux.com/2014-03-11-se-viene-la-sasoconf.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/2014-03-11-se-viene-la-sasoconf.org</guid>
-    <pubDate>Tue, 11 Mar 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/2014-03-11-se-viene-la-sasoconf.html" width="640" height="358" alt="Se viene la SASOConf"><img src="http://osiux.com/tmb/SASOConf.png" alt="Se viene la SASOConf" width="640" height="358" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-
-  <item>
-    <title>TODO TXT rst + org-mode</title>
-    <link>http://osiux.com/todo-txt-rst+org-mode.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/todo-txt-rst+org-mode.org</guid>
-    <pubDate>Wed, 15 Jan 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/todo-txt-rst+org-mode.html" width="640" height="480" alt="TODO TXT rst + org-mode"><img src="http://osiux.com/img/todo-txt-rst-org-mode.png" alt="TODO TXT rst + org-mode" width="640" height="480" /></a>
-    </p>
-    </div>
-    ]]></description>
-  </item>
-
-  <item>
-    <title>tengo el título de la charla y ahora cómo hago los slides?</title>
-    <link>http://osiux.com/tengo-el-titulo-de-la-charla-y-ahora-como-hago-los-slides.org</link>
-    <author>Osiris Alejandro Gómez</author>
-    <guid isPermaLink="false">http://osiux.com/tengo-el-titulo-de-la-charla-y-ahora-como-hago-los-slides.org</guid>
-    <pubDate>Wed, 15 Jan 2014 00:00:00 -0300</pubDate>
-
-    <description><![CDATA[
-    <div class="figure">
-    <p><a href="http://osiux.com/tengo-el-titulo-de-la-charla-y-ahora-como-hago-los-slides.html" width="640" height="480" alt="Slides Charlas"><img src="http://osiux.com/img/slides-charlas.png" alt="Slides Charlas" width="640" height="480" /></a>
-    </p>
-    </div>
-
-    <p>
-    <a href="http://osiux.com/blog.html">&lt;- blog</a> | <a href="http://osiux.com/2013.html">2013</a> | <a href="http://osiux.com/2012.html">2012</a> | <a href="http://osiux.com/2011.html">2011</a> | <a href="http://osiux.com/docs.html">docs -&gt;</a>
-    </p>
     ]]></description>
   </item>
 </channel>
