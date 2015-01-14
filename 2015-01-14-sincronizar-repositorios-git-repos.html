@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Sincronizar Repositorios git con git-repos</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Sincronizar Repositorios git con git-repos</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div class="figure">
+<p><a href="img/git-repos-osiris.png" width="640" height="480" alt="git-repos"><img src="tmb/git-repos-osiris.png" alt="git-repos" width="640" height="480" /></a>
+</p>
+</div>
+
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">todo es un repo git</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+Hace varios años que uso <code>git</code> para el control de versiones del
+código fuente en los que trabajo a diario. Pero últimamente me
+estoy moviendo de una computadora a otra: una desktop, una notebook
+y una netbook, es por esto que necesito tener sincronizados los
+repositorios en cada una de ellas y terminé realizando un script
+<i>bash</i> que me facilite la tarea.
+</p>
+
+<p>
+Además de los repositorios de los proyectos en los que estoy
+involucrado en la cooperativa <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, necesito varias
+utilidades que en su mayoría estan siendo actualizadas
+constantemente en <i>github</i>, también necesito mis repositorios
+personales <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> y sobre todo las configuraciones de todas
+los programas que uso, que obviamente estan en un repo git!
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2"><code>~/.git-repos</code></h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<p>
+Para no olvidarme de ningún repo, armo una lista en <code>~/.git-repos</code>,
+el esquema es el siguiente:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">egrep <span style="color: #ad7fa8; font-style: italic;">"(osiris|bash)"</span> ~/.git-repos
+</pre>
+</div>
+
+<pre class="example">
+parse_bash_history      https://github:swooingfish/parse_bash_history
+aps2dot                 github:osiris/aps2dot
+blog                    github:osiris/osiux-blog
+direplos                github:osiris/direplos
+git-bash-utils          github:osiris/git-bash-utils
+html                    github:osiris/osiris.github
+libretA7                github:osiris/libretA7
+media-bash-utils        github:osiris/media-bash-utils
+minimal-bash-prompt     github:osiris/minimal-bash-prompt
+multiboot               github:osiris/multiboot
+org-bash-utils          github:osiris/org-bash-utils
+org-mode-doc-es         github:osiris/org-mode-doc-es
+pcap2dot                github:osiris/pcap2dot
+sugar-graphviz          github:osiris/sugar-graphviz
+traducciones            github:osiris/traducciones
+</pre>
+
+<p>
+Las líneas que comienzan con <code>#</code> son ignoradas. Por lo general
+el directorio coincide con el nombre del repo, aunque a veces es
+necesario cambiarlo.
+</p>
+
+<p>
+Para acortar la url, es conveniente definir los hosts en el
+<code>~/.ssh/config</code>, por ejemplo para <i>github</i> sería asi:
+</p>
+
+<pre class="example">
+Host github
+  User git
+  Hostname github.com
+</pre>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-2">
+<h2 id="unnumbered-3"><code>git-repos</code></h2>
+<div class="outline-text-2" id="text-unnumbered-3">
+<p>
+Las tareas que realiza <code>git-repos</code> son elementales:
+</p>
+
+<ul class="org-ul">
+<li>listar
+</li>
+<li>clonar
+</li>
+<li>pullear
+</li>
+<li>pushear
+</li>
+</ul>
+
+<p>
+Lo interesante es que se realizan en todos los repositorios!
+</p>
+
+<p>
+Supongamos que no tenemos ni un solo repo <i>git</i>, para obtener todos
+los repositorios que utilizo debería descargar la lista <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>
+y el script:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~
+git clone https://github.com/osiris/git-bash-utils
+</pre>
+</div>
+
+<p>
+Agregar al <code>~/.bashrc</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf; font-weight: bold;">if</span> [ -d <span style="color: #ad7fa8; font-style: italic;">"$HOME/git-bash-utils"</span> ]
+<span style="color: #729fcf; font-weight: bold;">then</span>
+    <span style="color: #ff6347;">PATH</span>=<span style="color: #ad7fa8; font-style: italic;">"$HOME/git-bash-utils:$PATH"</span>
+    <span style="color: #729fcf;">source</span> $<span style="color: #ff6347;">HOME</span>/git-bash-utils/git-alias
+<span style="color: #729fcf; font-weight: bold;">fi</span>
+</pre>
+</div>
+
+<p>
+Si quisiera listar todos los repositorios que contienen <i>bash</i>
+ejecutaría lo siguente:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">git-repos -f bash
+</pre>
+</div>
+
+
+<div class="figure">
+<p><a href="img/git-repos-list.png" width="640" height="120" alt="git-repos-list"><img src="tmb/git-repos-list.png" alt="git-repos-list" width="640" height="120" /></a>
+</p>
+</div>
+
+<p>
+Si no encuentra un repo, muestra <b>NOT FOUND</b> y una cruz <b>✖</b>
+indicando que falló el comando sobre el repositorio.
+</p>
+
+<p>
+Si quisiera clonar estos repositorios haría:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">git-repos -f bash -c
+</pre>
+</div>
+
+<p>
+Se clonaron todos los repositorios pero además se muestra
+información extra, un streak que indica los últimos 30 días y
+cuando se hizo por lo menos un commit.
+</p>
+
+<p>
+En caso de agregar el tiempo invertido en cada commit en el formato
+HH:MM se puede totalizar y saber cuanto tiempo hemos invertido a lo
+largo del proyecto.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">git-repos -f bash -t
+</pre>
+</div>
+
+
+<div class="figure">
+<p><a href="img/git-repos-show-time.png" width="640" height="120" alt="git-repos-show-time"><img src="tmb/git-repos-show-time.png" alt="git-repos-show-time" width="640" height="120" /></a>
+</p>
+</div>
+
+<p>
+Podríamos visualizar la última línea del log a fin de saber que es
+lo último que se hizo.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">git-repos -f bash -g
+</pre>
+</div>
+
+
+<div class="figure">
+<p><a href="img/git-repos-show-log.png" width="640" height="220" alt="git-repos-show-log"><img src="tmb/git-repos-show-log.png" alt="git-repos-show-log" width="640" height="220" /></a>
+</p>
+</div>
+
+<p>
+Y para el final queda lo más importante, hacer un pull/push en todos
+los repositorios.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">git-repos -f bash -ls
+</pre>
+</div>
+
+
+<div class="figure">
+<p><a href="img/git-repos-pull.png" width="640" height="120" alt="git-repos-show-time"><img src="tmb/git-repos-pull.png" alt="git-repos-show-time" width="640" height="120" /></a>
+</p>
+</div>
+
+<p>
+Hay más utilidades en el repositorio <code>git-bash-utils</code>, en particular
+recomiendo mirar el git-alias y cualquier correción/sugerencia será
+bien recibida.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://gcoop.coop/">http://gcoop.coop/</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="https://github.com/osiris">https://github.com/osiris</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="https://raw.githubusercontent.com/osiris/git-bash-utils/master/.git-repos">https://raw.githubusercontent.com/osiris/git-bash-utils/master/.git-repos</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
+<p class="date">Date: 2015-01-14</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
