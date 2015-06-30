@@ -14,9 +14,9 @@
   <link>http://osiux.com/</link>
   <description><![CDATA[]]></description>
   <language>es</language>
-  <pubDate>Sat, 10 Jan 2015 11:25:26 -0300</pubDate>
-  <lastBuildDate>Sat, 10 Jan 2015 11:25:26 -0300</lastBuildDate>
-  <generator>Emacs 24.4 Org-mode 8.3beta</generator>
+  <pubDate>Tue, 30 Jun 2015 05:29:31 -0300</pubDate>
+  <lastBuildDate>Tue, 30 Jun 2015 05:29:31 -0300</lastBuildDate>
+  <generator>Emacs 24.3 Org-mode 8.3beta</generator>
   <webMaster>osiux@osiux.com (Osiris Alejandro Gómez)</webMaster>
   <image>
     <url>http://orgmode.org/img/org-mode-unicorn-logo.png</url>
@@ -30,11 +30,43 @@
 
 
   <item>
+    <title>tmux + terminator = awesome</title>
+    <link>http://osiux.com/tmux-terminator-awsome.org</link>
+    <author>Osiris Alejandro Gómez</author>
+    <guid isPermaLink="false">http://osiux.com/tmux-terminator-awsome.org</guid>
+    <pubDate>Tue, 30 Jun 2015 00:00:00 -0300</pubDate>
+
+    <description><![CDATA[
+    <div class="figure">
+    <p><a href="http://osiux.com/tmux-terminator-awesome.html" width="640" height="480" alt="tmux+terminator+awesome"><img src="http://osiux.com/tmb/tmux-terminator-awesome.png" alt="tmux+terminator+awesome" width="640" height="480" /></a>
+    </p>
+    </div>
+    ]]></description>
+  </item>
+
+
+  <item>
+    <title>Sincronizar Repositorios git con git-repos</title>
+    <link>http://osiux.com/2014-01-14-sincronizar-repositorios-git-repos.org</link>
+    <author>Osiris Alejandro Gómez</author>
+    <guid isPermaLink="false">http://osiux.com/2014-01-14-sincronizar-repositorios-git-repos.org</guid>
+    <pubDate>Wed, 14 Jan 2015 00:00:00 -0300</pubDate>
+
+    <description><![CDATA[
+    <div class="figure">
+    <p><a href="http://osiux.com/2015-01-14-sincronizar-repositorios-git-repos.html" width="640" height="480" alt="git-repos"><img src="http://osiux.com/tmb/git-repos-osiris.png" alt="git-repos" width="640" height="480" /></a>
+    </p>
+    </div>
+    ]]></description>
+  </item>
+
+
+  <item>
     <title>Renombrar y Ordenar Fotos Duplicadas</title>
     <link>http://osiux.com/2014-01-10-renombrar-y-ordenar-fotos-duplicadas.org</link>
     <author>Osiris Alejandro Gómez</author>
     <guid isPermaLink="false">http://osiux.com/2014-01-10-renombrar-y-ordenar-fotos-duplicadas.org</guid>
-    <pubDate>Fri, 10 Jan 2014 00:00:00 -0300</pubDate>
+    <pubDate>Sat, 10 Jan 2015 00:00:00 -0300</pubDate>
 
     <description><![CDATA[
     <div class="figure">

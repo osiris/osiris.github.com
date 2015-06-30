@@ -3,12 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>visualizando dos años de orgmode con gnuplot - viewing two years of orgmode with gnuplot</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -17,9 +18,9 @@
 <a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Introducción</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Introducción</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 Desde que comencé a usar org-mode <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> siempre tuve ganas de
 graficar el registro de horas que llevo a diario, pasaron dos largos
@@ -65,9 +66,9 @@ tener miedo, lleva un poco de tiempo aprenderlo y vale la pena.
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Cronometrar Tareas</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Cronometrar Tareas</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 Para iniciar el reloj de una tarea basta con presionar <code>C-c C-x C-i</code>,
 es decir <code>Ctrl+C Ctrl+x Ctrl+i</code> sobre una tarea, y qué es una tarea,
@@ -155,9 +156,9 @@ Esto cambia la vista del comando <code>history</code> y es de gran ayuda:
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Recolectando datos</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Recolectando datos</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <p>
 La idea es recoletar todos los períodos de tiempo utilizados para cada
 proyecto (un archivo con extesion <code>.org</code>) ordenados por día y
@@ -170,9 +171,9 @@ ejecuto directamente desde org-mode usando org-babel <sup><a id="fnr.3" class="f
 </p>
 </div>
 
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">listado de días</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">listado de días</h3>
+<div class="outline-text-3" id="text-orgheadline4">
 <p>
 Primero busco las líneas que tengan <code>CLOCK:</code> seguido de cualquier cosa
 <code>(.*)</code> para luego buscar el año y mes actual <code>2011-12</code> seguido de un
@@ -231,9 +232,9 @@ cronometradas, ya que no siempre estoy registrando horas.
 </div>
 </div>
 
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">listado de archivos</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">listado de archivos</h3>
+<div class="outline-text-3" id="text-orgheadline5">
 <p>
 De manera similar al paso anterior hago lo mismo para obtener el
 listado de archivos de los proyectos registrados:
@@ -263,9 +264,9 @@ plot.org
 </div>
 </div>
 
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">Armando la matriz</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">Armando la matriz</h3>
+<div class="outline-text-3" id="text-orgheadline6">
 <p>
 Con el listado de días y archivos estamos en condiciones de completar
 una matriz para cada día y proyecto especificando la hora de inicio de
@@ -438,12 +439,12 @@ org-babel), en el archivo <code>.emacs</code> es necesario definir:
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Graficando</h2>
-<div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1">El primer gráfico</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Graficando</h2>
+<div class="outline-text-2" id="text-orgheadline9">
+</div><div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">El primer gráfico</h3>
+<div class="outline-text-3" id="text-orgheadline7">
 <p>
 <b>GNUPLOT</b> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> es sorprendente, realmente es muy fácil de usar
 y muy rápido generando los gráficos, inicialmente alcanza con indicar
@@ -514,9 +515,9 @@ El primer gráfico:
 </div>
 </div>
 
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2">Mejorando el gráfico</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8">Mejorando el gráfico</h3>
+<div class="outline-text-3" id="text-orgheadline8">
 <p>
 Las primeras mejoras que apliqué fueron todas visuales:
 </p>
@@ -644,8 +645,7 @@ Está disponible un archivo <code>plot.org</code> con el código completo:
 </p>
 
 <ul class="org-ul">
-<li><a href="http://pub.osiux.com/org-mode/plot.org">http://pub.osiux.com/org-mode/plot.org</a>
-</li>
+<li><a href="http://pub.osiux.com/org-mode/plot.org">http://pub.osiux.com/org-mode/plot.org</a></li>
 </ul>
 
 
@@ -702,9 +702,9 @@ Comparando el 2011, veo que soy un adicto a org-mode:
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Conclusión</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">Conclusión</h2>
+<div class="outline-text-2" id="text-orgheadline10">
 <p>
 Org-mode es fiel a la filosofía UNIX al permitir unir muchas pequeñas
 herramientas, en este caso: <code>bash, awk, egrep, sort, gnuplot</code> con la
@@ -746,14 +746,12 @@ grep -A 3 "*** visualizando" plot.org | grep "="
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">ChangeLog</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11">ChangeLog</h2>
+<div class="outline-text-2" id="text-orgheadline11">
 <ul class="org-ul">
-<li><span class="timestamp-wrapper"><span class="timestamp">[2013-02-28 jue]</span></span> Cambio formato rst por org.
-</li>
-<li><span class="timestamp-wrapper"><span class="timestamp">[2013-03-15 vie]</span></span> Agrego width a imágenes.
-</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2013-02-28 jue] </span></span> Cambio formato rst por org.</li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[2013-03-15 vie] </span></span> Agrego width a imágenes.</li>
 </ul>
 </div>
 </div>
@@ -761,25 +759,25 @@ grep -A 3 "*** visualizando" plot.org | grep "="
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://orgmode.org/">http://orgmode.org/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://orgmode.org/worg/org-contrib/babel/intro.html">http://orgmode.org/worg/org-contrib/babel/intro.html</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://www.gnuplot.info/">http://www.gnuplot.info/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://osiux.com/restructuredtext-texto-re-estructurado.txt">http://osiux.com/restructuredtext-texto-re-estructurado.txt</a>
-</p></div>
+</p></p></div>
 
 
 </div>

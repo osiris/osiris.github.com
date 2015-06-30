@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>de fondo negro a fondo blanco</title>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="OSiRiS &lt;osiris@gcoop.coop&gt;" />
+<link rel="stylesheet" href="osiux.css" type="text/css" />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">de fondo negro a fondo blanco</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> de fondo negro a fondo blanco</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+la charla trata de cómo lograr un elegante documento desde una oscura
+terminal, no es sobre cómo hacer fondo blanco con fernet! ;-)
+</p>
+
+
+<div class="figure">
+<p><img src="file:~/data/charlas/de-fondo-negro-a-fondo-blanco/1882-branca.png" alt="1882-branca.png" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> txt2pdf <code>C-c C-e p</code></h3>
+<div class="outline-text-3" id="text-1-1">
+
+<div class="figure">
+<p><img src="txt2pdf-orgmode-beamer.png" alt="txt2pdf-orgmode-beamer.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> para qué sirve <code>org-mode</code> ?</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>hacer listas (checkboxes)</li>
+<li>registrar notas</li>
+<li>manejo de agenda y calendario</li>
+<li>organizar tareas <code>TODO</code></li>
+<li>registrar tiempos</li>
+<li>planificar proyectos</li>
+<li>realizar documentos estructurados</li>
+<li>documentar código para ejecutarlo</li>
+<li>manejar tablas y planillas de cálculo</li>
+<li>ejecutar código y que quede documentado</li>
+<li>hacer presentaciones</li>
+<li>bases de datos</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> instalar <code>org-mode</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><p>
+obtener código repositorio git
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">git clone git://orgmode.org/org-mode.git
+</pre>
+</div></li>
+<li><p>
+agregar al archivo <code>.emacs</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(setq load-path (cons <span style="color: #ad7fa8; font-style: italic;">"~/org.git/lisp"</span> load-path))
+</pre>
+</div></li>
+<li><p>
+compilar
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">make
+make install
+</pre>
+</div></li>
+<li><p>
+configurar en <code>.emacs</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="color: #729fcf; font-weight: bold;">require</span> '<span style="color: #8ae234;">org-install</span>)
+(add-to-list 'auto-mode-alist '(<span style="color: #ad7fa8; font-style: italic;">"\\.org\\'"</span>.org-mode))
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> sintaxis <code>org-mode</code></h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #80c800; font-size: 150%; font-weight: bold;">* t&#237;tulo </span><span style="color: #cfff00; font-weight: bold;">[0/1]</span><span style="color: #80c800; font-size: 150%; font-weight: bold;"> </span><span style="color: #cfff00; font-weight: bold;">[0%]</span><span style="color: #80c800; font-size: 150%; font-weight: bold;"> </span>
+<span style="color: #9fc800; font-size: 120%; font-weight: bold;">** </span><span style="color: #cfff00; font-weight: bold;">TODO</span><span style="color: #9fc800; font-size: 120%; font-weight: bold;"> una tarea con estado PORHACER  </span><span style="color: #9fc800; font-size: 120%; font-weight: bold;">:un_tag:otro_tag:</span>
+
+,   - <span style="font-weight: bold;">*negrita*</span>
+,   - <span style="font-style: italic;">/it&#225;lica/</span>
+,   - <span style="color: #eeeeec; font-style: italic; text-decoration: underline;">=c&#243;digo=</span>
+,   - <span style="color: #00ff00;">~verbatim~</span>
+
+,   P&#225;rrafo de texto medio corto.
+
+,   - [-] lista por completar <span style="color: #cfff00; font-weight: bold;">[1/2]</span> <span style="color: #cfff00; font-weight: bold;">[50%]</span>
+,     - [X] item que est&#225; completo
+,     - [ ] item por realizar
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> tablas y hoja de cáculo</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>calcular fila: <code>C-c *</code></li>
+<li>calcular todas las filas: <code>C-u C-c *</code></li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Item</th>
+<th scope="col" class="left">Und</th>
+<th scope="col" class="right">Cant</th>
+<th scope="col" class="right">Precio</th>
+<th scope="col" class="right">Importe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Asado</td>
+<td class="left">Kg</td>
+<td class="right">2.0</td>
+<td class="right">40</td>
+<td class="right">80.00</td>
+</tr>
+
+<tr>
+<td class="left">Vacío</td>
+<td class="left">Kg</td>
+<td class="right">1.5</td>
+<td class="right">40</td>
+<td class="right">60.00</td>
+</tr>
+
+<tr>
+<td class="left">Chori</td>
+<td class="left">Kg</td>
+<td class="right">2.0</td>
+<td class="right">20</td>
+<td class="right">40.00</td>
+</tr>
+
+<tr>
+<td class="left">Pollo</td>
+<td class="left">Kg</td>
+<td class="right">2.0</td>
+<td class="right">35</td>
+<td class="right">70.00</td>
+</tr>
+
+<tr>
+<td class="left">Pan</td>
+<td class="left">Kg</td>
+<td class="right">1.5</td>
+<td class="right">15</td>
+<td class="right">22.50</td>
+</tr>
+
+<tr>
+<td class="left">Carbón</td>
+<td class="left">Kg</td>
+<td class="right">9.0</td>
+<td class="right">20</td>
+<td class="right">180.00</td>
+</tr>
+
+<tr>
+<td class="left">Fernet</td>
+<td class="left">Lt</td>
+<td class="right">3.0</td>
+<td class="right">50</td>
+<td class="right">150.00</td>
+</tr>
+
+<tr>
+<td class="left">Coca</td>
+<td class="left">Lt</td>
+<td class="right">8.0</td>
+<td class="right">8</td>
+<td class="right">64.00</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">&#xa0;</td>
+<td class="right">666.50</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<code>#+TBLFM: $5=$3*$4;%0.2f::@10$5=vsum(@I..@II);%0.2f</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> propiedades</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>agregar propiedad: <code>C-c C-x p</code></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #80c800; font-size: 150%; font-weight: bold;">* BUGS</span>
+<span style="color: #9fc800; font-size: 120%; font-weight: bold;">** lograr que la aplicaci&#243;n funcione</span>
+,   :PROPERTIES:
+,   :ID:       CCT-1880
+,   :STATUS:   FIXED
+,   :ASSIGNED: OSiRiS
+,   :END:
+<span style="color: #9fc800; font-size: 120%; font-weight: bold;">** es s&#243;lo arreglar una pavadita</span>
+,   :PROPERTIES:
+,   :ID:       CCT-1990
+,   :STATUS:   OPEN
+,   :ASSIGNED: OSiRiS
+,   :END:
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> vista columnas</h3>
+<div class="outline-text-3" id="text-1-7">
+<ul class="org-ul">
+<li>activar: <code>C-c C-x C-c</code></li>
+<li>salir: <code>q</code></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #888a85;">#+COLUMNS: %10ID %10STATUS %10ASSIGNED(Asignado) %50ITEM</span>
+
+,| ID       | STAT  | ASSIGN | ITEM                           |
+,|----------+-------+--------+--------------------------------|
+,| CCT-1880 | FIXED | OSiRiS | ** lograr que la aplicaci&#243;n... |
+,| CCT-1990 | OPEN  | OSiRiS | ** es s&#243;lo arreglar una...     |
+,| CCT-1881 | FIXED | OSiRiS | ** resolver bug bloqueante...  |
+,| CCT-1991 | OPEN  | OSiRiS | ** agregar un men&#250;...          |
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> registrar tiempos</h3>
+<div class="outline-text-3" id="text-1-8">
+<ul class="org-ul">
+<li>iniciar reloj: <code>C-c C-x C-i</code> / <code>F9 i</code></li>
+<li>detener reloj: <code>C-c C-x C-o</code> / <code>F9 o</code></li>
+<li>ir al reloj: <code>C-c C-x C-j</code> / <code>F9 j</code></li>
+<li>reporte rápido: <code>C-c C-x C-d</code></li>
+<li>insertar fecha inactiva: <code>C-c !</code> <code>[2012-02-14 mar]</code></li>
+<li>insertar fecha activa: <code>C-c .</code> <code>&lt;2012-02-14 mar&gt;</code></li>
+<li>insertar <code>DEADLINE:</code> <code>C-c d</code></li>
+<li>insertar <code>SCHEDULED:</code> <code>C-c s</code></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #80c800; font-size: 150%; font-weight: bold;">* registar tiempos de una tarea o item..................2:26</span>
+,  :LOGBOOK:
+,  <span style="color: #a52a2a;">CLOCK:</span><span style="color: #cfff00; text-decoration: underline;">[2012-02-14 mar 00:45]--[2012-02-14 mar 01:58]</span>=&gt;1:13
+,  <span style="color: #a52a2a;">CLOCK:</span><span style="color: #cfff00; text-decoration: underline;">[2012-02-13 lun 00:45]--[2012-02-14 lun 01:58]</span>=&gt;1:13
+,  :END:
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> acordarse de todo</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li><code>C-c r</code></li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="color: #729fcf; font-weight: bold;">require</span> '<span style="color: #8ae234;">org-remember</span>)
+(<span style="color: #729fcf; font-weight: bold;">require</span> '<span style="color: #8ae234;">remember</span>)
+(org-remember-insinuate)
+(define-key global-map <span style="color: #ad7fa8; font-style: italic;">"\C-cr"</span> 'org-remember)
+(setq org-remember-templates
+'(
+(<span style="color: #ad7fa8; font-style: italic;">"Todo"</span> ?t <span style="color: #ad7fa8; font-style: italic;">"** TODO %?%^g\n"</span> <span style="color: #ad7fa8; font-style: italic;">"~/org/notas.org"</span> <span style="color: #ad7fa8; font-style: italic;">"Tareas"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"Nota"</span> ?n <span style="color: #ad7fa8; font-style: italic;">"** %?%^g\n"</span> <span style="color: #ad7fa8; font-style: italic;">"~/org/notas.org"</span> <span style="color: #ad7fa8; font-style: italic;">"Notas"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"Link"</span> ?l <span style="color: #ad7fa8; font-style: italic;">"** %?%^g\n"</span> <span style="color: #ad7fa8; font-style: italic;">"~/org/links.org"</span> <span style="color: #ad7fa8; font-style: italic;">"Links"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"Contacto"</span> ?c <span style="color: #ad7fa8; font-style: italic;">"* %?%^g\n"</span> <span style="color: #ad7fa8; font-style: italic;">"~/org/contactos.org"</span> <span style="color: #ad7fa8; font-style: italic;">"Contactos"</span>)
+))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> links personalizados</h3>
+<div class="outline-text-3" id="text-1-10">
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp"><span style="color: #888a85;">;; </span><span style="color: #888a85;">http://orgmode.org/manual/Link-abbreviations.html</span>
+(setq org-link-abbrev-alist
+'(
+(<span style="color: #ad7fa8; font-style: italic;">"google"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://encrypted.google.com/search?q="</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"wikipedia"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://en.wikipedia.org/w/index.php?search="</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"ADB"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://localhost:47243/browse/ADB-"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"CCT"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://localhost:47243/browse/CCT-"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"CVE"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"DSA"</span>.<span style="color: #ad7fa8; font-style: italic;">"http://www.debian.org/security/2012/dsa-"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"GCA"</span>.<span style="color: #ad7fa8; font-style: italic;">"file:jira/CCT.org::"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"RCJ"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://dev.gcoop.com.ar/gcoopwiki/ReunionesConsejo/"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"RED"</span>.<span style="color: #ad7fa8; font-style: italic;">"http://localhost:8141/redmine/issues/"</span>)
+(<span style="color: #ad7fa8; font-style: italic;">"RFC"</span>.<span style="color: #ad7fa8; font-style: italic;">"https://www.rfc-editor.org/info/rfc"</span>)
+))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> usando links</h3>
+<div class="outline-text-3" id="text-1-11">
+<ul class="org-ul">
+<li><code>C-u C-c C-l</code> insertar link</li>
+<li><code>C-c C-o</code> abrir link</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-org"><span style="color: #888a85;">#+LINK: GIT <a href="https://git.gcoop.com.ar/?p=sugargca.git">https://git.gcoop.com.ar/?p=sugargca.git</a>;</span>
+,a=commitdiff;h=
+,
+<span style="color: #80c800; font-size: 150%; font-weight: bold;">* </span><span style="color: #cfff00; text-decoration: underline;"><a href="CCT:1818">CCT:1818</a></span><span style="color: #80c800; font-size: 150%; font-weight: bold;"> </span><span style="color: #cfff00; text-decoration: underline;"><a href="GIT:7d4ea0a">GIT:7d4ea0a</a></span><span style="color: #80c800; font-size: 150%; font-weight: bold;"> usando links</span>
+
+,  - <span style="color: #cfff00; text-decoration: underline;"><a href="file:/var/www/sugargca/doc/SugarGCA.txt">file:/var/www/sugargca/doc/SugarGCA.txt</a></span>
+,  - <span style="color: #cfff00; text-decoration: underline;"><a href="file:/var/www/sugargca/doc/SugarGCA.txt">Manual</a></span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> trabajar con código fuente</h3>
+<div class="outline-text-3" id="text-1-12">
+<ul class="org-ul">
+<li>bloque código: <code>&lt;s{TAB}</code></li>
+<li>ejecutar código: <code>C-c C-C</code></li>
+</ul>
+
+<pre class="example">
+#+BEGIN_SRC sh :exports both
+  cd ~/org
+  wc -l charla.org
+  ls -l charla.org | awk '{print $1,$5}'
+#+END_SRC
+
+#+RESULTS:
+|        128 | charla.org |
+| -rw-rw-r-- |       3689 |
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> hacer gráficos con <code>ditaa</code></h3>
+<div class="outline-text-3" id="text-1-13">
+<div class="org-src-container">
+
+<pre class="src src-ditaa">              +-------------------+
+/---------\   |    no se dibujar  |
+|Ascii Art|--&gt;| con el mouse cBLU |
+\----+----/   +-+-----------------+
+     |          |
+     +---=------+
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="ascii-art.png" alt="ascii-art.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> o grafos con <code>graphviz</code></h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="org-src-container">
+
+<pre class="src src-dot">graph g{node [shape=circle,style=filled,color=blue,fontsize=1,fontcolor=blue,width=.2,height=.2];
+edge [color=white,len=.5];a01--a02;a02--a03;a03--a04;
+a04--a05;a05--a06;a06--a07;a07--a08;a08--a09;a09--a10;a10--a11;a11--a12;a12--a01;a01--b01;a02--b01;a02--b02;a03--b02;a03--b03;
+a04--b03;a04--b04;a05--b04;a05--b05;a06--b05;a06--b06;a07--b06;a07--b07;a08--b07;a08--b08;a09--b08;a09--b09;a10--b09;a10--b10;
+a11--b10;a11--b11;a12--b11;a12--b12;a01--b12;}
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="g-coop.png" alt="g-coop.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> diagramas con <code>plantuml</code></h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="org-src-container">
+
+<pre class="src src-plantuml">Sugar -&gt; CAS: Authentication Request
+CAS --&gt; Sugar: Authentication Response
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="sugar-cas.png" alt="sugar-cas.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> exportar</h3>
+<div class="outline-text-3" id="text-1-16">
+<ul class="org-ul">
+<li><code>C-c C-e b</code> HTML</li>
+<li><code>C-c C-e d</code> LaTeX PDF</li>
+<li><code>C-c C-e O</code> OpenDocument ODT</li>
+<li><code>C-c C-e a</code> ASCII</li>
+<li><code>C-c C-e D</code> DocBook</li>
+<li><code>C-c C-e J</code> TaskJuggler</li>
+<li><code>C-c C-e m</code> Freemind mind map</li>
+<li><code>C-c C-e x</code> XOXO</li>
+<li><code>C-c C-e i</code> iCalendar ICS</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="section-number-3">1.17</span> compartir es bueno</h3>
+<div class="outline-text-3" id="text-1-17">
+<p>
+<b>usted es libre de</b>:
+</p>
+
+<ul class="org-ul">
+<li>compartir, copiar, distribuir, ejecutar</li>
+<li>comunicar públicamente la obra</li>
+<li>hacer obras derivadas</li>
+<li>hacer un uso comercial de esta obra</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:~/data/charlas/ccbysa.png" alt="ccbysa.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-18" class="outline-3">
+<h3 id="sec-1-18"><span class="section-number-3">1.18</span> gracias!</h3>
+<div class="outline-text-3" id="text-1-18">
+<ul class="org-ul">
+<li>preguntas, dudas y sugerencias a:
+<ul class="org-ul">
+<li><a href="mailto:OSiRiS@gcoop.coop">mailto:OSiRiS@gcoop.coop</a></li>
+</ul></li>
+<li>encontrá ésta y otras charlas en:
+<ul class="org-ul">
+<li><a href="http://pub.osiux.com/charlas">http://pub.osiux.com/charlas</a></li>
+<li><a href="http://www.gcoop.coop/capacitaciones-gcoop">http://www.gcoop.coop/capacitaciones-gcoop</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: OSiRiS &lt;osiris@gcoop.coop&gt; (<a href="mailto:osiris@gcoop.coop">osiris@gcoop.coop</a>)</p>
+<p class="date">Date: 2012-02-14</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

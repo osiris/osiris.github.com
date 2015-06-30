@@ -29,44 +29,39 @@ proyecto <b>Letras Viajeras</b> <sup><a id="fnr.3" class="footref" href="#fn.3">
 pendrives con exactamente lo mismo y no queríamos hacerlo de a uno.
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Cómo clonar un pendrive a muchos pendrives</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Cómo clonar un pendrive a muchos pendrives</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
 <p>
 Buscando un poco por la web, encontramos varias opciones, entre ellas:
 </p>
 
 <ol class="org-ol">
 <li>iniciar una máquina con <i>CloneZilla</i> <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> que tiene
-una utilidad para clonar <i>USB</i>.
-</li>
+una utilidad para clonar <i>USB</i>.</li>
 <li>usar <code>dd</code> y <code>tee</code> con varios <i>pendrives</i> conectados a la misma
-máquina.
-</li>
+máquina.</li>
 <li>usar <code>dd</code>, <code>tee</code> y <code>netcat</code> con varios <i>pendrives</i> en varias
-máquinas.
-</li>
+máquinas.</li>
 <li>crear un <code>.torrent</code> con el contenido, y descargar el <i>torrent</i>
-      directamente en cada <i>pendrive</i> conectado a un <i>router</i>.
-</li>
+      directamente en cada <i>pendrive</i> conectado a un <i>router</i>.</li>
 <li>que cada router descargue el contenido directamente en el <i>USB</i>
-      usando <code>wget</code> y <code>tar</code> desde un <code>parallel-ssh</code> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
-</li>
+      usando <code>wget</code> y <code>tar</code> desde un <code>parallel-ssh</code> <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></li>
 </ol>
 </div>
 
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">1. CloneZilla</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-unnumbered-2" class="outline-3">
+<h3 id="unnumbered-2">1. CloneZilla</h3>
+<div class="outline-text-3" id="text-unnumbered-2">
 <p>
 No lo probamos porque no queríamos reiniciar :-P
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">2. <code>dd</code> + <code>tee</code></h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">2. <code>dd</code> + <code>tee</code></h3>
+<div class="outline-text-3" id="text-unnumbered-3">
 <p>
 Un hack <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> de la vieja escuela, haciendo uso de <code>dd</code> y
 <code>tee</code> se puede de una manera muy simple clonar en varios
@@ -85,25 +80,19 @@ ls / | pv | tee &gt;(dd of=a) &gt;(dd of=b) | (dd of=c)
 </pre>
 
 <ul class="org-ul">
-<li><code>ls /</code> listamos el contenido de la raiz
-</li>
+<li><code>ls /</code> listamos el contenido de la raiz</li>
 
 <li><code>| pv</code> agregamos un <i>pipe view</i> para tener un indicador de
-progreso
-</li>
+progreso</li>
 
 <li><code>| tee</code> esto nos permite redireccionar a la salida estandar y al
-mismo tiempo enviar la salida a un archivo.
-</li>
+mismo tiempo enviar la salida a un archivo.</li>
 
-<li><code>&gt;(dd of=a)</code> enviamos la salida al archivo <code>a</code>
-</li>
+<li><code>&gt;(dd of=a)</code> enviamos la salida al archivo <code>a</code></li>
 
-<li><code>&gt;(dd of=b)</code> enviamos la salida al archivo <code>b</code>
-</li>
+<li><code>&gt;(dd of=b)</code> enviamos la salida al archivo <code>b</code></li>
 
-<li><code>&gt;| (dd of=c)</code> última salida al archivo <code>c</code>
-</li>
+<li><code>&gt;| (dd of=c)</code> última salida al archivo <code>c</code></li>
 </ul>
 
 <p>
@@ -227,9 +216,9 @@ sys6m4.339s
 </div>
 </div>
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3">3. <code>dd</code> + <code>tee</code> + <code>netcat</code></h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4">3. <code>dd</code> + <code>tee</code> + <code>netcat</code></h3>
+<div class="outline-text-3" id="text-unnumbered-4">
 <p>
 Esta opción sonaba muy interesante, porque podíamos usar varias
 máquinas y podríamos clonar todos los pendrives al mismo tiempo,
@@ -245,9 +234,9 @@ utilizar un mismo <i>BUS</i> <i>USB</i>.
 </div>
 </div>
 
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4">4. crear un <code>.torrent</code> y distribuirlo</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-unnumbered-5" class="outline-3">
+<h3 id="unnumbered-5">4. crear un <code>.torrent</code> y distribuirlo</h3>
+<div class="outline-text-3" id="text-unnumbered-5">
 <p>
 Esto motivó realmente conectar todos los pendrives al mismo
 tiempo, y ahí el surgieron 2 temas, el primero la alimentación de
@@ -280,9 +269,9 @@ otros <i>routers</i> al mismo tiempo por compartir el mismo <i>torrent</i>.
 </div>
 </div>
 
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5">5. <code>wget</code> + <code>tar</code> + <code>parallel-ssh</code></h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-unnumbered-6" class="outline-3">
+<h3 id="unnumbered-6">5. <code>wget</code> + <code>tar</code> + <code>parallel-ssh</code></h3>
+<div class="outline-text-3" id="text-unnumbered-6">
 <p>
 Aprovechando que <code>wget</code> y <code>tar</code> vienen en <i>OpenWRT</i>, realizamos un
 <i>script</i> para que realize el <i>deploy</i> en cada <i>router</i>. Para esto
@@ -402,9 +391,9 @@ paralelo y asegurando que quedan todas exactamente iguales. :-)
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><a href="mailto:blog@osiux.com?subject=Comentario">Comentarios</a></h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-unnumbered-7" class="outline-2">
+<h2 id="unnumbered-7"><a href="mailto:blog@osiux.com?subject=Comentario">Comentarios</a></h2>
+<div class="outline-text-2" id="text-unnumbered-7">
 </div>
 </div>
 <div id="footnotes">

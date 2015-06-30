@@ -3,14 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Procesos Linux</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Procesos Linux</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gomez" />
 <meta  name="description" content="Administrando recursos de sistema"
  />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -19,36 +20,32 @@
 <a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">¿Qué es proceso?</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">¿Qué es proceso?</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <ul class="org-ul">
-<li>Un proceso es la instancia de un programa en ejecución.
-</li>
-<li>También se lo conoce como tarea.
-</li>
+<li>Un proceso es la instancia de un programa en ejecución.</li>
+<li>También se lo conoce como tarea.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">¿Por qué?</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">¿Por qué?</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <ul class="org-ul">
 <li>GNU/Linux es un sistema multitarea, permite la ejecución de
-múltiples procesos al mismo tiempo.
-</li>
+múltiples procesos al mismo tiempo.</li>
 
 <li>Comprender el concepto de procesos nos permite administrar el
-rendimiento de nuestro equipo.
-</li>
+rendimiento de nuestro equipo.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Lo que el usuario ve:</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Lo que el usuario ve:</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 
 <div class="figure">
 <p><img src="img/cfp-procesos-01.png" alt="cfp-procesos-01.png" />
@@ -57,9 +54,9 @@ rendimiento de nuestro equipo.
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Lo que el sistema ve:</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Lo que el sistema ve:</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 
 <div class="figure">
 <p><img src="img/cfp-procesos-03.png" alt="cfp-procesos-03.png" />
@@ -74,21 +71,15 @@ rendimiento de nuestro equipo.
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><code>PID</code></h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><code>PID</code></h2>
+<div class="outline-text-2" id="text-orgheadline5">
 <ul class="org-ul">
-<li><p>
-Todo proceso que se inicia tiene un número asignado llamado
-<b>PID</b>.
-</p>
-</li>
+<li>Todo proceso que se inicia tiene un número asignado llamado
+<b>PID</b>.</li>
 
-<li><p>
-Este <b>PID</b> permite identificar el proceso y administrarlo
-(detenerlo, reanudarlo etc&#x2026;)
-</p>
-</li>
+<li>Este <b>PID</b> permite identificar el proceso y administrarlo
+(detenerlo, reanudarlo etc&#x2026;)</li>
 
 <li><p>
 Ejemplo: Para obtener el <b>PID</b> de un proceso podemos usar el
@@ -102,16 +93,15 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 8544
-</pre>
-</li>
+1 6795
+</pre></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">Listar procesos</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Listar procesos</h2>
+<div class="outline-text-2" id="text-orgheadline6">
 <p>
 El comando <code>ps</code> puede listar el estado de los procesos:
 </p>
@@ -124,9 +114,9 @@ El comando <code>ps</code> puede listar el estado de los procesos:
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">Operaciones</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Operaciones</h2>
+<div class="outline-text-2" id="text-orgheadline7">
 <p>
 Los procesos se pueden controlar de manera externa.
 </p>
@@ -144,9 +134,9 @@ los procesos. Por ejemplo la señal de terminación:
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8">Jerarquía</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">Jerarquía</h2>
+<div class="outline-text-2" id="text-orgheadline8">
 <p>
 El comando pstree nos permite ver la organización de los procesos
 en ejecución:
@@ -159,16 +149,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-  647 ?        S      0:00 /bin/bash /usr/bin/mysqld_safe
- 1060 ?        Sl     5:11  \_ /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --log-error=/var/log/mysql/error.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
-  648 ?        S      0:00 logger -p daemon.err -t /etc/init.d/mysql -i
- 1024 ?        Ssl    0:00 /usr/lib/colord/colord
- 1159 ?        Sl     0:55 /usr/bin/python /usr/bin/fail2ban-server -b -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid
- 1392 ?        Ss     0:00 /usr/sbin/sshd -D
-22150 ?        Ss     0:00  \_ sshd: osiris [priv] 
-22152 ?        S      0:00      \_ sshd: osiris@pts/1  
-22153 pts/1    Ss     0:00          \_ -bash
- 1052 pts/1    S+     0:00              \_ /bin/bash /home/osiris/bin/tmuxosiux
+4446 tty1     S      0:00  \_ -bash
+5175 tty1     S+     0:00      \_ /bin/sh /usr/bin/startx
+5197 tty1     S+     0:00          \_ xinit /home/osiris/.xinitrc -- /etc/X11/xinit/xserverrc :1 vt1 -auth /tmp/serverauth.Da5Db1yAUJ
+5198 ?        Ss     5:47              \_ /usr/bin/X -nolisten tcp :1 vt1 -auth /tmp/serverauth.Da5Db1yAUJ
+5202 tty1     S      0:02              \_ awesome
+5205 tty1     S      0:00                  \_ xscreensaver -nosplash
+3781 tty2     Ss+    0:00 /sbin/getty 38400 tty2
+3782 tty3     Ss+    0:00 /sbin/getty 38400 tty3
+3783 tty4     Ss+    0:00 /sbin/getty 38400 tty4
+3784 tty5     Ss+    0:00 /sbin/getty 38400 tty5
 </pre>
 
 <div class="org-src-container">
@@ -178,23 +168,23 @@ en ejecución:
 </div>
 
 <pre class="example">
-systemd(1)─┬─/usr/bin/termin(4946)─┬─bash(4953)───tmuxchat(5011)───tmux(5019)───vlock-main(30054)
-           │                       ├─gnome-pty-helpe(4952)
-           │                       └─{gmain}(4954)
-           ├─/usr/bin/termin(6540)─┬─bash(6547)───tmux(16145)
-           │                       ├─gnome-pty-helpe(6546)
-           │                       └─{gmain}(6548)
-           ├─/usr/bin/termin(8169)─┬─bash(8176)───tmuxemacs(8234)───tmux(8240)
-           │                       ├─bash(31847)───python(31926)
-           │                       ├─gnome-pty-helpe(8175)
-           │                       └─{gmain}(8177)
+init(1)─┬─/usr/bin/monito(2872)───monitorix-httpd(3202)
+        ├─accounts-daemon(3791)─┬─{accounts-daemon}(3793)
+        │                       └─{accounts-daemon}(3794)
+        ├─alan-watcher(4451)─┬─{alan-watcher}(4457)
+        │                    └─{alan-watcher}(4470)
+        ├─applet.py(4415)───{applet.py}(4538)
+        ├─at-spi-bus-laun(3888)─┬─dbus-daemon(3892)
+        │                       ├─{at-spi-bus-laun}(3889)
+        │                       ├─{at-spi-bus-laun}(3891)
+        │                       └─{at-spi-bus-laun}(3893)
 </pre>
 </div>
 </div>
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9">En tiempo real</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">En tiempo real</h2>
+<div class="outline-text-2" id="text-orgheadline9">
 <p>
 Para visualizar los procesos en ejecución, también se puede usar
 <code>htop</code> o <code>top</code>:
@@ -208,26 +198,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 12:23:34 up 4 days,  2:33, 10 users,  load average: 0,71, 0,47, 0,37
-Tasks: 221 total,   2 running, 219 sleeping,   0 stopped,   0 zombie
-%Cpu(s): 10,6 us,  3,4 sy,  5,5 ni, 78,2 id,  2,2 wa,  0,0 hi,  0,1 si,  0,0 st
-KiB Mem:   2004296 total,  1899408 used,   104888 free,    76196 buffers
-KiB Swap:        0 total,        0 used,        0 free.   356440 cached Mem
+top - 23:50:01 up 51 min,  5 users,  load average: 0,53, 0,50, 0,64
+Tasks: 209 total,   1 running, 208 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  7,1 us,  2,0 sy,  0,0 ni, 89,1 id,  1,8 wa,  0,0 hi,  0,1 si,  0,0 st
+KiB Mem:   5912772 total,  2025528 used,  3887244 free,    83076 buffers
+KiB Swap:  1310716 total,        0 used,  1310716 free.   810580 cached Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
- 2834 root      20   0  188224  28224   7408 S  12,8  1,4 655:15.56 Xorg
- 2837 osiris    20   0  200572  11284   2952 S  12,8  0,6   0:46.04 awesome
-  605 lp        20   0   12700    328    160 S   6,4  0,0  94:28.02 lpd
- 6540 osiris    20   0  661596  31516   6340 S   6,4  1,6   0:20.41 /usr/bin/t+
-    1 root      20   0  193096   3136   1256 S   0,0  0,2   0:02.15 systemd
-    2 root      20   0       0      0      0 S   0,0  0,0   0:00.10 kthreadd
-    3 root      20   0       0      0      0 S   0,0  0,0   0:32.46 ksoftirqd/0
+    1 root      20   0   15476   1856   1692 S   0,0  0,0   0:01.05 init
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.00 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:00.63 ksoftirqd/0
     5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
-    7 root      20   0       0      0      0 S   0,0  0,0   1:00.61 rcu_sched
+    7 root      20   0       0      0      0 S   0,0  0,0   0:05.46 rcu_sched
     8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
-    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.40 migration/0
-   10 root      rt   0       0      0      0 S   0,0  0,0   0:01.62 watchdog/0
-   11 root      rt   0       0      0      0 S   0,0  0,0   0:01.63 watchdog/1
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.14 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:00.02 watchdog/0
+   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.02 watchdog/1
+   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.09 migration/1
+   13 root      20   0       0      0      0 S   0,0  0,0   0:00.62 ksoftirqd/1
+   15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
+   16 root      rt   0       0      0      0 S   0,0  0,0   0:00.01 watchdog/2
 </pre>
 
 
@@ -238,27 +228,24 @@ KiB Swap:        0 total,        0 used,        0 free.   356440 cached Mem
 </div>
 </div>
 
-<div id="outline-container-sec-10" class="outline-2">
-<h2 id="sec-10">Resumen</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">Resumen</h2>
+<div class="outline-text-2" id="text-orgheadline10">
 <ul class="org-ul">
-<li>Los procesos son instancias de programas en funcionamiento.
-</li>
+<li>Los procesos son instancias de programas en funcionamiento.</li>
 <li>Los recursos del sistema son limitados, el sistema administra y
-hace posible compartir recursos.
-</li>
+hace posible compartir recursos.</li>
 <li>Cada proceso tiene un identiﬁcador (<code>PID</code>), que nos sirve para
-enviar señales.
-</li>
+enviar señales.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11">Changelog</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11">Changelog</h2>
+<div class="outline-text-2" id="text-orgheadline11">
 <p>
-<span class="timestamp-wrapper"><span class="timestamp">[2013-03-18 lun]</span></span> migro <a href="http://wiki.gcoop.coop/_media/apuntes:procesos.pdf">slides pdf</a> de Hugo Ruscitti a <code>.org</code>
+<span class="timestamp-wrapper"><span class="timestamp">[2013-03-18 lun] </span></span> migro <a href="http://wiki.gcoop.coop/_media/apuntes:procesos.pdf">slides pdf</a> de Hugo Ruscitti a <code>.org</code>
 </p>
 </div>
 </div>

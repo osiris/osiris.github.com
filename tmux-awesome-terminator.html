@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>tmux + terminator + awesome</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" href="osiux.css" type="text/css"  />
+<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">tmux + terminator + awesome</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">porqué usar tmux?</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Durante mucho tiempo que uso <code>screen</code> y me resulta muy útil, muchos
+desconocen que se pueden hacer split horizontal y vertical usando
+(<code>CTRL-A + |</code> y <code>CTRL-A + -</code>).
+</p>
+
+<p>
+Luego de leer varios tutoriales para tmux llegué a dos conclusiones:
+</p>
+
+<ol class="org-ol">
+<li>es un reemplazo de screen (muchos sugieren mapear el <code>CTRL-B</code> por
+<code>CTRL-A</code></li>
+
+<li>es para usar con monitores grandes!</li>
+</ol>
+
+<p>
+Debido a esto es que tarde en implementarlo, <code>screen</code> parecía
+suficiente y <code>tmux</code> no me resultaba del todo atractivo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">tmux + terminator + awesome</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+Hasta que decidí probarlo y descubrí que podía adaptarlo a mi
+manera de trabajar. Habitualmente uso <code>awesome</code> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> y
+<code>terminator</code>, me resultan muy cómodos, por un lado terminator
+permite realizar un <i>split</i> muy fácil, usando <code>CTRL+SHIFT+E</code> y
+<code>CTRL+SHIFT+O</code>. Por otro lado usando <code>SUPER+1..9</code> me permite
+cambiar de <i>workspace</i> fácilmente, de esta manera venía trabajando
+con 1 terminal por <i>workspace</i>, esto resulta muy útil para mantener
+el foco en una única aplicación y no distraerse.
+</p>
+
+<p>
+Ahora en cada terminal hay una sesion de <code>tmux</code> corriendo y cada
+sesion esta dividida en diferentes ventanas y en muy pocos casos
+además cada ventana en diferentes paneles. No me resulta cómodo
+usar varios paneles porque no puedo tener diferentes tamaños de
+fuente en cada panel (al menos yo no encontré cómo hacerlo) y esa
+funcioalidad la realizo con <code>terminator</code>, normalmente lo utilizo para
+ver logs locales o remotos relacionados a lo que estoy trabajando.
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-terminator-awesome.png"><img src="tmb/tmux-terminator-awesome.png" alt="tmux-terminator-awesome.png" /></a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">definiendo sesiones</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+Sin dudas, una de las mejores características de <code>tmux</code> es el poder
+definir la composisión de una sesión, la cantidad y tamaño de las
+ventanas y/o paneles.
+</p>
+
+<p>
+Un ejemplo de cómo se puede definir una sesion mediante un script
+<code>bash</code> , por ejemplo <code>~/bin/tmuxosiux</code> es el siguiente:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #888a85;">#</span><span style="color: #888a85;">!/bin/</span><span style="color: #729fcf; font-weight: bold;">bash</span>
+<span style="color: #729fcf;">cd</span> ~
+tmux new-session -d -s osiux -n <span style="color: #ad7fa8; font-style: italic;">'mm'</span> <span style="color: #ad7fa8; font-style: italic;">'mutt -F ~/config/mutt/muttrc-imap-osiux-gin'</span>
+tmux new-window -t osiux:2 -n <span style="color: #ad7fa8; font-style: italic;">'mx'</span> <span style="color: #ad7fa8; font-style: italic;">'mutt -F ~/config/mutt/muttrc-imap-xuiso-gin'</span>
+tmux a -t osiux
+</pre>
+</div>
+
+<p>
+De esta manera se crea una sesion <b>osiux</b> con dos ventanas <b>mm</b> y
+<b>mx</b>, en la primera levanto un <code>mutt</code> con la cuenta <b>osiux</b> y en la
+otra ventana un <code>mutt</code> con la cuenta <b>xuiso</b>. Para simplificar su
+ejecución defini el alias <code>tmx</code>.
+</p>
+
+<p>
+Entonces tengo asociada cada sesion de <code>tmux</code> a un <b>workspace</b> de
+<code>awesome</code> con el siguiente esquema:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">ws</th>
+<th scope="col" class="org-left">alias</th>
+<th scope="col" class="org-left">comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-left">tmo</td>
+<td class="org-left">tmuxosiris</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-left">tgca</td>
+<td class="org-left">tmuxgca</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-left">tmx</td>
+<td class="org-left">tmuxosiux</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-left">temacs</td>
+<td class="org-left">tmuxemacs</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-left">tmoc</td>
+<td class="org-left">tmuxmoc</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-left">tchat</td>
+<td class="org-left">tmuxchat</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Otros alias que uso bastante son:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #729fcf;">alias</span> <span style="color: #ff6347;">tas</span>=<span style="color: #ad7fa8; font-style: italic;">'tmux a -s '</span>
+<span style="color: #729fcf;">alias</span> <span style="color: #ff6347;">tls</span>=<span style="color: #ad7fa8; font-style: italic;">'tmux ls'</span>   
+<span style="color: #729fcf;">alias</span> <span style="color: #ff6347;">tma</span>=<span style="color: #ad7fa8; font-style: italic;">'tmux a'</span>    
+<span style="color: #729fcf;">alias</span> <span style="color: #ff6347;">tns</span>=<span style="color: #ad7fa8; font-style: italic;">'tmux new-session -d -s '</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><code>screen</code> dentro de <code>tmux</code></h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+No cambié el default de <code>CTRL+B</code> de <code>tmux</code> como reemplazo de
+<code>screen</code>, esto permite que pueda ejecutar <code>screen</code> dentro de <code>tmux</code>
+e invocar los comandos de <code>screen</code> mediante <code>CTRL+A</code> y al mismo
+tiempo sin superponerse los comandos de <code>tmux</code>. Generalmente utilizo
+<code>screen</code> en servidores remotos para procesos que requieran una
+ejecución prolongada.
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-screen.png"><img src="tmb/tmux-screen.png" alt="tmux-screen.png" /></a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">local y remoto de la misma manera</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+La gran ventaja de usar <code>tmux</code> es poder mantener abiertos todos
+los programas con la configuración de ventanas y paneles tanto
+localmente como remotamente vía <code>ssh</code>, es decir, no necesito cerrar
+nada y al terminar el día, al volver a casa puedo conectarme por
+<code>ssh</code> al trabajo y esta todo donde lo dejé, continuar con algo
+que me olvidé o necesitaba mi atención, hacer un <code>tmux detach</code> o
+<code>CTRL-B</code> y quedarme que esta ahi corriendo en segundo plano y que
+puedo recuperar mediante un <code>tmux attatch</code> en cualquier momento y
+desde cualquier lugar.
+</p>
+
+<pre class="example">
+tmux list-windows -a
+
+chat:2: finch* (1 panes) [140x47] 
+emacs:2: emacs!* (1 panes) [140x47] 
+gca:2: vim* (1 panes) [140x47] 
+gca:3: socks# (1 panes) [140x47] 
+gca:4: ssh#- (1 panes) [140x47] 
+gcoop:1: mg!* (1 panes) [140x47] 
+gcoop:3: mo#!- (1 panes) [140x47] 
+moc:2: mocp* (1 panes) [140x47] 
+osiux:1: mm!* (1 panes) [140x47] 
+osiux:2: mx#!- (1 panes) [140x47]
+</pre>
+
+<p>
+Dado que la única aplicación que uso que no vive dentro de una
+terminal es <i>Firefox</i>, todo mi entorno se reduce a una terminal y
+tmux, ya sea local combinando con <i>awesome</i> como remotamente mediante
+<code>ssh</code>, y esto además de resultar muy cómodo es extremadamente
+productivo, pueden pasar 2 días y puedo volver en cualquier momento
+a un archivo abierto en una línea determinada de cualquier proyecto
+y remotamente!
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-terminator-ssh.png"><img src="tmb/tmux-terminator-ssh.png" alt="tmux-terminator-ssh.png" /></a>
+</p>
+</div>
+
+<p>
+Por tratarse de una conexión <code>ssh</code> que sólo envía texto plano,
+no requiero de ancho de banda, de ser necesario puedo recuperar la
+sesión desde un telefono espía con <i>android</i>
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-juice-ssh-android.png"><img src="tmb/tmux-juice-ssh-android.png" alt="tmux-juice-ssh-android.png" /></a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">tmux es un excelente monitor</h2>
+<div class="outline-text-2" id="text-orgheadline6">
+<p>
+También resulta muy útil utilizar <code>tmux</code> como herramienta de
+monitoreo, por ejemplo en <i>malbec</i> a veces es necesario monitorear
+las conexiones de red y como hay varias placas de red, mediante un
+script tmux es muy simple ver que esta sucediendo en cada interfaz de
+red al mismo tiempo:
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-malbec-gorra.png"><img src="tmb/tmux-malbec-gorra.png" alt="tmux-malbec-gorra.png" /></a>
+</p>
+</div>
+
+<p>
+Para visualizar varios archivos de logs al mismo tiempo:
+</p>
+
+
+<div class="figure">
+<p><a href="img/tmux-tail-logs.png"><img src="tmb/tmux-tail-logs.png" alt="tmux-tail-logs.png" /></a>
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
+<a href="awesome-es-increible.html">awesome-es-increible.html</a>
+</p></p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Fecha: 2015-01-22</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="email">Email: <a href="mailto:osiux@osiux.com">osiux@osiux.com</a></p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

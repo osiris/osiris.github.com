@@ -3,12 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Como hacer andar el modem HUAWEI E166 3g de CLARO en Debian Lenny</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Como hacer andar el modem HUAWEI E166 3g de CLARO en Debian Lenny</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="JoMaX" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -27,44 +28,26 @@ Para configurarlo lo vamos a hacer desde consola:
 </p>
 
 <ul class="org-ul">
-<li><p>
-Instalar el paquete <code>wvdial</code> instalado <code>sudo apt-get install wvdial</code>
-</p>
-</li>
+<li>Instalar el paquete <code>wvdial</code> instalado <code>sudo apt-get install wvdial</code></li>
 
-<li><p>
-Antes que nada debemos ver si tenemos en <code>/dev/</code> los <code>ttyUSB*</code>. Para
+<li>Antes que nada debemos ver si tenemos en <code>/dev/</code> los <code>ttyUSB*</code>. Para
 eso hacemos un <code>ls /dev/</code>, si no estan conectamos el modem y
 reiniciamos, hacemos un <code>ls /dev/</code> y ya deberia aparecer
-<code>/dev/ttyUSB0</code>
-</p>
-</li>
+<code>/dev/ttyUSB0</code></li>
 
-<li><p>
-Los dispositivos USB se identifican con dos ID: el idVendor y el
+<li>Los dispositivos USB se identifican con dos ID: el idVendor y el
 idProduct, que corresponden respectivamente al fabricante y al
-producto.
-</p>
-</li>
+producto.</li>
 
-<li><p>
-Cuando se enchufan, el sistema de detección de hardware formado por
+<li>Cuando se enchufan, el sistema de detección de hardware formado por
 udev, dbus, hal, intenta determinar qué driver cargar para manejar
-ese dispositivo en base a la pareja (<code>idVendor</code>, <code>idProduct</code>)
-</p>
-</li>
+ese dispositivo en base a la pareja (<code>idVendor</code>, <code>idProduct</code>)</li>
 
-<li><p>
-Para averiguar el idVendor y el idProduct debemos tipear en consola
-<code>lsusb -v</code> y buscar donde aparezca el nombre de nuestro modem.
-</p>
-</li>
+<li>Para averiguar el idVendor y el idProduct debemos tipear en consola
+<code>lsusb -v</code> y buscar donde aparezca el nombre de nuestro modem.</li>
 
-<li><p>
-Yo para buscarlo mejor, ejecuto <code>lsusb -v | less</code> asi se hace mas
-facil la busqueda antes de estar subiendo la pantalla de la consola
-</p>
-</li>
+<li>Yo para buscarlo mejor, ejecuto <code>lsusb -v | less</code> asi se hace mas
+facil la busqueda antes de estar subiendo la pantalla de la consola</li>
 
 <li><p>
 En mi caso al hacer <code>lsusb -v | less</code> me sale esto: 
@@ -174,16 +157,12 @@ DialMessage1 =
 DialMessage2 =
 ISDN = 0
 Auto DNS = 1
-</pre>
-</li>
+</pre></li>
 
-<li><p>
-Con esto ya el modem deberia poder funcionar. Desde la consola
+<li>Con esto ya el modem deberia poder funcionar. Desde la consola
 ejecutamos <code>wvdial</code>, despues de unos segundos nuestro modem deberia
 aparecer como conectado (se mantiene prendida una luz cuando
-estamos conectados)
-</p>
-</li>
+estamos conectados)</li>
 
 <li><p>
 Si el modem conecta debemos modificar el <code>resolv.conf</code> porque por
@@ -194,10 +173,8 @@ corresponden. German me paso los siguientes:
 <pre class="example">
 nameserver 170.51.255.100
 nameserver 170.51.242.18
-</pre>
-</li>
-</ul>
-</li>
+</pre></li>
+</ul></li>
 </ul>
 
 <p>
@@ -207,8 +184,7 @@ PD: Gracias German, sos mi google personal ;)
 </p>
 
 <ul class="org-ul">
-<li><a href="http://www.joseschenone.com.ar/2008/11/como-hacer-andar-el-modem-huawei-e166_29.html">http://www.joseschenone.com.ar/2008/11/como-hacer-andar-el-modem-huawei-e166_29.html</a>
-</li>
+<li><a href="http://www.joseschenone.com.ar/2008/11/como-hacer-andar-el-modem-huawei-e166_29.html">http://www.joseschenone.com.ar/2008/11/como-hacer-andar-el-modem-huawei-e166_29.html</a></li>
 </ul>
 </div>
 <div id="postamble" class="status">

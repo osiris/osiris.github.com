@@ -3,14 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Visualizando Grafos usando Graphviz</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visualizando Grafos usando Graphviz</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gomez" />
 <meta  name="description" content="generación automática de grafos directamente desde una consola"
  />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -19,9 +20,9 @@
 <a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Introducción</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Introducción</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 Generación de distintos grafos como estructuras de datos, estructuras
 de árbol, diagramas entidad-relación, de redes, de flujo, etc,
@@ -32,9 +33,9 @@ automática de grafos directamente desde una consola.
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">Qué es Graphviz?</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Qué es Graphviz?</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 Es un conjunto de herramientas open-source realizado inicialmente en
 los laboratorios de investigación de AT&amp;T para el dibujo de gráficos
@@ -45,31 +46,24 @@ bajo CPL (Common Public License).
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Aplicaciones</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Aplicaciones</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <ul class="org-ul">
-<li>Estructuras de datos.
-</li>
-<li>Estructuras de árbol.
-</li>
-<li>Representación de análisis social de redes.
-</li>
-<li>Diagramas entidad relación.
-</li>
-<li>Diagramas de redes.
-</li>
-<li>Diagramas de flujo.
-</li>
-<li>Diagramas de procesos.
-</li>
+<li>Estructuras de datos.</li>
+<li>Estructuras de árbol.</li>
+<li>Representación de análisis social de redes.</li>
+<li>Diagramas entidad relación.</li>
+<li>Diagramas de redes.</li>
+<li>Diagramas de flujo.</li>
+<li>Diagramas de procesos.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Grafos</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Grafos</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 Un grafo es un conjunto de objetos llamados vértices (o nodos) y una
 selección de pares de vértices, llamados aristas (arcs en inglés) que
@@ -80,12 +74,12 @@ mediante una serie de puntos (los vértices) conectados por líneas
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Generadores de gráficos</h2>
-<div class="outline-text-2" id="text-5">
-</div><div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><code>dot</code> Gráficos direccionales</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10">Generadores de gráficos</h2>
+<div class="outline-text-2" id="text-orgheadline10">
+</div><div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><code>dot</code> Gráficos direccionales</h3>
+<div class="outline-text-3" id="text-orgheadline5">
 <div class="org-src-container">
 
 <pre class="src src-dot">digraph dot
@@ -110,9 +104,9 @@ mediante una serie de puntos (los vértices) conectados por líneas
 </div>
 
 
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2"><code>neato</code> Gráficos no-direccionales</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><code>neato</code> Gráficos no-direccionales</h3>
+<div class="outline-text-3" id="text-orgheadline6">
 <div class="org-src-container">
 
 <pre class="src src-dot">graph neato
@@ -136,9 +130,9 @@ mediante una serie de puntos (los vértices) conectados por líneas
 </div>
 </div>
 
-<div id="outline-container-sec-5-3" class="outline-3">
-<h3 id="sec-5-3"><code>twopi</code> Gráficos radiales</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><code>twopi</code> Gráficos radiales</h3>
+<div class="outline-text-3" id="text-orgheadline7">
 <div class="org-src-container">
 
 <pre class="src src-dot">graph twopi
@@ -162,9 +156,9 @@ mediante una serie de puntos (los vértices) conectados por líneas
 </div>
 </div>
 
-<div id="outline-container-sec-5-4" class="outline-3">
-<h3 id="sec-5-4"><code>fdp</code> Gráficos no-direccionales</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><code>fdp</code> Gráficos no-direccionales</h3>
+<div class="outline-text-3" id="text-orgheadline8">
 <div class="org-src-container">
 
 <pre class="src src-dot">graph fdp
@@ -188,9 +182,9 @@ mediante una serie de puntos (los vértices) conectados por líneas
 </div>
 </div>
 
-<div id="outline-container-sec-5-5" class="outline-3">
-<h3 id="sec-5-5"><code>circo</code> Gráficos circulares</h3>
-<div class="outline-text-3" id="text-5-5">
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><code>circo</code> Gráficos circulares</h3>
+<div class="outline-text-3" id="text-orgheadline9">
 <div class="org-src-container">
 
 <pre class="src src-dot">graph circo

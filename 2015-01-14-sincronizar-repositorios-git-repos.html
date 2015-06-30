@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Sincronizar Repositorios git con git-repos</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sincronizar Repositorios git con git-repos</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
 </head>
 <body>
 <div id="content">
@@ -22,9 +22,9 @@
 </p>
 </div>
 
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">todo es un repo git</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">todo es un repo git</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 Hace varios años que uso <code>git</code> para el control de versiones del
 código fuente en los que trabajo a diario. Pero últimamente me
@@ -45,9 +45,9 @@ los programas que uso, que obviamente estan en un repo git!
 </div>
 </div>
 
-<div id="outline-container-unnumbered-2" class="outline-2">
-<h2 id="unnumbered-2"><code>~/.git-repos</code></h2>
-<div class="outline-text-2" id="text-unnumbered-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><code>~/.git-repos</code></h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 Para no olvidarme de ningún repo, armo una lista en <code>~/.git-repos</code>,
 el esquema es el siguiente:
@@ -60,21 +60,25 @@ el esquema es el siguiente:
 </div>
 
 <pre class="example">
-parse_bash_history      https://github:swooingfish/parse_bash_history
 aps2dot                 github:osiris/aps2dot
 blog                    github:osiris/osiux-blog
 direplos                github:osiris/direplos
 git-bash-utils          github:osiris/git-bash-utils
-html                    github:osiris/osiris.github
+html                    github:osiris/osiris.github.com
 libretA7                github:osiris/libretA7
+mails2dot               github:osiris/mails2dot
 media-bash-utils        github:osiris/media-bash-utils
 minimal-bash-prompt     github:osiris/minimal-bash-prompt
 multiboot               github:osiris/multiboot
 org-bash-utils          github:osiris/org-bash-utils
 org-mode-doc-es         github:osiris/org-mode-doc-es
 pcap2dot                github:osiris/pcap2dot
-sugar-graphviz          github:osiris/sugar-graphviz
 traducciones            github:osiris/traducciones
+eventoL                 github:osiris/eventoL
+parse_bash_history      https://github:swooingfish/parse_bash_history
+# bash
+bash-slugify            https://github.com/benlinton/bash-slugify
+mysql-colorize.bash     https://github.com/horosgrisa/mysql-colorize.bash
 </pre>
 
 <p>
@@ -96,22 +100,18 @@ Host github
 </div>
 </div>
 
-<div id="outline-container-unnumbered-3" class="outline-2">
-<h2 id="unnumbered-3"><code>git-repos</code></h2>
-<div class="outline-text-2" id="text-unnumbered-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><code>git-repos</code></h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <p>
 Las tareas que realiza <code>git-repos</code> son elementales:
 </p>
 
 <ul class="org-ul">
-<li>listar
-</li>
-<li>clonar
-</li>
-<li>pullear
-</li>
-<li>pushear
-</li>
+<li>listar</li>
+<li>clonar</li>
+<li>pullear</li>
+<li>pushear</li>
 </ul>
 
 <p>
@@ -246,25 +246,24 @@ bien recibida.
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://gcoop.coop/">http://gcoop.coop/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://github.com/osiris">https://github.com/osiris</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://raw.githubusercontent.com/osiris/git-bash-utils/master/.git-repos">https://raw.githubusercontent.com/osiris/git-bash-utils/master/.git-repos</a>
-</p></div>
+</p></p></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
-<p class="date">Date: 2015-01-14</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="date">Fecha: 2015-01-14</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -167,15 +167,15 @@ la siguiente estructura:
 
 <pre class="example">
 ├── 2014
-│   ├── 2014-01
-│   │   ├── 2014-01-25
-│   │   ├── 2014-01-26
-│   │   ├── 2014-01-27
-│   │   └── 2014-01-29
+│   ├── 2014-02
+│   │   └── 2014-02-12
 │   ├── 2014-03
 │   │   ├── 2014-03-14
-│   │   └── 2014-03-31
-│   ├── 2014-04
+│   │   └── 2014-03-15
+│   ├── 2014-08
+│   │   ├── 2014-08-22
+│   │   ├── 2014-08-23
+│   │   └── 2014-08-24
 </pre>
 
 <p>
@@ -187,12 +187,6 @@ Entonces los archivos quedarían asi:
 <pre class="src src-sh"><span style="color: #729fcf;">cd</span> /mnt/data/fotos &amp;&amp; ls 2014/2014-01/2014-01-29/* | head
 </pre>
 </div>
-
-<pre class="example">
-2014/2014-01/2014-01-29/2014-01-29-0844-24fc12.jpg
-2014/2014-01/2014-01-29/2014-01-29-0844-b70a1e.jpg
-2014/2014-01/2014-01-29/2014-01-29-0846-69dc1a.jpg
-</pre>
 
 <p>
 De manera similar al <i>script</i> anterior, se detectan los duplicados,
@@ -249,14 +243,10 @@ se me ocurren las siguientes ideas:
 
 <ul class="org-ul">
 <li>ante duplicados, comparar tamaños en pixels y conservar las fotos
-más grandes.
-</li>
-<li>detectar imágenes muy similares.
-</li>
-<li>aplicar operaciones varias como compresión, marcas de agua, etc.
-</li>
-<li>generar tamaños alternativos y/o unificar tamaños de <i>previews</i>.
-</li>
+más grandes.</li>
+<li>detectar imágenes muy similares.</li>
+<li>aplicar operaciones varias como compresión, marcas de agua, etc.</li>
+<li>generar tamaños alternativos y/o unificar tamaños de <i>previews</i>.</li>
 </ul>
 
 <p>
@@ -272,7 +262,7 @@ otra vez a todas las fotos con exactamente el mismo criterio.
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2015-01-10</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Un tupper para almacenar backups</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Un tupper para almacenar backups</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div class="figure">
+<p><img src="tupper.png" alt="tupper.png" />
+</p>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">dónde guardar los backups?</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+En la <i>cooperativa</i> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> trabajamos con muchas máquinas
+virtuales (usando <i>PROXMOX</i> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>) y si bien contamos con
+<i>backup</i> local no está demás ser previsor y contar con un <i>backup</i>
+remoto por si fuera necesario utilizarlo algún día&#x2026;
+</p>
+
+<p>
+Como todo problema, uno tiende a simplificarlo, en principio la
+solución parecía simple: "comprar un disco externo, y copiar todo ahí"
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">siempre es bueno tener un tupper a mano</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+Teníamos una <i>AllInOne</i> que usamos en algún momento para un evento
+y que estaba en deshuso, como no se trataba de una compu muy potente,
+estaba en una caja. <i>¿Y si la desarmamos y la metemos en un tupper?</i>
+</p>
+
+<p>
+Las ventajas, en principio son:
+</p>
+
+<ul class="org-ul">
+<li>ocupa muchísimo menos espacio (no necesitamos monitor)</li>
+<li>es fácil de transportar (si fuera necesario)</li>
+<li>puede estar en cualquier lugar (wifi mediante)</li>
+<li>no hace nada de ruido</li>
+</ul>
+
+<p>
+Asi procedí al desarme, descarté el disco para ahorrar espacio, en su
+reemplazo utilice un pendrive de 16GB para el Sistema Operativo, que
+inicinalmente fue un Huayra 2.0 <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>, luego probé con
+OpenElect y OpenMediaVault, finalmente la mejor opción fue realizar
+la instalación mínima de un Debian Jessie.
+</p>
+
+
+<div class="figure">
+<p><img src="tupper-desarme.png" alt="tupper-desarme.png" />
+</p>
+</div>
+
+<p>
+Contaba con 1 puerto USB 3.0, donde conecté el disco externo de 2T.
+Lo ciframos usando LUKS porque somos paranoicos&#x2026;
+</p>
+
+<p>
+Tuve que tapar con cinta los LEDS, de no hacerlo tendría Navidad
+todas las noches.
+</p>
+
+<p>
+La wifi interna no tenía buena señal, asi que use un <i>dongle USB</i>
+TPLink WNAlgo que mejoró notablemente la conexión:
+</p>
+
+
+<div class="figure">
+<p><img src="tupper-wavemon.png" alt="tupper-wavemon.png" />
+</p>
+</div>
+
+<p>
+A fin de que no se caliente demasiado hice unos cuantos agujeros en
+la tapa y en los bordes, y aproveche uno para pasar la antena.
+</p>
+
+<p>
+Aunque luego opté por conectar el tupper mediante UTP a un AP TPLink
+WDR841ND, asi extendía la red de CompartirEsBueno, agregando un nodo
+más a la mesh.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">plan-b</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+Un backup si no es automatizado: NO SIRVE!
+</p>
+
+<p>
+Así que implementé plan-b <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>, que son una serie de scripts
+que facilitan el backup de contenedores OpenVZ y que tuve el gusto de
+presentarlo en la edición 2015 de la SASOConf <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup> y que
+están disponibles en github <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> para que cualquiera pueda
+usarlos y mejorarlos.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">bonus extra: un mediacenter!</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+Y ya que el tupper tenía que estar prendido todo el día y podía
+estar en cualquier lugar de la casa, aproveché a conectarlo por
+<i>HDMI</i> a una <i>TV</i> y se convirtió en un <i>mediacenter</i> instalando
+<i>XBMC</i> <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>.
+</p>
+
+
+<div class="figure">
+<p><img src="tupper-xbmc.png" alt="tupper-xbmc.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://gcoop.coop/">http://gcoop.coop/</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://proxmox.com/">http://proxmox.com/</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://huayra.conectarigualdad.gob.ar/">http://huayra.conectarigualdad.gob.ar/</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://pub.osiux.com/plan-b-sasoconf.pdf">http://pub.osiux.com/plan-b-sasoconf.pdf</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://sasoconf.com.ar/">http://sasoconf.com.ar/</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara"><p class="footpara">
+<a href="https://github.com/gcoop-libre/plan-b">https://github.com/gcoop-libre/plan-b</a>
+</p></p></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara"><p class="footpara">
+<a href="http://xbmc.org/">http://xbmc.org/</a>
+</p></p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Fecha: 2014-11-14</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
