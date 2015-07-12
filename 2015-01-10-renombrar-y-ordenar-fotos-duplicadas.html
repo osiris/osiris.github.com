@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Renombrar y Ordenar Fotos Duplicadas</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Renombrar y Ordenar Fotos Duplicadas</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
 </head>
 <body>
 <div id="content">
@@ -18,13 +18,13 @@
 </p>
 
 <div class="figure">
-<p><img src="img/nahuel-osiris-leonel.jpg" alt="En casa usamos Debian" width="640" height="320" />
+<p><img src="img/nahuel-osiris-leonel.jpg" alt="nahuel-osiris-leonel.jpg" width="640" height="320" title="En casa usamos Debian" />
 </p>
 </div>
 
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">Caos por naturaleza</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Caos por naturaleza</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 Amo el orden, pero soy un caos ;-) asi que desde hace años que vengo
 acumulando archivos en distintas computadoras, en varios discos
@@ -45,9 +45,9 @@ nomás&#x2026;
 </div>
 </div>
 
-<div id="outline-container-unnumbered-2" class="outline-2">
-<h2 id="unnumbered-2">Ordenando un poco</h2>
-<div class="outline-text-2" id="text-unnumbered-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Ordenando un poco</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 Hace poco que vengo teniendo éxito en ordenar mi colección de fotos
 digitales (y algunas digitalizadas), la solución vino de manera
@@ -57,9 +57,9 @@ mediante un <i>script</i> en <code>bash</code> (de cabezadura que soy!).
 </p>
 </div>
 
-<div id="outline-container-unnumbered-3" class="outline-3">
-<h3 id="unnumbered-3"><code>renombrar-fotos</code></h3>
-<div class="outline-text-3" id="text-unnumbered-3">
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><code>renombrar-fotos</code></h3>
+<div class="outline-text-3" id="text-orgheadline3">
 <p>
 Este <i>script</i> se encarga de generar un nombre de archivo único, a
 partir del <i>md5</i> y de la fecha que esta dentro de la imagen <code>.jpg</code>
@@ -150,9 +150,9 @@ bajo un mismo criterio y detectar las duplicadas! :-)
 </div>
 </div>
 
-<div id="outline-container-unnumbered-4" class="outline-3">
-<h3 id="unnumbered-4"><code>ordenar-fotos</code></h3>
-<div class="outline-text-3" id="text-unnumbered-4">
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><code>ordenar-fotos</code></h3>
+<div class="outline-text-3" id="text-orgheadline4">
 <p>
 Teniendo los archivos correctamente renombrados, se mueven a un
 único directorio, por defecto <code>/mnt/data/fotos</code> y se organizan en
@@ -167,6 +167,7 @@ la siguiente estructura:
 
 <pre class="example">
 ├── 2014
+<<<<<<< HEAD
 │   ├── 2014-02
 │   │   └── 2014-02-12
 │   ├── 2014-03
@@ -176,6 +177,17 @@ la siguiente estructura:
 │   │   ├── 2014-08-22
 │   │   ├── 2014-08-23
 │   │   └── 2014-08-24
+=======
+│   ├── 2014-01
+│   │   ├── 2014-01-25
+│   │   ├── 2014-01-26
+│   │   ├── 2014-01-27
+│   │   └── 2014-01-29
+│   ├── 2014-02
+│   │   └── 2014-02-18
+│   ├── 2014-03
+│   │   ├── 2014-03-14
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -223,9 +235,9 @@ delete re-duplicate file: 2014-07-15-1044-ffb340.jpg
 </div>
 </div>
 
-<div id="outline-container-unnumbered-5" class="outline-2">
-<h2 id="unnumbered-5">Todo en orden?</h2>
-<div class="outline-text-2" id="text-unnumbered-5">
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Todo en orden?</h2>
+<div class="outline-text-2" id="text-orgheadline5">
 <p>
 Actualmente ambos <i>scripts</i> están en el repo <code>media-bash-utils</code> y
 se pueden obtener usando <code>git</code>:

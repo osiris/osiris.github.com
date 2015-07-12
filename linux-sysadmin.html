@@ -3,16 +3,17 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Administrador de Sistemas GNU/Linux</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Administrador de Sistemas GNU/Linux</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
 </head>
 <body>
 <div id="content">
 <h1 class="title">Administrador de Sistemas GNU/Linux</h1>
+<<<<<<< HEAD
 <div id="table-of-contents">
 <h2>&Iacute;ndice</h2>
 <div id="text-table-of-contents">
@@ -346,13 +347,21 @@
 </ul>
 </div>
 </div>
+=======
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-1" class="outline-2">
 <h2 id="unnumbered-1">Filosofía UNIX</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
+=======
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Filosofía UNIX</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <i>UNIX</i> incorpora un conjunto de herramientas que guardan cierta
 analogía con una navaja multiusos. Son simples, pero hacen muy bien
@@ -492,9 +501,15 @@ reinventarlo, pobremente." - <i>Henry Spencer</i>, 1987
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-2" class="outline-2">
 <h2 id="unnumbered-2">Linux por dentro, jerarquías de directorios</h2>
 <div class="outline-text-2" id="text-unnumbered-2">
+=======
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Linux por dentro, jerarquías de directorios</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 /
 +-- bin         binarios
@@ -521,12 +536,21 @@ reinventarlo, pobremente." - <i>Henry Spencer</i>, 1987
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-3" class="outline-2">
 <h2 id="unnumbered-3">Todo es un archivo, conociendo <code>/proc</code> y <code>/dev</code></h2>
 <div class="outline-text-2" id="text-unnumbered-3">
 </div><div id="outline-container-unnumbered-4" class="outline-3">
 <h3 id="unnumbered-4"><code>/proc</code></h3>
 <div class="outline-text-3" id="text-unnumbered-4">
+=======
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Todo es un archivo, conociendo <code>/proc</code> y <code>/dev</code></h2>
+<div class="outline-text-2" id="text-orgheadline9">
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><code>/proc</code></h3>
+<div class="outline-text-3" id="text-orgheadline3">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Es un pseudo-sistema de ficheros que se usa como interfaz para las
 estructuras de datos del núcleo en lugar de leer e interpretar
@@ -536,9 +560,15 @@ núcleo.
 </p>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-5" class="outline-4">
 <h4 id="unnumbered-5"><code>/proc/partitions</code></h4>
 <div class="outline-text-4" id="text-unnumbered-5">
+=======
+<div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><code>/proc/partitions</code></h4>
+<div class="outline-text-4" id="text-orgheadline4">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Podemos ver las particiones que leyó el <i>kernel</i>:
 </p>
@@ -552,18 +582,43 @@ Podemos ver las particiones que leyó el <i>kernel</i>:
 <pre class="example">
 major minor  #blocks  name
 
+<<<<<<< HEAD
    8        0  312571224 sda
    8        1   41961440 sda1
    8        4  270606892 sda4
   11        0    1048575 sr0
  254        0  270605864 dm-0
+=======
+   8       16  625130807 sdb
+   8       17   78148161 sdb1
+   8       18   78148192 sdb2
+   8       19   78148192 sdb3
+   8       20          1 sdb4
+   8       21   78148161 sdb5
+   8       22   78148161 sdb6
+   8       23   78148161 sdb7
+   8       24   78148161 sdb8
+   8       25   78091933 sdb9
+   8        0  488386584 sda
+   8        1   48827392 sda1
+   8        2   48828125 sda2
+   8        3  390729752 sda3
+  11        0    1048575 sr0
+ 254        0  390727704 dm-0
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-6" class="outline-4">
 <h4 id="unnumbered-6"><code>/proc/uptime</code></h4>
 <div class="outline-text-4" id="text-unnumbered-6">
+=======
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><code>/proc/uptime</code></h4>
+<div class="outline-text-4" id="text-orgheadline5">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El <code>uptime</code> de nuestro equipo puede ser consultado directamente en
 <code>/proc/uptime</code>,
@@ -576,7 +631,11 @@ El <code>uptime</code> de nuestro equipo puede ser consultado directamente en
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 328712.75 1016572.10
+=======
+249397.48 447645.72
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -594,24 +653,40 @@ de informar otros valores, como la cantidad de usuarios y el
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 16:02:08 up 3 days, 19:18,  5 users,  load average: 0,30, 0,19, 0,20
+=======
+09:02:23 up 2 days, 21:16,  8 users,  load average: 0,74, 0,44, 0,35
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-7" class="outline-3">
 <h3 id="unnumbered-7"><code>/dev</code></h3>
 <div class="outline-text-3" id="text-unnumbered-7">
+=======
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><code>/dev</code></h3>
+<div class="outline-text-3" id="text-orgheadline6">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Aquí se encuentran todos los dispositivos del sistema, presentes y
 futuros.
 </p>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-8" class="outline-4">
 <h4 id="unnumbered-8"><code>/dev/null</code></h4>
 <div class="outline-text-4" id="text-unnumbered-8">
+=======
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><code>/dev/null</code></h4>
+<div class="outline-text-4" id="text-orgheadline7">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Este dispositivo es muy especial y sumamente útil, es un agujero
 negro, todo lo que se envía a <code>/dev/null</code> desaparece
@@ -624,7 +699,11 @@ negro, todo lo que se envía a <code>/dev/null</code> desaparece
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 crw-rw-rw- 1 root root 1, 3 mar 24 20:43 /dev/null
+=======
+crw-rw-rw- 1 root root 1, 3 jun 30 11:45 /dev/null
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -640,14 +719,24 @@ ls -lh /dev/null
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 crw-rw-rw- 1 root root 1, 3 mar 24 20:43 /dev/null
+=======
+crw-rw-rw- 1 root root 1, 3 jun 30 11:45 /dev/null
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-9" class="outline-4">
 <h4 id="unnumbered-9"><code>/dev/sdX</code></h4>
 <div class="outline-text-4" id="text-unnumbered-9">
+=======
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><code>/dev/sdX</code></h4>
+<div class="outline-text-4" id="text-orgheadline8">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Los discos están identificados con el prefijo <code>sd</code>, luego una letra
 <code>a</code>, <code>b</code>, <code>c</code>, etc y finalmente un número <code>1</code>, <code>2</code>, <code>3</code>, etc que
@@ -681,7 +770,11 @@ Vemos si esta montado <code>sda</code>:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 /dev/sda1 on / type ext4 (rw,relatime,data=ordered)
+=======
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -695,19 +788,32 @@ Visualizamos el espacio disponible:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 /dev/sda1           40G    28G  9,8G  74% /
+=======
+/dev/sda1             46G    30G   14G  70% /
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-10" class="outline-2">
 <h2 id="unnumbered-10">Entrada estándar, Salida estándar y Tuberías</h2>
 <div class="outline-text-2" id="text-unnumbered-10">
 </div><div id="outline-container-unnumbered-11" class="outline-3">
 <h3 id="unnumbered-11">Descriptores de archivos</h3>
 <div class="outline-text-3" id="text-unnumbered-11">
+=======
+<div id="outline-container-orgheadline23" class="outline-2">
+<h2 id="orgheadline23">Entrada estándar, Salida estándar y Tuberías</h2>
+<div class="outline-text-2" id="text-orgheadline23">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Descriptores de archivos</h3>
+<div class="outline-text-3" id="text-orgheadline10">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Existen 3 descriptores básicos de archivos:
 </p>
@@ -716,29 +822,29 @@ Existen 3 descriptores básicos de archivos:
 
 
 <colgroup>
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="left"><code>0</code></td>
-<td class="left"><code>stdin</code></td>
-<td class="left">entrada estándar</td>
+<td class="org-left"><code>0</code></td>
+<td class="org-left"><code>stdin</code></td>
+<td class="org-left">entrada estándar</td>
 </tr>
 
 <tr>
-<td class="left"><code>1</code></td>
-<td class="left"><code>stdout</code></td>
-<td class="left">salida estándar</td>
+<td class="org-left"><code>1</code></td>
+<td class="org-left"><code>stdout</code></td>
+<td class="org-left">salida estándar</td>
 </tr>
 
 <tr>
-<td class="left"><code>2</code></td>
-<td class="left"><code>stderr</code></td>
-<td class="left">salida de errores</td>
+<td class="org-left"><code>2</code></td>
+<td class="org-left"><code>stderr</code></td>
+<td class="org-left">salida de errores</td>
 </tr>
 </tbody>
 </table>
@@ -756,9 +862,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-12" class="outline-3">
 <h3 id="unnumbered-12">Enviar la salida estándar a un archivo</h3>
 <div class="outline-text-3" id="text-unnumbered-12">
+=======
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Enviar la salida estándar a un archivo</h3>
+<div class="outline-text-3" id="text-orgheadline11">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stdout-file.png" alt="stdout-file.png" />
@@ -767,9 +879,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-13" class="outline-3">
 <h3 id="unnumbered-13">Enviar la salida de errores a un archivo</h3>
 <div class="outline-text-3" id="text-unnumbered-13">
+=======
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12">Enviar la salida de errores a un archivo</h3>
+<div class="outline-text-3" id="text-orgheadline12">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stderr-file.png" alt="stderr-file.png" />
@@ -778,9 +896,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-14" class="outline-3">
 <h3 id="unnumbered-14">Enviar la salida estándar y la salida de errores a un mismo archivo</h3>
 <div class="outline-text-3" id="text-unnumbered-14">
+=======
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13">Enviar la salida estándar y la salida de errores a un mismo archivo</h3>
+<div class="outline-text-3" id="text-orgheadline13">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stderr-stdout-file.png" alt="stderr-stdout-file.png" />
@@ -789,9 +913,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-15" class="outline-3">
 <h3 id="unnumbered-15">Enviar la salida de errores a la salida estándar</h3>
 <div class="outline-text-3" id="text-unnumbered-15">
+=======
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">Enviar la salida de errores a la salida estándar</h3>
+<div class="outline-text-3" id="text-orgheadline14">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stderr-stdout.png" alt="stderr-stdout.png" />
@@ -800,9 +930,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-16" class="outline-3">
 <h3 id="unnumbered-16">Enviar la salida de estándar a <code>/dev/null</code></h3>
 <div class="outline-text-3" id="text-unnumbered-16">
+=======
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15">Enviar la salida de estándar a <code>/dev/null</code></h3>
+<div class="outline-text-3" id="text-orgheadline15">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stdout-dev-null.png" alt="stdout-dev-null.png" />
@@ -811,9 +947,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-17" class="outline-3">
 <h3 id="unnumbered-17">Enviar la salida de estándar y la salida de errores a <code>/dev/null</code></h3>
 <div class="outline-text-3" id="text-unnumbered-17">
+=======
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">Enviar la salida de estándar y la salida de errores a <code>/dev/null</code></h3>
+<div class="outline-text-3" id="text-orgheadline16">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stderr-stdout-dev-null.png" alt="stderr-stdout-dev-null.png" />
@@ -822,9 +964,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-18" class="outline-3">
 <h3 id="unnumbered-18">Enviar un archivo a la entrada estándar</h3>
 <div class="outline-text-3" id="text-unnumbered-18">
+=======
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17">Enviar un archivo a la entrada estándar</h3>
+<div class="outline-text-3" id="text-orgheadline17">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stdin-file.png" alt="stdin-file.png" />
@@ -833,9 +981,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-19" class="outline-3">
 <h3 id="unnumbered-19">Enviar la salida estándar a un archivo y a la salida estándar</h3>
 <div class="outline-text-3" id="text-unnumbered-19">
+=======
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18">Enviar la salida estándar a un archivo y a la salida estándar</h3>
+<div class="outline-text-3" id="text-orgheadline18">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/tee-stdout-file.png" alt="tee-stdout-file.png" />
@@ -844,9 +998,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-20" class="outline-3">
 <h3 id="unnumbered-20">Enviar la salida estándar de un comando como la entrada estándar de otro comando</h3>
 <div class="outline-text-3" id="text-unnumbered-20">
+=======
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19">Enviar la salida estándar de un comando como la entrada estándar de otro comando</h3>
+<div class="outline-text-3" id="text-orgheadline19">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/stdout-pipe-stdin.png" alt="stdout-pipe-stdin.png" />
@@ -855,9 +1015,15 @@ operadores <code>&gt;</code>, <code>&lt;</code> y <code>|</code>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-21" class="outline-3">
 <h3 id="unnumbered-21"><code>stdout</code></h3>
 <div class="outline-text-3" id="text-unnumbered-21">
+=======
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><code>stdout</code></h3>
+<div class="outline-text-3" id="text-orgheadline20">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Buscar el texto <b>model</b> en el archivo <code>/proc/cpuinfo</code> y enviar el
 resultado a un nuevo archivo llamado <code>/tmp/cpu</code> que contendrá
@@ -895,6 +1061,7 @@ cat /tmp/cpu
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 model		: 37
 model name	: Intel(R) Core(TM) i3 CPU       M 350  @ 2.27GHz
 model		: 37
@@ -911,13 +1078,29 @@ cache size	: 3072 KB
 cache_alignment	: 64
 cache size	: 3072 KB
 cache_alignment	: 64
+=======
+model       : 23
+model name  : Pentium(R) Dual-Core  CPU      E5400  @ 2.70GHz
+model       : 23
+model name  : Pentium(R) Dual-Core  CPU      E5400  @ 2.70GHz
+cache size  : 2048 KB
+cache_alignment : 64
+cache size  : 2048 KB
+cache_alignment : 64
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-22" class="outline-3">
 <h3 id="unnumbered-22"><code>stderr</code></h3>
 <div class="outline-text-3" id="text-unnumbered-22">
+=======
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><code>stderr</code></h3>
+<div class="outline-text-3" id="text-orgheadline21">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Enviar la salida con errores a <code>/dev/null</code>:
 </p>
@@ -936,9 +1119,15 @@ echo "xkcd" | grep 2&gt;&amp;1
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-23" class="outline-3">
 <h3 id="unnumbered-23">pipes</h3>
 <div class="outline-text-3" id="text-unnumbered-23">
+=======
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22">pipes</h3>
+<div class="outline-text-3" id="text-orgheadline22">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El símbolo <code>|</code> es usado para redireccionar la salida de un comando
 a la entrada de otro comando.
@@ -961,6 +1150,7 @@ comando <code>head</code>
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 total 2,8G
 -rw-r----- 1 root        adm       52K mar 28 16:02 mail.info
 -rw-r----- 1 root        adm       52K mar 28 16:02 mail.log
@@ -971,6 +1161,18 @@ total 2,8G
 -rw-r----- 1 root        adm      414M mar 28 15:44 user.log
 -rw-r--r-- 1 root        root      40K mar 28 15:44 Xorg.1.log
 -rw-r--r-- 1 root        root      41K mar 28 15:44 Xorg.0.log
+=======
+total 24M
+-rw-r----- 1 root        adm     2,1M jul  3 09:02 mail.info
+-rw-r----- 1 root        adm     2,1M jul  3 09:02 mail.log
+-rw-r----- 1 root        adm      89K jul  3 09:02 syslog
+-rw-r----- 1 root        adm     1,9M jul  3 09:02 auth.log
+-rw-rw-r-- 1 root        utmp     78K jul  3 09:00 wtmp
+-rw-r----- 1 root        adm     234K jul  3 08:52 daemon.log
+-rw-r----- 1 root        adm      15K jul  3 08:46 user.log
+-rw-rw-r-- 1 root        utmp    634K jul  3 07:53 lastlog
+-rw-r----- 1 root        adm      77K jul  3 07:28 messages
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -988,6 +1190,7 @@ del directorio:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 802M    daemon.log
 414M    user.log
 414M    messages
@@ -996,17 +1199,38 @@ del directorio:
 5,9M    mysql
 1,4M    messages.1
 1,4M    kern.log.1
+=======
+670M	total
+479M	collectl
+153M	atop
+16M	installer
+15M	installer/cdebconf
+4,2M	mail.log.1
+4,2M	mail.info.1
+3,8M	auth.log.1
+2,1M	mail.log
+2,1M	mail.info
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-24" class="outline-2">
 <h2 id="unnumbered-24">Comandos básicos de terminal</h2>
 <div class="outline-text-2" id="text-unnumbered-24">
 </div><div id="outline-container-unnumbered-25" class="outline-3">
 <h3 id="unnumbered-25">Directorios:</h3>
 <div class="outline-text-3" id="text-unnumbered-25">
+=======
+<div id="outline-container-orgheadline60" class="outline-2">
+<h2 id="orgheadline60">Comandos básicos de terminal</h2>
+<div class="outline-text-2" id="text-orgheadline60">
+</div><div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24">Directorios:</h3>
+<div class="outline-text-3" id="text-orgheadline24">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El separador de archivos y directorios es la barra <code>/</code>
 </p>
@@ -1022,79 +1246,110 @@ ejemplos:
 </pre>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-26" class="outline-4">
 <h4 id="unnumbered-26">Moviéndose en el sistema de archivos:</h4>
 <div class="outline-text-4" id="text-unnumbered-26">
 </div><div id="outline-container-unnumbered-27" class="outline-5">
 <h5 id="unnumbered-27"><code>pwd</code></h5>
 <div class="outline-text-5" id="text-unnumbered-27">
+=======
+<div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32">Moviéndose en el sistema de archivos:</h4>
+<div class="outline-text-4" id="text-orgheadline32">
+</div><ul class="org-ul"><li><a id="orgheadline25"></a><code>pwd</code><br  /><div class="outline-text-5" id="text-orgheadline25">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Muestra el directorio actual.
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-28" class="outline-5">
 <h5 id="unnumbered-28"><code>cd</code></h5>
 <div class="outline-text-5" id="text-unnumbered-28">
+=======
+<li><a id="orgheadline26"></a><code>cd</code><br  /><div class="outline-text-5" id="text-orgheadline26">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia al directorio definido en <code>HOME</code>
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-29" class="outline-5">
 <h5 id="unnumbered-29"><code>cd /etc/php5</code></h5>
 <div class="outline-text-5" id="text-unnumbered-29">
+=======
+<li><a id="orgheadline27"></a><code>cd /etc/php5</code><br  /><div class="outline-text-5" id="text-orgheadline27">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia el directorio actual a <code>/etc/php5</code>
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-30" class="outline-5">
 <h5 id="unnumbered-30"><code>cd apache2</code></h5>
 <div class="outline-text-5" id="text-unnumbered-30">
+=======
+<li><a id="orgheadline28"></a><code>cd apache2</code><br  /><div class="outline-text-5" id="text-orgheadline28">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia al subdirectorio <code>apache2</code> del directorio actual
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-31" class="outline-5">
 <h5 id="unnumbered-31"><code>cd ..</code></h5>
 <div class="outline-text-5" id="text-unnumbered-31">
+=======
+<li><a id="orgheadline29"></a><code>cd ..</code><br  /><div class="outline-text-5" id="text-orgheadline29">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia al directorio inmediato superior
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-32" class="outline-5">
 <h5 id="unnumbered-32"><code>cd $HOME</code></h5>
 <div class="outline-text-5" id="text-unnumbered-32">
+=======
+<li><a id="orgheadline30"></a><code>cd $HOME</code><br  /><div class="outline-text-5" id="text-orgheadline30">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia al directorio definido en la variable <code>HOME</code>
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-33" class="outline-5">
 <h5 id="unnumbered-33"><code>cd ~osiris</code></h5>
 <div class="outline-text-5" id="text-unnumbered-33">
+=======
+<li><a id="orgheadline31"></a><code>cd ~osiris</code><br  /><div class="outline-text-5" id="text-orgheadline31">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cambia al directorio del usuario osiris
 </p>
-</div>
-</div>
+</div></li></ul>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-34" class="outline-4">
 <h4 id="unnumbered-34">Listar directorios:</h4>
 <div class="outline-text-4" id="text-unnumbered-34">
 </div><div id="outline-container-unnumbered-35" class="outline-5">
 <h5 id="unnumbered-35"><code>ls -l</code></h5>
 <div class="outline-text-5" id="text-unnumbered-35">
+=======
+<div id="outline-container-orgheadline36" class="outline-4">
+<h4 id="orgheadline36">Listar directorios:</h4>
+<div class="outline-text-4" id="text-orgheadline36">
+</div><ul class="org-ul"><li><a id="orgheadline33"></a><code>ls -l</code><br  /><div class="outline-text-5" id="text-orgheadline33">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Listar en formato ancho, de esta manera se visualizan gran parte de
 los atributos de cada archivo y/o directorio
@@ -1125,33 +1380,44 @@ tipo de archivo:
   d   directorio
   l   enlace simbolico
 </pre>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-36" class="outline-5">
 <h5 id="unnumbered-36"><code>ls</code></h5>
 <div class="outline-text-5" id="text-unnumbered-36">
+=======
+<li><a id="orgheadline34"></a><code>ls</code><br  /><div class="outline-text-5" id="text-orgheadline34">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Listar directorio actual
 </p>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-37" class="outline-5">
 <h5 id="unnumbered-37"><code>ls -a</code></h5>
 <div class="outline-text-5" id="text-unnumbered-37">
+=======
+<li><a id="orgheadline35"></a><code>ls -a</code><br  /><div class="outline-text-5" id="text-orgheadline35">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Listar directorio actual incluyendo archivos ocultos (comienzan con
 <code>.</code>)
 </p>
-</div>
-</div>
+</div></li></ul>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-38" class="outline-3">
 <h3 id="unnumbered-38">Cambiando permisos y atributos</h3>
 <div class="outline-text-3" id="text-unnumbered-38">
+=======
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37">Cambiando permisos y atributos</h3>
+<div class="outline-text-3" id="text-orgheadline37">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 r = read        4
 w = write       2
@@ -1168,9 +1434,15 @@ para realizar el cambio de <code>usuario</code> o <code>grupo</code>.
 </p>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-39" class="outline-4">
 <h4 id="unnumbered-39"><code>chmod 750 archivo</code></h4>
 <div class="outline-text-4" id="text-unnumbered-39">
+=======
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><code>chmod 750 archivo</code></h4>
+<div class="outline-text-4" id="text-orgheadline38">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Listamos los permisos del archivo <code>~/.bash_history</code>
 </p>
@@ -1182,7 +1454,11 @@ Listamos los permisos del archivo <code>~/.bash_history</code>
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rw------- 1 osiris osiris 95424 mar 28 15:59 /home/osiris/.bash_history
+=======
+-rw------- 1 osiris osiris 268804 jul  3 09:01 /home/osiris/.bash_history
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -1197,7 +1473,11 @@ ls -l ~/.bash_history
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rwxr-x--- 1 osiris osiris 95424 mar 28 15:59 /home/osiris/.bash_history
+=======
+-rwxr-x--- 1 osiris osiris 268804 jul  3 09:01 /home/osiris/.bash_history
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -1212,32 +1492,54 @@ ls -l ~/.bash_history
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rw------- 1 osiris osiris 95424 mar 28 15:59 /home/osiris/.bash_history
+=======
+-rw------- 1 osiris osiris 268804 jul  3 09:01 /home/osiris/.bash_history
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-40" class="outline-4">
 <h4 id="unnumbered-40"><code>chgrp grupo archivo</code></h4>
 <div class="outline-text-4" id="text-unnumbered-40">
+=======
+<div id="outline-container-orgheadline39" class="outline-4">
+<h4 id="orgheadline39"><code>chgrp grupo archivo</code></h4>
+<div class="outline-text-4" id="text-orgheadline39">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Establece el grupo al archivo
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-41" class="outline-4">
 <h4 id="unnumbered-41"><code>chown usuario archivo</code></h4>
 <div class="outline-text-4" id="text-unnumbered-41">
+=======
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><code>chown usuario archivo</code></h4>
+<div class="outline-text-4" id="text-orgheadline40">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Establece el usuario como propietario del archivo
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-42" class="outline-4">
 <h4 id="unnumbered-42"><code>chown usuario archivo</code></h4>
 <div class="outline-text-4" id="text-unnumbered-42">
+=======
+<div id="outline-container-orgheadline41" class="outline-4">
+<h4 id="orgheadline41"><code>chown usuario archivo</code></h4>
+<div class="outline-text-4" id="text-orgheadline41">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Establece el usuario como propietario del directorio y todo su contenido recursivamente.
 </p>
@@ -1245,9 +1547,15 @@ Establece el usuario como propietario del directorio y todo su contenido recursi
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-43" class="outline-3">
 <h3 id="unnumbered-43">Moviendo, renombrando y copiando archivos:o</h3>
 <div class="outline-text-3" id="text-unnumbered-43">
+=======
+<div id="outline-container-orgheadline42" class="outline-3">
+<h3 id="orgheadline42">Moviendo, renombrando y copiando archivos:o</h3>
+<div class="outline-text-3" id="text-orgheadline42">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Copiamos el archivo <code>~/.bash_history</code> a <code>~/.bash_history.bak</code> y
 verificamos que sea igual:
@@ -1263,10 +1571,17 @@ md5sum ~/.bash_history ~/.bash_history.bak
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rw------- 1 osiris osiris 94K mar 28 15:59 /home/osiris/.bash_history
 -rw------- 1 osiris osiris 94K mar 28 16:02 /home/osiris/.bash_history.bak
 281b6f82e286bfb931b85a032c03562c  /home/osiris/.bash_history
 281b6f82e286bfb931b85a032c03562c  /home/osiris/.bash_history.bak
+=======
+-rw------- 1 osiris osiris 263K jul  3 09:02 /home/osiris/.bash_history
+-rw------- 1 osiris osiris 263K jul  3 09:02 /home/osiris/.bash_history.bak
+fb3fa56fe4abe2cf6cd74635eea40da3  /home/osiris/.bash_history
+fb3fa56fe4abe2cf6cd74635eea40da3  /home/osiris/.bash_history.bak
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <p>
@@ -1285,8 +1600,13 @@ ls -l ~/.bash_history ~/historial.bak
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rw------- 1 osiris osiris 95424 mar 28 15:59 /home/osiris/.bash_history
 -rw------- 1 osiris osiris 51089 mar 26 01:21 /home/osiris/historial.bak
+=======
+-rw------- 1 osiris osiris 268819 jul  3 09:02 /home/osiris/.bash_history
+-rw------- 1 osiris osiris  38259 mar 27 15:57 /home/osiris/historial.bak
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 
@@ -1302,17 +1622,30 @@ ls -l ~/historial.log
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 -rw------- 1 osiris osiris 50169 mar 25 23:45 /home/osiris/historial.log
+=======
+-rw------- 1 osiris osiris 28196 mar 26 12:59 /home/osiris/historial.log
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-44" class="outline-3">
 <h3 id="unnumbered-44">Ver y editar arhivos:</h3>
 <div class="outline-text-3" id="text-unnumbered-44">
 </div><div id="outline-container-unnumbered-45" class="outline-4">
 <h4 id="unnumbered-45"><code>cat</code></h4>
 <div class="outline-text-4" id="text-unnumbered-45">
+=======
+<div id="outline-container-orgheadline48" class="outline-3">
+<h3 id="orgheadline48">Ver y editar arhivos:</h3>
+<div class="outline-text-3" id="text-orgheadline48">
+</div><div id="outline-container-orgheadline43" class="outline-4">
+<h4 id="orgheadline43"><code>cat</code></h4>
+<div class="outline-text-4" id="text-orgheadline43">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">cat /etc/issue
@@ -1320,16 +1653,26 @@ ls -l ~/historial.log
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 ┏━╸┏━┓╻┏━┓╻┏━┓┏━┓┏━┓╻┏ ┏━┓
 ┃  ┣━┫┃┣━┛┃┣┳┛┃ ┃┗━┓┣┻┓┣━┫
 ┗━╸╹ ╹╹╹  ╹╹┗╸┗━┛┗━┛╹ ╹╹ ╹
+=======
+Debian GNU/Linux 8 \n \l
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-46" class="outline-4">
 <h4 id="unnumbered-46"><code>head</code></h4>
 <div class="outline-text-4" id="text-unnumbered-46">
+=======
+<div id="outline-container-orgheadline44" class="outline-4">
+<h4 id="orgheadline44"><code>head</code></h4>
+<div class="outline-text-4" id="text-orgheadline44">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">head /proc/meminfo | head
@@ -1337,6 +1680,7 @@ ls -l ~/historial.log
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 MemTotal:        5912772 kB
 MemFree:         2712608 kB
 MemAvailable:    3744276 kB
@@ -1347,13 +1691,31 @@ Active:          2443508 kB
 Inactive:         552824 kB
 Active(anon):    1691860 kB
 Inactive(anon):   141536 kB
+=======
+MemTotal:        3439000 kB
+MemFree:          191060 kB
+MemAvailable:    1338504 kB
+Buffers:          526864 kB
+Cached:           751216 kB
+SwapCached:            0 kB
+Active:          2203780 kB
+Inactive:         683452 kB
+Active(anon):    1626176 kB
+Inactive(anon):   122348 kB
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-47" class="outline-4">
 <h4 id="unnumbered-47"><code>head -2</code></h4>
 <div class="outline-text-4" id="text-unnumbered-47">
+=======
+<div id="outline-container-orgheadline45" class="outline-4">
+<h4 id="orgheadline45"><code>head -2</code></h4>
+<div class="outline-text-4" id="text-orgheadline45">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">head /proc/meminfo | head -2
@@ -1361,15 +1723,26 @@ Inactive(anon):   141536 kB
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 MemTotal:        5912772 kB
 MemFree:         2712608 kB
+=======
+MemTotal:        3439000 kB
+MemFree:          190780 kB
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-48" class="outline-4">
 <h4 id="unnumbered-48"><code>tail</code></h4>
 <div class="outline-text-4" id="text-unnumbered-48">
+=======
+<div id="outline-container-orgheadline46" class="outline-4">
+<h4 id="orgheadline46"><code>tail</code></h4>
+<div class="outline-text-4" id="text-orgheadline46">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">tail /etc/passwd
@@ -1377,6 +1750,7 @@ MemFree:         2712608 kB
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 osiris:x:2222:2222:OSiRiS,,,:/home/osiris:/bin/bash
 systemd-timesync:x:116:130:systemd Time Synchronization,,,:/run/systemd:/bin/false
 systemd-network:x:117:131:systemd Network Management,,,:/run/systemd/netif:/bin/false
@@ -1387,6 +1761,18 @@ debian-transmission:x:120:134::/var/lib/transmission-daemon:/bin/false
 minidlna:x:121:135:MiniDLNA server,,,:/var/lib/minidlna:/usr/sbin/nologin
 nahuel:x:1002:1002:,,,:/home/nahuel:/bin/bash
 leonel:x:1003:1003:Leonel,,,:/home/leonel:/bin/bash
+=======
+mysql:x:112:120:MySQL Server,,,:/var/lib/mysql:/bin/false
+arpwatch:x:113:121:ARP Watcher,,,:/var/lib/arpwatch:/bin/sh
+vnstat:x:114:122::/var/lib/vnstat:/bin/false
+redsocks:x:115:125::/var/run/redsocks:/bin/false
+monkeysphere:x:116:126:monkeysphere authentication user,,,:/var/lib/monkeysphere:/bin/bash
+debian-tor:x:117:127::/var/lib/tor:/bin/false
+logcheck:x:118:128:logcheck system account,,,:/var/lib/logcheck:/bin/false
+postfix:x:119:129::/var/spool/postfix:/bin/false
+geoclue:x:120:132::/var/lib/geoclue:/bin/false
+fetchmail:x:121:65534::/var/lib/fetchmail:/bin/false
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <div class="org-src-container">
@@ -1396,15 +1782,26 @@ leonel:x:1003:1003:Leonel,,,:/home/leonel:/bin/bash
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 nahuel:x:1002:1002:,,,:/home/nahuel:/bin/bash
 leonel:x:1003:1003:Leonel,,,:/home/leonel:/bin/bash
+=======
+geoclue:x:120:132::/var/lib/geoclue:/bin/false
+fetchmail:x:121:65534::/var/lib/fetchmail:/bin/false
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-49" class="outline-4">
 <h4 id="unnumbered-49"><code>sed</code></h4>
 <div class="outline-text-4" id="text-unnumbered-49">
+=======
+<div id="outline-container-orgheadline47" class="outline-4">
+<h4 id="orgheadline47"><code>sed</code></h4>
+<div class="outline-text-4" id="text-orgheadline47">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">cat /etc/issue
@@ -1414,6 +1811,7 @@ cat /etc/issue
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 ┏━╸┏━┓╻┏━┓╻┏━┓┏━┓┏━┓╻┏ ┏━┓
 ┃  ┣━┫┃┣━┛┃┣┳┛┃ ┃┗━┓┣┻┓┣━┫
 ┗━╸╹ ╹╹╹  ╹╹┗╸┗━┛┗━┛╹ ╹╹ ╹
@@ -1423,55 +1821,93 @@ cat /etc/issue
 ┏━╸┏━┓╻┏━┓╻┏━┓┏━┓┏━┓╻┏ ┏━┓
 ┃  ┣━┫┃┣━┛┃┣┳┛┃ ┃┗━┓┣┻┓┣━┫
 ┗━╸╹ ╹╹╹  ╹╹┗╸┗━┛┗━┛╹ ╹╹ ╹
+=======
+Debian GNU/Linux 8 \n \l
+
+Debian GNU/Linux 8 \n \l
+
+Debian GNU/Linux 8 \n \l
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-50" class="outline-3">
 <h3 id="unnumbered-50">Expresiones regulares</h3>
 <div class="outline-text-3" id="text-unnumbered-50">
+=======
+<div id="outline-container-orgheadline49" class="outline-3">
+<h3 id="orgheadline49">Expresiones regulares</h3>
+<div class="outline-text-3" id="text-orgheadline49">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Se utilizan para definir patrones para la búsqueda y filtrado:
 </p>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-51" class="outline-4">
 <h4 id="unnumbered-51"><code>[a-z]</code> Minúsculas</h4>
 <div class="outline-text-4" id="text-unnumbered-51">
+=======
+<div id="outline-container-orgheadline50" class="outline-4">
+<h4 id="orgheadline50"><code>[a-z]</code> Minúsculas</h4>
+<div class="outline-text-4" id="text-orgheadline50">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Rango de la <b>a</b> a la <b>z</b>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-52" class="outline-4">
 <h4 id="unnumbered-52"><code>[A-Z]</code> Mayúsculas</h4>
 <div class="outline-text-4" id="text-unnumbered-52">
+=======
+<div id="outline-container-orgheadline51" class="outline-4">
+<h4 id="orgheadline51"><code>[A-Z]</code> Mayúsculas</h4>
+<div class="outline-text-4" id="text-orgheadline51">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Rango de la <b>A</b> a la <b>Z</b>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-53" class="outline-4">
 <h4 id="unnumbered-53"><code>[0-9]</code> Números</h4>
 <div class="outline-text-4" id="text-unnumbered-53">
+=======
+<div id="outline-container-orgheadline52" class="outline-4">
+<h4 id="orgheadline52"><code>[0-9]</code> Números</h4>
+<div class="outline-text-4" id="text-orgheadline52">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Rango de 0 a 9
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-54" class="outline-4">
 <h4 id="unnumbered-54"><code>[^..]</code> Patrón distinto</h4>
 <div class="outline-text-4" id="text-unnumbered-54">
+=======
+<div id="outline-container-orgheadline53" class="outline-4">
+<h4 id="orgheadline53"><code>[^..]</code> Patrón distinto</h4>
+<div class="outline-text-4" id="text-orgheadline53">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Negación
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-55" class="outline-4">
 <h4 id="unnumbered-55"><code>^</code> comienzo de línea</h4>
 </div>
@@ -1495,13 +1931,44 @@ Negación
 
 <div id="outline-container-unnumbered-60" class="outline-4">
 <h4 id="unnumbered-60"><code>+</code> una o más repeticiones</h4>
+=======
+<div id="outline-container-orgheadline54" class="outline-4">
+<h4 id="orgheadline54"><code>^</code> comienzo de línea</h4>
+</div>
+
+
+<div id="outline-container-orgheadline55" class="outline-4">
+<h4 id="orgheadline55"><code>$</code> fin de línea</h4>
+</div>
+
+<div id="outline-container-orgheadline56" class="outline-4">
+<h4 id="orgheadline56"><code>.</code> cualquier carácter</h4>
+</div>
+
+<div id="outline-container-orgheadline57" class="outline-4">
+<h4 id="orgheadline57"><code>?</code> cero o una aparición</h4>
+</div>
+
+<div id="outline-container-orgheadline58" class="outline-4">
+<h4 id="orgheadline58"><code>*</code> ninguna o muchas repeticiones</h4>
+</div>
+
+<div id="outline-container-orgheadline59" class="outline-4">
+<h4 id="orgheadline59"><code>+</code> una o más repeticiones</h4>
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-61" class="outline-2">
 <h2 id="unnumbered-61">Acceso remoto usando ssh</h2>
 <div class="outline-text-2" id="text-unnumbered-61">
+=======
+<div id="outline-container-orgheadline61" class="outline-2">
+<h2 id="orgheadline61">Acceso remoto usando ssh</h2>
+<div class="outline-text-2" id="text-orgheadline61">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>ssh</code> permite la ejecución remota de un intérprete de comandos
 como <code>bash</code>
@@ -1512,9 +1979,15 @@ como <code>bash</code>
 </ul>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-62" class="outline-3">
 <h3 id="unnumbered-62">¿qué ventajas tiene?</h3>
 <div class="outline-text-3" id="text-unnumbered-62">
+=======
+<div id="outline-container-orgheadline62" class="outline-3">
+<h3 id="orgheadline62">¿qué ventajas tiene?</h3>
+<div class="outline-text-3" id="text-orgheadline62">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li><b>Es seguro</b> porque cifra la conexión y nadie puede ver qué
 estamos haciendo</li>
@@ -1526,9 +1999,15 @@ obteniendo control total de un sistema de manera remota.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-63" class="outline-3">
 <h3 id="unnumbered-63">¿qué necesito para usar SSH?</h3>
 <div class="outline-text-3" id="text-unnumbered-63">
+=======
+<div id="outline-container-orgheadline63" class="outline-3">
+<h3 id="orgheadline63">¿qué necesito para usar SSH?</h3>
+<div class="outline-text-3" id="text-orgheadline63">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li><p>
 <i>computadora remota</i>
@@ -1566,9 +2045,15 @@ veremos cómo encender remotamente una computadora)</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-64" class="outline-3">
 <h3 id="unnumbered-64">¿cómo me conecto por SSH?</h3>
 <div class="outline-text-3" id="text-unnumbered-64">
+=======
+<div id="outline-container-orgheadline64" class="outline-3">
+<h3 id="orgheadline64">¿cómo me conecto por SSH?</h3>
+<div class="outline-text-3" id="text-orgheadline64">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 En una terminal hay que escribir el comando <code>ssh</code> luego el
 usuario remoto, por ejemplo: <b>pepe</b> y separado por un <b>@</b> arroba
@@ -1583,9 +2068,15 @@ la dirección <b>IP</b> o el dominio (ej: <code>192.168.0.9</code> ó <code>osiu
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-65" class="outline-3">
 <h3 id="unnumbered-65">¿qué sucede la primera vez?</h3>
 <div class="outline-text-3" id="text-unnumbered-65">
+=======
+<div id="outline-container-orgheadline65" class="outline-3">
+<h3 id="orgheadline65">¿qué sucede la primera vez?</h3>
+<div class="outline-text-3" id="text-orgheadline65">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Siempre que nos conectamos por primera vez a un servidor SSH, nos
 aparece un mensaje para que confirmemos la autenticidad de la
@@ -1608,9 +2099,15 @@ correcta, ingresamos al sistema remoto!</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-66" class="outline-3">
 <h3 id="unnumbered-66">Listo, entré a la matrix! ¿y ahora?</h3>
 <div class="outline-text-3" id="text-unnumbered-66">
+=======
+<div id="outline-container-orgheadline66" class="outline-3">
+<h3 id="orgheadline66">Listo, entré a la matrix! ¿y ahora?</h3>
+<div class="outline-text-3" id="text-orgheadline66">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Ahora podemos hacer todo lo que el usuario que usamos para
 conectarnos (en este caso <b>pepe</b>) pueda hacer!
@@ -1640,9 +2137,15 @@ root@lab2:/# pkill -u pepe
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-67" class="outline-3">
 <h3 id="unnumbered-67">El intruso va por la revancha!</h3>
 <div class="outline-text-3" id="text-unnumbered-67">
+=======
+<div id="outline-container-orgheadline67" class="outline-3">
+<h3 id="orgheadline67">El intruso va por la revancha!</h3>
+<div class="outline-text-3" id="text-orgheadline67">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Como lo dejamos afuera a <b>pepe</b> matando sus procesos, ahora está
 enojado! Entonces nos empieza a crear <b>carpetas</b> en
@@ -1662,9 +2165,15 @@ Si sigue así en algún momento nos va a llenar el <b>Escritorio</b>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-68" class="outline-3">
 <h3 id="unnumbered-68">Eliminando al intruso!</h3>
 <div class="outline-text-3" id="text-unnumbered-68">
+=======
+<div id="outline-container-orgheadline68" class="outline-3">
+<h3 id="orgheadline68">Eliminando al intruso!</h3>
+<div class="outline-text-3" id="text-orgheadline68">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Matar los procesos activos no es suficiente, debemos eliminar al
 usuario, para esto hacemos:
@@ -1680,9 +2189,15 @@ root@lab2:/# deluser pepe
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-69" class="outline-3">
 <h3 id="unnumbered-69">El intruso es duro de domar!</h3>
 <div class="outline-text-3" id="text-unnumbered-69">
+=======
+<div id="outline-container-orgheadline69" class="outline-3">
+<h3 id="orgheadline69">El intruso es duro de domar!</h3>
+<div class="outline-text-3" id="text-orgheadline69">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Resulta que <b>pepe</b> cuando ingresó la primera vez, fue astuto y
 cambió la contraseña de <b>root</b>. ¿Y cómo pudo hacerlo? es simple,
@@ -1704,9 +2219,15 @@ Vuelva a escribir la nueva contraseña de UNIX:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-70" class="outline-3">
 <h3 id="unnumbered-70">¿Y ahora quién podrá defendernos?</h3>
 <div class="outline-text-3" id="text-unnumbered-70">
+=======
+<div id="outline-container-orgheadline70" class="outline-3">
+<h3 id="orgheadline70">¿Y ahora quién podrá defendernos?</h3>
+<div class="outline-text-3" id="text-orgheadline70">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Si un intruso logró obtener cuenta <b>root</b>, estamos fritos! tiene
 completo control del sistema y sin que nos demos cuenta, salvo
@@ -1741,9 +2262,15 @@ desconectada del mundo!</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-71" class="outline-3">
 <h3 id="unnumbered-71">Controlando la matrix!</h3>
 <div class="outline-text-3" id="text-unnumbered-71">
+=======
+<div id="outline-container-orgheadline71" class="outline-3">
+<h3 id="orgheadline71">Controlando la matrix!</h3>
+<div class="outline-text-3" id="text-orgheadline71">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Si bien usamos el ejemplo de un intruso, lo más probable es que
 nosotros seamos root en muchos otros sistemas, como la compu del
@@ -1771,12 +2298,21 @@ conectadas! :-D
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-72" class="outline-2">
 <h2 id="unnumbered-72">Entornos gráficos, ejecución remota de aplicaciones gráficas</h2>
 <div class="outline-text-2" id="text-unnumbered-72">
 </div><div id="outline-container-unnumbered-73" class="outline-3">
 <h3 id="unnumbered-73"><code>ssh -X</code></h3>
 <div class="outline-text-3" id="text-unnumbered-73">
+=======
+<div id="outline-container-orgheadline75" class="outline-2">
+<h2 id="orgheadline75">Entornos gráficos, ejecución remota de aplicaciones gráficas</h2>
+<div class="outline-text-2" id="text-orgheadline75">
+</div><div id="outline-container-orgheadline72" class="outline-3">
+<h3 id="orgheadline72"><code>ssh -X</code></h3>
+<div class="outline-text-3" id="text-orgheadline72">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Es posible ejecutar una aplicación gráfica de un servidor remoto
 visualizando en el equipo local por medio de <code>ssh</code>, solo es
@@ -1790,9 +2326,15 @@ ssh -X caipiroska 'gnome-calculator'
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-74" class="outline-3">
 <h3 id="unnumbered-74"><code>DISPLAY\</code>:0=</h3>
 <div class="outline-text-3" id="text-unnumbered-74">
+=======
+<div id="outline-container-orgheadline73" class="outline-3">
+<h3 id="orgheadline73"><code>DISPLAY\</code>:0=</h3>
+<div class="outline-text-3" id="text-orgheadline73">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Utilizando la aplicación <code>notify-send</code> se puede enviar un mensaje
 de notificación, normalmente es utilizado para visualizar eventos
@@ -1808,9 +2350,15 @@ del sistema, y estoy lo podemos hacer en un equipo remoto mediante
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-75" class="outline-3">
 <h3 id="unnumbered-75"><code>vnc4server</code></h3>
 <div class="outline-text-3" id="text-unnumbered-75">
+=======
+<div id="outline-container-orgheadline74" class="outline-3">
+<h3 id="orgheadline74"><code>vnc4server</code></h3>
+<div class="outline-text-3" id="text-orgheadline74">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Habitualmente se utiliza <b>VNC</b> para compartir la sesión actual,
 pero también se pueden levantar instancias nuevas, pudiendo tener
@@ -1829,12 +2377,21 @@ vnc4server
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-76" class="outline-2">
 <h2 id="unnumbered-76">Procesos</h2>
 <div class="outline-text-2" id="text-unnumbered-76">
 </div><div id="outline-container-unnumbered-77" class="outline-3">
 <h3 id="unnumbered-77">¿Qué es proceso?</h3>
 <div class="outline-text-3" id="text-unnumbered-77">
+=======
+<div id="outline-container-orgheadline87" class="outline-2">
+<h2 id="orgheadline87">Procesos</h2>
+<div class="outline-text-2" id="text-orgheadline87">
+</div><div id="outline-container-orgheadline76" class="outline-3">
+<h3 id="orgheadline76">¿Qué es proceso?</h3>
+<div class="outline-text-3" id="text-orgheadline76">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Un proceso es la instancia de un programa en ejecución.</li>
 <li>También se lo conoce como tarea.</li>
@@ -1842,9 +2399,15 @@ vnc4server
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-78" class="outline-3">
 <h3 id="unnumbered-78">¿Por qué?</h3>
 <div class="outline-text-3" id="text-unnumbered-78">
+=======
+<div id="outline-container-orgheadline77" class="outline-3">
+<h3 id="orgheadline77">¿Por qué?</h3>
+<div class="outline-text-3" id="text-orgheadline77">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>GNU/Linux es un sistema multitarea, permite la ejecución de
 múltiples procesos al mismo tiempo.</li>
@@ -1855,9 +2418,15 @@ rendimiento de nuestro equipo.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-79" class="outline-3">
 <h3 id="unnumbered-79">Lo que el usuario ve:</h3>
 <div class="outline-text-3" id="text-unnumbered-79">
+=======
+<div id="outline-container-orgheadline78" class="outline-3">
+<h3 id="orgheadline78">Lo que el usuario ve:</h3>
+<div class="outline-text-3" id="text-orgheadline78">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/cfp-procesos-01.png" alt="cfp-procesos-01.png" />
@@ -1866,9 +2435,15 @@ rendimiento de nuestro equipo.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-80" class="outline-3">
 <h3 id="unnumbered-80">Lo que el sistema ve:</h3>
 <div class="outline-text-3" id="text-unnumbered-80">
+=======
+<div id="outline-container-orgheadline79" class="outline-3">
+<h3 id="orgheadline79">Lo que el sistema ve:</h3>
+<div class="outline-text-3" id="text-orgheadline79">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/cfp-procesos-03.png" alt="cfp-procesos-03.png" />
@@ -1883,9 +2458,15 @@ rendimiento de nuestro equipo.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-81" class="outline-3">
 <h3 id="unnumbered-81"><code>PID</code></h3>
 <div class="outline-text-3" id="text-unnumbered-81">
+=======
+<div id="outline-container-orgheadline80" class="outline-3">
+<h3 id="orgheadline80"><code>PID</code></h3>
+<div class="outline-text-3" id="text-orgheadline80">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Todo proceso que se inicia tiene un número asignado llamado
 <b>PID</b>.</li>
@@ -1905,15 +2486,25 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 1 25214
+=======
+1 10556
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre></li>
 </ul>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-82" class="outline-3">
 <h3 id="unnumbered-82">Listar procesos</h3>
 <div class="outline-text-3" id="text-unnumbered-82">
+=======
+<div id="outline-container-orgheadline81" class="outline-3">
+<h3 id="orgheadline81">Listar procesos</h3>
+<div class="outline-text-3" id="text-orgheadline81">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El comando <code>ps</code> puede listar el estado de los procesos:
 </p>
@@ -1926,9 +2517,15 @@ El comando <code>ps</code> puede listar el estado de los procesos:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-83" class="outline-3">
 <h3 id="unnumbered-83">Operaciones</h3>
 <div class="outline-text-3" id="text-unnumbered-83">
+=======
+<div id="outline-container-orgheadline82" class="outline-3">
+<h3 id="orgheadline82">Operaciones</h3>
+<div class="outline-text-3" id="text-orgheadline82">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Los procesos se pueden controlar de manera externa.
 </p>
@@ -1946,9 +2543,15 @@ los procesos. Por ejemplo la señal de terminación:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-84" class="outline-3">
 <h3 id="unnumbered-84">Jerarquía</h3>
 <div class="outline-text-3" id="text-unnumbered-84">
+=======
+<div id="outline-container-orgheadline83" class="outline-3">
+<h3 id="orgheadline83">Jerarquía</h3>
+<div class="outline-text-3" id="text-orgheadline83">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El comando pstree nos permite ver la organización de los procesos
 en ejecución:
@@ -1961,6 +2564,7 @@ en ejecución:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 28736 tty1     S      0:00  \_ -bash
 28887 tty1     S+     0:00      \_ /bin/sh /usr/bin/startx
 28909 tty1     S+     0:00          \_ xinit /home/osiris/.xinitrc -- /etc/X11/xinit/xserverrc :1 vt1 -auth /tmp/serverauth.bp5lV2umq2
@@ -1971,6 +2575,18 @@ en ejecución:
  4034 tty3     Ss+    0:00 /sbin/getty 38400 tty3
  4035 tty4     Ss+    0:00 /sbin/getty 38400 tty4
  4036 tty5     Ss+    0:00 /sbin/getty 38400 tty5
+=======
+24999 pts/6    Ss     0:00          \_ -bash
+25137 pts/6    S+     0:00              \_ tmux a
+26611 pts/6    S+     0:00                  \_ sh -c vlock
+26612 pts/6    S+     0:00                      \_ /usr/sbin/vlock-main
+ 1515 ?        Ss     0:00 /lib/systemd/systemd-logind
+ 1541 ?        Ss     0:05 avahi-daemon: running [stout.local]
+ 1636 ?        S      0:00  \_ avahi-daemon: chroot helper
+ 1542 ?        Ss     1:03 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ 1598 ?        Ss     0:00 /usr/sbin/lpd -s
+ 1604 ?        S     67:08  \_ /usr/sbin/lpd -s
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <div class="org-src-container">
@@ -1980,6 +2596,7 @@ en ejecución:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 init(1)─┬─accounts-daemon(4045)─┬─{accounts-daemon}(4048)
         │                       └─{accounts-daemon}(4049)
         ├─alan-watcher(4400)─┬─{alan-watcher}(4401)
@@ -1990,13 +2607,31 @@ init(1)─┬─accounts-daemon(4045)─┬─{accounts-daemon}(4048)
         │                       ├─{at-spi-bus-laun}(4146)
         │                       └─{at-spi-bus-laun}(4148)
         ├─at-spi-bus-laun(4485)─┬─dbus-daemon(16722)
+=======
+systemd(1)─┬─/usr/bin/termin(7123)─┬─bash(7131)───tmuxmoc(7257)───tmux(7262)───sh(8760)───vlock-main(8761)
+           │                       ├─gnome-pty-helpe(7130)
+           │                       └─{gmain}(7132)
+           ├─/usr/bin/termin(9889)─┬─bash(9896)───emacs(10556)─┬─sh(12345)───sh(12346)─┬─head(12348)
+           │                       │                           │                       └─pstree(12347)
+           │                       │                           └─{gmain}(10557)
+           │                       ├─gnome-pty-helpe(9895)
+           │                       └─{gmain}(9897)
+           ├─/usr/bin/termin(13052)─┬─bash(13059)───tmuxgcoop(13204)───tmux(13214)
+           │                        ├─gnome-pty-helpe(13058)
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-85" class="outline-3">
 <h3 id="unnumbered-85">En tiempo real</h3>
 <div class="outline-text-3" id="text-unnumbered-85">
+=======
+<div id="outline-container-orgheadline84" class="outline-3">
+<h3 id="orgheadline84">En tiempo real</h3>
+<div class="outline-text-3" id="text-orgheadline84">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Para visualizar los procesos en ejecución, también se puede usar
 <code>htop</code> o <code>top</code>:
@@ -2010,6 +2645,7 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 top - 16:02:21 up 3 days, 19:18,  5 users,  load average: 0,75, 0,29, 0,24
 Tasks: 237 total,   2 running, 234 sleeping,   0 stopped,   1 zombie
 %Cpu(s):  6,4 us,  1,1 sy,  0,1 ni, 92,0 id,  0,5 wa,  0,0 hi,  0,0 si,  0,0 st
@@ -2030,6 +2666,28 @@ KiB Swap:        0 total,        0 used,        0 free.  1238748 cached Mem
     9 root      rt   0       0      0      0 S   0,0  0,0   0:03.52 migration/0
    12 root      rt   0       0      0      0 S   0,0  0,0   0:03.12 migration/1
    13 root      20   0       0      0      0 S   0,0  0,0   0:25.96 ksoftirqd/1
+=======
+top - 09:02:37 up 2 days, 21:16,  8 users,  load average: 1,03, 0,51, 0,37
+Tasks: 221 total,   2 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  6,4 us,  2,6 sy,  0,5 ni, 89,6 id,  0,8 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem:   3439000 total,  3240544 used,   198456 free,   527152 buffers
+KiB Swap:        0 total,        0 used,        0 free.   744540 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+14084 osiris    20   0 1498740 709936  38936 S  32,1 20,6 146:24.79 iceweasel
+ 1604 lp        20   0   12708   1300   1124 S   6,4  0,0  67:08.58 lpd
+12351 osiris    20   0   24876   2924   2472 R   6,4  0,1   0:00.01 top
+13207 osiris    20   0  127616 103640   2500 S   6,4  3,0   6:44.76 tmux
+24809 osiris    20   0  412308  38900  15204 S   6,4  1,1  56:39.79 /usr/bin/t+
+    1 root      20   0  176804   4904   2628 S   0,0  0,1   0:06.20 systemd
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.08 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:25.76 ksoftirqd/0
+    5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
+    7 root      20   0       0      0      0 S   0,0  0,0   1:24.78 rcu_sched
+    8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.93 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:01.38 watchdog/0
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 
@@ -2040,9 +2698,15 @@ KiB Swap:        0 total,        0 used,        0 free.  1238748 cached Mem
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-86" class="outline-3">
 <h3 id="unnumbered-86">Resumen</h3>
 <div class="outline-text-3" id="text-unnumbered-86">
+=======
+<div id="outline-container-orgheadline85" class="outline-3">
+<h3 id="orgheadline85">Resumen</h3>
+<div class="outline-text-3" id="text-orgheadline85">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Los procesos son instancias de programas en funcionamiento.</li>
 <li>Los recursos del sistema son limitados, el sistema administra y
@@ -2053,9 +2717,15 @@ enviar señales.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-87" class="outline-3">
 <h3 id="unnumbered-87">Changelog</h3>
 <div class="outline-text-3" id="text-unnumbered-87">
+=======
+<div id="outline-container-orgheadline86" class="outline-3">
+<h3 id="orgheadline86">Changelog</h3>
+<div class="outline-text-3" id="text-orgheadline86">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2013-03-18 lun] </span></span> migro <a href="http://wiki.gcoop.coop/_media/apuntes:procesos.pdf">slides pdf</a> de Hugo Ruscitti a <code>.org</code>
 </p>
@@ -2063,12 +2733,18 @@ enviar señales.</li>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-88" class="outline-2">
 <h2 id="unnumbered-88">Automatizando tareas: <code>sleep</code>, <code>jobs</code>, <code>crontab</code></h2>
 <div class="outline-text-2" id="text-unnumbered-88">
 </div><div id="outline-container-unnumbered-89" class="outline-3">
 <h3 id="unnumbered-89">Procesos padres e hijos</h3>
 <div class="outline-text-3" id="text-unnumbered-89">
+=======
+<div id="outline-container-orgheadline88" class="outline-2">
+<h2 id="orgheadline88">Automatizando tareas: <code>sleep</code>, <code>jobs</code>, <code>crontab</code></h2>
+<div class="outline-text-2" id="text-orgheadline88">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cada vez que ejecutamos un comando en una terminal, éste comando
 se convierte en un proceso hijo de la terminal que estamos
@@ -2096,11 +2772,16 @@ la terminal, también se cerraría <b>firefox</b> por depender del
 proceso <b>terminal</b>.
 </p>
 </div>
-</div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-90" class="outline-3">
 <h3 id="unnumbered-90">Para mí, vos estás en segundo plano</h3>
 <div class="outline-text-3" id="text-unnumbered-90">
+=======
+<div id="outline-container-orgheadline89" class="outline-3">
+<h3 id="orgheadline89">Para mí, vos estás en segundo plano</h3>
+<div class="outline-text-3" id="text-orgheadline89">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Al ejecutar un comando en una terminal, por ejemplo <b>top</b>, este
 comando pasa a estar en primer plano y hasta que no interrumpamos
@@ -2129,9 +2810,15 @@ significa <b>foreground</b> o sea, pasar a primer plano.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-91" class="outline-3">
 <h3 id="unnumbered-91">Sos tan lento&#x2026; que no te quiero ver</h3>
 <div class="outline-text-3" id="text-unnumbered-91">
+=======
+<div id="outline-container-orgheadline90" class="outline-3">
+<h3 id="orgheadline90">Sos tan lento&#x2026; que no te quiero ver</h3>
+<div class="outline-text-3" id="text-orgheadline90">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 También se puede enviar a segundo plano un comando ni bien lo
 invocamos, generalmente esto, se hace con comandos que sabemos
@@ -2195,9 +2882,15 @@ Grabando a: “ubuntu-12.04.1-desktop-i386.iso”
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-92" class="outline-3">
 <h3 id="unnumbered-92">Esta compu, se destruye en 5 minutos!</h3>
 <div class="outline-text-3" id="text-unnumbered-92">
+=======
+<div id="outline-container-orgheadline91" class="outline-3">
+<h3 id="orgheadline91">Esta compu, se destruye en 5 minutos!</h3>
+<div class="outline-text-3" id="text-orgheadline91">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 En ocasiones es necesario ejecutar algún comando dentro de cierto
 tiempo, por ejemplo dentro de 5 minutos, para ello se puede
@@ -2211,9 +2904,15 @@ segundos, <b>m</b> para minutos y <b>h</b> para horas:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-93" class="outline-3">
 <h3 id="unnumbered-93">Tengo un crontab para no olvidar nada</h3>
 <div class="outline-text-3" id="text-unnumbered-93">
+=======
+<div id="outline-container-orgheadline92" class="outline-3">
+<h3 id="orgheadline92">Tengo un crontab para no olvidar nada</h3>
+<div class="outline-text-3" id="text-orgheadline92">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Mediante el uso del <b>crontab</b> es posible definir la ejecución de
 tareas de manera específica.
@@ -2258,9 +2957,15 @@ Para listar, ejecutar:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-94" class="outline-3">
 <h3 id="unnumbered-94">Robotizando el mouse</h3>
 <div class="outline-text-3" id="text-unnumbered-94">
+=======
+<div id="outline-container-orgheadline93" class="outline-3">
+<h3 id="orgheadline93">Robotizando el mouse</h3>
+<div class="outline-text-3" id="text-orgheadline93">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Muchas veces, puede resultar muy útil automatizar tareas de la
 interfase gráfica pero usando una terminal, para esto es
@@ -2344,12 +3049,21 @@ De esta simple manera, se pueden automatizar muchísimas tareas!
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-95" class="outline-2">
 <h2 id="unnumbered-95">Análisis de tráfico de red con <code>tcpdump</code> y <code>wireshark</code></h2>
 <div class="outline-text-2" id="text-unnumbered-95">
 </div><div id="outline-container-unnumbered-96" class="outline-3">
 <h3 id="unnumbered-96">la era de la inocencia</h3>
 <div class="outline-text-3" id="text-unnumbered-96">
+=======
+<div id="outline-container-orgheadline101" class="outline-2">
+<h2 id="orgheadline101">Análisis de tráfico de red con <code>tcpdump</code> y <code>wireshark</code></h2>
+<div class="outline-text-2" id="text-orgheadline101">
+</div><div id="outline-container-orgheadline94" class="outline-3">
+<h3 id="orgheadline94">la era de la inocencia</h3>
+<div class="outline-text-3" id="text-orgheadline94">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Iniciamos Firefox como es costumbre de todos los días y empezamos
 a saltar de un sitio web a otro. Nada extraño sucede, leemos y
@@ -2365,9 +3079,15 @@ red&#x2026; :-S
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-97" class="outline-3">
 <h3 id="unnumbered-97">olfateando la red</h3>
 <div class="outline-text-3" id="text-unnumbered-97">
+=======
+<div id="outline-container-orgheadline95" class="outline-3">
+<h3 id="orgheadline95">olfateando la red</h3>
+<div class="outline-text-3" id="text-orgheadline95">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Si mientras estamos usando la red, se nos ocurre ver qué datos
 pasan a través de la red, sólo necesitamos usar  <code>tcpdump</code>:
@@ -2499,9 +3219,15 @@ más máquinas, es decir más personas!
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-98" class="outline-3">
 <h3 id="unnumbered-98">mirando en profundidad</h3>
 <div class="outline-text-3" id="text-unnumbered-98">
+=======
+<div id="outline-container-orgheadline96" class="outline-3">
+<h3 id="orgheadline96">mirando en profundidad</h3>
+<div class="outline-text-3" id="text-orgheadline96">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Es posible el contenido de los paquetes en formato ASCII mediante
 el parámetro <code>-A</code>, indicar la cantidad de paquetes a capturar con
@@ -2564,9 +3290,15 @@ Entonces podemos saber:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-99" class="outline-3">
 <h3 id="unnumbered-99">y si chateamos?</h3>
 <div class="outline-text-3" id="text-unnumbered-99">
+=======
+<div id="outline-container-orgheadline97" class="outline-3">
+<h3 id="orgheadline97">y si chateamos?</h3>
+<div class="outline-text-3" id="text-orgheadline97">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Probemos que sucede si chateamos en la red local, sin salir a
 Internet. Para esto, usamos <b>Pidgin</b>, un programa que soporta
@@ -2660,9 +3392,15 @@ red, solo basta usar <code>tcpdump</code>.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-100" class="outline-3">
 <h3 id="unnumbered-100">el fin de la privacidad?</h3>
 <div class="outline-text-3" id="text-unnumbered-100">
+=======
+<div id="outline-container-orgheadline98" class="outline-3">
+<h3 id="orgheadline98">el fin de la privacidad?</h3>
+<div class="outline-text-3" id="text-orgheadline98">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Cualquier <b>sniffer</b> como <code>tcpdump</code> puede capturar todo el tráfico
 de la red y hasta se podría modificar el contenido de los
@@ -2746,9 +3484,15 @@ la máquina en donde estamos hasta la máquina remota, desde esta
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-101" class="outline-3">
 <h3 id="unnumbered-101">por las dudas yo guardo el tráfico de red ;-)</h3>
 <div class="outline-text-3" id="text-unnumbered-101">
+=======
+<div id="outline-container-orgheadline99" class="outline-3">
+<h3 id="orgheadline99">por las dudas yo guardo el tráfico de red ;-)</h3>
+<div class="outline-text-3" id="text-orgheadline99">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Podemos decirle a <code>tcpdump</code> que en lugar de mostrarnos el tráfico
 de red, lo guarde en un archivo, para luego analizarlo en
@@ -2809,9 +3553,15 @@ Es bastante intuitivo y muy interesante para los curiosos! :-D
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-102" class="outline-3">
 <h3 id="unnumbered-102">no entendí nada! :-(</h3>
 <div class="outline-text-3" id="text-unnumbered-102">
+=======
+<div id="outline-container-orgheadline100" class="outline-3">
+<h3 id="orgheadline100">no entendí nada! :-(</h3>
+<div class="outline-text-3" id="text-orgheadline100">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 El análisis de tráfico de red, requiere de ciertos conocimientos
 básicos de redes, sobre el modelo <b>OSI</b> y el modelo <b>TCP/IP</b>,
@@ -2841,12 +3591,18 @@ enviamos y recibimos, aunque sólo se trate del <i>Administrador de la Red</i>.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-103" class="outline-2">
 <h2 id="unnumbered-103">Introducción a las redes TCP/IP</h2>
 <div class="outline-text-2" id="text-unnumbered-103">
 </div><div id="outline-container-unnumbered-104" class="outline-3">
 <h3 id="unnumbered-104">Topología, redes y Subredes</h3>
 <div class="outline-text-3" id="text-unnumbered-104">
+=======
+<div id="outline-container-orgheadline102" class="outline-2">
+<h2 id="orgheadline102">Introducción a las redes TCP/IP</h2>
+<div class="outline-text-2" id="text-orgheadline102">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li><p>
 centralizada
@@ -2867,7 +3623,13 @@ descentralizada
 <p><img src="img/redes-descentralizadas.png" alt="redes-descentralizadas.png" />
 </p>
 </div></li>
+<<<<<<< HEAD
+=======
+</ul>
 
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
+
+<ul class="org-ul">
 <li><p>
 en malla o <i>mesh</i>
 </p>
@@ -2879,20 +3641,31 @@ en malla o <i>mesh</i>
 </div></li>
 </ul>
 </div>
-</div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-105" class="outline-3">
 <h3 id="unnumbered-105">Asignación de IPs por medio de DHCP</h3>
 <div class="outline-text-3" id="text-unnumbered-105">
+=======
+<div id="outline-container-orgheadline103" class="outline-3">
+<h3 id="orgheadline103">Asignación de IPs por medio de DHCP</h3>
+<div class="outline-text-3" id="text-orgheadline103">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>DHCP server</li>
 <li>DHCP client</li>
 </ul>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-106" class="outline-4">
 <h4 id="unnumbered-106">Red de 4 equipos</h4>
 <div class="outline-text-4" id="text-unnumbered-106">
+=======
+<div id="outline-container-orgheadline104" class="outline-4">
+<h4 id="orgheadline104">Red de 4 equipos</h4>
+<div class="outline-text-4" id="text-orgheadline104">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/redes-lan.png" alt="redes-lan.png" />
@@ -2901,9 +3674,15 @@ en malla o <i>mesh</i>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-107" class="outline-4">
 <h4 id="unnumbered-107"><code>B</code> dice, <b>necesito una IP!</b></h4>
 <div class="outline-text-4" id="text-unnumbered-107">
+=======
+<div id="outline-container-orgheadline105" class="outline-4">
+<h4 id="orgheadline105"><code>B</code> dice, <b>necesito una IP!</b></h4>
+<div class="outline-text-4" id="text-orgheadline105">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>mensaje: <code>DHCPDISCOVER</code></li>
 <li>protocolo: UDP</li>
@@ -2919,9 +3698,15 @@ en malla o <i>mesh</i>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-108" class="outline-4">
 <h4 id="unnumbered-108"><code>D</code> dice, <b>yo te puedo dar IP!</b></h4>
 <div class="outline-text-4" id="text-unnumbered-108">
+=======
+<div id="outline-container-orgheadline106" class="outline-4">
+<h4 id="orgheadline106"><code>D</code> dice, <b>yo te puedo dar IP!</b></h4>
+<div class="outline-text-4" id="text-orgheadline106">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>mensaje: <code>DHCPOFFER</code></li>
 <li>dirección física: 01:12:23:34:45:dd</li>
@@ -2939,9 +3724,15 @@ en malla o <i>mesh</i>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-109" class="outline-4">
 <h4 id="unnumbered-109"><code>B</code> dice, confirmo recepción!</h4>
 <div class="outline-text-4" id="text-unnumbered-109">
+=======
+<div id="outline-container-orgheadline107" class="outline-4">
+<h4 id="orgheadline107"><code>B</code> dice, confirmo recepción!</h4>
+<div class="outline-text-4" id="text-orgheadline107">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>mensaje: <code>DHCPREQUEST</code></li>
 </ul>
@@ -2954,9 +3745,15 @@ en malla o <i>mesh</i>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-110" class="outline-4">
 <h4 id="unnumbered-110"><code>D</code> dice, confirmo confirmación!</h4>
 <div class="outline-text-4" id="text-unnumbered-110">
+=======
+<div id="outline-container-orgheadline108" class="outline-4">
+<h4 id="orgheadline108"><code>D</code> dice, confirmo confirmación!</h4>
+<div class="outline-text-4" id="text-orgheadline108">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>mensaje: <code>DHCPACK</code></li>
 </ul>
@@ -2970,9 +3767,15 @@ en malla o <i>mesh</i>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-111" class="outline-3">
 <h3 id="unnumbered-111">Resolución de nombres de dominios DNS</h3>
 <div class="outline-text-3" id="text-unnumbered-111">
+=======
+<div id="outline-container-orgheadline109" class="outline-3">
+<h3 id="orgheadline109">Resolución de nombres de dominios DNS</h3>
+<div class="outline-text-3" id="text-orgheadline109">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">host localhost
@@ -2990,16 +3793,27 @@ localhost.lan has address 127.0.0.1
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 ; &lt;&lt;&gt;&gt; DiG 9.9.5-4.2-Debian &lt;&lt;&gt;&gt; osiux.com
 ;; global options: +cmd
 ;; Got answer:
 ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 29623
 ;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+=======
+; &lt;&lt;&gt;&gt; DiG 9.9.5-9-Debian &lt;&lt;&gt;&gt; osiux.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 50763
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4000
 ;; QUESTION SECTION:
 ;osiux.com.			IN	A
 
 ;; ANSWER SECTION:
+<<<<<<< HEAD
 osiux.com.		2525	IN	A	198.23.230.106
 
 ;; Query time: 1 msec
@@ -3012,6 +3826,20 @@ osiux.com.		2525	IN	A	198.23.230.106
 <div id="outline-container-unnumbered-112" class="outline-4">
 <h4 id="unnumbered-112">viendo un paquete de query dns</h4>
 <div class="outline-text-4" id="text-unnumbered-112">
+=======
+osiux.com.		3600	IN	A	198.23.230.106
+
+;; Query time: 166 msec
+;; SERVER: 192.168.10.3#53(192.168.10.3)
+;; WHEN: Fri Jul 03 09:02:46 ART 2015
+;; MSG SIZE  rcvd: 54
+</pre>
+</div>
+
+<div id="outline-container-orgheadline110" class="outline-4">
+<h4 id="orgheadline110">viendo un paquete de query dns</h4>
+<div class="outline-text-4" id="text-orgheadline110">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">tcpdump -r dns-query.pcap -nvX
@@ -3020,9 +3848,15 @@ osiux.com.		2525	IN	A	198.23.230.106
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-113" class="outline-4">
 <h4 id="unnumbered-113">analizando un paquete de query dns</h4>
 <div class="outline-text-4" id="text-unnumbered-113">
+=======
+<div id="outline-container-orgheadline111" class="outline-4">
+<h4 id="orgheadline111">analizando un paquete de query dns</h4>
+<div class="outline-text-4" id="text-orgheadline111">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">tshark -r dns-query.pcap -VO dns
@@ -3031,81 +3865,93 @@ osiux.com.		2525	IN	A	198.23.230.106
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-114" class="outline-4">
 <h4 id="unnumbered-114">capturar consultas al dns</h4>
 <div class="outline-text-4" id="text-unnumbered-114">
+=======
+<div id="outline-container-orgheadline112" class="outline-4">
+<h4 id="orgheadline112">capturar consultas al dns</h4>
+<div class="outline-text-4" id="text-orgheadline112">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 ssh root@linksys '/usr/sbin/tcpdump -i br0 -s 0 -w - dst port 53' &gt;linksys.pcap
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-115" class="outline-4">
 <h4 id="unnumbered-115">ranking de dns</h4>
 <div class="outline-text-4" id="text-unnumbered-115">
+=======
+<div id="outline-container-orgheadline113" class="outline-4">
+<h4 id="orgheadline113">ranking de dns</h4>
+<div class="outline-text-4" id="text-orgheadline113">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 tcpdump -r linksys.pcap -c 2000 -nnnA dst port 53 | \
 egrep -o "A+\? .*\." | sed s/".$"//g | awk '{print $2}' | \
 egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </pre>
 
-<table id="ranking-dns" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="orgtable1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="right" />
+<col  class="org-right" />
 
-<col  class="left" />
+<col  class="org-left" />
 </colgroup>
 <tbody>
 <tr>
-<td class="right">47</td>
-<td class="left">www.facebook.com</td>
+<td class="org-right">47</td>
+<td class="org-left">www.facebook.com</td>
 </tr>
 
 <tr>
-<td class="right">42</td>
-<td class="left">dns.msftncsi.com</td>
+<td class="org-right">42</td>
+<td class="org-left">dns.msftncsi.com</td>
 </tr>
 
 <tr>
-<td class="right">41</td>
-<td class="left">su.ff.avast.com</td>
+<td class="org-right">41</td>
+<td class="org-left">su.ff.avast.com</td>
 </tr>
 
 <tr>
-<td class="right">37</td>
-<td class="left">ssl.google-analytics.com</td>
+<td class="org-right">37</td>
+<td class="org-left">ssl.google-analytics.com</td>
 </tr>
 
 <tr>
-<td class="right">37</td>
-<td class="left">ipv6.msftncsi.com</td>
+<td class="org-right">37</td>
+<td class="org-left">ipv6.msftncsi.com</td>
 </tr>
 
 <tr>
-<td class="right">32</td>
-<td class="left">www.habbo.es</td>
+<td class="org-right">32</td>
+<td class="org-left">www.habbo.es</td>
 </tr>
 
 <tr>
-<td class="right">26</td>
-<td class="left">imap.googlemail.com</td>
+<td class="org-right">26</td>
+<td class="org-left">imap.googlemail.com</td>
 </tr>
 
 <tr>
-<td class="right">21</td>
-<td class="left">dynamic.zoneedit.com</td>
+<td class="org-right">21</td>
+<td class="org-left">dynamic.zoneedit.com</td>
 </tr>
 
 <tr>
-<td class="right">19</td>
-<td class="left">www.msftncsi.com</td>
+<td class="org-right">19</td>
+<td class="org-left">www.msftncsi.com</td>
 </tr>
 
 <tr>
-<td class="right">18</td>
-<td class="left">kiwwwi.com.ar</td>
+<td class="org-right">18</td>
+<td class="org-left">kiwwwi.com.ar</td>
 </tr>
 </tbody>
 </table>
@@ -3113,12 +3959,21 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-116" class="outline-3">
 <h3 id="unnumbered-116">Sniffers nmap, dsniff</h3>
 <div class="outline-text-3" id="text-unnumbered-116">
 </div><div id="outline-container-unnumbered-117" class="outline-4">
 <h4 id="unnumbered-117">nmap</h4>
 <div class="outline-text-4" id="text-unnumbered-117">
+=======
+<div id="outline-container-orgheadline115" class="outline-3">
+<h3 id="orgheadline115">Sniffers nmap, dsniff</h3>
+<div class="outline-text-3" id="text-orgheadline115">
+</div><div id="outline-container-orgheadline114" class="outline-4">
+<h4 id="orgheadline114">nmap</h4>
+<div class="outline-text-4" id="text-orgheadline114">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">nmap -sV --open 192.168.10.0/24 -p22 | head
@@ -3128,42 +3983,72 @@ egrep -v "(osiux|fbcdn|akamai)" | sort | uniq -c | sort -nr | head
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-118" class="outline-3">
 <h3 id="unnumbered-118">Túneles y Redes Privadas Virtuales VPN</h3>
 <div class="outline-text-3" id="text-unnumbered-118">
 </div><div id="outline-container-unnumbered-119" class="outline-4">
 <h4 id="unnumbered-119">Redireccionar puertos con <code>ssh</code></h4>
 <div class="outline-text-4" id="text-unnumbered-119">
+=======
+<div id="outline-container-orgheadline119" class="outline-3">
+<h3 id="orgheadline119">Túneles y Redes Privadas Virtuales VPN</h3>
+<div class="outline-text-3" id="text-orgheadline119">
+</div><div id="outline-container-orgheadline116" class="outline-4">
+<h4 id="orgheadline116">Redireccionar puertos con <code>ssh</code></h4>
+<div class="outline-text-4" id="text-orgheadline116">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 ssh -L 2525:localhost:25 osiux.com
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-120" class="outline-4">
 <h4 id="unnumbered-120">Proxy Socks mediante ssh</h4>
 <div class="outline-text-4" id="text-unnumbered-120">
+=======
+<div id="outline-container-orgheadline117" class="outline-4">
+<h4 id="orgheadline117">Proxy Socks mediante ssh</h4>
+<div class="outline-text-4" id="text-orgheadline117">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 ssh -D 9090 osiux.com
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-121" class="outline-4">
 <h4 id="unnumbered-121">Tunel reverso con ssh</h4>
 <div class="outline-text-4" id="text-unnumbered-121">
+=======
+<div id="outline-container-orgheadline118" class="outline-4">
+<h4 id="orgheadline118">Tunel reverso con ssh</h4>
+<div class="outline-text-4" id="text-orgheadline118">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 ssh -R 12345:localhost:22 osiux.com
 </pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-122" class="outline-3">
 <h3 id="unnumbered-122">Cómo saber la IP de un equipo?</h3>
 <div class="outline-text-3" id="text-unnumbered-122">
 </div><div id="outline-container-unnumbered-123" class="outline-4">
 <h4 id="unnumbered-123">B dice, <b>cuál es la IP de D?</b></h4>
 <div class="outline-text-4" id="text-unnumbered-123">
+=======
+<div id="outline-container-orgheadline126" class="outline-3">
+<h3 id="orgheadline126">Cómo saber la IP de un equipo?</h3>
+<div class="outline-text-3" id="text-orgheadline126">
+</div><div id="outline-container-orgheadline120" class="outline-4">
+<h4 id="orgheadline120">B dice, <b>cuál es la IP de D?</b></h4>
+<div class="outline-text-4" id="text-orgheadline120">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Se que D es <b>00:14:d1:18:4a:dd</b></li>
 <li>Yo soy B y mi mac es <b>00:14:d1:18:4a:bb</b></li>
@@ -3178,9 +4063,15 @@ ssh -R 12345:localhost:22 osiux.com
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-124" class="outline-4">
 <h4 id="unnumbered-124">D contesta, <b>mi IP es 10.4.14.225</b></h4>
 <div class="outline-text-4" id="text-unnumbered-124">
+=======
+<div id="outline-container-orgheadline121" class="outline-4">
+<h4 id="orgheadline121">D contesta, <b>mi IP es 10.4.14.225</b></h4>
+<div class="outline-text-4" id="text-orgheadline121">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/redes-arp-2.png" alt="redes-arp-2.png" />
@@ -3189,9 +4080,15 @@ ssh -R 12345:localhost:22 osiux.com
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-125" class="outline-4">
 <h4 id="unnumbered-125">Quénes están en esta red?</h4>
 <div class="outline-text-4" id="text-unnumbered-125">
+=======
+<div id="outline-container-orgheadline122" class="outline-4">
+<h4 id="orgheadline122">Quénes están en esta red?</h4>
+<div class="outline-text-4" id="text-orgheadline122">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo arp-scan --interface eth0 --localnet
@@ -3200,9 +4097,15 @@ ssh -R 12345:localhost:22 osiux.com
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-126" class="outline-4">
 <h4 id="unnumbered-126">pingueando</h4>
 <div class="outline-text-4" id="text-unnumbered-126">
+=======
+<div id="outline-container-orgheadline123" class="outline-4">
+<h4 id="orgheadline123">pingueando</h4>
+<div class="outline-text-4" id="text-orgheadline123">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ping -c 5 127.0.0.1
@@ -3211,6 +4114,7 @@ ssh -R 12345:localhost:22 osiux.com
 
 <pre class="example">
 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+<<<<<<< HEAD
 64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.043 ms
 64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.039 ms
 64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.040 ms
@@ -3220,22 +4124,45 @@ PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
 --- 127.0.0.1 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 3996ms
 rtt min/avg/max/mdev = 0.028/0.040/0.051/0.008 ms
+=======
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.048 ms
+64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.046 ms
+64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.047 ms
+64 bytes from 127.0.0.1: icmp_seq=5 ttl=64 time=0.040 ms
+
+--- 127.0.0.1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 3999ms
+rtt min/avg/max/mdev = 0.030/0.042/0.048/0.007 ms
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-127" class="outline-4">
 <h4 id="unnumbered-127">capturando pings</h4>
 <div class="outline-text-4" id="text-unnumbered-127">
+=======
+<div id="outline-container-orgheadline124" class="outline-4">
+<h4 id="orgheadline124">capturando pings</h4>
+<div class="outline-text-4" id="text-orgheadline124">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 sudo tcpdump -i lo -nnnt -c 5 icmp
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-128" class="outline-4">
 <h4 id="unnumbered-128">viendo un <code>ping</code></h4>
 <div class="outline-text-4" id="text-unnumbered-128">
+=======
+<div id="outline-container-orgheadline125" class="outline-4">
+<h4 id="orgheadline125">viendo un <code>ping</code></h4>
+<div class="outline-text-4" id="text-orgheadline125">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </pre>
@@ -3254,9 +4181,15 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-129" class="outline-3">
 <h3 id="unnumbered-129">traceroute</h3>
 <div class="outline-text-3" id="text-unnumbered-129">
+=======
+<div id="outline-container-orgheadline127" class="outline-3">
+<h3 id="orgheadline127">traceroute</h3>
+<div class="outline-text-3" id="text-orgheadline127">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">traceroute -m 100 216.81.59.173
@@ -3265,6 +4198,7 @@ sudo tcpdump -i lo -nnntvvX -c 1 -e icmp
 
 <pre class="example">
 traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
+<<<<<<< HEAD
  1  leosia.lan (10.254.111.239)  5.009 ms  4.969 ms  5.306 ms
  2  10.4.14.225 (10.4.14.225)  6.362 ms  8.347 ms  8.339 ms
  3  1-212-126-200.fibertel.com.ar (200.126.212.1)  21.375 ms  21.379 ms  21.664 ms
@@ -3278,6 +4212,21 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 11  po2-30G.ar2.MIA2.gblx.net (67.17.106.162)  140.751 ms  144.452 ms po3-20G.ar2.MIA2.gblx.net (67.16.139.18)  146.570 ms
 12  xe-0-3-0.mia10.ip4.tinet.net (213.200.84.37)  146.477 ms  144.281 ms  151.329 ms
 13  xe-5-0-2.atl11.ip4.gtt.net (89.149.128.101)  178.189 ms xe-5-3-2.atl11.ip4.gtt.net (89.149.128.113)  184.363 ms  186.941 ms
+=======
+ 1  malbec (192.168.10.3)  0.103 ms  0.082 ms  0.071 ms
+ 2  1-189-235-201.fibertel.com.ar (201.235.189.1)  9.655 ms  9.522 ms  9.519 ms
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  97-166-89-200.fibertel.com.ar (200.89.166.97)  15.881 ms 73-166-89-200.fibertel.com.ar (200.89.166.73)  15.234 ms 125-166-89-200.fibertel.com.ar (200.89.166.125)  16.373 ms
+ 7  1-165-89-200.fibertel.com.ar (200.89.165.1)  15.003 ms  14.299 ms  14.386 ms
+ 8  250-165-89-200.fibertel.com.ar (200.89.165.250)  11.186 ms  11.192 ms  11.217 ms
+ 9  xe-1-1-3.ar3.eze1.gblx.net (67.17.161.13)  11.510 ms  13.129 ms  11.483 ms
+10  po2-30G.ar2.MIA2.gblx.net (67.17.106.162)  138.086 ms  135.062 ms po3-20G.ar2.MIA2.gblx.net (67.16.139.18)  134.891 ms
+11  xe-0-3-0.mia10.ip4.tinet.net (213.200.84.37)  136.346 ms  136.030 ms  136.076 ms
+12  xe-4-3-0.atl11.ip4.gtt.net (89.149.184.153)  162.318 ms  156.281 ms xe-5-0-2.atl11.ip4.gtt.net (89.149.128.101)  161.342 ms
+13  * * *
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 14  * * *
 15  * * *
 16  * * *
@@ -3375,9 +4324,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-130" class="outline-3">
 <h3 id="unnumbered-130">protocolos</h3>
 <div class="outline-text-3" id="text-unnumbered-130">
+=======
+<div id="outline-container-orgheadline128" class="outline-3">
+<h3 id="orgheadline128">protocolos</h3>
+<div class="outline-text-3" id="text-orgheadline128">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
 <p><img src="img/redes-protocolos-1.png" alt="redes-protocolos-1.png" />
@@ -3391,9 +4346,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-131" class="outline-4">
 <h4 id="unnumbered-131">Qué tiene un paquete TCP/IP?</h4>
 <div class="outline-text-4" id="text-unnumbered-131">
+=======
+<div id="outline-container-orgheadline129" class="outline-4">
+<h4 id="orgheadline129">Qué tiene un paquete TCP/IP?</h4>
+<div class="outline-text-4" id="text-orgheadline129">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 +------------------------+--------------------------+
 | MAC origen fe:ca:fe:ca | MAC destino  ca:fe:ca:fe |
@@ -3412,9 +4373,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-132" class="outline-4">
 <h4 id="unnumbered-132">Ethernet header</h4>
 <div class="outline-text-4" id="text-unnumbered-132">
+=======
+<div id="outline-container-orgheadline130" class="outline-4">
+<h4 id="orgheadline130">Ethernet header</h4>
+<div class="outline-text-4" id="text-orgheadline130">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -3438,9 +4405,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-133" class="outline-3">
 <h3 id="unnumbered-133">IP header</h3>
 <div class="outline-text-3" id="text-unnumbered-133">
+=======
+<div id="outline-container-orgheadline131" class="outline-3">
+<h3 id="orgheadline131">IP header</h3>
+<div class="outline-text-3" id="text-orgheadline131">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -3461,9 +4434,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-134" class="outline-3">
 <h3 id="unnumbered-134">UPD header</h3>
 <div class="outline-text-3" id="text-unnumbered-134">
+=======
+<div id="outline-container-orgheadline132" class="outline-3">
+<h3 id="orgheadline132">UPD header</h3>
+<div class="outline-text-3" id="text-orgheadline132">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -3478,9 +4457,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-135" class="outline-3">
 <h3 id="unnumbered-135">TCP header</h3>
 <div class="outline-text-3" id="text-unnumbered-135">
+=======
+<div id="outline-container-orgheadline133" class="outline-3">
+<h3 id="orgheadline133">TCP header</h3>
+<div class="outline-text-3" id="text-orgheadline133">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 |                   |1                  |2                  |3  |
 |0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|2|3|4|5|6|7|8|9|0|1|
@@ -3505,9 +4490,15 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-136" class="outline-3">
 <h3 id="unnumbered-136">ChangeLog</h3>
 <div class="outline-text-3" id="text-unnumbered-136">
+=======
+<div id="outline-container-orgheadline134" class="outline-3">
+<h3 id="orgheadline134">ChangeLog</h3>
+<div class="outline-text-3" id="text-orgheadline134">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li><span class="timestamp-wrapper"><span class="timestamp">[2013-06-05 mié] </span></span> simplifico y hago correcciones varias</li>
 <li><span class="timestamp-wrapper"><span class="timestamp">[2013-04-09 mar] </span></span> corrijo gráficos ascii-art</li>
@@ -3517,6 +4508,7 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-137" class="outline-2">
 <h2 id="unnumbered-137">Configuración de servicios básicos</h2>
 <div class="outline-text-2" id="text-unnumbered-137">
@@ -3526,17 +4518,30 @@ traceroute to 216.81.59.173 (216.81.59.173), 100 hops max, 60 byte packets
 </div><div id="outline-container-unnumbered-139" class="outline-4">
 <h4 id="unnumbered-139">Instalar Apache</h4>
 <div class="outline-text-4" id="text-unnumbered-139">
+=======
+<div id="outline-container-orgheadline165" class="outline-2">
+<h2 id="orgheadline165">Configuración de servicios básicos</h2>
+<div class="outline-text-2" id="text-orgheadline165">
+</div><div id="outline-container-orgheadline135" class="outline-3">
+<h3 id="orgheadline135">Apache</h3>
+<div class="outline-text-3" id="text-orgheadline135">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">apt-get install apache2-mpm-prefork libapache2-mod-php5
 </pre>
 </div>
 </div>
-</div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-140" class="outline-4">
 <h4 id="unnumbered-140">Crear un VirtualHost</h4>
 <div class="outline-text-4" id="text-unnumbered-140">
+=======
+<div id="outline-container-orgheadline136" class="outline-4">
+<h4 id="orgheadline136">Crear un VirtualHost</h4>
+<div class="outline-text-4" id="text-orgheadline136">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Primero se debe crear un archivo preferentemente con el nombre
 del dominio y ubicarlo en <code>sites-available</code>.
@@ -3581,9 +4586,15 @@ Luego se debe habilitar el sitio, de la siguiente manera:
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-141" class="outline-4">
 <h4 id="unnumbered-141">Iniciar, Detener y Reiniciar Apache</h4>
 <div class="outline-text-4" id="text-unnumbered-141">
+=======
+<div id="outline-container-orgheadline137" class="outline-4">
+<h4 id="orgheadline137">Iniciar, Detener y Reiniciar Apache</h4>
+<div class="outline-text-4" id="text-orgheadline137">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Los cambios en los VirtualHost son aplicados sólo cuando se
 reinicia el servicio, es posible hacerlo de dos maneras:
@@ -3599,23 +4610,34 @@ apache2ctl stop|start|graceful
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-142" class="outline-3">
 <h3 id="unnumbered-142">PHP</h3>
 <div class="outline-text-3" id="text-unnumbered-142">
 </div><div id="outline-container-unnumbered-143" class="outline-4">
 <h4 id="unnumbered-143">Instalar PHP</h4>
 <div class="outline-text-4" id="text-unnumbered-143">
+=======
+<div id="outline-container-orgheadline138" class="outline-3">
+<h3 id="orgheadline138">PHP</h3>
+<div class="outline-text-3" id="text-orgheadline138">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">apt-get install php5 php-pear php-mail php-doc phpmyadmin libapache2-mod-php5 php5-cli php5-mysql php5-xdebug
 </pre>
 </div>
 </div>
-</div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-144" class="outline-4">
 <h4 id="unnumbered-144">Configurar PHP</h4>
 <div class="outline-text-4" id="text-unnumbered-144">
+=======
+<div id="outline-container-orgheadline139" class="outline-4">
+<h4 id="orgheadline139">Configurar PHP</h4>
+<div class="outline-text-4" id="text-orgheadline139">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 vi /etc/php5/apache2/php.ini
 
@@ -3626,9 +4648,15 @@ upload_max_filesize = 20M
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-145" class="outline-4">
 <h4 id="unnumbered-145">Programar PHP</h4>
 <div class="outline-text-4" id="text-unnumbered-145">
+=======
+<div id="outline-container-orgheadline140" class="outline-4">
+<h4 id="orgheadline140">Programar PHP</h4>
+<div class="outline-text-4" id="text-orgheadline140">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 vi /var/www/contacts_emails.php
 
@@ -3657,12 +4685,18 @@ vi /var/www/contacts_emails.php
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-146" class="outline-3">
 <h3 id="unnumbered-146">MySQL</h3>
 <div class="outline-text-3" id="text-unnumbered-146">
 </div><div id="outline-container-unnumbered-147" class="outline-4">
 <h4 id="unnumbered-147">Crear Base y Usuario</h4>
 <div class="outline-text-4" id="text-unnumbered-147">
+=======
+<div id="outline-container-orgheadline141" class="outline-3">
+<h3 id="orgheadline141">MySQL</h3>
+<div class="outline-text-3" id="text-orgheadline141">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 CREATE DATABASE sugar CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE user sugar;
@@ -3670,11 +4704,16 @@ GRANT ALL ON sugar.* TO 'sugar'@'%';
 SET PASSWORD FOR 'sugar'@'%'=PASSWORD('sugar');
 </pre>
 </div>
-</div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-148" class="outline-4">
 <h4 id="unnumbered-148">UTF8</h4>
 <div class="outline-text-4" id="text-unnumbered-148">
+=======
+<div id="outline-container-orgheadline142" class="outline-4">
+<h4 id="orgheadline142">UTF8</h4>
+<div class="outline-text-4" id="text-orgheadline142">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Definir UTF8 en el cliente
 </p>
@@ -3693,9 +4732,15 @@ SET NAMES utf8; SELECT * FROM contacts;
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-149" class="outline-4">
 <h4 id="unnumbered-149">MySQL de Bash</h4>
 <div class="outline-text-4" id="text-unnumbered-149">
+=======
+<div id="outline-container-orgheadline143" class="outline-4">
+<h4 id="orgheadline143">MySQL de Bash</h4>
+<div class="outline-text-4" id="text-orgheadline143">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Definir Alias
 </p>
@@ -3748,9 +4793,15 @@ sugar &lt; $(echo "show tables" | sugar | grep calls | while read t;do echo "TRU
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-150" class="outline-4">
 <h4 id="unnumbered-150">MySQL desde Vim</h4>
 <div class="outline-text-4" id="text-unnumbered-150">
+=======
+<div id="outline-container-orgheadline144" class="outline-4">
+<h4 id="orgheadline144">MySQL desde Vim</h4>
+<div class="outline-text-4" id="text-orgheadline144">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Agregar en <code>.vimrc</code>
 </p>
@@ -3803,91 +4854,118 @@ CTRL-X CTRL-K
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-151" class="outline-4">
 <h4 id="unnumbered-151">Reemplazar Texto</h4>
 <div class="outline-text-4" id="text-unnumbered-151">
 </div><div id="outline-container-unnumbered-152" class="outline-5">
 <h5 id="unnumbered-152">Traducir valores</h5>
 <div class="outline-text-5" id="text-unnumbered-152">
+=======
+<div id="outline-container-orgheadline147" class="outline-4">
+<h4 id="orgheadline147">Reemplazar Texto</h4>
+<div class="outline-text-4" id="text-orgheadline147">
+</div><ul class="org-ul"><li><a id="orgheadline145"></a>Traducir valores<br  /><div class="outline-text-5" id="text-orgheadline145">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      REPLACE(REPLACE(direction,<span style="color: #ad7fa8; font-style: italic;">'Inbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Entrante'</span>),<span style="color: #ad7fa8; font-style: italic;">'Outbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Saliente'</span>) AS direccion
-FROM        calls;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      REPLACE(REPLACE(direction,<span style="color: #ad7fa8; font-style: italic;">'Inbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Entrante'</span>),<span style="color: #ad7fa8; font-style: italic;">'Outbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Saliente'</span>) <span style="color: #729fcf; font-weight: bold;">AS</span> direccion
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls;
 </pre>
 </div>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-153" class="outline-5">
 <h5 id="unnumbered-153">Actualizar registros</h5>
 <div class="outline-text-5" id="text-unnumbered-153">
+=======
+<li><a id="orgheadline146"></a>Actualizar registros<br  /><div class="outline-text-5" id="text-orgheadline146">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE contacts SET last_name = REPLACE(last_name, <span style="color: #ad7fa8; font-style: italic;">'NUNEZ'</span>, <span style="color: #ad7fa8; font-style: italic;">'NU&#209;EZ'</span>);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span> contacts <span style="color: #729fcf; font-weight: bold;">SET</span> last_name = REPLACE(last_name, <span style="color: #ad7fa8; font-style: italic;">'NUNEZ'</span>, <span style="color: #ad7fa8; font-style: italic;">'NU&#209;EZ'</span>);
 </pre>
 </div>
-</div>
-</div>
+</div></li></ul>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-154" class="outline-4">
 <h4 id="unnumbered-154">Buscar duplicados</h4>
 <div class="outline-text-4" id="text-unnumbered-154">
+=======
+<div id="outline-container-orgheadline148" class="outline-4">
+<h4 id="orgheadline148">Buscar duplicados</h4>
+<div class="outline-text-4" id="text-orgheadline148">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      last_name, first_name, COUNT(id) AS total
-FROM        contacts
-GROUP BY    first_name, last_name
-HAVING      total &gt; 1
-ORDER BY    last_name, first_name;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      last_name, first_name, <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        contacts
+<span style="color: #729fcf; font-weight: bold;">GROUP</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    first_name, last_name
+<span style="color: #729fcf; font-weight: bold;">HAVING</span>      total &gt; 1
+<span style="color: #729fcf; font-weight: bold;">ORDER</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    last_name, first_name;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-155" class="outline-4">
 <h4 id="unnumbered-155">Agrupar</h4>
 <div class="outline-text-4" id="text-unnumbered-155">
+=======
+<div id="outline-container-orgheadline149" class="outline-4">
+<h4 id="orgheadline149">Agrupar</h4>
+<div class="outline-text-4" id="text-orgheadline149">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      name,
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf; font-weight: bold;">name</span>,
             (
-            SELECT  CASE
-            WHEN    EXTRACT(HOUR FROM date_start) &lt; 12
-            THEN    <span style="color: #ad7fa8; font-style: italic;">'ma&#241;ana'</span>
-            ELSE    <span style="color: #ad7fa8; font-style: italic;">'tarde'</span>
-            END
-            ) AS turno,
-            COUNT(id) as total
-FROM        calls
-GROUP BY    name, turno
-HAVING      total &gt; 500
-ORDER BY    total DESC;
+            <span style="color: #729fcf; font-weight: bold;">SELECT</span>  <span style="color: #729fcf; font-weight: bold;">CASE</span>
+            <span style="color: #729fcf; font-weight: bold;">WHEN</span>    <span style="color: #729fcf;">EXTRACT</span>(<span style="color: #729fcf; font-weight: bold;">HOUR</span> <span style="color: #729fcf; font-weight: bold;">FROM</span> date_start) &lt; 12
+            <span style="color: #729fcf; font-weight: bold;">THEN</span>    <span style="color: #ad7fa8; font-style: italic;">'ma&#241;ana'</span>
+            <span style="color: #729fcf; font-weight: bold;">ELSE</span>    <span style="color: #ad7fa8; font-style: italic;">'tarde'</span>
+            <span style="color: #729fcf; font-weight: bold;">END</span>
+            ) <span style="color: #729fcf; font-weight: bold;">AS</span> turno,
+            <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">as</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls
+<span style="color: #729fcf; font-weight: bold;">GROUP</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    <span style="color: #729fcf; font-weight: bold;">name</span>, turno
+<span style="color: #729fcf; font-weight: bold;">HAVING</span>      total &gt; 500
+<span style="color: #729fcf; font-weight: bold;">ORDER</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    total <span style="color: #729fcf; font-weight: bold;">DESC</span>;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-156" class="outline-4">
 <h4 id="unnumbered-156">Cruzando tablas</h4>
 <div class="outline-text-4" id="text-unnumbered-156">
+=======
+<div id="outline-container-orgheadline150" class="outline-4">
+<h4 id="orgheadline150">Cruzando tablas</h4>
+<div class="outline-text-4" id="text-orgheadline150">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Explicito mejor que implicito
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc
-LEFT JOIN   contacts co ON co.id = cc.contact_id ;
-AND         cc.deleted = 0
-AND         co.deleted = 0
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">LEFT</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>   contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id ;
+<span style="color: #729fcf; font-weight: bold;">AND</span>         cc.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.deleted = 0
 
-SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc, contacts co
-WHERE       co.deleted = 0
-AND         co.id = cc.contact_id
-AND         cc.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc, contacts co
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         cc.deleted = 0
 </pre>
 </div>
 
@@ -3897,9 +4975,9 @@ Contactos con llamadas
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc
-LEFT JOIN   contacts co ON co.id = cc.contact_id;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">LEFT</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>   contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id;
 </pre>
 </div>
 
@@ -3909,15 +4987,15 @@ Contactos con llamadas entrantes
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      co.last_name,
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      co.last_name,
             co.first_name,
-            CONVERT_TZ(date_start, <span style="color: #ad7fa8; font-style: italic;">'+00:00'</span>, <span style="color: #ad7fa8; font-style: italic;">'-03:00'</span>) as fecha
-FROM        contacts co
-INNER JOIN  calls_contacts cc ON (cc.contact_id = co.id AND cc.deleted = 0)
-INNER JOIN  calls ca ON (ca.id = cc.call_id AND ca.deleted = 0)
-WHERE       co.deleted = 0
-AND         last_name IS NOT NULL
-LIMIT       20;
+            CONVERT_TZ(date_start, <span style="color: #ad7fa8; font-style: italic;">'+00:00'</span>, <span style="color: #ad7fa8; font-style: italic;">'-03:00'</span>) <span style="color: #729fcf; font-weight: bold;">as</span> fecha
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        contacts co
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> (cc.contact_id = co.id <span style="color: #729fcf; font-weight: bold;">AND</span> cc.deleted = 0)
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls ca <span style="color: #729fcf; font-weight: bold;">ON</span> (ca.id = cc.call_id <span style="color: #729fcf; font-weight: bold;">AND</span> ca.deleted = 0)
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         last_name <span style="color: #729fcf; font-weight: bold;">IS</span> <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>
+<span style="color: #729fcf; font-weight: bold;">LIMIT</span>       20;
 </pre>
 </div>
 
@@ -3927,173 +5005,234 @@ Actualizar las llamadas de un contacto
 
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE      calls ca, contacts co, calls_contacts cc
-SET         ca.assigned_user_id = (
-                                    SELECT  id
-                                    FROM    users
-                                    WHERE   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span>      calls ca, contacts co, calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">SET</span>         ca.assigned_user_id = (
+                                    <span style="color: #729fcf; font-weight: bold;">SELECT</span>  id
+                                    <span style="color: #729fcf; font-weight: bold;">FROM</span>    users
+                                    <span style="color: #729fcf; font-weight: bold;">WHERE</span>   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
                                     )
-WHERE       ca.id = cc.call_id
-AND         co.id = cc.contact_id
-AND         co.id = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       ca.id = cc.call_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
 
 
-UPDATE      calls ca
-INNER JOIN  calls_contacts cc ON cc.call_id = ca.id
-INNER JOIN  contacts co ON co.id = cc.contact_id
-SET         ca.assigned_user_id = (
-                                    SELECT  id
-                                    FROM    users
-                                    WHERE   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
+<span style="color: #729fcf; font-weight: bold;">UPDATE</span>      calls ca
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> cc.call_id = ca.id
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">SET</span>         ca.assigned_user_id = (
+                                    <span style="color: #729fcf; font-weight: bold;">SELECT</span>  id
+                                    <span style="color: #729fcf; font-weight: bold;">FROM</span>    users
+                                    <span style="color: #729fcf; font-weight: bold;">WHERE</span>   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
                                     )
-WHERE       co. = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co. = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-157" class="outline-4">
 <h4 id="unnumbered-157">Insertar desde otra tabla</h4>
 <div class="outline-text-4" id="text-unnumbered-157">
+=======
+<div id="outline-container-orgheadline151" class="outline-4">
+<h4 id="orgheadline151">Insertar desde otra tabla</h4>
+<div class="outline-text-4" id="text-orgheadline151">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">DROP TABLE IF EXISTS calls_contacts_today;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">DROP</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">IF</span> <span style="color: #729fcf; font-weight: bold;">EXISTS</span> calls_contacts_today;
 
-CREATE TABLE `calls_contacts_today` (
-    `id` varchar(36) NOT NULL,
-    `contact_id` varchar(36) NOT NULL,
-    `call_id` varchar(36) NOT NULL,
-    `status` varchar(25) default NULL,
-    `direction` varchar(25) default NULL,
-     PRIMARY KEY  (`call_id`)
+<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> `calls_contacts_today` (
+    `id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `contact_id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `call_id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `status` <span style="color: #8ae234; font-weight: bold;">varchar</span>(25) <span style="color: #729fcf; font-weight: bold;">default</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `direction` <span style="color: #8ae234; font-weight: bold;">varchar</span>(25) <span style="color: #729fcf; font-weight: bold;">default</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+     <span style="color: #729fcf; font-weight: bold;">PRIMARY</span> <span style="color: #729fcf; font-weight: bold;">KEY</span>  (`call_id`)
 );
 
-INSERT INTO calls_contacts_today
+<span style="color: #729fcf; font-weight: bold;">INSERT</span> <span style="color: #729fcf; font-weight: bold;">INTO</span> calls_contacts_today
             (id, contact_id, call_id, status, direction)
-SELECT      UUID(), cc.contact_id, ca.id, ca.status, ca.direction
-FROM        calls ca
-INNER JOIN  calls_contacts cc ON cc.call_id = ca.id
-WHERE       DATE(ca.date_start) = CURDATE();
+<span style="color: #729fcf; font-weight: bold;">SELECT</span>      UUID(), cc.contact_id, ca.id, ca.status, ca.direction
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls ca
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> cc.call_id = ca.id
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       <span style="color: #8ae234; font-weight: bold;">DATE</span>(ca.date_start) = CURDATE();
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-158" class="outline-4">
 <h4 id="unnumbered-158">AUTOCOMPLETE</h4>
 <div class="outline-text-4" id="text-unnumbered-158">
+=======
+<div id="outline-container-orgheadline152" class="outline-4">
+<h4 id="orgheadline152">AUTOCOMPLETE</h4>
+<div class="outline-text-4" id="text-orgheadline152">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sql">\#
 
-SELECT FROM t&lt;Presionar TAB&gt;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf; font-weight: bold;">FROM</span> t&lt;Presionar TAB&gt;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-159" class="outline-4">
 <h4 id="unnumbered-159">COUNT</h4>
 <div class="outline-text-4" id="text-unnumbered-159">
+=======
+<div id="outline-container-orgheadline153" class="outline-4">
+<h4 id="orgheadline153">COUNT</h4>
+<div class="outline-text-4" id="text-orgheadline153">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE calls set deleted = 1 WHERE status = <span style="color: #ad7fa8; font-style: italic;">'Not Held'</span>;
-SELECT COUNT(*) FROM calls;
-SELECT COUNT(id) FROM calls;
-SELECT COUNT(id) FROM calls WHERE deleted = 0;
-SELECT SQL_CALC_FOUND_ROWS id FROM calls WHERE deleted = 0 LIMIT 1; SELECT FOUND_ROWS();
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span> calls <span style="color: #729fcf; font-weight: bold;">set</span> deleted = 1 <span style="color: #729fcf; font-weight: bold;">WHERE</span> status = <span style="color: #ad7fa8; font-style: italic;">'Not Held'</span>;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(*) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls <span style="color: #729fcf; font-weight: bold;">WHERE</span> deleted = 0;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> SQL_CALC_FOUND_ROWS id <span style="color: #729fcf; font-weight: bold;">FROM</span> calls <span style="color: #729fcf; font-weight: bold;">WHERE</span> deleted = 0 <span style="color: #729fcf; font-weight: bold;">LIMIT</span> 1; <span style="color: #729fcf; font-weight: bold;">SELECT</span> FOUND_ROWS();
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-160" class="outline-4">
 <h4 id="unnumbered-160">EXPLAIN</h4>
 <div class="outline-text-4" id="text-unnumbered-160">
+=======
+<div id="outline-container-orgheadline154" class="outline-4">
+<h4 id="orgheadline154">EXPLAIN</h4>
+<div class="outline-text-4" id="text-orgheadline154">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">EXPLAIN SELECT      COUNT(id)
-        FROM        calls
-        WHERE       deleted = 0
-        AND         assigned_user_id = <span style="color: #ad7fa8; font-style: italic;">'ba8630eb-7442-73f9-a88e-49b6be5882c2'</span>;
+<pre class="src src-sql">EXPLAIN <span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(id)
+        <span style="color: #729fcf; font-weight: bold;">FROM</span>        calls
+        <span style="color: #729fcf; font-weight: bold;">WHERE</span>       deleted = 0
+        <span style="color: #729fcf; font-weight: bold;">AND</span>         assigned_user_id = <span style="color: #ad7fa8; font-style: italic;">'ba8630eb-7442-73f9-a88e-49b6be5882c2'</span>;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-161" class="outline-4">
 <h4 id="unnumbered-161">INDEX</h4>
 <div class="outline-text-4" id="text-unnumbered-161">
+=======
+<div id="outline-container-orgheadline155" class="outline-4">
+<h4 id="orgheadline155">INDEX</h4>
+<div class="outline-text-4" id="text-orgheadline155">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">SHOW INDEX IN calls;
-ALTER TABLE calls ADD INDEX idx_deleted_user (deleted, assigned_user_id);
-ALTER TABLE calls DROP INDEX idx_deleted_user;
+<pre class="src src-sql">SHOW INDEX <span style="color: #729fcf; font-weight: bold;">IN</span> calls;
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls</span> <span style="color: #729fcf; font-weight: bold;">ADD</span> INDEX idx_deleted_user (deleted, assigned_user_id);
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls</span> <span style="color: #729fcf; font-weight: bold;">DROP</span> INDEX idx_deleted_user;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-162" class="outline-4">
 <h4 id="unnumbered-162">UNIQUE</h4>
 <div class="outline-text-4" id="text-unnumbered-162">
+=======
+<div id="outline-container-orgheadline156" class="outline-4">
+<h4 id="orgheadline156">UNIQUE</h4>
+<div class="outline-text-4" id="text-orgheadline156">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">ALTER TABLE calls_contacts_today ADD UNIQUE idx_contact_call (contact_id, call_id);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls_contacts_today</span> <span style="color: #729fcf; font-weight: bold;">ADD</span> <span style="color: #729fcf; font-weight: bold;">UNIQUE</span> idx_contact_call (contact_id, call_id);
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-163" class="outline-4">
 <h4 id="unnumbered-163">AUTO_INCREMENT</h4>
 <div class="outline-text-4" id="text-unnumbered-163">
+=======
+<div id="outline-container-orgheadline157" class="outline-4">
+<h4 id="orgheadline157">AUTO_INCREMENT</h4>
+<div class="outline-text-4" id="text-orgheadline157">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">ALTER TABLE tracker AUTO_INCREMENT = 9;
-ALTER TABLE tracker MODIFY id INT(11) AUTO_INCREMENT;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">tracker</span> AUTO_INCREMENT = 9;
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">tracker</span> <span style="color: #729fcf; font-weight: bold;">MODIFY</span> id <span style="color: #8ae234; font-weight: bold;">INT</span>(11) AUTO_INCREMENT;
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-164" class="outline-4">
 <h4 id="unnumbered-164">REGEXP</h4>
 <div class="outline-text-4" id="text-unnumbered-164">
+=======
+<div id="outline-container-orgheadline158" class="outline-4">
+<h4 id="orgheadline158">REGEXP</h4>
+<div class="outline-text-4" id="text-orgheadline158">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE      contacts
-SET         postal = SUBSTR(postal,4,7)
-WHERE       postal NOT REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[0-9]{4}$'</span>
-AND         postal REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[A-Z]{3}[0-9]{4}$'</span>
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span>      contacts
+<span style="color: #729fcf; font-weight: bold;">SET</span>         postal = SUBSTR(postal,4,7)
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       postal <span style="color: #729fcf; font-weight: bold;">NOT</span> REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[0-9]{4}$'</span>
+<span style="color: #729fcf; font-weight: bold;">AND</span>         postal REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[A-Z]{3}[0-9]{4}$'</span>
 </pre>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-165" class="outline-4">
 <h4 id="unnumbered-165">RANDOM</h4>
 <div class="outline-text-4" id="text-unnumbered-165">
+=======
+<div id="outline-container-orgheadline159" class="outline-4">
+<h4 id="orgheadline159">RANDOM</h4>
+<div class="outline-text-4" id="text-orgheadline159">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT RAND();
-SELECT MD5(RAND());
-SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 8);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span> RAND();
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> MD5(RAND());
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">SUBSTRING</span>(MD5(RAND()) <span style="color: #729fcf; font-weight: bold;">FROM</span> 1 <span style="color: #729fcf; font-weight: bold;">FOR</span> 8);
 </pre>
 </div>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-166" class="outline-3">
 <h3 id="unnumbered-166">Postfix</h3>
 <div class="outline-text-3" id="text-unnumbered-166">
+=======
+<div id="outline-container-orgheadline160" class="outline-3">
+<h3 id="orgheadline160">Postfix</h3>
+<div class="outline-text-3" id="text-orgheadline160">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>TODO</code>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-167" class="outline-3">
 <h3 id="unnumbered-167">DHCP</h3>
 <div class="outline-text-3" id="text-unnumbered-167">
@@ -4103,6 +5242,15 @@ SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 8);
 </div><div id="outline-container-unnumbered-169" class="outline-5">
 <h5 id="unnumbered-169">configuración</h5>
 <div class="outline-text-5" id="text-unnumbered-169">
+=======
+<div id="outline-container-orgheadline164" class="outline-3">
+<h3 id="orgheadline164">DHCP</h3>
+<div class="outline-text-3" id="text-orgheadline164">
+</div><div id="outline-container-orgheadline163" class="outline-4">
+<h4 id="orgheadline163"><code>dhcp3</code></h4>
+<div class="outline-text-4" id="text-orgheadline163">
+</div><ul class="org-ul"><li><a id="orgheadline161"></a>configuración<br  /><div class="outline-text-5" id="text-orgheadline161">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Es muy simple la sintaxis del archivo <code>/etc/dhcp3/dhcpd.conf</code> donde podemos
 especificar los sevidores de dns (<b>domain-name-servers</b>) entre
@@ -4142,38 +5290,54 @@ host syrah {
         fixed-address 192.168.0.4;
 }
 </pre>
-</div>
-</div>
+</div></li>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-170" class="outline-5">
 <h5 id="unnumbered-170">iniciar y detener el servicio</h5>
 <div class="outline-text-5" id="text-unnumbered-170">
+=======
+<li><a id="orgheadline162"></a>iniciar y detener el servicio<br  /><div class="outline-text-5" id="text-orgheadline162">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <pre class="example">
 /etc/init.d/dhcp start
 /etc/init.d/dhcp stop
 </pre>
-</div>
-</div>
+</div></li></ul>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-171" class="outline-2">
 <h2 id="unnumbered-171">Metodologías ágiles de trabajo</h2>
 <div class="outline-text-2" id="text-unnumbered-171">
 </div><div id="outline-container-unnumbered-172" class="outline-3">
 <h3 id="unnumbered-172">Time Management for System Administrators</h3>
 <div class="outline-text-3" id="text-unnumbered-172">
+=======
+<div id="outline-container-orgheadline177" class="outline-2">
+<h2 id="orgheadline177">Metodologías ágiles de trabajo</h2>
+<div class="outline-text-2" id="text-orgheadline177">
+</div><div id="outline-container-orgheadline166" class="outline-3">
+<h3 id="orgheadline166">Time Management for System Administrators</h3>
+<div class="outline-text-3" id="text-orgheadline166">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li><a href="http://www.tomontime.com/">http://www.tomontime.com/</a></li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-173" class="outline-3">
 <h3 id="unnumbered-173">GTD</h3>
 <div class="outline-text-3" id="text-unnumbered-173">
+=======
+<div id="outline-container-orgheadline167" class="outline-3">
+<h3 id="orgheadline167">GTD</h3>
+<div class="outline-text-3" id="text-orgheadline167">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
-Es un método de gestión de las actividades y el título de un libro
 de David Allen <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>, libro que en español se ha editado con
 el título <b>Organízate con eficacia</b> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.
 </p>
@@ -4197,20 +5361,32 @@ inmediatamente.
 </p>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-174" class="outline-4">
 <h4 id="unnumbered-174">Workflow</h4>
 <div class="outline-text-4" id="text-unnumbered-174">
+=======
+<div id="outline-container-orgheadline168" class="outline-4">
+<h4 id="orgheadline168">Workflow</h4>
+<div class="outline-text-4" id="text-orgheadline168">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 
 <div class="figure">
-<p><img src="img/gtd-workflow.png" alt="GTD Workflow" width="640" height="480" />
+<p><img src="img/gtd-workflow.png" alt="gtd-workflow.png" width="640" height="480" title="GTD Workflow" />
 </p>
 </div>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-175" class="outline-4">
 <h4 id="unnumbered-175">Recopilar</h4>
 <div class="outline-text-4" id="text-unnumbered-175">
+=======
+<div id="outline-container-orgheadline169" class="outline-4">
+<h4 id="orgheadline169">Recopilar</h4>
+<div class="outline-text-4" id="text-orgheadline169">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Capturar todo en <b><b>INBOX</b></b> y seguir trabajando
 <ul class="org-ul">
@@ -4226,9 +5402,15 @@ inmediatamente.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-176" class="outline-4">
 <h4 id="unnumbered-176">Procesar</h4>
 <div class="outline-text-4" id="text-unnumbered-176">
+=======
+<div id="outline-container-orgheadline170" class="outline-4">
+<h4 id="orgheadline170">Procesar</h4>
+<div class="outline-text-4" id="text-orgheadline170">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Procesar por completo el <b>INBOX</b>
 <ul class="org-ul">
@@ -4250,9 +5432,15 @@ inmediatamente.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-177" class="outline-4">
 <h4 id="unnumbered-177">Organizar</h4>
 <div class="outline-text-4" id="text-unnumbered-177">
+=======
+<div id="outline-container-orgheadline171" class="outline-4">
+<h4 id="orgheadline171">Organizar</h4>
+<div class="outline-text-4" id="text-orgheadline171">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Asignar acciones a una carpeta
 <ul class="org-ul">
@@ -4265,9 +5453,15 @@ inmediatamente.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-178" class="outline-4">
 <h4 id="unnumbered-178">Revisar</h4>
 <div class="outline-text-4" id="text-unnumbered-178">
+=======
+<div id="outline-container-orgheadline172" class="outline-4">
+<h4 id="orgheadline172">Revisar</h4>
+<div class="outline-text-4" id="text-orgheadline172">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>Fijar un momento para la revisión</li>
 <li>Revisión ágil y diligente</li>
@@ -4278,36 +5472,60 @@ inmediatamente.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-179" class="outline-3">
 <h3 id="unnumbered-179">Scrum</h3>
 <div class="outline-text-3" id="text-unnumbered-179">
+=======
+<div id="outline-container-orgheadline173" class="outline-3">
+<h3 id="orgheadline173">Scrum</h3>
+<div class="outline-text-3" id="text-orgheadline173">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>TODO</code>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-180" class="outline-3">
 <h3 id="unnumbered-180">Pomodoro</h3>
 <div class="outline-text-3" id="text-unnumbered-180">
+=======
+<div id="outline-container-orgheadline174" class="outline-3">
+<h3 id="orgheadline174">Pomodoro</h3>
+<div class="outline-text-3" id="text-orgheadline174">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>TODO</code>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-181" class="outline-3">
 <h3 id="unnumbered-181">Autofocus</h3>
 <div class="outline-text-3" id="text-unnumbered-181">
+=======
+<div id="outline-container-orgheadline175" class="outline-3">
+<h3 id="orgheadline175">Autofocus</h3>
+<div class="outline-text-3" id="text-orgheadline175">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>TODO</code>
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-182" class="outline-3">
 <h3 id="unnumbered-182">Kanban</h3>
 <div class="outline-text-3" id="text-unnumbered-182">
+=======
+<div id="outline-container-orgheadline176" class="outline-3">
+<h3 id="orgheadline176">Kanban</h3>
+<div class="outline-text-3" id="text-orgheadline176">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 <code>TODO</code>
 </p>
@@ -4315,12 +5533,21 @@ inmediatamente.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-183" class="outline-2">
 <h2 id="unnumbered-183">Aplicaciones de Consola</h2>
 <div class="outline-text-2" id="text-unnumbered-183">
 </div><div id="outline-container-unnumbered-184" class="outline-3">
 <h3 id="unnumbered-184">chat</h3>
 <div class="outline-text-3" id="text-unnumbered-184">
+=======
+<div id="outline-container-orgheadline213" class="outline-2">
+<h2 id="orgheadline213">Aplicaciones de Consola</h2>
+<div class="outline-text-2" id="text-orgheadline213">
+</div><div id="outline-container-orgheadline178" class="outline-3">
+<h3 id="orgheadline178">chat</h3>
+<div class="outline-text-3" id="text-orgheadline178">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>irssi</li>
 <li>centerim</li>
@@ -4328,9 +5555,15 @@ inmediatamente.
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-185" class="outline-3">
 <h3 id="unnumbered-185">copias</h3>
 <div class="outline-text-3" id="text-unnumbered-185">
+=======
+<div id="outline-container-orgheadline179" class="outline-3">
+<h3 id="orgheadline179">copias</h3>
+<div class="outline-text-3" id="text-orgheadline179">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>rdiffbackup</li>
 <li>rsync</li>
@@ -4338,9 +5571,15 @@ inmediatamente.
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-186" class="outline-3">
 <h3 id="unnumbered-186">correo</h3>
 <div class="outline-text-3" id="text-unnumbered-186">
+=======
+<div id="outline-container-orgheadline180" class="outline-3">
+<h3 id="orgheadline180">correo</h3>
+<div class="outline-text-3" id="text-orgheadline180">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>alpine</li>
 <li>mutt</li>
@@ -4348,9 +5587,15 @@ inmediatamente.
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-187" class="outline-3">
 <h3 id="unnumbered-187">descargas</h3>
 <div class="outline-text-3" id="text-unnumbered-187">
+=======
+<div id="outline-container-orgheadline181" class="outline-3">
+<h3 id="orgheadline181">descargas</h3>
+<div class="outline-text-3" id="text-orgheadline181">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>axel</li>
 <li>rtorrent</li>
@@ -4359,26 +5604,44 @@ inmediatamente.
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-188" class="outline-3">
 <h3 id="unnumbered-188">disco</h3>
 <div class="outline-text-3" id="text-unnumbered-188">
+=======
+<div id="outline-container-orgheadline182" class="outline-3">
+<h3 id="orgheadline182">disco</h3>
+<div class="outline-text-3" id="text-orgheadline182">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>ncdu</li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-189" class="outline-3">
 <h3 id="unnumbered-189">editores</h3>
 <div class="outline-text-3" id="text-unnumbered-189">
+=======
+<div id="outline-container-orgheadline183" class="outline-3">
+<h3 id="orgheadline183">editores</h3>
+<div class="outline-text-3" id="text-orgheadline183">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>emacs</li>
 <li>vim</li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-190" class="outline-3">
 <h3 id="unnumbered-190">explorador de archivos</h3>
 <div class="outline-text-3" id="text-unnumbered-190">
+=======
+<div id="outline-container-orgheadline184" class="outline-3">
+<h3 id="orgheadline184">explorador de archivos</h3>
+<div class="outline-text-3" id="text-orgheadline184">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>mc</li>
 <li>ranger</li>
@@ -4386,6 +5649,7 @@ inmediatamente.
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-191" class="outline-3">
 <h3 id="unnumbered-191">monitoreo</h3>
 <div class="outline-text-3" id="text-unnumbered-191">
@@ -4395,6 +5659,17 @@ inmediatamente.
 <div id="outline-container-unnumbered-193" class="outline-4">
 <h4 id="unnumbered-193"><code>atop</code></h4>
 <div class="outline-text-4" id="text-unnumbered-193">
+=======
+<div id="outline-container-orgheadline203" class="outline-3">
+<h3 id="orgheadline203">monitoreo</h3>
+<div class="outline-text-3" id="text-orgheadline203">
+</div><div id="outline-container-orgheadline185" class="outline-4">
+<h4 id="orgheadline185"><code>top</code></h4>
+</div>
+<div id="outline-container-orgheadline186" class="outline-4">
+<h4 id="orgheadline186"><code>atop</code></h4>
+<div class="outline-text-4" id="text-orgheadline186">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Es posible consultar el registro de un día en particular, por
 ejemplo qué procesos estaban consumiendo mayor acceso a disco el
@@ -4409,6 +5684,7 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-194" class="outline-4">
 <h4 id="unnumbered-194"><code>htop</code></h4>
 </div>
@@ -4418,17 +5694,43 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 <div id="outline-container-unnumbered-196" class="outline-4">
 <h4 id="unnumbered-196"><code>iotop</code></h4>
 <div class="outline-text-4" id="text-unnumbered-196">
+=======
+<div id="outline-container-orgheadline187" class="outline-4">
+<h4 id="orgheadline187"><code>htop</code></h4>
+</div>
+<div id="outline-container-orgheadline188" class="outline-4">
+<h4 id="orgheadline188"><code>iftop</code></h4>
+</div>
+<div id="outline-container-orgheadline189" class="outline-4">
+<h4 id="orgheadline189"><code>iotop</code></h4>
+<div class="outline-text-4" id="text-orgheadline189">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ssh malbec <span style="color: #ad7fa8; font-style: italic;">'sudo iotop -b -o -n 2 -d 5'</span>
 </pre>
 </div>
+
+<pre class="example">
+Total DISK READ: 0.00 B/s | Total DISK WRITE: 0.00 B/s
+  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
+Total DISK READ: 0.00 B/s | Total DISK WRITE: 51.75 K/s
+  TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN      IO    COMMAND
+ 1602 be/4 root        0.00 B/s    3.98 K/s  0.00 %  0.00 % syslogd
+  256 be/4 root        0.00 B/s 1630.47 B/s  0.00 %  0.00 % [kjournald]
+</pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-197" class="outline-4">
 <h4 id="unnumbered-197"><code>ioping</code></h4>
 <div class="outline-text-4" id="text-unnumbered-197">
+=======
+<div id="outline-container-orgheadline190" class="outline-4">
+<h4 id="orgheadline190"><code>ioping</code></h4>
+<div class="outline-text-4" id="text-orgheadline190">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ioping -c 5 /mnt/data
@@ -4437,6 +5739,7 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-198" class="outline-4">
 <h4 id="unnumbered-198">mon</h4>
 </div>
@@ -4449,6 +5752,20 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 <div id="outline-container-unnumbered-201" class="outline-4">
 <h4 id="unnumbered-201"><code>mtr</code></h4>
 <div class="outline-text-4" id="text-unnumbered-201">
+=======
+<div id="outline-container-orgheadline191" class="outline-4">
+<h4 id="orgheadline191">mon</h4>
+</div>
+<div id="outline-container-orgheadline192" class="outline-4">
+<h4 id="orgheadline192">monit</h4>
+</div>
+<div id="outline-container-orgheadline193" class="outline-4">
+<h4 id="orgheadline193">munin</h4>
+</div>
+<div id="outline-container-orgheadline194" class="outline-4">
+<h4 id="orgheadline194"><code>mtr</code></h4>
+<div class="outline-text-4" id="text-orgheadline194">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">mtr -r -c 5 -n osiux.com
@@ -4456,6 +5773,7 @@ ejemplo qué procesos estaban consumiendo mayor acceso a disco el
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 Start: Sat Mar 28 16:06:04 2015
 HOST: caipiroska                  Loss%   Snt   Last   Avg  Best  Wrst StDev
   1.|-- 10.254.111.239             0.0%     5    4.6   2.8   1.2   4.9   1.7
@@ -4475,10 +5793,29 @@ HOST: caipiroska                  Loss%   Snt   Last   Avg  Best  Wrst StDev
  15.|-- 69.31.134.226             20.0%     5  187.4 355.9 172.3 766.1 279.1
  16.|-- 198.23.229.2              20.0%     5  170.4 170.3 168.4 172.4   1.5
  17.|-- 198.23.230.106            25.0%     4  176.8 192.3 169.2 230.9  33.6
+=======
+Start: Fri Jul  3 09:05:10 2015
+HOST: stout                       Loss%   Snt   Last   Avg  Best  Wrst StDev
+  1.|-- 192.168.10.3               0.0%     5    0.1   0.1   0.1   0.2   0.0
+  2.|-- 10.0.0.2                   0.0%     5    0.5   0.5   0.4   0.6   0.0
+  3.|-- 190.225.250.41             0.0%     5   23.7  24.0  23.7  24.7   0.0
+  4.|-- 190.225.254.153            0.0%     5   25.1  26.3  24.9  27.5   1.0
+  5.|-- 190.225.252.162            0.0%     5   34.6  31.3  25.0  34.6   4.2
+  6.|-- 195.22.220.213             0.0%     5   24.4  24.7  24.2  25.0   0.0
+  7.|-- 195.22.199.135             0.0%     5  154.0 149.3 143.1 154.0   3.9
+  8.|-- 195.22.199.103             0.0%     5  147.4 147.6 142.4 150.3   3.1
+  9.|-- 77.67.71.97                0.0%     5  149.9 149.9 148.9 150.7   0.5
+ 10.|-- 89.149.180.202             0.0%     5  179.0 178.9 178.0 179.3   0.0
+ 11.|-- 69.31.135.94               0.0%     5  181.3 181.7 181.2 182.8   0.5
+ 12.|-- 69.31.134.226              0.0%     5  174.3 174.8 173.0 177.6   1.9
+ 13.|-- 198.23.229.2              20.0%     5  173.3 174.0 173.3 174.7   0.0
+ 14.|-- 198.23.230.106            20.0%     5  172.3 174.6 171.8 177.4   2.9
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-202" class="outline-4">
 <h4 id="unnumbered-202">sysstat</h4>
 </div>
@@ -4488,11 +5825,21 @@ HOST: caipiroska                  Loss%   Snt   Last   Avg  Best  Wrst StDev
 </div><div id="outline-container-unnumbered-204" class="outline-5">
 <h5 id="unnumbered-204">top 10</h5>
 <div class="outline-text-5" id="text-unnumbered-204">
+=======
+<div id="outline-container-orgheadline195" class="outline-4">
+<h4 id="orgheadline195">sysstat</h4>
+</div>
+<div id="outline-container-orgheadline200" class="outline-4">
+<h4 id="orgheadline200"><code>vnstat</code></h4>
+<div class="outline-text-4" id="text-orgheadline200">
+</div><ul class="org-ul"><li><a id="orgheadline196"></a>top 10<br  /><div class="outline-text-5" id="text-orgheadline196">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ssh osiux <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -t'</span>
 </pre>
 </div>
+<<<<<<< HEAD
 
 <pre class="example">
 venet0  /  top 10
@@ -4517,11 +5864,17 @@ venet0  /  top 10
 <div id="outline-container-unnumbered-205" class="outline-5">
 <h5 id="unnumbered-205">vista mensual</h5>
 <div class="outline-text-5" id="text-unnumbered-205">
+=======
+</div></li>
+
+<li><a id="orgheadline197"></a>vista mensual<br  /><div class="outline-text-5" id="text-orgheadline197">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ssh osiux <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -m'</span>
 </pre>
 </div>
+<<<<<<< HEAD
 
 <pre class="example">
 venet0  /  monthly
@@ -4541,11 +5894,17 @@ venet0  /  monthly
 <div id="outline-container-unnumbered-206" class="outline-5">
 <h5 id="unnumbered-206">vista semanal</h5>
 <div class="outline-text-5" id="text-unnumbered-206">
+=======
+</div></li>
+
+<li><a id="orgheadline198"></a>vista semanal<br  /><div class="outline-text-5" id="text-orgheadline198">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ssh osiux <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -w'</span>
 </pre>
 </div>
+<<<<<<< HEAD
 
 <pre class="example">
 venet0  /  weekly
@@ -4564,11 +5923,17 @@ venet0  /  weekly
 <div id="outline-container-unnumbered-207" class="outline-5">
 <h5 id="unnumbered-207">vista por horas</h5>
 <div class="outline-text-5" id="text-unnumbered-207">
+=======
+</div></li>
+
+<li><a id="orgheadline199"></a>vista por horas<br  /><div class="outline-text-5" id="text-orgheadline199">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <div class="org-src-container">
 
 <pre class="src src-sh">ssh osiux <span style="color: #ad7fa8; font-style: italic;">'vnstat -i venet0 -h'</span>
 </pre>
 </div>
+<<<<<<< HEAD
 
 <pre class="example">
  venet0                                                                   16:03 
@@ -4609,14 +5974,35 @@ venet0  /  weekly
 <div id="outline-container-unnumbered-210" class="outline-3">
 <h3 id="unnumbered-210">musica</h3>
 <div class="outline-text-3" id="text-unnumbered-210">
+=======
+</div></li></ul>
+</div>
+
+<div id="outline-container-orgheadline201" class="outline-4">
+<h4 id="orgheadline201">multitail</h4>
+</div>
+<div id="outline-container-orgheadline202" class="outline-4">
+<h4 id="orgheadline202">logcheck</h4>
+</div>
+</div>
+<div id="outline-container-orgheadline204" class="outline-3">
+<h3 id="orgheadline204">musica</h3>
+<div class="outline-text-3" id="text-orgheadline204">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>moc</li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-211" class="outline-3">
 <h3 id="unnumbered-211">navegadores web</h3>
 <div class="outline-text-3" id="text-unnumbered-211">
+=======
+<div id="outline-container-orgheadline205" class="outline-3">
+<h3 id="orgheadline205">navegadores web</h3>
+<div class="outline-text-3" id="text-orgheadline205">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>elinks</li>
 <li>links</li>
@@ -4625,9 +6011,15 @@ venet0  /  weekly
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-212" class="outline-3">
 <h3 id="unnumbered-212">red</h3>
 <div class="outline-text-3" id="text-unnumbered-212">
+=======
+<div id="outline-container-orgheadline206" class="outline-3">
+<h3 id="orgheadline206">red</h3>
+<div class="outline-text-3" id="text-orgheadline206">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>wicd-curses</li>
 <li>tshark</li>
@@ -4637,17 +6029,29 @@ venet0  /  weekly
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-213" class="outline-3">
 <h3 id="unnumbered-213">rss</h3>
 <div class="outline-text-3" id="text-unnumbered-213">
+=======
+<div id="outline-container-orgheadline207" class="outline-3">
+<h3 id="orgheadline207">rss</h3>
+<div class="outline-text-3" id="text-orgheadline207">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>newsbeuter</li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-214" class="outline-3">
 <h3 id="unnumbered-214">seguridad</h3>
 <div class="outline-text-3" id="text-unnumbered-214">
+=======
+<div id="outline-container-orgheadline208" class="outline-3">
+<h3 id="orgheadline208">seguridad</h3>
+<div class="outline-text-3" id="text-orgheadline208">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>chrootkit</li>
 <li>cron-apt</li>
@@ -4656,18 +6060,30 @@ venet0  /  weekly
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-215" class="outline-3">
 <h3 id="unnumbered-215">utilitarios</h3>
 <div class="outline-text-3" id="text-unnumbered-215">
+=======
+<div id="outline-container-orgheadline209" class="outline-3">
+<h3 id="orgheadline209">utilitarios</h3>
+<div class="outline-text-3" id="text-orgheadline209">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>screen</li>
 <li>tmux</li>
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-216" class="outline-3">
 <h3 id="unnumbered-216">versionado</h3>
 <div class="outline-text-3" id="text-unnumbered-216">
+=======
+<div id="outline-container-orgheadline210" class="outline-3">
+<h3 id="orgheadline210">versionado</h3>
+<div class="outline-text-3" id="text-orgheadline210">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <ul class="org-ul">
 <li>etckeeper</li>
 <li>git-core</li>
@@ -4677,12 +6093,21 @@ venet0  /  weekly
 </ul>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-217" class="outline-3">
 <h3 id="unnumbered-217">ssh</h3>
 <div class="outline-text-3" id="text-unnumbered-217">
 </div><div id="outline-container-unnumbered-218" class="outline-4">
 <h4 id="unnumbered-218"><code>parallel-ssh</code></h4>
 <div class="outline-text-4" id="text-unnumbered-218">
+=======
+<div id="outline-container-orgheadline212" class="outline-3">
+<h3 id="orgheadline212">ssh</h3>
+<div class="outline-text-3" id="text-orgheadline212">
+</div><div id="outline-container-orgheadline211" class="outline-4">
+<h4 id="orgheadline211"><code>parallel-ssh</code></h4>
+<div class="outline-text-4" id="text-orgheadline211">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Armamos un listado con los <b>hostnames</b> de cada servidor y lo
 guardarmos en un archivo, por ejemplo en <code>~/.ssh/gcoop</code>, ahora solo
@@ -4696,6 +6121,7 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 [1] 16:06:13 [FAILURE] cabernet Exited with error code 255
 [2] 16:06:13 [FAILURE] malbec Exited with error code 255
 [3] 16:06:13 [FAILURE] squeeze Exited with error code 255
@@ -4703,6 +6129,18 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 [5] 16:06:13 [FAILURE] wheezy Exited with error code 255
 [6] 16:06:15 [SUCCESS] tempranillo
  16:06:15 up 21 days,  4:52,  0 users,  load average: 0,14, 0,34, 0,28
+=======
+[1] 09:05:17 [SUCCESS] torrontes
+ 09:05:18 up 2 days, 21:18,  0 users,  load average: 0.15, 0.23, 0.19
+[2] 09:05:17 [SUCCESS] malbec
+ 09:05:20 up 2 days, 21:19,  1 user,  load average: 0.00, 0.00, 0.00
+[3] 09:05:17 [SUCCESS] cabernet
+ 09:05:18 up 2 days, 21:18,  0 users,  load average: 13,26, 6,80, 3,39
+[4] 09:05:19 [SUCCESS] tempranillo
+ 09:05:20 up 117 days, 21:51,  2 users,  load average: 1,68, 1,33, 0,79
+[5] 09:05:19 [SUCCESS] bonarda
+ 09:05:21 up 78 days, 23:37,  0 users,  load average: 0,01, 0,04, 0,05
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
@@ -4712,13 +6150,13 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://davidco.com/">http://davidco.com/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://www.cuspide.com/isbn/849662708X">http://www.cuspide.com/isbn/849662708X</a>
-</p></div>
+</p></p></div>
 
 
 </div>
@@ -4726,7 +6164,7 @@ falta indicar el comando a ejecutar <code>uptime</code> en este caso y listo!
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiris@gcoop.coop">osiris@gcoop.coop</a>)</p>
 <p class="date">Date: 2014-01-20</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

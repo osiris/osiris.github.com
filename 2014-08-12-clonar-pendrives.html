@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>Clonar 24 pendrives al mismo tiempo</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clonar 24 pendrives al mismo tiempo</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gómez" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
 </head>
 <body>
 <div id="content">
@@ -18,7 +18,7 @@
 </p>
 
 <div class="figure">
-<p><a href="img/clonar-pendrives/letras-viajeras-routers.jpg" width="640" height="487" alt="Clonar pendrives - routers"><img src="tmb/clonar-pendrives/letras-viajeras-routers.jpg" alt="Clonar pendrives - routers" width="640" height="487" /></a>
+<p><a href="img/clonar-pendrives/letras-viajeras-routers.jpg" width="640" height="487" title="Clonar pendrives - routers"><img src="tmb/clonar-pendrives/letras-viajeras-routers.jpg" alt="letras-viajeras-routers.jpg" width="640" height="487" title="Clonar pendrives - routers" /></a>
 </p>
 </div>
 
@@ -29,9 +29,15 @@ proyecto <b>Letras Viajeras</b> <sup><a id="fnr.3" class="footref" href="#fn.3">
 pendrives con exactamente lo mismo y no queríamos hacerlo de a uno.
 </p>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-1" class="outline-2">
 <h2 id="unnumbered-1">Cómo clonar un pendrive a muchos pendrives</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
+=======
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Cómo clonar un pendrive a muchos pendrives</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Buscando un poco por la web, encontramos varias opciones, entre ellas:
 </p>
@@ -50,18 +56,30 @@ máquinas.</li>
 </ol>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-2" class="outline-3">
 <h3 id="unnumbered-2">1. CloneZilla</h3>
 <div class="outline-text-3" id="text-unnumbered-2">
+=======
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">1. CloneZilla</h3>
+<div class="outline-text-3" id="text-orgheadline2">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 No lo probamos porque no queríamos reiniciar :-P
 </p>
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-3" class="outline-3">
 <h3 id="unnumbered-3">2. <code>dd</code> + <code>tee</code></h3>
 <div class="outline-text-3" id="text-unnumbered-3">
+=======
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">2. <code>dd</code> + <code>tee</code></h3>
+<div class="outline-text-3" id="text-orgheadline3">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Un hack <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup> de la vieja escuela, haciendo uso de <code>dd</code> y
 <code>tee</code> se puede de una manera muy simple clonar en varios
@@ -216,9 +234,15 @@ sys6m4.339s
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-4" class="outline-3">
 <h3 id="unnumbered-4">3. <code>dd</code> + <code>tee</code> + <code>netcat</code></h3>
 <div class="outline-text-3" id="text-unnumbered-4">
+=======
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">3. <code>dd</code> + <code>tee</code> + <code>netcat</code></h3>
+<div class="outline-text-3" id="text-orgheadline4">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Esta opción sonaba muy interesante, porque podíamos usar varias
 máquinas y podríamos clonar todos los pendrives al mismo tiempo,
@@ -234,9 +258,15 @@ utilizar un mismo <i>BUS</i> <i>USB</i>.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-5" class="outline-3">
 <h3 id="unnumbered-5">4. crear un <code>.torrent</code> y distribuirlo</h3>
 <div class="outline-text-3" id="text-unnumbered-5">
+=======
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5">4. crear un <code>.torrent</code> y distribuirlo</h3>
+<div class="outline-text-3" id="text-orgheadline5">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Esto motivó realmente conectar todos los pendrives al mismo
 tiempo, y ahí el surgieron 2 temas, el primero la alimentación de
@@ -269,9 +299,15 @@ otros <i>routers</i> al mismo tiempo por compartir el mismo <i>torrent</i>.
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-6" class="outline-3">
 <h3 id="unnumbered-6">5. <code>wget</code> + <code>tar</code> + <code>parallel-ssh</code></h3>
 <div class="outline-text-3" id="text-unnumbered-6">
+=======
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">5. <code>wget</code> + <code>tar</code> + <code>parallel-ssh</code></h3>
+<div class="outline-text-3" id="text-orgheadline6">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 <p>
 Aprovechando que <code>wget</code> y <code>tar</code> vienen en <i>OpenWRT</i>, realizamos un
 <i>script</i> para que realize el <i>deploy</i> en cada <i>router</i>. Para esto
@@ -312,7 +348,7 @@ Confirmamos que estén conectados todos los <i>routers</i>, mediante
 
 
 <div class="figure">
-<p><a href="img/clonar-pendrives/letras-viajeras-wicd.jpg" width="640" height="480" alt="Clonar pendrives - wicd"><img src="tmb/clonar-pendrives/letras-viajeras-wicd.jpg" alt="Clonar pendrives - wicd" width="640" height="480" /></a>
+<p><a href="img/clonar-pendrives/letras-viajeras-wicd.jpg" width="640" height="480" title="Clonar pendrives - wicd"><img src="tmb/clonar-pendrives/letras-viajeras-wicd.jpg" alt="letras-viajeras-wicd.jpg" width="640" height="480" title="Clonar pendrives - wicd" /></a>
 </p>
 </div>
 
@@ -324,7 +360,7 @@ resultado:
 
 
 <div class="figure">
-<p><a href="img/clonar-pendrives/letras-viajeras-pssh.jpg" width="640" height="480" alt="Clonar pendrives - parallel-ssh"><img src="tmb/clonar-pendrives/letras-viajeras-pssh.jpg" alt="Clonar pendrives - parallel-ssh" width="640" height="480" /></a>
+<p><a href="img/clonar-pendrives/letras-viajeras-pssh.jpg" width="640" height="480" title="Clonar pendrives - parallel-ssh"><img src="tmb/clonar-pendrives/letras-viajeras-pssh.jpg" alt="letras-viajeras-pssh.jpg" width="640" height="480" title="Clonar pendrives - parallel-ssh" /></a>
 </p>
 </div>
 
@@ -362,7 +398,7 @@ Ni bien ejecutamos el <i>deploy</i> vemos el resultado por cada
 
 
 <div class="figure">
-<p><a href="img/clonar-pendrives/letras-viajeras-md5.jpg" width="640" height="480" alt="Clonar pendrives - md5"><img src="tmb/clonar-pendrives/letras-viajeras-md5.jpg" alt="Clonar pendrives - md5" width="640" height="480" /></a>
+<p><a href="img/clonar-pendrives/letras-viajeras-md5.jpg" width="640" height="480" title="Clonar pendrives - md5"><img src="tmb/clonar-pendrives/letras-viajeras-md5.jpg" alt="letras-viajeras-md5.jpg" width="640" height="480" title="Clonar pendrives - md5" /></a>
 </p>
 </div>
 
@@ -376,7 +412,7 @@ teniendo una <i>LAN</i> de <code>1Gbit</code> no debería haber problemas:
 
 
 <div class="figure">
-<p><a href="img/clonar-pendrives/letras-viajeras-iftop.jpg" width="640" height="480" alt="Clonar pendrives - iftop"><img src="tmb/clonar-pendrives/letras-viajeras-iftop.jpg" alt="Clonar pendrives - iftop" width="640" height="480" /></a>
+<p><a href="img/clonar-pendrives/letras-viajeras-iftop.jpg" width="640" height="480" title="Clonar pendrives - iftop"><img src="tmb/clonar-pendrives/letras-viajeras-iftop.jpg" alt="letras-viajeras-iftop.jpg" width="640" height="480" title="Clonar pendrives - iftop" /></a>
 </p>
 </div>
 
@@ -391,54 +427,60 @@ paralelo y asegurando que quedan todas exactamente iguales. :-)
 </div>
 </div>
 
+<<<<<<< HEAD
 <div id="outline-container-unnumbered-7" class="outline-2">
 <h2 id="unnumbered-7"><a href="mailto:blog@osiux.com?subject=Comentario">Comentarios</a></h2>
 <div class="outline-text-2" id="text-unnumbered-7">
+=======
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><a href="mailto:blog@osiux.com?subject=Comentario">Comentarios</a></h2>
+<div class="outline-text-2" id="text-orgheadline7">
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </div>
 </div>
 <div id="footnotes">
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://openwrt.org/">http://openwrt.org/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://www.tp-link.com/en/products/details/?model=TL-MR3020">http://www.tp-link.com/en/products/details/?model=TL-MR3020</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://github.com/gcoop-libre/letras_viajeras">https://github.com/gcoop-libre/letras_viajeras</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://www.clonezilla.org/">http://www.clonezilla.org/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://code.google.com/p/parallel-ssh/">https://code.google.com/p/parallel-ssh/</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://superuser.com/questions/145516/cloning-single-disk-drive-to-multiple-drives-simultaneously">https://superuser.com/questions/145516/cloning-single-disk-drive-to-multiple-drives-simultaneously</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://es.wikipedia.org/wiki/Tiempo_estimado_de_llegada">https://es.wikipedia.org/wiki/Tiempo_estimado_de_llegada</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/autoconfig.sh">https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/autoconfig.sh</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara"><p class="footpara">
 <a href="https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/deploy.sh">https://github.com/gcoop-libre/letras_viajeras/blob/master/config_ap/root/deploy.sh</a>
-</p></div>
+</p></p></div>
 
-<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara"><p class="footpara">
 <a href="http://nginx.org/">http://nginx.org/</a>
-</p></div>
+</p></p></div>
 
 
 </div>
@@ -446,7 +488,7 @@ paralelo y asegurando que quedan todas exactamente iguales. :-)
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2014-08-12</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

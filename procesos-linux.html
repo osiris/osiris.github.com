@@ -11,7 +11,10 @@
 <meta  name="description" content="Administrando recursos de sistema"
  />
 <link rel="stylesheet" type="text/css" href="osiux.css" />
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+=======
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </head>
 <body>
 <div id="content">
@@ -93,7 +96,11 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 1 6795
+=======
+1 10556
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre></li>
 </ul>
 </div>
@@ -149,6 +156,7 @@ en ejecución:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 4446 tty1     S      0:00  \_ -bash
 5175 tty1     S+     0:00      \_ /bin/sh /usr/bin/startx
 5197 tty1     S+     0:00          \_ xinit /home/osiris/.xinitrc -- /etc/X11/xinit/xserverrc :1 vt1 -auth /tmp/serverauth.Da5Db1yAUJ
@@ -159,6 +167,18 @@ en ejecución:
 3782 tty3     Ss+    0:00 /sbin/getty 38400 tty3
 3783 tty4     Ss+    0:00 /sbin/getty 38400 tty4
 3784 tty5     Ss+    0:00 /sbin/getty 38400 tty5
+=======
+24999 pts/6    Ss     0:00          \_ -bash
+25137 pts/6    S+     0:00              \_ tmux a
+26611 pts/6    S+     0:00                  \_ sh -c vlock
+26612 pts/6    S+     0:00                      \_ /usr/sbin/vlock-main
+ 1515 ?        Ss     0:00 /lib/systemd/systemd-logind
+ 1541 ?        Ss     0:05 avahi-daemon: running [stout.local]
+ 1636 ?        S      0:00  \_ avahi-daemon: chroot helper
+ 1542 ?        Ss     1:03 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ 1598 ?        Ss     0:00 /usr/sbin/lpd -s
+ 1604 ?        S     67:08  \_ /usr/sbin/lpd -s
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 <div class="org-src-container">
@@ -168,6 +188,7 @@ en ejecución:
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 init(1)─┬─/usr/bin/monito(2872)───monitorix-httpd(3202)
         ├─accounts-daemon(3791)─┬─{accounts-daemon}(3793)
         │                       └─{accounts-daemon}(3794)
@@ -178,6 +199,18 @@ init(1)─┬─/usr/bin/monito(2872)───monitorix-httpd(3202)
         │                       ├─{at-spi-bus-laun}(3889)
         │                       ├─{at-spi-bus-laun}(3891)
         │                       └─{at-spi-bus-laun}(3893)
+=======
+systemd(1)─┬─/usr/bin/termin(7123)─┬─bash(7131)───tmuxmoc(7257)───tmux(7262)───sh(8760)───vlock-main(8761)
+           │                       ├─gnome-pty-helpe(7130)
+           │                       └─{gmain}(7132)
+           ├─/usr/bin/termin(9889)─┬─bash(9896)───emacs(10556)─┬─sh(11931)───sh(11932)─┬─head(11934)
+           │                       │                           │                       └─pstree(11933)
+           │                       │                           └─{gmain}(10557)
+           │                       ├─gnome-pty-helpe(9895)
+           │                       └─{gmain}(9897)
+           ├─/usr/bin/termin(13052)─┬─bash(13059)───tmuxgcoop(13204)───tmux(13214)
+           │                        ├─gnome-pty-helpe(13058)
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 </div>
 </div>
@@ -198,6 +231,7 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
+<<<<<<< HEAD
 top - 23:50:01 up 51 min,  5 users,  load average: 0,53, 0,50, 0,64
 Tasks: 209 total,   1 running, 208 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  7,1 us,  2,0 sy,  0,0 ni, 89,1 id,  1,8 wa,  0,0 hi,  0,1 si,  0,0 st
@@ -218,6 +252,28 @@ KiB Swap:  1310716 total,        0 used,  1310716 free.   810580 cached Mem
    13 root      20   0       0      0      0 S   0,0  0,0   0:00.62 ksoftirqd/1
    15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
    16 root      rt   0       0      0      0 S   0,0  0,0   0:00.01 watchdog/2
+=======
+top - 09:02:19 up 2 days, 21:16,  8 users,  load average: 0,63, 0,41, 0,34
+Tasks: 222 total,   3 running, 219 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  6,4 us,  2,6 sy,  0,5 ni, 89,6 id,  0,8 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem:   3439000 total,  3289008 used,   149992 free,   535744 buffers
+KiB Swap:        0 total,        0 used,        0 free.   774768 cached Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+24809 osiris    20   0  412308  38900  15204 R   6,4  1,1  56:39.60 /usr/bin/t+
+    1 root      20   0  176804   4940   2664 S   0,0  0,1   0:06.19 systemd
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.08 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:25.75 ksoftirqd/0
+    5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
+    7 root      20   0       0      0      0 S   0,0  0,0   1:24.76 rcu_sched
+    8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.93 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:01.38 watchdog/0
+   11 root      rt   0       0      0      0 S   0,0  0,0   0:01.34 watchdog/1
+   12 root      rt   0       0      0      0 S   0,0  0,0   0:01.00 migration/1
+   13 root      20   0       0      0      0 S   0,0  0,0   0:25.49 ksoftirqd/1
+   15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
+>>>>>>> @ 00:25 hs - actualizo HTMLs con export unificado
 </pre>
 
 
@@ -253,7 +309,7 @@ enviar señales.</li>
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
