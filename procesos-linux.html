@@ -11,7 +11,6 @@
 <meta  name="description" content="Administrando recursos de sistema"
  />
 <link rel="stylesheet" type="text/css" href="osiux.css" />
-<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -93,7 +92,7 @@ comando <code>pidof</code>:
 </div>
 
 <pre class="example">
-1 6795
+1 9175
 </pre></li>
 </ul>
 </div>
@@ -149,16 +148,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-4446 tty1     S      0:00  \_ -bash
-5175 tty1     S+     0:00      \_ /bin/sh /usr/bin/startx
-5197 tty1     S+     0:00          \_ xinit /home/osiris/.xinitrc -- /etc/X11/xinit/xserverrc :1 vt1 -auth /tmp/serverauth.Da5Db1yAUJ
-5198 ?        Ss     5:47              \_ /usr/bin/X -nolisten tcp :1 vt1 -auth /tmp/serverauth.Da5Db1yAUJ
-5202 tty1     S      0:02              \_ awesome
-5205 tty1     S      0:00                  \_ xscreensaver -nosplash
-3781 tty2     Ss+    0:00 /sbin/getty 38400 tty2
-3782 tty3     Ss+    0:00 /sbin/getty 38400 tty3
-3783 tty4     Ss+    0:00 /sbin/getty 38400 tty4
-3784 tty5     Ss+    0:00 /sbin/getty 38400 tty5
+23324 pts/12   Ss     0:00          \_ -bash
+23470 pts/12   S+     0:00              \_ /bin/bash /home/osiris/bin/tmuxemacs
+23475 pts/12   S+     0:00                  \_ tmux a -t emacs
+ 1830 ?        Ss     0:00 /lib/systemd/systemd-logind
+ 1853 ?        Ss     0:01 avahi-daemon: running [stout.local]
+ 1968 ?        S      0:00  \_ avahi-daemon: chroot helper
+ 1855 ?        Ss     0:45 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+ 1972 ?        S      1:38 /usr/bin/tor --defaults-torrc /usr/share/tor/tor-service-defaults-torrc --hush
+ 1979 ?        Ssl    0:02 /usr/sbin/rsyslogd -n
+ 1985 ?        S      0:05 /usr/sbin/arpwatch -u arpwatch -N -p
 </pre>
 
 <div class="org-src-container">
@@ -168,16 +167,16 @@ en ejecución:
 </div>
 
 <pre class="example">
-init(1)─┬─/usr/bin/monito(2872)───monitorix-httpd(3202)
-        ├─accounts-daemon(3791)─┬─{accounts-daemon}(3793)
-        │                       └─{accounts-daemon}(3794)
-        ├─alan-watcher(4451)─┬─{alan-watcher}(4457)
-        │                    └─{alan-watcher}(4470)
-        ├─applet.py(4415)───{applet.py}(4538)
-        ├─at-spi-bus-laun(3888)─┬─dbus-daemon(3892)
-        │                       ├─{at-spi-bus-laun}(3889)
-        │                       ├─{at-spi-bus-laun}(3891)
-        │                       └─{at-spi-bus-laun}(3893)
+systemd(1)─┬─/usr/bin/termin(4301)─┬─bash(4310)───tmuxmoc(4435)───tmux(4443)───sh(10217)───vlock-main(10218)
+           │                       ├─gnome-pty-helpe(4309)
+           │                       └─{gmain}(4311)
+           ├─/usr/bin/termin(5167)─┬─bash(5174)───tmuxchat(5299)───tmux(5305)───sh(1722)───vlock-main(1731)
+           │                       ├─gnome-pty-helpe(5173)
+           │                       └─{gmain}(5175)
+           ├─/usr/bin/termin(5664)─┬─bash(5672)───tmuxrcc(5805)───tmux(5815)───sh(15839)───vlock-main(15842)
+           │                       ├─bash(17884)───vim(18035)─┬─{ruby-timer-thr}(18037)
+           │                       │                          └─{vim}(18036)
+           │                       ├─gnome-pty-helpe(5670)
 </pre>
 </div>
 </div>
@@ -198,26 +197,26 @@ top -b -n1 | head -20
 </div>
 
 <pre class="example">
-top - 23:50:01 up 51 min,  5 users,  load average: 0,53, 0,50, 0,64
-Tasks: 209 total,   1 running, 208 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  7,1 us,  2,0 sy,  0,0 ni, 89,1 id,  1,8 wa,  0,0 hi,  0,1 si,  0,0 st
-KiB Mem:   5912772 total,  2025528 used,  3887244 free,    83076 buffers
-KiB Swap:  1310716 total,        0 used,  1310716 free.   810580 cached Mem
+top - 10:54:45 up 2 days, 27 min,  8 users,  load average: 0,56, 0,35, 0,28
+Tasks: 212 total,   1 running, 211 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5,2 us,  2,9 sy,  0,6 ni, 90,6 id,  0,6 wa,  0,0 hi,  0,0 si,  0,0 st
+KiB Mem:   3439000 total,  3257812 used,   181188 free,   321512 buffers
+KiB Swap:        0 total,        0 used,        0 free.  1095340 cached Mem
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
-    1 root      20   0   15476   1856   1692 S   0,0  0,0   0:01.05 init
-    2 root      20   0       0      0      0 S   0,0  0,0   0:00.00 kthreadd
-    3 root      20   0       0      0      0 S   0,0  0,0   0:00.63 ksoftirqd/0
+ 4252 root      20   0  213184  26664  11128 S   6,4  0,8 278:39.12 Xorg
+11518 osiris    20   0  410688  38908  16212 S   6,4  1,1  22:51.39 /usr/bin/t+
+    1 root      20   0  111456   5204   2832 S   0,0  0,2   0:03.27 systemd
+    2 root      20   0       0      0      0 S   0,0  0,0   0:00.04 kthreadd
+    3 root      20   0       0      0      0 S   0,0  0,0   0:15.00 ksoftirqd/0
     5 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/0:+
-    7 root      20   0       0      0      0 S   0,0  0,0   0:05.46 rcu_sched
+    7 root      20   0       0      0      0 S   0,0  0,0   0:56.68 rcu_sched
     8 root      20   0       0      0      0 S   0,0  0,0   0:00.00 rcu_bh
-    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.14 migration/0
-   10 root      rt   0       0      0      0 S   0,0  0,0   0:00.02 watchdog/0
-   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.02 watchdog/1
-   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.09 migration/1
-   13 root      20   0       0      0      0 S   0,0  0,0   0:00.62 ksoftirqd/1
-   15 root       0 -20       0      0      0 S   0,0  0,0   0:00.00 kworker/1:+
-   16 root      rt   0       0      0      0 S   0,0  0,0   0:00.01 watchdog/2
+    9 root      rt   0       0      0      0 S   0,0  0,0   0:00.44 migration/0
+   10 root      rt   0       0      0      0 S   0,0  0,0   0:00.94 watchdog/0
+   11 root      rt   0       0      0      0 S   0,0  0,0   0:00.94 watchdog/1
+   12 root      rt   0       0      0      0 S   0,0  0,0   0:00.46 migration/1
+   13 root      20   0       0      0      0 S   0,0  0,0   0:14.40 ksoftirqd/1
 </pre>
 
 
@@ -253,7 +252,7 @@ enviar señales.</li>
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2012-11-06</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

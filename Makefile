@@ -1,5 +1,5 @@
 update-gin: css
-	ssh gin 'cd ~/osiux && git pull'
+	ssh gin 'cd ~/osiux && git stash && git pull'
 	scp *.css gin:osiux/
 
 css:

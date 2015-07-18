@@ -9,7 +9,6 @@
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Osiris Alejandro Gomez" />
 <link rel="stylesheet" type="text/css" href="osiux.css" />
-<link rel="stylesheet" type="text/css" href="print.css" media="print" />
 </head>
 <body>
 <div id="content">
@@ -169,8 +168,8 @@ CTRL-X CTRL-K
 <div class="outline-text-3" id="text-orgheadline5">
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      REPLACE(REPLACE(direction,<span style="color: #ad7fa8; font-style: italic;">'Inbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Entrante'</span>),<span style="color: #ad7fa8; font-style: italic;">'Outbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Saliente'</span>) AS direccion
-FROM        calls;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      REPLACE(REPLACE(direction,<span style="color: #ad7fa8; font-style: italic;">'Inbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Entrante'</span>),<span style="color: #ad7fa8; font-style: italic;">'Outbound'</span>,<span style="color: #ad7fa8; font-style: italic;">'Saliente'</span>) <span style="color: #729fcf; font-weight: bold;">AS</span> direccion
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls;
 </pre>
 </div>
 </div>
@@ -181,7 +180,7 @@ FROM        calls;
 <div class="outline-text-3" id="text-orgheadline6">
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE contacts SET last_name = REPLACE(last_name, <span style="color: #ad7fa8; font-style: italic;">'NUNEZ'</span>, <span style="color: #ad7fa8; font-style: italic;">'NU&#209;EZ'</span>);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span> contacts <span style="color: #729fcf; font-weight: bold;">SET</span> last_name = REPLACE(last_name, <span style="color: #ad7fa8; font-style: italic;">'NUNEZ'</span>, <span style="color: #ad7fa8; font-style: italic;">'NU&#209;EZ'</span>);
 </pre>
 </div>
 </div>
@@ -193,11 +192,11 @@ FROM        calls;
 <div class="outline-text-2" id="text-orgheadline8">
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      last_name, first_name, COUNT(id) AS total
-FROM        contacts
-GROUP BY    first_name, last_name
-HAVING      total &gt; 1
-ORDER BY    last_name, first_name;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      last_name, first_name, <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        contacts
+<span style="color: #729fcf; font-weight: bold;">GROUP</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    first_name, last_name
+<span style="color: #729fcf; font-weight: bold;">HAVING</span>      total &gt; 1
+<span style="color: #729fcf; font-weight: bold;">ORDER</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    last_name, first_name;
 </pre>
 </div>
 </div>
@@ -208,19 +207,19 @@ ORDER BY    last_name, first_name;
 <div class="outline-text-2" id="text-orgheadline9">
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      name,
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf; font-weight: bold;">name</span>,
             (
-            SELECT  CASE
-            WHEN    EXTRACT(HOUR FROM date_start) &lt; 12
-            THEN    <span style="color: #ad7fa8; font-style: italic;">'ma&#241;ana'</span>
-            ELSE    <span style="color: #ad7fa8; font-style: italic;">'tarde'</span>
-            END
-            ) AS turno,
-            COUNT(id) as total
-FROM        calls
-GROUP BY    name, turno
-HAVING      total &gt; 500
-ORDER BY    total DESC;
+            <span style="color: #729fcf; font-weight: bold;">SELECT</span>  <span style="color: #729fcf; font-weight: bold;">CASE</span>
+            <span style="color: #729fcf; font-weight: bold;">WHEN</span>    <span style="color: #729fcf;">EXTRACT</span>(<span style="color: #729fcf; font-weight: bold;">HOUR</span> <span style="color: #729fcf; font-weight: bold;">FROM</span> date_start) &lt; 12
+            <span style="color: #729fcf; font-weight: bold;">THEN</span>    <span style="color: #ad7fa8; font-style: italic;">'ma&#241;ana'</span>
+            <span style="color: #729fcf; font-weight: bold;">ELSE</span>    <span style="color: #ad7fa8; font-style: italic;">'tarde'</span>
+            <span style="color: #729fcf; font-weight: bold;">END</span>
+            ) <span style="color: #729fcf; font-weight: bold;">AS</span> turno,
+            <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">as</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls
+<span style="color: #729fcf; font-weight: bold;">GROUP</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    <span style="color: #729fcf; font-weight: bold;">name</span>, turno
+<span style="color: #729fcf; font-weight: bold;">HAVING</span>      total &gt; 500
+<span style="color: #729fcf; font-weight: bold;">ORDER</span> <span style="color: #729fcf; font-weight: bold;">BY</span>    total <span style="color: #729fcf; font-weight: bold;">DESC</span>;
 </pre>
 </div>
 </div>
@@ -235,17 +234,17 @@ Explicito mejor que implicito
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc
-LEFT JOIN   contacts co ON co.id = cc.contact_id ;
-AND         cc.deleted = 0
-AND         co.deleted = 0
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">LEFT</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>   contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id ;
+<span style="color: #729fcf; font-weight: bold;">AND</span>         cc.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.deleted = 0
 
-SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc, contacts co
-WHERE       co.deleted = 0
-AND         co.id = cc.contact_id
-AND         cc.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc, contacts co
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         cc.deleted = 0
 </pre>
 </div>
 
@@ -255,9 +254,9 @@ Contactos con llamadas
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      COUNT(cc.id) AS total
-FROM        calls_contacts cc
-LEFT JOIN   contacts co ON co.id = cc.contact_id;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(cc.id) <span style="color: #729fcf; font-weight: bold;">AS</span> total
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">LEFT</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>   contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id;
 </pre>
 </div>
 
@@ -267,15 +266,15 @@ Contactos con llamadas entrantes
 
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT      co.last_name,
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span>      co.last_name,
             co.first_name,
-            CONVERT_TZ(date_start, <span style="color: #ad7fa8; font-style: italic;">'+00:00'</span>, <span style="color: #ad7fa8; font-style: italic;">'-03:00'</span>) as fecha
-FROM        contacts co
-INNER JOIN  calls_contacts cc ON (cc.contact_id = co.id AND cc.deleted = 0)
-INNER JOIN  calls ca ON (ca.id = cc.call_id AND ca.deleted = 0)
-WHERE       co.deleted = 0
-AND         last_name IS NOT NULL
-LIMIT       20;
+            CONVERT_TZ(date_start, <span style="color: #ad7fa8; font-style: italic;">'+00:00'</span>, <span style="color: #ad7fa8; font-style: italic;">'-03:00'</span>) <span style="color: #729fcf; font-weight: bold;">as</span> fecha
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        contacts co
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> (cc.contact_id = co.id <span style="color: #729fcf; font-weight: bold;">AND</span> cc.deleted = 0)
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls ca <span style="color: #729fcf; font-weight: bold;">ON</span> (ca.id = cc.call_id <span style="color: #729fcf; font-weight: bold;">AND</span> ca.deleted = 0)
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co.deleted = 0
+<span style="color: #729fcf; font-weight: bold;">AND</span>         last_name <span style="color: #729fcf; font-weight: bold;">IS</span> <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>
+<span style="color: #729fcf; font-weight: bold;">LIMIT</span>       20;
 </pre>
 </div>
 
@@ -285,26 +284,26 @@ Actualizar las llamadas de un contacto
 
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE      calls ca, contacts co, calls_contacts cc
-SET         ca.assigned_user_id = (
-                                    SELECT  id
-                                    FROM    users
-                                    WHERE   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span>      calls ca, contacts co, calls_contacts cc
+<span style="color: #729fcf; font-weight: bold;">SET</span>         ca.assigned_user_id = (
+                                    <span style="color: #729fcf; font-weight: bold;">SELECT</span>  id
+                                    <span style="color: #729fcf; font-weight: bold;">FROM</span>    users
+                                    <span style="color: #729fcf; font-weight: bold;">WHERE</span>   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
                                     )
-WHERE       ca.id = cc.call_id
-AND         co.id = cc.contact_id
-AND         co.id = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       ca.id = cc.call_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">AND</span>         co.id = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
 
 
-UPDATE      calls ca
-INNER JOIN  calls_contacts cc ON cc.call_id = ca.id
-INNER JOIN  contacts co ON co.id = cc.contact_id
-SET         ca.assigned_user_id = (
-                                    SELECT  id
-                                    FROM    users
-                                    WHERE   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
+<span style="color: #729fcf; font-weight: bold;">UPDATE</span>      calls ca
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> cc.call_id = ca.id
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  contacts co <span style="color: #729fcf; font-weight: bold;">ON</span> co.id = cc.contact_id
+<span style="color: #729fcf; font-weight: bold;">SET</span>         ca.assigned_user_id = (
+                                    <span style="color: #729fcf; font-weight: bold;">SELECT</span>  id
+                                    <span style="color: #729fcf; font-weight: bold;">FROM</span>    users
+                                    <span style="color: #729fcf; font-weight: bold;">WHERE</span>   user_name = <span style="color: #ad7fa8; font-style: italic;">'osiris'</span>
                                     )
-WHERE       co. = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       co. = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae20-0754-a7c7-49beb64cee37'</span>;
 </pre>
 </div>
 </div>
@@ -315,23 +314,23 @@ WHERE       co. = <span style="color: #ad7fa8; font-style: italic;">'2a756d50-ae
 <div class="outline-text-2" id="text-orgheadline11">
 <div class="org-src-container">
 
-<pre class="src src-sql">DROP TABLE IF EXISTS calls_contacts_today;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">DROP</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">IF</span> <span style="color: #729fcf; font-weight: bold;">EXISTS</span> calls_contacts_today;
 
-CREATE TABLE `calls_contacts_today` (
-    `id` varchar(36) NOT NULL,
-    `contact_id` varchar(36) NOT NULL,
-    `call_id` varchar(36) NOT NULL,
-    `status` varchar(25) default NULL,
-    `direction` varchar(25) default NULL,
-     PRIMARY KEY  (`call_id`)
+<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> `calls_contacts_today` (
+    `id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `contact_id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `call_id` <span style="color: #8ae234; font-weight: bold;">varchar</span>(36) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `status` <span style="color: #8ae234; font-weight: bold;">varchar</span>(25) <span style="color: #729fcf; font-weight: bold;">default</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+    `direction` <span style="color: #8ae234; font-weight: bold;">varchar</span>(25) <span style="color: #729fcf; font-weight: bold;">default</span> <span style="color: #729fcf; font-weight: bold;">NULL</span>,
+     <span style="color: #729fcf; font-weight: bold;">PRIMARY</span> <span style="color: #729fcf; font-weight: bold;">KEY</span>  (`call_id`)
 );
 
-INSERT INTO calls_contacts_today
+<span style="color: #729fcf; font-weight: bold;">INSERT</span> <span style="color: #729fcf; font-weight: bold;">INTO</span> calls_contacts_today
             (id, contact_id, call_id, status, direction)
-SELECT      UUID(), cc.contact_id, ca.id, ca.status, ca.direction
-FROM        calls ca
-INNER JOIN  calls_contacts cc ON cc.call_id = ca.id
-WHERE       DATE(ca.date_start) = CURDATE();
+<span style="color: #729fcf; font-weight: bold;">SELECT</span>      UUID(), cc.contact_id, ca.id, ca.status, ca.direction
+<span style="color: #729fcf; font-weight: bold;">FROM</span>        calls ca
+<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span>  calls_contacts cc <span style="color: #729fcf; font-weight: bold;">ON</span> cc.call_id = ca.id
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       <span style="color: #8ae234; font-weight: bold;">DATE</span>(ca.date_start) = CURDATE();
 </pre>
 </div>
 </div>
@@ -344,7 +343,7 @@ WHERE       DATE(ca.date_start) = CURDATE();
 
 <pre class="src src-sql">\#
 
-SELECT FROM t&lt;Presionar TAB&gt;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf; font-weight: bold;">FROM</span> t&lt;Presionar TAB&gt;
 </pre>
 </div>
 </div>
@@ -355,11 +354,11 @@ SELECT FROM t&lt;Presionar TAB&gt;
 <div class="outline-text-2" id="text-orgheadline13">
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE calls set deleted = 1 WHERE status = <span style="color: #ad7fa8; font-style: italic;">'Not Held'</span>;
-SELECT COUNT(*) FROM calls;
-SELECT COUNT(id) FROM calls;
-SELECT COUNT(id) FROM calls WHERE deleted = 0;
-SELECT SQL_CALC_FOUND_ROWS id FROM calls WHERE deleted = 0 LIMIT 1; SELECT FOUND_ROWS();
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span> calls <span style="color: #729fcf; font-weight: bold;">set</span> deleted = 1 <span style="color: #729fcf; font-weight: bold;">WHERE</span> status = <span style="color: #ad7fa8; font-style: italic;">'Not Held'</span>;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(*) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">COUNT</span>(id) <span style="color: #729fcf; font-weight: bold;">FROM</span> calls <span style="color: #729fcf; font-weight: bold;">WHERE</span> deleted = 0;
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> SQL_CALC_FOUND_ROWS id <span style="color: #729fcf; font-weight: bold;">FROM</span> calls <span style="color: #729fcf; font-weight: bold;">WHERE</span> deleted = 0 <span style="color: #729fcf; font-weight: bold;">LIMIT</span> 1; <span style="color: #729fcf; font-weight: bold;">SELECT</span> FOUND_ROWS();
 </pre>
 </div>
 </div>
@@ -370,10 +369,10 @@ SELECT SQL_CALC_FOUND_ROWS id FROM calls WHERE deleted = 0 LIMIT 1; SELECT FOUND
 <div class="outline-text-2" id="text-orgheadline14">
 <div class="org-src-container">
 
-<pre class="src src-sql">EXPLAIN SELECT      COUNT(id)
-        FROM        calls
-        WHERE       deleted = 0
-        AND         assigned_user_id = <span style="color: #ad7fa8; font-style: italic;">'ba8630eb-7442-73f9-a88e-49b6be5882c2'</span>;
+<pre class="src src-sql">EXPLAIN <span style="color: #729fcf; font-weight: bold;">SELECT</span>      <span style="color: #729fcf;">COUNT</span>(id)
+        <span style="color: #729fcf; font-weight: bold;">FROM</span>        calls
+        <span style="color: #729fcf; font-weight: bold;">WHERE</span>       deleted = 0
+        <span style="color: #729fcf; font-weight: bold;">AND</span>         assigned_user_id = <span style="color: #ad7fa8; font-style: italic;">'ba8630eb-7442-73f9-a88e-49b6be5882c2'</span>;
 </pre>
 </div>
 </div>
@@ -384,9 +383,9 @@ SELECT SQL_CALC_FOUND_ROWS id FROM calls WHERE deleted = 0 LIMIT 1; SELECT FOUND
 <div class="outline-text-2" id="text-orgheadline15">
 <div class="org-src-container">
 
-<pre class="src src-sql">SHOW INDEX IN calls;
-ALTER TABLE calls ADD INDEX idx_deleted_user (deleted, assigned_user_id);
-ALTER TABLE calls DROP INDEX idx_deleted_user;
+<pre class="src src-sql">SHOW INDEX <span style="color: #729fcf; font-weight: bold;">IN</span> calls;
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls</span> <span style="color: #729fcf; font-weight: bold;">ADD</span> INDEX idx_deleted_user (deleted, assigned_user_id);
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls</span> <span style="color: #729fcf; font-weight: bold;">DROP</span> INDEX idx_deleted_user;
 </pre>
 </div>
 </div>
@@ -397,7 +396,7 @@ ALTER TABLE calls DROP INDEX idx_deleted_user;
 <div class="outline-text-2" id="text-orgheadline16">
 <div class="org-src-container">
 
-<pre class="src src-sql">ALTER TABLE calls_contacts_today ADD UNIQUE idx_contact_call (contact_id, call_id);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">calls_contacts_today</span> <span style="color: #729fcf; font-weight: bold;">ADD</span> <span style="color: #729fcf; font-weight: bold;">UNIQUE</span> idx_contact_call (contact_id, call_id);
 </pre>
 </div>
 </div>
@@ -408,8 +407,8 @@ ALTER TABLE calls DROP INDEX idx_deleted_user;
 <div class="outline-text-2" id="text-orgheadline17">
 <div class="org-src-container">
 
-<pre class="src src-sql">ALTER TABLE tracker AUTO_INCREMENT = 9;
-ALTER TABLE tracker MODIFY id INT(11) AUTO_INCREMENT;
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">tracker</span> AUTO_INCREMENT = 9;
+<span style="color: #729fcf; font-weight: bold;">ALTER</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">tracker</span> <span style="color: #729fcf; font-weight: bold;">MODIFY</span> id <span style="color: #8ae234; font-weight: bold;">INT</span>(11) AUTO_INCREMENT;
 </pre>
 </div>
 </div>
@@ -420,10 +419,10 @@ ALTER TABLE tracker MODIFY id INT(11) AUTO_INCREMENT;
 <div class="outline-text-2" id="text-orgheadline18">
 <div class="org-src-container">
 
-<pre class="src src-sql">UPDATE      contacts
-SET         postal = SUBSTR(postal,4,7)
-WHERE       postal NOT REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[0-9]{4}$'</span>
-AND         postal REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[A-Z]{3}[0-9]{4}$'</span>
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">UPDATE</span>      contacts
+<span style="color: #729fcf; font-weight: bold;">SET</span>         postal = SUBSTR(postal,4,7)
+<span style="color: #729fcf; font-weight: bold;">WHERE</span>       postal <span style="color: #729fcf; font-weight: bold;">NOT</span> REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[0-9]{4}$'</span>
+<span style="color: #729fcf; font-weight: bold;">AND</span>         postal REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[A-Z]{3}[0-9]{4}$'</span>
 </pre>
 </div>
 </div>
@@ -434,9 +433,9 @@ AND         postal REGEXP <span style="color: #ad7fa8; font-style: italic;">'^[A
 <div class="outline-text-2" id="text-orgheadline19">
 <div class="org-src-container">
 
-<pre class="src src-sql">SELECT RAND();
-SELECT MD5(RAND());
-SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 8);
+<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">SELECT</span> RAND();
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> MD5(RAND());
+<span style="color: #729fcf; font-weight: bold;">SELECT</span> <span style="color: #729fcf;">SUBSTRING</span>(MD5(RAND()) <span style="color: #729fcf; font-weight: bold;">FROM</span> 1 <span style="color: #729fcf; font-weight: bold;">FOR</span> 8);
 </pre>
 </div>
 </div>
@@ -445,7 +444,7 @@ SELECT SUBSTRING(MD5(RAND()) FROM 1 FOR 8);
 <div id="postamble" class="status">
 <p class="author">Author: Osiris Alejandro Gomez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
 <p class="date">Date: 2009-12-01</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

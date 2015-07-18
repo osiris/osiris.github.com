@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
-<title>HowTo GnuPG</title>
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>HowTo GnuPG</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Mauro Lizaur" />
-<link rel="stylesheet" href="osiux.css" type="text/css" />
-<link rel="stylesheet" href="print.css" type="text/css" media="print" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
 </head>
 <body>
 <div id="content">
@@ -17,9 +17,9 @@
 <a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
 </p>
 
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">Instalando GnuPG</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Instalando GnuPG</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 En distribuciones de GNU/Linux como Debian o Ubuntu, para instalar
 gnupg y demás programas, solo hace falta ejecutar el siguiente
@@ -32,9 +32,9 @@ aptitude install gnupg
 </div>
 </div>
 
-<div id="outline-container-unnumbered-2" class="outline-2">
-<h2 id="unnumbered-2">Generando nuestra llave pública/privada</h2>
-<div class="outline-text-2" id="text-unnumbered-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Generando nuestra llave pública/privada</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 Una vez instalado, debemos generar la llave:
 </p>
@@ -185,9 +185,9 @@ Donde <code>0D34DB33F</code> es nuestra <code>key-id</code>.
 </div>
 </div>
 
-<div id="outline-container-unnumbered-3" class="outline-2">
-<h2 id="unnumbered-3">Exportando nuestra llave pública</h2>
-<div class="outline-text-2" id="text-unnumbered-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Exportando nuestra llave pública</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <p>
 Para exportar nuestra clave debemos ejecutar:
 </p>
@@ -206,9 +206,9 @@ gpg --export -a 0D34DB33F &gt; jcpetela.asc
 </div>
 </div>
 
-<div id="outline-container-unnumbered-4" class="outline-2">
-<h2 id="unnumbered-4">Agregando nuevas identidades a nuestra llave</h2>
-<div class="outline-text-2" id="text-unnumbered-4">
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Agregando nuevas identidades a nuestra llave</h2>
+<div class="outline-text-2" id="text-orgheadline4">
 <p>
 A veces se da el caso de que tenemos mas de una cuenta de email que
 utilizamos y nos gustaria que todas esas cuentas pudieran ser
@@ -298,9 +298,9 @@ comando ``save`` que nos pedira la passphrase.
 </div>
 </div>
 
-<div id="outline-container-unnumbered-5" class="outline-2">
-<h2 id="unnumbered-5">Revocando nuestra llave</h2>
-<div class="outline-text-2" id="text-unnumbered-5">
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Revocando nuestra llave</h2>
+<div class="outline-text-2" id="text-orgheadline5">
 <p>
 En caso de haber perdido o que nuestra llave se vea comprometida, lo
 correcto seria revocarla para no comprometer nuesta ''red de
@@ -443,9 +443,9 @@ sub  2048g/012304CD  creado: 2008-09-09  uso: E
 </div>
 </div>
 
-<div id="outline-container-unnumbered-6" class="outline-2">
-<h2 id="unnumbered-6">Buscando e Importando llaves públicas ajenas</h2>
-<div class="outline-text-2" id="text-unnumbered-6">
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Buscando e Importando llaves públicas ajenas</h2>
+<div class="outline-text-2" id="text-orgheadline6">
 <p>
 Digamos que un amigo exportó su llave pública y nos la envió en un
 archivo con el nombre <code>rolopuente.asc</code>.
@@ -512,9 +512,9 @@ cual es antes de continuar.
 </div>
 </div>
 
-<div id="outline-container-unnumbered-7" class="outline-2">
-<h2 id="unnumbered-7">Cifrando archivos</h2>
-<div class="outline-text-2" id="text-unnumbered-7">
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7">Cifrando archivos</h2>
+<div class="outline-text-2" id="text-orgheadline7">
 <p>
 Si queremos cifrar archivos que contienen información sensible,
 podemos hacerlo de la siguiente manera:
@@ -567,9 +567,9 @@ gpg --decrypt archivo_cifrado.gpg
 </div>
 </div>
 
-<div id="outline-container-unnumbered-8" class="outline-2">
-<h2 id="unnumbered-8">Firmando llaves</h2>
-<div class="outline-text-2" id="text-unnumbered-8">
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8">Firmando llaves</h2>
+<div class="outline-text-2" id="text-orgheadline8">
 <p>
 Antes que nada, es <b><b>muy importante</b></b> conocer a la persona que le
 firmemos la llave. Incluso conociendola desde hace años, lo correcto
@@ -628,9 +628,9 @@ gpg --keyserver subkeys.pgp.net --send-key 1234D00D
 </div>
 </div>
 
-<div id="outline-container-unnumbered-9" class="outline-2">
-<h2 id="unnumbered-9">Otras aplicaciones para utilizar con GPG</h2>
-<div class="outline-text-2" id="text-unnumbered-9">
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Otras aplicaciones para utilizar con GPG</h2>
+<div class="outline-text-2" id="text-orgheadline9">
 <ul class="org-ul">
 <li>Icedove/Thunderbird + Enigmal <a href="http://www.difundefirefox.com/extensiones/enigmail">http://www.difundefirefox.com/extensiones/enigmail</a></li>
 <li>mutt + gpg <a href="http://codesorcery.net/old/mutt/mutt-gnupg-howto">http://codesorcery.net/old/mutt/mutt-gnupg-howto</a></li>
@@ -657,7 +657,7 @@ gpg --keyserver subkeys.pgp.net --send-key 1234D00D
 <div id="postamble" class="status">
 <p class="author">Author: Mauro Lizaur (<a href="mailto:osiris@gcoop.coop">osiris@gcoop.coop</a>)</p>
 <p class="date">Date: 2008-09-11</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
