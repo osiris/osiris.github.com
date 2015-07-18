@@ -1009,10 +1009,10 @@ segundo.</li>
 <div class="outline-text-3" id="text-orgheadline47">
 <div class="org-src-container">
 
-<pre class="src src-sql"><span style="color: #729fcf; font-weight: bold;">CREATE</span> DATABASE mibase;
-<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf;">USER</span> usuario;
-<span style="color: #729fcf; font-weight: bold;">SET</span> PASSWORD <span style="color: #729fcf; font-weight: bold;">FOR</span> <span style="color: #ad7fa8; font-style: italic;">'usuario'</span>@<span style="color: #ad7fa8; font-style: italic;">'%'</span>=Password(<span style="color: #ad7fa8; font-style: italic;">'secreto'</span>);
-<span style="color: #729fcf; font-weight: bold;">GRANT</span> <span style="color: #729fcf; font-weight: bold;">ALL</span> <span style="color: #729fcf; font-weight: bold;">ON</span> mibase.* <span style="color: #729fcf; font-weight: bold;">TO</span> <span style="color: #ad7fa8; font-style: italic;">'usuario'</span>@<span style="color: #ad7fa8; font-style: italic;">'%'</span>;
+<pre class="src src-sql">CREATE DATABASE mibase;
+CREATE USER usuario;
+SET PASSWORD FOR <span style="color: #ad7fa8; font-style: italic;">'usuario'</span>@<span style="color: #ad7fa8; font-style: italic;">'%'</span>=Password(<span style="color: #ad7fa8; font-style: italic;">'secreto'</span>);
+GRANT ALL ON mibase.* TO <span style="color: #ad7fa8; font-style: italic;">'usuario'</span>@<span style="color: #ad7fa8; font-style: italic;">'%'</span>;
 </pre>
 </div>
 </div>
@@ -1043,24 +1043,24 @@ mysql -u usuario -psecreto -B mibase &lt; backup-mibase.sql
 
 <pre class="src src-sql">USE mibase;
 
-<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">emails</span> (
-  id <span style="color: #8ae234; font-weight: bold;">INT</span> AUTO_INCREMENT <span style="color: #729fcf; font-weight: bold;">PRIMARY</span> <span style="color: #729fcf; font-weight: bold;">KEY</span>,
-  address <span style="color: #8ae234; font-weight: bold;">VARCHAR</span>(150) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span> <span style="color: #729fcf; font-weight: bold;">DEFAULT</span> <span style="color: #ad7fa8; font-style: italic;">''</span>
+CREATE TABLE emails (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  address VARCHAR(150) NOT NULL DEFAULT <span style="color: #ad7fa8; font-style: italic;">''</span>
 );
-<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">contacts</span> (
-  id <span style="color: #8ae234; font-weight: bold;">INT</span> AUTO_INCREMENT <span style="color: #729fcf; font-weight: bold;">PRIMARY</span> <span style="color: #729fcf; font-weight: bold;">KEY</span>,
-  <span style="color: #729fcf; font-weight: bold;">name</span> <span style="color: #8ae234; font-weight: bold;">VARCHAR</span>(50) <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span> <span style="color: #729fcf; font-weight: bold;">DEFAULT</span> <span style="color: #ad7fa8; font-style: italic;">''</span>
+CREATE TABLE contacts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL DEFAULT <span style="color: #ad7fa8; font-style: italic;">''</span>
 );
-<span style="color: #729fcf; font-weight: bold;">CREATE</span> <span style="color: #729fcf; font-weight: bold;">TABLE</span> <span style="color: #edd400; font-weight: bold;">contacts_emails</span> (
-  contact_id <span style="color: #8ae234; font-weight: bold;">INT</span> <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span> <span style="color: #729fcf; font-weight: bold;">DEFAULT</span> 0,
-  email_id <span style="color: #8ae234; font-weight: bold;">INT</span> <span style="color: #729fcf; font-weight: bold;">NOT</span> <span style="color: #729fcf; font-weight: bold;">NULL</span> <span style="color: #729fcf; font-weight: bold;">DEFAULT</span> 0
+CREATE TABLE contacts_emails (
+  contact_id INT NOT NULL DEFAULT 0,
+  email_id INT NOT NULL DEFAULT 0
 );
 
-<span style="color: #729fcf; font-weight: bold;">SELECT</span>     c.<span style="color: #729fcf; font-weight: bold;">name</span>, e.email_address
-<span style="color: #729fcf; font-weight: bold;">FROM</span>       contacts c
-<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span> contacts_emails ce <span style="color: #729fcf; font-weight: bold;">ON</span> ce.contact_id = c.id
-<span style="color: #729fcf; font-weight: bold;">INNER</span> <span style="color: #729fcf; font-weight: bold;">JOIN</span> emails e <span style="color: #729fcf; font-weight: bold;">ON</span> e.id = ce.email_id
-<span style="color: #729fcf; font-weight: bold;">ORDER</span> <span style="color: #729fcf; font-weight: bold;">BY</span>   c.<span style="color: #729fcf; font-weight: bold;">name</span>, e.address;
+SELECT     c.name, e.email_address
+FROM       contacts c
+INNER JOIN contacts_emails ce ON ce.contact_id = c.id
+INNER JOIN emails e ON e.id = ce.email_id
+ORDER BY   c.name, e.address;
 </pre>
 </div>
 </div>
@@ -1158,105 +1158,105 @@ Argentina 2.5 <sup><a id="fnr.23" class="footref" href="#fn.23">23</a></sup>.</l
 <h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Stallman">http://es.wikipedia.org/wiki/Stallman</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Gnu">http://es.wikipedia.org/wiki/Gnu</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/FSF">http://es.wikipedia.org/wiki/FSF</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Linux">http://es.wikipedia.org/wiki/Linux</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Linus_Torvalds">http://es.wikipedia.org/wiki/Linus_Torvalds</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/GNU_General_Public_License">http://es.wikipedia.org/wiki/GNU_General_Public_License</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Creative_commons">http://es.wikipedia.org/wiki/Creative_commons</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/QEMU">http://es.wikipedia.org/wiki/QEMU</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.9" class="footnum" href="#fnr.9">9</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/VirtualBox">http://es.wikipedia.org/wiki/VirtualBox</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.10" class="footnum" href="#fnr.10">10</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/Xen">http://es.wikipedia.org/wiki/Xen</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.11" class="footnum" href="#fnr.11">11</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/WRT54G">http://es.wikipedia.org/wiki/WRT54G</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.12" class="footnum" href="#fnr.12">12</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/OpenWrt">http://es.wikipedia.org/wiki/OpenWrt</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.13" class="footnum" href="#fnr.13">13</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/DD-WRT">http://es.wikipedia.org/wiki/DD-WRT</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.14" class="footnum" href="#fnr.14">14</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://wiki.buenosaireslibre.org/PoE">http://wiki.buenosaireslibre.org/PoE</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.15" class="footnum" href="#fnr.15">15</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/OLSR">http://es.wikipedia.org/wiki/OLSR</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.16" class="footnum" href="#fnr.16">16</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/LAMP">http://es.wikipedia.org/wiki/LAMP</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.17" class="footnum" href="#fnr.17">17</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/MySQL">http://es.wikipedia.org/wiki/MySQL</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.18" class="footnum" href="#fnr.18">18</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://es.wikipedia.org/wiki/GFDL">http://es.wikipedia.org/wiki/GFDL</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.19" class="footnum" href="#fnr.19">19</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://casanas.com.ar/web.php?sec=como&amp;ssec=c1">http://casanas.com.ar/web.php?sec=como&amp;ssec=c1</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.20" class="footnum" href="#fnr.20">20</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://www.jesusda.com/docs/tallerintroadminlinux/s5-linux">http://www.jesusda.com/docs/tallerintroadminlinux/s5-linux</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.21" class="footnum" href="#fnr.21">21</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://jose.rebeldes.org.ar/wp-content/uploads/2007/04/copyleft_jose_flisol2007.pdf">http://jose.rebeldes.org.ar/wp-content/uploads/2007/04/copyleft_jose_flisol2007.pdf</a>
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.22" class="footnum" href="#fnr.22">22</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://www.vialibre.org.ar/materiales/">http://www.vialibre.org.ar/materiales/</a> 
-</p></p></div>
+</p></div></div>
 
-<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <p class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.23" class="footnum" href="#fnr.23">23</a></sup> <div class="footpara"><p class="footpara">
 <a href="http://creativecommons.org/licenses/by-sa/2.5/ar">http://creativecommons.org/licenses/by-sa/2.5/ar</a>
-</p></p></div>
+</p></div></div>
 
 
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="author">Author: Osiris Alejandro Gómez (<a href="mailto:osiux@osiux.com">osiux@osiux.com</a>)</p>
-<p class="date">Date: 2008/11/05</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
+<p class="date">Fecha: 2008/11/05</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
