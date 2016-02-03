@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>monitoreo en status bar de tmux</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">monitoreo en status bar de tmux</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div class="figure">
+<p><a href="img/qmhandle-status-bar-tmux.png" width="570" height="147" title="qmhandle status bar tmux using spark"><img src="tmb/qmhandle-status-bar-tmux-spark.png" alt="qmhandle-status-bar-tmux-spark.png" width="570" height="147" title="qmhandle status bar tmux using spark" /></a>
+</p>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">&#x2026;anda lento&#x2026; mmm&#x2026; que raro!</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Hace un par de meses que heredé un par de servidores con varios
+servicios que deben estar operativos 24x7 y entre ellos me tocó
+manter un <i>qmail</i> y como no podía ser de otra manera de tanto en
+tanto hay algo de SPAM y por ello la cola de mails se eleva. :S
+</p>
+
+<p>
+A fin de tener alguna métrica de qué está sucediendo era necesario
+visualizar constantemente el estado de la cola y si bien hay
+muchísimas herramientas disponibles opté por el principio
+<b>KISS</b> <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> (<i>Keep it simple, stupid</i>), de momento sólo lo
+vería yo y posiblemente alguién más en mi ausencia, no quería
+instalar nada en ese servidor, tampoco tenía muchas posibilidades
+de conectarme a otros servidores por reglas de firewall y quería
+tenerlo visible en mi tmux ya que paso ahí gran parte del día (y a
+veces las noches)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><code>bash</code> para generar y <code>spark</code> para graficar</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+Abusando una vez más de <i>bash</i> hice un script en el server que
+envía un timestamp y metricas básicas, entre ellas la cantidad de
+mails encolados a un log y ese log se copia un una vps donde esta
+este blog, asi de esta manera el qmail envía a osiux.com el log y
+luego un script debería descargar de osiux.com para "graficar"
+localmente.
+</p>
+
+<p>
+El contenido del script <code>qmhandle</code>:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #888a85;">#</span><span style="color: #888a85;">!/bin/</span><span style="color: #729fcf; font-weight: bold;">sh</span>
+<span style="color: #729fcf;">export</span> <span style="color: #ff6347;">http_proxy</span>=<span style="color: #ad7fa8; font-style: italic;">""</span>
+<span style="color: #ff6347;">log</span>=/tmp/qmhandle.log
+wget -q -O $<span style="color: #ff6347;">log</span> http://pub.osiux.com/qmhandle.log
+<span style="color: #ff6347;">q</span>=<span style="color: #ff00ff;">`tail -20 $log | awk '{print $5}'`</span>
+
+<span style="color: #ff6347;">a</span>=<span style="color: #ff00ff;">`echo $q | awk '{print \$1}'`</span>
+<span style="color: #ff6347;">b</span>=<span style="color: #ff00ff;">`echo $q | awk '{print \$5}'`</span>
+<span style="color: #ff6347;">c</span>=<span style="color: #ff00ff;">`echo $q | awk '{print \$10}'`</span>
+<span style="color: #ff6347;">d</span>=<span style="color: #ff00ff;">`echo $q | awk '{print \$15}'`</span>
+<span style="color: #ff6347;">e</span>=<span style="color: #ff00ff;">`echo $q | awk '{print \$20}'`</span>
+
+<span style="color: #729fcf;">echo</span> $<span style="color: #ff6347;">a</span> <span style="color: #ff00ff;">`echo $a $b $c $d $e | spark`</span> $<span style="color: #ff6347;">e</span>
+</pre>
+</div>
+
+<p>
+Si ejecutamos <code>qmhandle</code> vemos:
+</p>
+
+<pre class="example">
+441 ████▁ 440
+</pre>
+
+<p>
+Para entender qué estamos visualizando, miremos el log:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">tail /tmp/qmhandle.log
+</pre>
+</div>
+
+<pre class="example">
+2016-02-03 02:53 441 0 441 2 0
+2016-02-03 02:54 441 0 441 2 0
+2016-02-03 02:55 441 0 441 2 0
+2016-02-03 02:56 441 0 441 2 0
+2016-02-03 02:57 441 0 441 2 0
+2016-02-03 02:58 441 0 441 2 0
+2016-02-03 02:59 441 0 441 2 0
+2016-02-03 03:00 440 0 440 2 0
+2016-02-03 03:01 440 0 440 2 0
+2016-02-03 03:02 440 0 440 2 0
+</pre>
+
+<p>
+El resultado es un <i>timestamp</i> con una serie de números, la
+columna 5 es la que importa y hay una línea nueva cada 1 minuto.
+</p>
+
+<p>
+Al procesar el log, me quedo con la cantidad de mails encolados
+cada 1, 5, 10, 15 y 20 minutos, asi tengo una tendencia con unas
+bonitas barras (gracias a <b>spark</b> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>) y el mínimo y
+máximo, esta información se actualiza en la barra de tmux cada 1
+minuto, agregando al <code>~/.tmux.conf</code> el comando qmhandle:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">set</span> -g status-right <span style="color: #ad7fa8; font-style: italic;">'#[fg=red,bg=default]#(qmhandle) #[fg=colour231,bg=colour232] #(bateria) #[fg=colour11,bg=colour232] %d/%m %H:%M'</span>
+</pre>
+</div>
+
+<p>
+Básico pero efectivo! <b>:)</b>
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/KISS_principle">https://en.wikipedia.org/wiki/KISS_principle</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://github.com/holman/spark">https://github.com/holman/spark</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="date">Fecha: 2014-11-14</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

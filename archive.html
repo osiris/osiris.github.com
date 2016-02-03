@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ABSOLUTELLY NO WARRANTY ARCHIVE</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">ABSOLUTELLY NO WARRANTY ARCHIVE</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><code>ARCHIVE</code></h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/blog
+ls *.org | egrep -o <span style="color: #ad7fa8; font-style: italic;">"^[0-9]{4}"</span> | sort -u | <span style="color: #729fcf; font-weight: bold;">while </span><span style="color: #729fcf;">read</span> i
+<span style="color: #729fcf; font-weight: bold;">do</span>
+   <span style="color: #729fcf;">echo</span> <span style="color: #ad7fa8; font-style: italic;">"- [[file:$i.org][$i]]"</span>
+<span style="color: #729fcf; font-weight: bold;">done</span> &gt;years.org
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><a href="2011.html">2011</a></li>
+<li><a href="2012.html">2012</a></li>
+<li><a href="2013.html">2013</a></li>
+<li><a href="2014.html">2014</a></li>
+<li><a href="2015.html">2015</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><code>STATS</code></h2>
+<div class="outline-text-2" id="text-orgheadline4">
+</div><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><code>YEARS</code></h3>
+<div class="outline-text-3" id="text-orgheadline2">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/blog &amp;&amp; ls *.org | egrep -o <span style="color: #ad7fa8; font-style: italic;">"^[0-9]{4}-"</span> | tr -d - | sort | uniq -c | barra
+</pre>
+</div>
+
+<pre class="example">
+ 17.46 %  17.46 %         11 ████                 2011 
+ 55.56 %  38.10 %         24 █████████            2012 
+ 80.95 %  25.40 %         16 ██████               2013 
+ 96.83 %  15.87 %         10 ████                 2014 
+100.00 %   3.17 %          2 ▌                    2015 
+                          63
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><code>MONTHS</code></h3>
+<div class="outline-text-3" id="text-orgheadline3">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/blog &amp;&amp; ls *.org | egrep -o <span style="color: #ad7fa8; font-style: italic;">"^[0-9]{4}-[0-9]{2}"</span> | cut -c 6- | sort | uniq -c | barra
+</pre>
+</div>
+
+<pre class="example">
+  3.17 %   3.17 %          2 ▌                    01 
+ 11.11 %   7.94 %          5 ██                   02 
+ 23.81 %  12.70 %          8 ███                  03 
+ 39.68 %  15.87 %         10 ████                 04 
+ 53.97 %  14.29 %          9 ███                  05 
+ 68.25 %  14.29 %          9 ███                  06 
+ 74.60 %   6.35 %          4 █                    07 
+ 79.37 %   4.76 %          3 █                    08 
+ 87.30 %   7.94 %          5 ██                   09 
+ 92.06 %   4.76 %          3 █                    10 
+ 98.41 %   6.35 %          4 █                    11 
+100.00 %   1.59 %          1 ▌                    12 
+                          63
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.3.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
