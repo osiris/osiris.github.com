@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>solo confío en localhost</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Osiris Alejandro Gómez" />
+<link rel="stylesheet" type="text/css" href="osiux.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">solo confío en localhost</h1>
+<p>
+<a href="index.html">index</a> | <a href="osiux.html">OSiUX</a> | <a href="blog.html">blog</a> | <a href="docs.html">docs</a> | <a href="charlas.html">charlas</a> | <a href="index.xml">rss</a>
+</p>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">█</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<pre class="example">
+┏━┓┏━┓╻  ┏━┓   ┏━╸┏━┓┏┓╻┏━╸╻┏━┓
+┗━┓┃ ┃┃  ┃ ┃   ┃  ┃ ┃┃┗┫┣╸ ┃┃ ┃
+┗━┛┗━┛┗━╸┗━┛   ┗━╸┗━┛╹ ╹╹  ╹┗━┛
+
+┏━╸┏┓╻   ╻  ┏━┓┏━╸┏━┓╻  ╻ ╻┏━┓┏━┓╺┳╸
+┣╸ ┃┗┫   ┃  ┃ ┃┃  ┣━┫┃  ┣━┫┃ ┃┗━┓ ┃
+┗━╸╹ ╹   ┗━╸┗━┛┗━╸╹ ╹┗━╸╹ ╹┗━┛┗━┛ ╹
+</pre>
+
+<ul class="org-ul">
+<li>usando <b>SSH</b> podemos tener <b>acceso remoto seguro</b></li>
+<li>con tuneles <b>saltear Firewalls</b></li>
+<li>podemos usarlo para armar una <b>VPN</b></li>
+<li><b>cifrar conexiones</b> a bases de datos</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Soy "OSiRiS" también conocido por "OSiUX"</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<ul class="org-ul">
+<li>trabajo en <b>gcoop Cooperativa de Software Libre</b></li>
+<li><p>
+pueden ver el corto <b>Códigos Cooperativos</b>
+</p>
+
+<p>
+<a href="http://gcoop.coop/codigos-cooperativos">http://gcoop.coop/codigos-cooperativos</a>
+</p></li>
+
+<li>programo en <code>PHP</code> y en <code>BASH</code></li>
+<li>últimamente hago mucho de SysAdmin</li>
+<li>hago casi todo desde consola</li>
+<li>no podría vivir sin <code>SSH</code></li>
+<li>soy desconfiado (me dicen paranoico)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">Compartiendo la Sesion</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+En lugar de Slides estáticos, pueden conectarse a mi notebook
+y ver de cerca cómo me equivoco al tipear :)
+</p>
+
+<ul class="org-ul">
+<li><p>
+desde una terminal
+</p>
+
+<pre class="example">
+ssh flisol@caipiroska.lan
+</pre></li>
+
+<li>desde de un browser
+
+<ul class="org-ul">
+<li><a href="https://caipiroska.lan:4200/">https://caipiroska.lan:4200/</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Qué es SSH?</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+Si pensás que estas en la charla equivocada porque no sabés
+para qué es SSH y ya lo repetí muchas veces&#x2026;acá una pista
+</p>
+
+<ul class="org-ul">
+<li>para parecer un hacker de película</li>
+<li>acceder remotamente a compus, routers, smartphones, etc</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Por qué usar SSH?</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<ul class="org-ul">
+<li>funciona con angosto de banda</li>
+<li>automatizar tareas</li>
+<li>acceder a muchos servidores</li>
+<li>todo el tráfico viaja cifrado</li>
+<li>saltear firewalls</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Túneles SSH</h2>
+<div class="outline-text-2" id="text-orgheadline6">
+<p>
+Para qué sirven los túneles SSH?
+</p>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">si tu ISP bloquea el puerto 25, usa el 2525 :)</h3>
+<div class="outline-text-3" id="text-orgheadline7">
+<pre class="example">
+ssh -fN -L 2525:localhost:25 gin &amp;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8">verificar tunel:</h3>
+<div class="outline-text-3" id="text-orgheadline8">
+<div class="org-src-container">
+
+<pre class="src src-sh">nc -vz localhost 2525 2&gt;&amp;1
+</pre>
+</div>
+
+<pre class="example">
+nc: connect to localhost port 2525 (tcp) failed: Connection refused
+Connection to localhost 2525 port [tcp/*] succeeded!
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Tunel Reverso</h2>
+<div class="outline-text-2" id="text-orgheadline9">
+<ul class="org-ul">
+<li><p>
+obtener acceso SSH salteando un firewall
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh -fN -R 2020:localhost:22 stout &amp;
+</pre>
+</div></li>
+
+<li><p>
+test
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh stout -- nc -vz localhost 2020 2&gt;&amp;1
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13">Proxy SOCKS</h2>
+<div class="outline-text-2" id="text-orgheadline13">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">iniciar proxy</h3>
+<div class="outline-text-3" id="text-orgheadline10">
+<pre class="example">
+ssh -fN -D 9090 gin &amp;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">navegar sin proxy</h3>
+<div class="outline-text-3" id="text-orgheadline11">
+<div class="org-src-container">
+
+<pre class="src src-sh">curl pub.osiux.com/ip/index.php
+</pre>
+</div>
+
+<pre class="example">
+186.18.228.139
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12">navegar con proxy (no usamos nuestra IP)</h3>
+<div class="outline-text-3" id="text-orgheadline12">
+<div class="org-src-container">
+
+<pre class="src src-sh">curl --socks5 localhost:9090 pub.osiux.com/ip/index.php
+</pre>
+</div>
+
+<pre class="example">
+198.23.230.106
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">dig +short -x 198.23.230.106
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17">Proxy SOCKS chat</h2>
+<div class="outline-text-2" id="text-orgheadline17">
+</div><div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">configurar proxy en cuentas:</h3>
+<div class="outline-text-3" id="text-orgheadline14">
+<div class="org-src-container">
+
+<pre class="src src-sh">grep -C1 localhost ~/.purple/accounts.xml | sort -u
+</pre>
+</div>
+
+<pre class="example">
+--
+			&lt;host&gt;localhost&lt;/host&gt;
+			&lt;port&gt;9129&lt;/port&gt;
+			&lt;type&gt;socks5&lt;/type&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15">configurar proxy en <code>~/.ssh/config</code></h3>
+<div class="outline-text-3" id="text-orgheadline15">
+<div class="org-src-container">
+
+<pre class="src src-sh">grep -B3 9129 ~/.ssh/config
+</pre>
+</div>
+
+<pre class="example">
+Host gin
+     Hostname 198.23.230.106
+     User osiris
+     DynamicForward :9129
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">verificar conexión</h3>
+<div class="outline-text-3" id="text-orgheadline16">
+<div class="org-src-container">
+
+<pre class="src src-sh">netstat -puntoa | grep 198.23.230.106 | sed <span style="color: #ad7fa8; font-style: italic;">'s/ \+/ /g'</span>
+</pre>
+</div>
+
+<pre class="example">
+tcp 0 0 192.168.10.78:39987 198.23.230.106:80 TIME_WAIT - timewait (31,42/0/0)
+tcp 0 0 192.168.10.78:51382 198.23.230.106:22 ESTABLISHED 22264/ssh keepalive (5206,76/0/0)
+tcp 0 0 192.168.10.78:51386 198.23.230.106:22 ESTABLISHED 22680/ssh keepalive (5239,53/0/0)
+tcp 0 0 192.168.10.78:51526 198.23.230.106:22 TIME_WAIT - timewait (22,20/0/0)
+tcp 0 0 192.168.10.78:39981 198.23.230.106:80 TIME_WAIT - timewait (15,40/0/0)
+tcp 0 0 192.168.10.78:39986 198.23.230.106:80 TIME_WAIT - timewait (31,08/0/0)
+tcp 0 0 192.168.10.78:51400 198.23.230.106:22 ESTABLISHED 23598/ssh keepalive (5305,07/0/0)
+tcp 0 0 192.168.10.78:39992 198.23.230.106:80 TIME_WAIT - timewait (37,82/0/0)
+tcp 0 0 192.168.10.78:39993 198.23.230.106:80 TIME_WAIT - timewait (43,34/0/0)
+tcp 0 0 192.168.10.78:44947 198.23.230.106:22 ESTABLISHED 11037/ssh keepalive (1110,76/0/0)
+tcp 0 0 192.168.10.78:39998 198.23.230.106:80 TIME_WAIT - timewait (59,12/0/0)
+tcp 0 0 192.168.10.78:51393 198.23.230.106:22 ESTABLISHED 22774/ssh keepalive (5272,30/0/0)
+tcp 0 0 192.168.10.78:51336 198.23.230.106:22 ESTABLISHED 19072/ssh keepalive (4125,42/0/0)
+tcp 0 0 192.168.10.78:51527 198.23.230.106:22 TIME_WAIT - timewait (24,52/0/0)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-2">
+<h2 id="orgheadline22">NO Passwords</h2>
+<div class="outline-text-2" id="text-orgheadline22">
+</div><div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18">Generar llave</h3>
+<div class="outline-text-3" id="text-orgheadline18">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-keygen -t rsa -b 4096 -P secreto -f ~/.ssh/seguro
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19">AgentForwarding</h3>
+<div class="outline-text-3" id="text-orgheadline19">
+<pre class="example">
+ssh-add ~/.ssh/id_rsa
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-agent
+</pre>
+</div>
+
+<pre class="example">
+SSH_AUTH_SOCK=/tmp/ssh-X37X39FCSJIy/agent.23779; export SSH_AUTH_SOCK;
+SSH_AGENT_PID=23780; export SSH_AGENT_PID;
+echo Agent pid 23780;
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">eval</span> <span style="color: #ff00ff;">`ssh-agent`</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20">listar llaves en agente</h3>
+<div class="outline-text-3" id="text-orgheadline20">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-add -l | awk <span style="color: #ad7fa8; font-style: italic;">'{print $2}'</span>
+</pre>
+</div>
+
+<pre class="example">
+8f:6b:e1:7e:6a:94:8f:61:a4:db:2a:8a:e8:43:f3:12
+9a:48:3f:9b:73:06:c4:b3:4a:c5:f5:98:8b:e4:96:78
+60:e6:e4:f2:ae:b6:f7:3a:58:ca:e9:58:a5:06:d2:42
+e6:bd:6d:f7:e1:d7:85:3a:26:38:8d:b7:f7:c6:6b:7d
+19:50:2e:0d:cf:15:8d:a5:19:c6:64:d5:66:1d:a2:c2
+bf:3f:3d:a8:07:3a:cb:f4:77:f5:98:57:63:37:2a:2e
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21">keychain</h3>
+<div class="outline-text-3" id="text-orgheadline21">
+<pre class="example">
+if [ -e /usr/bin/keychain ]
+then
+   eval `keychain -q --eval --agents ssh id_rsa`
+   eval `keychain -q --eval --agents ssh db_rsa`
+   eval `keychain -q --eval --agents ssh web_rsa`
+fi
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-2">
+<h2 id="orgheadline23">Man In The Middle</h2>
+<div class="outline-text-2" id="text-orgheadline23">
+<p>
+Es posible que alguien se haga pasar por nuestro servidor,
+por ello es necesario saber y verificar nuestro fingerprint,
+y confiar sólo en los fingerprint que conocemos!
+</p>
+
+<pre class="example">
+ssh -o StrictHostKeyChecking=yes
+</pre>
+</div>
+
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24">Obtener fingerprint del servidor</h3>
+<div class="outline-text-3" id="text-orgheadline24">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub | tr <span style="color: #ad7fa8; font-style: italic;">" "</span> <span style="color: #ad7fa8; font-style: italic;">"\n"</span>
+</pre>
+</div>
+
+<pre class="example">
+2048
+d5:ed:33:b9:d4:58:4a:6b:a1:f3:e5:c0:3c:1b:cd:8c
+/etc/ssh/ssh_host_rsa_key.pub
+(RSA)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25">Verificar fingerprint al conectarse</h3>
+<div class="outline-text-3" id="text-orgheadline25">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-keygen -l -f ~/.ssh/known_hosts | awk <span style="color: #ad7fa8; font-style: italic;">'{print $2}'</span> | sort -u | head
+</pre>
+</div>
+
+<pre class="example">
+00:63:26:79:f7:1e:e9:b6:49:57:6d:19:52:1c:24:5e
+02:8e:b2:5a:20:39:b7:30:fa:be:5f:7c:7e:50:cd:60
+04:51:50:b2:cc:e6:58:ca:1e:c6:19:8b:56:be:82:84
+08:db:1d:d2:9f:9a:4f:e8:b2:cc:88:89:01:fb:b5:67
+09:57:ff:45:38:0d:7e:4c:3c:32:bf:84:bd:54:1d:69
+0c:6a:c5:13:ea:8d:eb:1a:df:4e:a7:0e:8e:43:4f:f8
+0f:1f:49:c6:9c:fc:33:f9:a8:43:03:78:7d:20:04:63
+10:94:7a:92:5e:8a:4e:4f:c4:bd:c9:e9:38:24:6d:a0
+11:7d:86:9b:1b:64:f3:14:ba:c7:9c:11:cf:39:b1:49
+16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26">fingerprint de nuestra llave local</h3>
+<div class="outline-text-3" id="text-orgheadline26">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh-keygen -l -f ~/.ssh/id_rsa.pub | tr <span style="color: #ad7fa8; font-style: italic;">" "</span> <span style="color: #ad7fa8; font-style: italic;">"\n"</span>
+</pre>
+</div>
+
+<pre class="example">
+2048
+8f:6b:e1:7e:6a:94:8f:61:a4:db:2a:8a:e8:43:f3:12
+/home/osiris/.ssh/id_rsa.pub
+(RSA)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27">verificando nuestro fingerprint</h3>
+<div class="outline-text-3" id="text-orgheadline27">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh -vvv gin uptime 2&gt;&amp;1 | grep pubkey | tr <span style="color: #ad7fa8; font-style: italic;">' '</span> <span style="color: #ad7fa8; font-style: italic;">'\n'</span>
+</pre>
+</div>
+
+<pre class="example">
+debug3:
+send_pubkey_test
+debug3:
+sign_and_send_pubkey:
+RSA
+8f:6b:e1:7e:6a:94:8f:61:a4:db:2a:8a:e8:43:f3:12
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline28" class="outline-3">
+<h3 id="orgheadline28">fingerprint de la llave permitida en el host remoto</h3>
+<div class="outline-text-3" id="text-orgheadline28">
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh gin -- ssh-keygen -l -f ~/.ssh/authorized_keys
+</pre>
+</div>
+
+<pre class="example">
+2048 8f:6b:e1:7e:6a:94:8f:61:a4:db:2a:8a:e8:43:f3:12   (RSA)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-2">
+<h2 id="orgheadline29">SSH Config I</h2>
+<div class="outline-text-2" id="text-orgheadline29">
+<p>
+definir un <code>host</code> indicando <code>hostname</code> y <code>port</code>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">grep -A2 <span style="color: #ad7fa8; font-style: italic;">"Host gin$"</span> ~/.ssh/config
+</pre>
+</div>
+
+<pre class="example">
+Host gin
+     Hostname 198.23.230.106
+     User osiris
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline30" class="outline-2">
+<h2 id="orgheadline30">SSH Config II</h2>
+<div class="outline-text-2" id="text-orgheadline30">
+<div class="org-src-container">
+
+<pre class="src src-sh">head -8 ~/.ssh/config
+</pre>
+</div>
+
+<pre class="example">
+Host *
+     ProtocolKeepAlives 30
+     ControlMaster auto
+     ControlPath ~/.ssh/.master-%r@%h:%p
+     Compression yes
+     Protocol 2
+     CompressionLevel 7
+     Cipher blowfish-cbc
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline31" class="outline-2">
+<h2 id="orgheadline31">SSH Config III</h2>
+<div class="outline-text-2" id="text-orgheadline31">
+<div class="org-src-container">
+
+<pre class="src src-sh">head -16 ~/.ssh/config | tail -8
+</pre>
+</div>
+
+<pre class="example">
+ServerAliveCountMax 3
+ServerAliveInterval 600
+StrictHostKeyChecking yes
+VisualHostKey yes
+NoHostAuthenticationForLocalhost yes
+LogLevel FATAL
+UseRoaming no
+AddressFamily inet
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-2">
+<h2 id="orgheadline32">Multi SSH Config, porqué?</h2>
+<div class="outline-text-2" id="text-orgheadline32">
+<ul class="org-ul">
+<li>crear "N" alias para cada host</li>
+<li>compartir acceso a servidores por un equipo</li>
+<li>versionar cambios en repositorio git</li>
+<li>definir túneles complejos (muchos saltos)</li>
+<li>unificar llaves SSH por rol/equipo</li>
+<li>mejorar la seguridad, <code>forwardAgent no</code>, 1 sola llave</li>
+<li>generar alias <code>/etc/ansible/hosts</code></li>
+<li>generar alias y grupos de <code>parallel-ssh</code></li>
+<li>graficar acceso a hosts :)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-2">
+<h2 id="orgheadline36">Multi SSH Config en 3 pasos</h2>
+<div class="outline-text-2" id="text-orgheadline36">
+</div><div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33">Obtener repositorio:</h3>
+<div class="outline-text-3" id="text-orgheadline33">
+<pre class="example">
+git clone https://github.com:osiris/multi-ssh-config.git
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34">Configurar los hosts:</h3>
+<div class="outline-text-3" id="text-orgheadline34">
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #729fcf;">cd</span> ~/.ssh/config.d
+find -type f | wc -l
+grep -hr LocalForward * | wc -l
+grep -hr RemoteForward * | wc -l
+grep -hr Port * | sort -u | wc -l
+grep -hr User * | sort -u | wc -l
+grep -hr IdentityFile * | sort -u | wc -l
+</pre>
+</div>
+
+<pre class="example">
+1219
+305
+31
+127
+40
+31
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35">Generar <code>~/.ssh/config</code></h3>
+<div class="outline-text-3" id="text-orgheadline35">
+<pre class="example">
+⌂ sshconfig
+
+Config Directory: /home/osiris/.ssh/config.d
+Backup /home/osiris/.ssh/config to /home/osiris/.ssh/bak/config.1461392552
+Add default to /home/osiris/.ssh/config
+Host agente ...
+Host atusud ...
+Host formulariosatusu ...
+Host fundaciond ...
+Host srcc1001lx ...
+...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-2">
+<h2 id="orgheadline37">compartir es bueno <b>CC-BY-SA</b></h2>
+<div class="outline-text-2" id="text-orgheadline37">
+<p>
+<b>usted es libre de</b>:
+</p>
+
+<ul class="org-ul">
+<li><b>compartir</b>, copiar, distribuir, ejecutar</li>
+<li><b>comunicar</b> públicamente la obra</li>
+<li>hacer <b>obras derivadas</b></li>
+<li>hacer un <b>uso comercial</b> de esta obra</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline38" class="outline-2">
+<h2 id="orgheadline38">gracias!</h2>
+<div class="outline-text-2" id="text-orgheadline38">
+<ul class="org-ul">
+<li>preguntas, dudas y sugerencias a:
+<ul class="org-ul">
+<li><a href="mailto:OSiUX@OSiUX.com">mailto:OSiUX@OSiUX.com</a></li>
+</ul></li>
+
+<li>encontrá ésta y otras cuarlas en:
+<ul class="org-ul">
+<li><a href="http://pub.osiux.com/charlas">http://pub.osiux.com/charlas</a></li>
+</ul></li>
+
+<li>y el source en:
+<ul class="org-ul">
+<li><a href="https://github.com/osiris/charlas">https://github.com/osiris/charlas</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Fecha: 2016-04-23</p>
+<p class="author">Autor: Osiris Alejandro Gómez</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3.2)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
